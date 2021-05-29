@@ -771,14 +771,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    227
+                    399
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
                 
@@ -814,6 +814,83 @@
 <li>-10^8 &lt;= target &lt;= 10^8</li>
 </ul>
 <p><strong>题解：</strong></p>
+<p>二维前缀和的题目，使用哈希表来优化</p>
+<pre class="line-numbers language-c++"><code class="language-c++">#define HT_LENGTH 256
+
+struct HashTable {
+    int keys[HT_LENGTH];
+    int vals[HT_LENGTH];
+
+    HashTable() {
+        this->clear();
+    }
+
+    void clear() {
+        keys[0] = 0; vals[0] = 1;
+        for (int i = 1;i < HT_LENGTH;i++) keys[i] = -1;
+    }
+
+    bool find(int key, int& ret) {
+        uint32_t ikey = (uint32_t)key % HT_LENGTH;
+        for (int i = 0;i < HT_LENGTH;i++) {
+            if (keys[ikey] == -1) return false;
+            if (keys[ikey] == key) {
+                ret = vals[ikey];
+                return true;
+            }
+            ikey ++;
+            ikey = ikey == HT_LENGTH ? 0 : ikey;
+        }
+        return false;
+    }
+
+    void inc(int key) {
+        uint32_t ikey = (uint32_t)key % HT_LENGTH;
+        for (int i = 0;i < HT_LENGTH;i++) {
+            if (keys[ikey] == -1) {
+                keys[ikey] = key;
+                vals[ikey] = 1;
+                return;
+            }
+            if (keys[ikey] == key) {
+                vals[ikey]++;
+                return;
+            }
+            ikey ++;
+            ikey = ikey == HT_LENGTH ? 0 : ikey;
+        }
+    }
+};
+
+class Solution {
+private:
+    HashTable ht;
+public:
+    int numSubmatrixSumTarget(vector<vector<int>>& matrix, int target) {
+        int rprefix[100][101];
+        int m = matrix.size(), n = matrix[0].size();
+        int ret = 0;
+        for (int i = 0;i < m;i++) {
+            rprefix[i][0] = 0;
+            for (int j = 1;j <= n;j ++) {
+                rprefix[i][j] = rprefix[i][j - 1] + matrix[i][j - 1];
+            }
+        }
+
+        for (int i = 1;i <= n;i++) {
+            for (int j = i;j <= n;j++) {
+                ht.clear();
+                int cprefix = 0, val;
+                for (int row = 0;row < m;row++) {
+                    cprefix += rprefix[row][j] - rprefix[row][i - 1];
+                    if (ht.find(cprefix - target, val)) ret += val;
+                    ht.inc(cprefix);
+                }
+            }
+        }
+        return ret;
+    }
+};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -1575,7 +1652,7 @@
            <!--<a href="/sitemap.xml" target="_blank">站点地图</a>丨-->
            
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">68.9k
+            <span class="white-color">69.1k
              丨            
             <a href="https://tongji.baidu.com/web/welcome/ico?s=df42dpc7224a5f6a8d435" target="_blank">百度统计</a>丨
            <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278720284'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1278720284%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
@@ -1670,7 +1747,7 @@
       <span class="badge-subject">PV</span><span class="badge-value bg-brightgreen" id="busuanzi_value_site_pv"></span>
     </div>
     <div class="github-badge">
-      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">68.9k</span>
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">69.1k</span>
     </div>
 </footer>
 
