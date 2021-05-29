@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Shawlon`s Blog</title>
+  
+  <subtitle>Yshawlon</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://www.yshawlon.cn/"/>
+  <updated>2021-05-29T02:53:12.227Z</updated>
+  <id>https://www.yshawlon.cn/</id>
+  
+  <author>
+    <name>Tyzhao</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【Day33】1074.元素和为目标值的子矩阵数量</title>
+    <link href="https://www.yshawlon.cn/day33-1074-yuan-su-he-wei-mu-biao-zhi-de-zi-ju-zhen-shu-liang.html"/>
+    <id>https://www.yshawlon.cn/day33-1074-yuan-su-he-wei-mu-biao-zhi-de-zi-ju-zhen-shu-liang.html</id>
+    <published>2021-05-29T02:50:36.000Z</published>
+    <updated>2021-05-29T02:53:12.227Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;1074-元素和为目标值的子矩阵数量&quot;&gt;&lt;a href=&quot;#1074-元素和为目标值的子矩阵数量&quot; class=&quot;headerlink&quot; title=&quot;1074. 元素和为目标值的子矩阵数量&quot;&gt;&lt;/a&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    
+      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【Day32】477.汉明距离总和</title>
+    <link href="https://www.yshawlon.cn/day32-477-han-ming-ju-chi-zong-he.html"/>
+    <id>https://www.yshawlon.cn/day32-477-han-ming-ju-chi-zong-he.html</id>
+    <published>2021-05-28T14:08:47.000Z</published>
+    <updated>2021-05-28T14:47:44.156Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;477-汉明距离总和&quot;&gt;&lt;a href=&quot;#477-汉明距离总和&quot; class=&quot;headerlink&quot; title=&quot;477. 汉明距离总和&quot;&gt;&lt;/a&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    
+      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【Day31】461.汉明距离</title>
+    <link href="https://www.yshawlon.cn/day31-461-han-ming-ju-chi.html"/>
+    <id>https://www.yshawlon.cn/day31-461-han-ming-ju-chi.html</id>
+    <published>2021-05-27T08:48:27.000Z</published>
+    <updated>2021-05-27T14:28:09.546Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;461-汉明距离&quot;&gt;&lt;a href=&quot;#461-汉明距离&quot; class=&quot;headerlink&quot; title=&quot;461. 汉明距离&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/hamming-distance/&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    
+      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【Day30】1190.反转每对括号间的子串</title>
+    <link href="https://www.yshawlon.cn/day30-1190-fan-zhuan-mei-dui-gua-hao-jian-de-zi-chuan.html"/>
+    <id>https://www.yshawlon.cn/day30-1190-fan-zhuan-mei-dui-gua-hao-jian-de-zi-chuan.html</id>
+    <published>2021-05-26T12:33:13.000Z</published>
+    <updated>2021-05-26T13:29:04.301Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;1190-反转每对括号间的子串&quot;&gt;&lt;a href=&quot;#1190-反转每对括号间的子串&quot; class=&quot;headerlink&quot; title=&quot;1190. 反转每对括号间的子串&quot;&gt;&lt;/a&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    
+      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【Day29】1787.使所有区间的异或结果为零</title>
+    <link href="https://www.yshawlon.cn/day29-1787-shi-suo-you-qu-jian-de-yi-huo-jie-guo-wei-ling.html"/>
+    <id>https://www.yshawlon.cn/day29-1787-shi-suo-you-qu-jian-de-yi-huo-jie-guo-wei-ling.html</id>
+    <published>2021-05-25T04:59:58.000Z</published>
+    <updated>2021-05-25T09:03:29.295Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;1787-使所有区间的异或结果为零&quot;&gt;&lt;a href=&quot;#1787-使所有区间的异或结果为零&quot; class=&quot;headerlink&quot; title=&quot;1787. 使所有区间的异或结果为零&quot;&gt;&lt;/a&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    
+      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【Day28】664.奇怪的打印机</title>
+    <link href="https://www.yshawlon.cn/day28-664-qi-guai-de-da-yin-ji.html"/>
+    <id>https://www.yshawlon.cn/day28-664-qi-guai-de-da-yin-ji.html</id>
+    <published>2021-05-24T04:49:06.000Z</published>
+    <updated>2021-05-24T05:14:30.656Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;664-奇怪的打印机&quot;&gt;&lt;a href=&quot;#664-奇怪的打印机&quot; class=&quot;headerlink&quot; title=&quot;664. 奇怪的打印机&quot;&gt;&lt;/a&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    
+      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【Day27】1707.与数组中元素的最大异或值</title>
+    <link href="https://www.yshawlon.cn/day27-1707-yu-shu-zu-zhong-yuan-su-de-zui-da-yi-huo-zhi.html"/>
+    <id>https://www.yshawlon.cn/day27-1707-yu-shu-zu-zhong-yuan-su-de-zui-da-yi-huo-zhi.html</id>
+    <published>2021-05-23T04:03:38.000Z</published>
+    <updated>2021-05-23T13:54:10.761Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;1707-与数组中元素的最大异或值&quot;&gt;&lt;a href=&quot;#1707-与数组中元素的最大异或值&quot; class=&quot;headerlink&quot; title=&quot;1707. 与数组中元素的最大异或值&quot;&gt;&lt;/a&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    
+      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【Day26】810.黑板异或游戏</title>
+    <link href="https://www.yshawlon.cn/day26-810-hei-ban-yi-huo-you-xi.html"/>
+    <id>https://www.yshawlon.cn/day26-810-hei-ban-yi-huo-you-xi.html</id>
+    <published>2021-05-21T16:26:32.000Z</published>
+    <updated>2021-05-22T15:24:16.358Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;810-黑板异或游戏&quot;&gt;&lt;a href=&quot;#810-黑板异或游戏&quot; class=&quot;headerlink&quot; title=&quot;810. 黑板异或游戏&quot;&gt;&lt;/a&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    
+      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【Day25】1035.不相交的线</title>
+    <link href="https://www.yshawlon.cn/day25-1035-bu-xiang-jiao-de-xian.html"/>
+    <id>https://www.yshawlon.cn/day25-1035-bu-xiang-jiao-de-xian.html</id>
+    <published>2021-05-21T05:15:09.000Z</published>
+    <updated>2021-05-21T06:23:02.039Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;1035-不相交的线&quot;&gt;&lt;a href=&quot;#1035-不相交的线&quot; class=&quot;headerlink&quot; title=&quot;1035. 不相交的线&quot;&gt;&lt;/a&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    
+      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【Day24】692.前K个高频单词</title>
+    <link href="https://www.yshawlon.cn/day24-692-qian-k-ge-gao-pin-dan-ci.html"/>
+    <id>https://www.yshawlon.cn/day24-692-qian-k-ge-gao-pin-dan-ci.html</id>
+    <published>2021-05-19T16:39:39.000Z</published>
+    <updated>2021-05-20T07:38:39.155Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;692-前K个高频单词&quot;&gt;&lt;a href=&quot;#692-前K个高频单词&quot; class=&quot;headerlink&quot; title=&quot;692. 前K个高频单词&quot;&gt;&lt;/a&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    
+      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【Day23】1738.找出第 K 大的异或坐标值</title>
+    <link href="https://www.yshawlon.cn/day23-1738-zhao-chu-di-k-da-de-yi-huo-zuo-biao-zhi.html"/>
+    <id>https://www.yshawlon.cn/day23-1738-zhao-chu-di-k-da-de-yi-huo-zuo-biao-zhi.html</id>
+    <published>2021-05-18T16:35:07.000Z</published>
+    <updated>2021-05-19T04:03:15.322Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;1738-找出第-K-大的异或坐标值&quot;&gt;&lt;a href=&quot;#1738-找出第-K-大的异或坐标值&quot; class=&quot;headerlink&quot; title=&quot;1738. 找出第 K 大的异或坐标值&quot;&gt;&lt;/a&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    
+      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【Day22】1442.形成两个异或相等数组的三元组数目</title>
+    <link href="https://www.yshawlon.cn/day22-1442-xing-cheng-liang-ge-yi-huo-xiang-deng-shu-zu-de-san-yuan-zu-shu-mu.html"/>
+    <id>https://www.yshawlon.cn/day22-1442-xing-cheng-liang-ge-yi-huo-xiang-deng-shu-zu-de-san-yuan-zu-shu-mu.html</id>
+    <published>2021-05-17T17:00:15.000Z</published>
+    <updated>2021-05-18T14:48:39.087Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;1442-形成两个异或相等数组的三元组数目&quot;&gt;&lt;a href=&quot;#1442-形成两个异或相等数组的三元组数目&quot; class=&quot;headerlink&quot; title=&quot;1442. 形成两个异或相等数组的三元组数目&quot;&gt;&lt;/a&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    
+      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【Day21】993.二叉树的堂兄弟节点</title>
+    <link href="https://www.yshawlon.cn/day21-993-er-cha-shu-de-tang-xiong-di-jie-dian.html"/>
+    <id>https://www.yshawlon.cn/day21-993-er-cha-shu-de-tang-xiong-di-jie-dian.html</id>
+    <published>2021-05-16T16:18:32.000Z</published>
+    <updated>2021-05-17T03:50:36.294Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;993-二叉树的堂兄弟节点&quot;&gt;&lt;a href=&quot;#993-二叉树的堂兄弟节点&quot; class=&quot;headerlink&quot; title=&quot;993. 二叉树的堂兄弟节点&quot;&gt;&lt;/a&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    
+      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《X86汇编语言从实模式到保护模式》阅读笔记</title>
+    <link href="https://www.yshawlon.cn/x86-hui-bian-yu-yan-cong-shi-mo-shi-dao-bao-hu-mo-shi-yue-du-bi-ji.html"/>
+    <id>https://www.yshawlon.cn/x86-hui-bian-yu-yan-cong-shi-mo-shi-dao-bao-hu-mo-shi-yue-du-bi-ji.html</id>
+    <published>2021-05-16T14:57:10.000Z</published>
+    <updated>2021-05-16T15:03:34.362Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;这本书是李忠、王小波、余洁所著，如果想深入理解汇编语言，探索操作系统的奥秘，我觉得这本书是很好的老师，这篇博客记录一下学习这本书的一些心得及知识点。&lt;/p&gt;
+
+        
+      
+    
+    </summary>
+    
+      <category term="操作系统" scheme="https://www.yshawlon.cn/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+      <category term="学习笔记" scheme="https://www.yshawlon.cn/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【Day20】421.数组中两个数的最大异或值</title>
+    <link href="https://www.yshawlon.cn/day20-421-shu-zu-zhong-liang-ge-shu-de-zui-da-yi-huo-zhi.html"/>
+    <id>https://www.yshawlon.cn/day20-421-shu-zu-zhong-liang-ge-shu-de-zui-da-yi-huo-zhi.html</id>
+    <published>2021-05-16T01:36:41.000Z</published>
+    <updated>2021-05-16T16:16:02.040Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;421-数组中两个数的最大异或值&quot;&gt;&lt;a href=&quot;#421-数组中两个数的最大异或值&quot; class=&quot;headerlink&quot; title=&quot;421. 数组中两个数的最大异或值&quot;&gt;&lt;/a&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    
+      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【Day19】13.罗马数字转整数</title>
+    <link href="https://www.yshawlon.cn/day19-13-luo-ma-shu-zi-zhuan-zheng-shu.html"/>
+    <id>https://www.yshawlon.cn/day19-13-luo-ma-shu-zi-zhuan-zheng-shu.html</id>
+    <published>2021-05-15T04:47:19.000Z</published>
+    <updated>2021-05-15T15:31:31.874Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;13-罗马数字转整数&quot;&gt;&lt;a href=&quot;#13-罗马数字转整数&quot; class=&quot;headerlink&quot; title=&quot;13. 罗马数字转整数&quot;&gt;&lt;/a&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    
+      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【Day18】12.整数转罗马数字</title>
+    <link href="https://www.yshawlon.cn/day18-12-zheng-shu-zhuan-luo-ma-shu-zi.html"/>
+    <id>https://www.yshawlon.cn/day18-12-zheng-shu-zhuan-luo-ma-shu-zi.html</id>
+    <published>2021-05-14T06:17:10.000Z</published>
+    <updated>2021-05-14T10:33:27.064Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;12-整数转罗马数字&quot;&gt;&lt;a href=&quot;#12-整数转罗马数字&quot; class=&quot;headerlink&quot; title=&quot;12. 整数转罗马数字&quot;&gt;&lt;/a&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    
+      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【Day17】1269.停在原地的方案数</title>
+    <link href="https://www.yshawlon.cn/day17-1269-ting-zai-yuan-di-de-fang-an-shu.html"/>
+    <id>https://www.yshawlon.cn/day17-1269-ting-zai-yuan-di-de-fang-an-shu.html</id>
+    <published>2021-05-13T01:57:04.000Z</published>
+    <updated>2021-05-13T15:27:58.204Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;1269-停在原地的方案数&quot;&gt;&lt;a href=&quot;#1269-停在原地的方案数&quot; class=&quot;headerlink&quot; title=&quot;1269. 停在原地的方案数&quot;&gt;&lt;/a&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    
+      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【Day16】1310.子数组异或查询</title>
+    <link href="https://www.yshawlon.cn/day16-1310-zi-shu-zu-yi-huo-cha-xun.html"/>
+    <id>https://www.yshawlon.cn/day16-1310-zi-shu-zu-yi-huo-cha-xun.html</id>
+    <published>2021-05-12T14:03:02.000Z</published>
+    <updated>2021-05-12T14:13:04.609Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;1310-子数组异或查询&quot;&gt;&lt;a href=&quot;#1310-子数组异或查询&quot; class=&quot;headerlink&quot; title=&quot;1310. 子数组异或查询&quot;&gt;&lt;/a&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    
+      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【Day15】1734.解码异或后的排列</title>
+    <link href="https://www.yshawlon.cn/day15-1734-jie-ma-yi-huo-hou-de-pai-lie.html"/>
+    <id>https://www.yshawlon.cn/day15-1734-jie-ma-yi-huo-hou-de-pai-lie.html</id>
+    <published>2021-05-11T11:33:28.000Z</published>
+    <updated>2021-05-11T14:06:35.084Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;1734-解码异或后的排列&quot;&gt;&lt;a href=&quot;#1734-解码异或后的排列&quot; class=&quot;headerlink&quot; title=&quot;1734. 解码异或后的排列&quot;&gt;&lt;/a&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    
+      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
+    
+  </entry>
+  
+</feed>
