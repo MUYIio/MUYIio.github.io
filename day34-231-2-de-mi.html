@@ -4,16 +4,15 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="【Day19】13.罗马数字转整数, 被动学习">
+    <meta name="keywords" content="【Day34】231. 2 的幂, 被动学习">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="13. 罗马数字转整数罗马数字包含以下七种字符: I， V， X， L，C，D 和 M。
-字符          数值
-I             1
-V             5
-X             10
-L          ">
+    <meta name="description" content="231. 2 的幂给你一个整数 n，请你判断该整数是否是 2 的幂次方。如果是，返回 true ；否则，返回 false 。
+如果存在一个整数 x 使得 n == 2x ，则认为 n 是 2 的幂次方。
+示例 1：
+输入：n = 1
+输出：">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +20,7 @@ L          ">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>【Day19】13.罗马数字转整数 | Shawlon`s Blog</title>
+    <title>【Day34】231. 2 的幂 | Shawlon`s Blog</title>
     <link rel="icon" type="image/jpeg" href="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/avatars/favicon.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -620,13 +619,13 @@ L          ">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/24.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        【Day19】13.罗马数字转整数
+                        【Day34】231. 2 的幂
                     </div>
                 </div>
             </div>
@@ -761,7 +760,7 @@ L          ">
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-05-15
+                    2021-05-30
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -775,14 +774,14 @@ L          ">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    531
+                    228
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
                 
@@ -798,75 +797,39 @@ L          ">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="13-罗马数字转整数"><a href="#13-罗马数字转整数" class="headerlink" title="13. 罗马数字转整数"></a><a href="https://leetcode-cn.com/problems/roman-to-integer/" target="_blank" rel="noopener">13. 罗马数字转整数</a></h4><p>罗马数字包含以下七种字符: I， V， X， L，C，D 和 M。</p>
-<pre><code>字符          数值
-I             1
-V             5
-X             10
-L             50
-C             100
-D             500
-M             1000</code></pre><blockquote>
-<p>例如， 罗马数字 2 写做 II ，即为两个并列的 1。12 写做 XII ，即为 X + II 。 27 写做  XXVII, 即为 XX + V + II 。</p>
-</blockquote>
-<p>通常情况下，罗马数字中小的数字在大的数字的右边。但也存在特例，例如 4 不写做 IIII，而是 IV。数字 1 在数字 5 的左边，所表示的数等于大数 5 减小数 1 得到的数值 4 。同样地，数字 9 表示为 IX。这个特殊的规则只适用于以下六种情况：</p>
+                <h4 id="231-2-的幂"><a href="#231-2-的幂" class="headerlink" title="231. 2 的幂"></a><a href="https://leetcode-cn.com/problems/power-of-two/" target="_blank" rel="noopener">231. 2 的幂</a></h4><p>给你一个整数 n，请你判断该整数是否是 2 的幂次方。如果是，返回 true ；否则，返回 false 。</p>
+<p>如果存在一个整数 x 使得 n == 2x ，则认为 n 是 2 的幂次方。</p>
+<p><strong>示例 1：</strong></p>
+<pre><code>输入：n = 1
+输出：true
+解释：20 = 1</code></pre><p><strong>示例 2：</strong></p>
+<pre><code>输入：n = 16
+输出：true
+解释：24 = 16</code></pre><p><strong>示例 3：</strong></p>
+<pre><code>输入：n = 3
+输出：false</code></pre><p><strong>示例 4：</strong></p>
+<pre><code>输入：n = 4
+输出：true</code></pre><p><strong>示例 5：</strong></p>
+<pre><code>输入：n = 5
+输出：false</code></pre><p><strong>提示：</strong></p>
 <ul>
-<li>I 可以放在 V (5) 和 X (10) 的左边，来表示 4 和 9。</li>
-<li>X 可以放在 L (50) 和 C (100) 的左边，来表示 40 和 90。 </li>
-<li>C 可以放在 D (500) 和 M (1000) 的左边，来表示 400 和 900。</li>
-</ul>
-<p>给定一个罗马数字，将其转换成整数。输入确保在 1 到 3999 的范围内。</p>
-<p><strong>示例 1:</strong></p>
-<pre><code>输入: &quot;III&quot;
-输出: 3</code></pre><p><strong>示例 2:</strong></p>
-<pre><code>输入: &quot;IV&quot;
-输出: 4</code></pre><p><strong>示例 3:</strong></p>
-<pre><code>输入: &quot;IX&quot;
-输出: 9</code></pre><p><strong>示例 4:</strong></p>
-<pre><code>输入: &quot;LVIII&quot;
-输出: 58
-解释: L = 50, V= 5, III = 3.</code></pre><p><strong>示例 5:</strong></p>
-<pre><code>输入: &quot;MCMXCIV&quot;
-输出: 1994
-解释: M = 1000, CM = 900, XC = 90, IV = 4.</code></pre><p><strong>提示：</strong></p>
-<ul>
-<li>1 &lt;= s.length &lt;= 15</li>
-<li>s 仅含字符 (‘I’, ‘V’, ‘X’, ‘L’, ‘C’, ‘D’, ‘M’)</li>
-<li>题目数据保证 s 是一个有效的罗马数字，且表示整数在范围 [1, 3999] 内</li>
-<li>题目所给测试用例皆符合罗马数字书写规则，不会出现跨位等情况。</li>
-<li>IL 和 IM 这样的例子并不符合题目要求，49 应该写作 XLIX，999 应该写作 CMXCIX 。</li>
-<li>关于罗马数字的详尽书写规则，可以参考 罗马数字 - Mathematics 。</li>
+<li>-231 &lt;= n &lt;= 231 - 1</li>
 </ul>
 <p><strong>题解：</strong></p>
+<p><strong>位运算</strong></p>
+<p>若 n = 2^x 且 x为自然数（即 n 为 2 的幂），则一定满足以下条件：</p>
+<p>首先，恒有 n &amp; (n - 1) == 0，因为：</p>
 <ul>
-<li><p>当小值在大值的左边，则减小值，如 IV=5-1=4；</p>
-</li>
-<li><p>当小值在大值的右边，则加小值，如 VI=5+1=6；</p>
-</li>
-<li><p>小值放在大值的左边，就是做减法，否则为加法。</p>
-</li>
+<li>n 二进制最高位为 11，其余所有位为 00；</li>
+<li>n−1 二进制最高位为 00，其余所有位为 11；</li>
 </ul>
+<p>其次，我们只需要限定n &gt; 0 即可。</p>
 <pre class="line-numbers language-c++"><code class="language-c++">class Solution {
 public:
-    int romanToInt(string s) {
-    int r=0;
-
-    for(int i=0;i<s.length();i++)
-    {
-        switch(s[i])
-        {
-            case 'I' : r += ('V' == s[i+1] || 'X' == s[i+1]) ?-1 : 1 ; break;
-            case 'V' : r += 5; break;
-            case 'X' : r += ('L' == s[i+1] || 'C' == s[i+1]) ?-10: 10 ; break;
-            case 'L' : r += 50; break;
-            case 'C' : r += ('D' == s[i+1] || 'M' == s[i+1]) ?-100: 100 ; break;
-            case 'D' : r += 500; break;
-            case 'M' : r += 1000; break;
-        }
+    bool isPowerOfTwo(int n) {
+         return n > 0 && (n & (n - 1)) == 0;
     }
-    return r;
-    }
-};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -1025,9 +988,9 @@ public:
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《【Day19】13.罗马数字转整数》
+                    《【Day34】231. 2 的幂》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/day19-13-luo-ma-shu-zi-zhuan-zheng-shu.html" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/day34-231-2-de-mi.html" property="cc:attributionName"
                rel="cc:attributionURL">
                 Tyzhao
             </a> 采用
@@ -1068,7 +1031,7 @@ public:
         repo: 'muyiio.github.io',
         owner: 'MUYIio',
         admin: "MUYIio",
-        id: 'day19-13-luo-ma-shu-zi-zhuan-zheng-shu.html',
+        id: 'day34-231-2-de-mi.html',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1351,32 +1314,34 @@ public:
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/day20-421-shu-zu-zhong-liang-ge-shu-de-zui-da-yi-huo-zhi.html">
+                <a href="/day34-231-2-de-mi.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/8.jpg" class="responsive-img" alt="【Day20】421.数组中两个数的最大异或值">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/24.jpg" class="responsive-img" alt="【Day34】231. 2 的幂">
                         
-                        <span class="card-title">【Day20】421.数组中两个数的最大异或值</span>
+                        <span class="card-title">【Day34】231. 2 的幂</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            421. 数组中两个数的最大异或值给你一个整数数组 nums ，返回 nums[i] XOR nums[j] 的最大运算结果，其中 0 ≤ i ≤ j &lt; n 。
-进阶：你可以在 O(n) 的时间解决这个问题吗？
+                            231. 2 的幂给你一个整数 n，请你判断该整数是否是 2 的幂次方。如果是，返回 true ；否则，返回 false 。
+如果存在一个整数 x 使得 n == 2x ，则认为 n 是 2 的幂次方。
 示例 1：
-输入：n
+输入：n = 1
+输出：
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-05-16
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-05-30
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -1389,6 +1354,7 @@ public:
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1407,29 +1373,25 @@ public:
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/day18-12-zheng-shu-zhuan-luo-ma-shu-zi.html">
+                <a href="/day33-1074-yuan-su-he-wei-mu-biao-zhi-de-zi-ju-zhen-shu-liang.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/7.jpg" class="responsive-img" alt="【Day18】12.整数转罗马数字">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/2.jpg" class="responsive-img" alt="【Day33】1074.元素和为目标值的子矩阵数量">
                         
-                        <span class="card-title">【Day18】12.整数转罗马数字</span>
+                        <span class="card-title">【Day33】1074.元素和为目标值的子矩阵数量</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            12. 整数转罗马数字罗马数字包含以下七种字符： I， V， X， L，C，D 和 M。
-字符          数值
-I             1
-V             5
-X             10
-L          
+                            1074. 元素和为目标值的子矩阵数量给出矩阵 matrix 和目标值 target，返回元素总和等于目标值的非空子矩阵的数量。
+子矩阵 x1, y1, x2, y2 是满足 x1 &lt;= x &lt;= x2 且 y1 &lt;= y
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-05-14
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-05-29
                             </span>
                         <span class="publish-author">
                             

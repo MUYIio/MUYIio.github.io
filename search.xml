@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>【Day34】231. 2 的幂</title>
+      <link href="/day34-231-2-de-mi.html"/>
+      <url>/day34-231-2-de-mi.html</url>
+      
+        <content type="html"><![CDATA[<h4 id="231-2-的幂"><a href="#231-2-的幂" class="headerlink" title="231. 2 的幂"></a><a href="https://leetcode-cn.com/problems/power-of-two/" target="_blank" rel="noopener">231. 2 的幂</a></h4><p>给你一个整数 n，请你判断该整数是否是 2 的幂次方。如果是，返回 true ；否则，返回 false 。</p><p>如果存在一个整数 x 使得 n == 2x ，则认为 n 是 2 的幂次方。</p><p><strong>示例 1：</strong></p><pre><code>输入：n = 1输出：true解释：20 = 1</code></pre><p><strong>示例 2：</strong></p><pre><code>输入：n = 16输出：true解释：24 = 16</code></pre><p><strong>示例 3：</strong></p><pre><code>输入：n = 3输出：false</code></pre><p><strong>示例 4：</strong></p><pre><code>输入：n = 4输出：true</code></pre><p><strong>示例 5：</strong></p><pre><code>输入：n = 5输出：false</code></pre><p><strong>提示：</strong></p><ul><li>-231 &lt;= n &lt;= 231 - 1</li></ul><p><strong>题解：</strong></p><p><strong>位运算</strong></p><p>若 n = 2^x 且 x为自然数（即 n 为 2 的幂），则一定满足以下条件：</p><p>首先，恒有 n &amp; (n - 1) == 0，因为：</p><ul><li>n 二进制最高位为 11，其余所有位为 00；</li><li>n−1 二进制最高位为 00，其余所有位为 11；</li></ul><p>其次，我们只需要限定n &gt; 0 即可。</p><pre class="line-numbers language-c++"><code class="language-c++">class Solution {public:    bool isPowerOfTwo(int n) {         return n > 0 && (n & (n - 1)) == 0;    }};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 每日一题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>【Day33】1074.元素和为目标值的子矩阵数量</title>
       <link href="/day33-1074-yuan-su-he-wei-mu-biao-zhi-de-zi-ju-zhen-shu-liang.html"/>
       <url>/day33-1074-yuan-su-he-wei-mu-biao-zhi-de-zi-ju-zhen-shu-liang.html</url>
