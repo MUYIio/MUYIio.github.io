@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.yshawlon.cn/"/>
-  <updated>2021-05-30T06:31:23.317Z</updated>
+  <updated>2021-05-31T04:31:11.123Z</updated>
   <id>https://www.yshawlon.cn/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【Day35】342. 4的幂</title>
+    <link href="https://www.yshawlon.cn/day35-342-4-de-mi.html"/>
+    <id>https://www.yshawlon.cn/day35-342-4-de-mi.html</id>
+    <published>2021-05-31T02:38:43.000Z</published>
+    <updated>2021-05-31T04:31:11.123Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;342-4的幂&quot;&gt;&lt;a href=&quot;#342-4的幂&quot; class=&quot;headerlink&quot; title=&quot;342. 4的幂&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/power-of-four/&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    
+      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
+    
+  </entry>
   
   <entry>
     <title>【Day34】231. 2 的幂</title>
@@ -499,32 +525,6 @@
         
         
           &lt;h4 id=&quot;1269-停在原地的方案数&quot;&gt;&lt;a href=&quot;#1269-停在原地的方案数&quot; class=&quot;headerlink&quot; title=&quot;1269. 停在原地的方案数&quot;&gt;&lt;/a&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
-    
-    
-      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【Day16】1310.子数组异或查询</title>
-    <link href="https://www.yshawlon.cn/day16-1310-zi-shu-zu-yi-huo-cha-xun.html"/>
-    <id>https://www.yshawlon.cn/day16-1310-zi-shu-zu-yi-huo-cha-xun.html</id>
-    <published>2021-05-12T14:03:02.000Z</published>
-    <updated>2021-05-12T14:13:04.609Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;1310-子数组异或查询&quot;&gt;&lt;a href=&quot;#1310-子数组异或查询&quot; class=&quot;headerlink&quot; title=&quot;1310. 子数组异或查询&quot;&gt;&lt;/a&gt;&lt;a
         
       
     

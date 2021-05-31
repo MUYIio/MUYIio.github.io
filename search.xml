@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>【Day35】342. 4的幂</title>
+      <link href="/day35-342-4-de-mi.html"/>
+      <url>/day35-342-4-de-mi.html</url>
+      
+        <content type="html"><![CDATA[<h4 id="342-4的幂"><a href="#342-4的幂" class="headerlink" title="342. 4的幂"></a><a href="https://leetcode-cn.com/problems/power-of-four/" target="_blank" rel="noopener">342. 4的幂</a></h4><p>给定一个整数，写一个函数来判断它是否是 4 的幂次方。如果是，返回 true ；否则，返回 false 。</p><p>整数 n 是 4 的幂次方需满足：存在整数 x 使得 n == 4x</p><p><strong>示例 1：</strong></p><pre><code>输入：n = 16输出：true</code></pre><p><strong>示例 2：</strong></p><pre><code>输入：n = 5输出：false</code></pre><p><strong>示例 3：</strong></p><pre><code>输入：n = 1输出：true</code></pre><p><strong>提示：</strong></p><ul><li>-231 &lt;= n &lt;= 231 - 1</li></ul><p><strong>题解：</strong></p><p>一个数是<code>2</code>的幂，那么二进制从右边数奇数位是<code>1</code>的一定是<code>4</code>的幂。判断是<code>2</code>的幂，我们只需要判断二进制中<code>1</code>的个数，用昨天的解即可。</p><pre><code>0x55555555的  二进制是  01010101 01010101 01010101 01010101</code></pre><pre class="line-numbers language-c++"><code class="language-c++">class Solution {public:    bool isPowerOfFour(int n) {    return n > 0 && (n & (n - 1)) == 0 && (n & 0x55555555) == n;    }};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 每日一题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>【Day34】231. 2 的幂</title>
       <link href="/day34-231-2-de-mi.html"/>
       <url>/day34-231-2-de-mi.html</url>
@@ -1596,9 +1621,9 @@
       
         <tags>
             
-            <tag> CentOS </tag>
-            
             <tag> VMware </tag>
+            
+            <tag> CentOS </tag>
             
         </tags>
       
