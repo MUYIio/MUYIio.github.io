@@ -618,7 +618,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/35.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/34.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -781,14 +781,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.5k
+                    4.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    16 分
+                    19 分
                 </div>
                 
                 
@@ -843,7 +843,8 @@
 <p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.5/Images/posts/1/03.png" alt></p>
 <p><strong>第一种</strong>：直接<font color="red" size="3">DownLoad</font>，下载到本地就可以。（<strong>不推荐</strong>）</p>
 <p><strong>第二种</strong>：如果你已经安装了<a href="https://git-scm.com/download/win" title="Git" target="_blank" rel="noopener">Git</a>，就可以右键单击<font color="red" size="3">Come Bash Here</font>运行</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">git</span> clone git@github.com:MUYIio/hexo-themes-matery.git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git@github.com:MUYIio/hexo-themes-matery.git</span><br></pre></td></tr></table></figure>
+
 <p>将所有文件下载到本地，这个复杂一点。</p>
 <h2 id="二、修改博客文档配置"><a href="#二、修改博客文档配置" class="headerlink" title="二、修改博客文档配置"></a>二、修改博客文档配置</h2><p>首先将我们下载的博客源代码解压，然后修改主要配置：</p>
 <ul>
@@ -904,72 +905,14 @@ npm install</code></pre><p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.5/
 <p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.5/Images/posts/1/13.png" alt></p>
 <p>接着我们输入<font color="red" size="3">hexo g</font>生成静态网页，然后输入<font color="red" size="3">hexo s</font>打开本地服务器，然后浏览器打开<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a>，就可以预览我们的博客啦，如图：</p>
 <p>显示以下信息说明操作正确：</p>
-<p><code>INFO Hexo is running at http://0.0.0.0:4000/. Press Ctrl+C to stop.</code></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.5/Images/posts/1/14.png" alt></p>
-<p>按<font color="red" size="3">ctrl+c</font>关闭本地服务器。</p>
-<p><strong>我们以后常用到的<font color="red" size="3">Hexo</font>命令：</strong></p>
+<figure class="highlight plain"><figcaption><span>Hexo is running at</span><a href="http://0.0.0.0:4000/." target="_blank" rel="noopener">Press Ctrl+C to stop.```</a></figcaption><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">![](https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.5/Images/posts/1/14.png)</span><br><span class="line"></span><br><span class="line">按&lt;font color=red size=3&gt;ctrl+c&lt;/font&gt;关闭本地服务器。</span><br><span class="line"></span><br><span class="line">**我们以后常用到的&lt;font color=red size=3&gt;Hexo&lt;/font&gt;命令：**</span><br><span class="line"></span><br><span class="line">- &lt;font color=red size=3&gt;hexo s&lt;/font&gt;等价于 &lt;font color=red size=3&gt;hexo server&lt;/font&gt;  #&lt;font color=red size=3&gt;Hexo&lt;/font&gt; 会监视文件变动并自动更新，除修改站点配置文件外,无须重启服务器,直接刷新网页即可生效。</span><br><span class="line"></span><br><span class="line">- &lt;font color=red size=3&gt;hexo g&lt;/font&gt; 等价于 &lt;font color=red size=3&gt;hexo generate&lt;/font&gt;  #生成静态网页 (执行 $ &lt;font color=red size=3&gt;hexo g&lt;/font&gt;后会在站点根目录下生成&lt;font color=red size=3&gt;public&lt;/font&gt;文件夹,&lt;font color=red size=3&gt; hexo&lt;/font&gt;会将&quot;&lt;font color=red size=3&gt;/blog/source/&lt;/font&gt;&quot; 下面的&lt;font color=red size=3&gt;.md&lt;/font&gt;后缀的文件编译为&lt;font color=red size=3&gt;.html&lt;/font&gt;后缀的文件,存放在&quot;&lt;font color=red size=3&gt;/blog/public/ &lt;/font&gt;&quot; 路径下)</span><br><span class="line"></span><br><span class="line">- &lt;font color=red size=3&gt;hexo d &lt;/font&gt;等价于 &lt;font color=red size=3&gt;hexo deploy&lt;/font&gt;  #将本地数据部署到远端服务器(如&lt;font color=red size=3&gt;github&lt;/font&gt;)</span><br><span class="line">- &lt;font color=red size=3&gt;hexo clean &lt;/font&gt; #清除缓存 ,网页正常情况下可以忽略此条命令,执行该指令后,会删掉站点根目录下的&lt;font color=red size=3&gt;public&lt;/font&gt;文件夹</span><br><span class="line"></span><br><span class="line"># 连接Github与本地 #</span><br><span class="line">## 一、生成密钥 ##</span><br><span class="line"></span><br><span class="line">右键单击鼠标，点击 &lt;font color=red size=3&gt;Git Bash Here&lt;/font&gt;输入以下命令：</span><br><span class="line"></span><br><span class="line">    git config --global user.name &quot;Name&quot;</span><br><span class="line">    git config --global user.email &quot;Email&quot;</span><br><span class="line"></span><br><span class="line">**&lt;font color=red size=3&gt;Name&lt;/font&gt;和&lt;font color=red size=3&gt;Email&lt;/font&gt;是我们注册&lt;font color=red size=3&gt;Github&lt;/font&gt;时的用户名和邮箱。**</span><br><span class="line"></span><br><span class="line">然后生成密钥：</span><br><span class="line"></span><br><span class="line">    ssh-keygen -t rsa -C &quot;Email&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">**&lt;font color=red size=3&gt;Email&lt;/font&gt;是我们注册&lt;font color=red size=3&gt;Github&lt;/font&gt;时的邮箱**</span><br><span class="line"></span><br><span class="line">然后会出现：</span><br><span class="line"></span><br><span class="line">    Generating public/private rsa key pair.</span><br><span class="line">    Enter file in which to save the key (/c/Users/you/.ssh/id_rsa):</span><br><span class="line">    //到这里可以直接回车将密钥按默认文件进行存储</span><br><span class="line"></span><br><span class="line">回车之后：</span><br><span class="line"></span><br><span class="line">    Enter passphrase (empty for no passphrase):</span><br><span class="line">    //这里是要你输入密码，其实不需要输什么密码，直接回车就行</span><br><span class="line">    Enter same passphrase again:</span><br><span class="line"></span><br><span class="line">接下来会有：</span><br><span class="line"></span><br><span class="line">    Your identification has been saved in /c/Users/you/.ssh/id_rsa.</span><br><span class="line">    Your public key has been saved in /c/Users/you/.ssh/id_rsa.pub.</span><br><span class="line">    The key fingerprint is:</span><br><span class="line">    这里是各种字母数字组成的字符串，结尾是你的邮箱</span><br><span class="line">    The key&apos;s randomart image is:</span><br><span class="line">    这里也是各种字母数字符号组成的字符串</span><br><span class="line"></span><br><span class="line">现在密钥已经生成，一般存放在&lt;font color=red size=3&gt;（/c/Users/you/.ssh/id_rsa.pub.）&lt;/font&gt;，我们运行下面的命令将密钥复制为粘贴板：</span><br><span class="line"></span><br><span class="line">     clip &lt; ~/.ssh/id_rsa.pub</span><br><span class="line"></span><br><span class="line">![](https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.5/Images/posts/1/15.png)</span><br><span class="line"></span><br><span class="line">## 二、连接Github ##</span><br><span class="line">在&lt;font color=red size=3&gt;Github&lt;/font&gt;头像下面点击&lt;font color=red size=3&gt;Settings&lt;/font&gt;，再点击&lt;font color=red size=3&gt;SSH and GPG keys&lt;/font&gt;，新建一个&lt;font color=red size=3&gt;SSH&lt;/font&gt;，名字任意。</span><br><span class="line"></span><br><span class="line">![](https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.5/Images/posts/1/16.png)</span><br><span class="line"></span><br><span class="line">![](https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.5/Images/posts/1/17.png)</span><br><span class="line"></span><br><span class="line">然后将刚才复制的密钥添加就可以了，像这样：</span><br><span class="line"></span><br><span class="line">![](https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.5/Images/posts/1/18.png)</span><br><span class="line"></span><br><span class="line">**本地连接Github**</span><br><span class="line"></span><br><span class="line">右键单击鼠标，点击&lt;font color=red size=3&gt; Git Bash Here&lt;/font&gt;输入以下命令，如果如下图所示，出现你的用户名，那就成功了</span><br><span class="line"></span><br><span class="line">    ssh -T git@github.com</span><br><span class="line">    //注意不要做任何修改</span><br><span class="line"></span><br><span class="line">![](https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.5/Images/posts/1/19.png)</span><br><span class="line"></span><br><span class="line">用编辑器打开博客根目录下的&lt;font color=red size=3&gt;_config.yml&lt;/font&gt;文件，我用的是记事本，当然vscode也可以这是博客的配置文件，我们需要修改一下才能连接&lt;font color=red size=3&gt;Github&lt;/font&gt;。</span><br><span class="line"></span><br><span class="line">![](https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.5/Images/posts/1/20.png)</span><br><span class="line"></span><br><span class="line">修改最后一行的配置：</span><br><span class="line"></span><br><span class="line">    # Deployment</span><br><span class="line">    ## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">    deploy:</span><br><span class="line">      type:</span><br><span class="line">改为：</span><br><span class="line"></span><br><span class="line">    # Deployment</span><br><span class="line">    ## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">    deploy:</span><br><span class="line">      type: git</span><br><span class="line">      repository: git@github.com:panakot/panakot.github.io.git  //自己的仓库地址</span><br><span class="line">      branch: master</span><br><span class="line"></span><br><span class="line">这个是我的更为完整：</span><br></pre></td></tr></table></figure>
+
+<h1 id="Deployment"><a href="#Deployment" class="headerlink" title="Deployment"></a>Deployment</h1><h2 id="Docs-https-hexo-io-docs-deployment-html"><a href="#Docs-https-hexo-io-docs-deployment-html" class="headerlink" title="Docs: https://hexo.io/docs/deployment.html"></a>Docs: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">https://hexo.io/docs/deployment.html</a></h2><p>deploy:</p>
 <ul>
-<li><p><font color="red" size="3">hexo s</font>等价于 <font color="red" size="3">hexo server</font>  #<font color="red" size="3">Hexo</font> 会监视文件变动并自动更新，除修改站点配置文件外,无须重启服务器,直接刷新网页即可生效。</p>
-</li>
-<li><p><font color="red" size="3">hexo g</font> 等价于 <font color="red" size="3">hexo generate</font>  #生成静态网页 (执行 $ <font color="red" size="3">hexo g</font>后会在站点根目录下生成<font color="red" size="3">public</font>文件夹,<font color="red" size="3"> hexo</font>会将”<font color="red" size="3">/blog/source/</font>“ 下面的<font color="red" size="3">.md</font>后缀的文件编译为<font color="red" size="3">.html</font>后缀的文件,存放在”<font color="red" size="3">/blog/public/ </font>“ 路径下)</p>
-</li>
-<li><p><font color="red" size="3">hexo d </font>等价于 <font color="red" size="3">hexo deploy</font>  #将本地数据部署到远端服务器(如<font color="red" size="3">github</font>)</p>
-</li>
-<li><p><font color="red" size="3">hexo clean </font> #清除缓存 ,网页正常情况下可以忽略此条命令,执行该指令后,会删掉站点根目录下的<font color="red" size="3">public</font>文件夹</p>
-</li>
+<li>type: git<br>repository:<br>  github: <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:MUYIio/MUYIio.github.io.git       //GitHub仓库<br>  coding: <a href="mailto:git@e.coding.net" target="_blank" rel="noopener">git@e.coding.net</a>:godxiaolon/yshawlon/feezxe.git   //coding仓库<br>  gitee: <a href="mailto:git@gitee.com" target="_blank" rel="noopener">git@gitee.com</a>:feezxe/feezxe.git       //gitee仓库<br>  #repo: root@xxxxx :/home/git/blog.git        //前面加#表示注释掉，这个是服务器地址<br>branch: master</li>
+<li>type: baidu_url_submitter<pre><code></code></pre></li>
 </ul>
-<h1 id="连接Github与本地"><a href="#连接Github与本地" class="headerlink" title="连接Github与本地"></a>连接Github与本地</h1><h2 id="一、生成密钥"><a href="#一、生成密钥" class="headerlink" title="一、生成密钥"></a>一、生成密钥</h2><p>右键单击鼠标，点击 <font color="red" size="3">Git Bash Here</font>输入以下命令：</p>
-<pre><code>git config --global user.name &quot;Name&quot;
-git config --global user.email &quot;Email&quot;</code></pre><p><strong><font color="red" size="3">Name</font>和<font color="red" size="3">Email</font>是我们注册<font color="red" size="3">Github</font>时的用户名和邮箱。</strong></p>
-<p>然后生成密钥：</p>
-<pre><code>ssh-keygen -t rsa -C &quot;Email&quot;</code></pre><p><strong><font color="red" size="3">Email</font>是我们注册<font color="red" size="3">Github</font>时的邮箱</strong></p>
-<p>然后会出现：</p>
-<pre><code>Generating public/private rsa key pair.
-Enter file in which to save the key (/c/Users/you/.ssh/id_rsa):
-//到这里可以直接回车将密钥按默认文件进行存储</code></pre><p>回车之后：</p>
-<pre><code>Enter passphrase (empty for no passphrase):
-//这里是要你输入密码，其实不需要输什么密码，直接回车就行
-Enter same passphrase again:</code></pre><p>接下来会有：</p>
-<pre><code>Your identification has been saved in /c/Users/you/.ssh/id_rsa.
-Your public key has been saved in /c/Users/you/.ssh/id_rsa.pub.
-The key fingerprint is:
-这里是各种字母数字组成的字符串，结尾是你的邮箱
-The key&#39;s randomart image is:
-这里也是各种字母数字符号组成的字符串</code></pre><p>现在密钥已经生成，一般存放在<font color="red" size="3">（/c/Users/you/.ssh/id_rsa.pub.）</font>，我们运行下面的命令将密钥复制为粘贴板：</p>
-<pre><code> clip &lt; ~/.ssh/id_rsa.pub</code></pre><p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.5/Images/posts/1/15.png" alt></p>
-<h2 id="二、连接Github"><a href="#二、连接Github" class="headerlink" title="二、连接Github"></a>二、连接Github</h2><p>在<font color="red" size="3">Github</font>头像下面点击<font color="red" size="3">Settings</font>，再点击<font color="red" size="3">SSH and GPG keys</font>，新建一个<font color="red" size="3">SSH</font>，名字任意。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.5/Images/posts/1/16.png" alt></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.5/Images/posts/1/17.png" alt></p>
-<p>然后将刚才复制的密钥添加就可以了，像这样：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.5/Images/posts/1/18.png" alt></p>
-<p><strong>本地连接Github</strong></p>
-<p>右键单击鼠标，点击<font color="red" size="3"> Git Bash Here</font>输入以下命令，如果如下图所示，出现你的用户名，那就成功了</p>
-<pre><code>ssh -T git@github.com
-//注意不要做任何修改</code></pre><p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.5/Images/posts/1/19.png" alt></p>
-<p>用编辑器打开博客根目录下的<font color="red" size="3">_config.yml</font>文件，我用的是记事本，当然vscode也可以这是博客的配置文件，我们需要修改一下才能连接<font color="red" size="3">Github</font>。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.5/Images/posts/1/20.png" alt></p>
-<p>修改最后一行的配置：</p>
-<pre><code># Deployment
-## Docs: https://hexo.io/docs/deployment.html
-deploy:
-  type:</code></pre><p>改为：</p>
-<pre><code># Deployment
-## Docs: https://hexo.io/docs/deployment.html
-deploy:
-  type: git
-  repository: git@github.com:panakot/panakot.github.io.git  //自己的仓库地址
-  branch: master</code></pre><p>这个是我的更为完整：</p>
-<pre><code># Deployment
-## Docs: https://hexo.io/docs/deployment.html
-deploy:
-- type: git
-  repository:
-    github: git@github.com:MUYIio/MUYIio.github.io.git       //GitHub仓库
-    coding: git@e.coding.net:godxiaolon/yshawlon/feezxe.git   //coding仓库
-    gitee: git@gitee.com:feezxe/feezxe.git       //gitee仓库
-    #repo: root@xxxxx :/home/git/blog.git        //前面加#表示注释掉，这个是服务器地址
-  branch: master
-- type: baidu_url_submitter</code></pre><p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.8/Images/posts/1/21.png" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.8/Images/posts/1/21.png" alt></p>
 <p>切记：</p>
 <ul>
 <li><strong><font color="red" size="3">repository</font>修改为你自己的<font color="red" size="3">github</font>项目地址</strong>。</li>
@@ -1535,7 +1478,7 @@ hexo d</code></pre><p>现在访问我们的网站就可以看到主题已经更�
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/18.jpg" class="responsive-img" alt="Hexo 双线部署到 Coding Pages 和 GitHub Pages 提升访问速度">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/17.jpg" class="responsive-img" alt="Hexo 双线部署到 Coding Pages 和 GitHub Pages 提升访问速度">
                         
                         <span class="card-title">Hexo 双线部署到 Coding Pages 和 GitHub Pages 提升访问速度</span>
                     </div>
@@ -1592,7 +1535,7 @@ hexo d</code></pre><p>现在访问我们的网站就可以看到主题已经更�
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/9.jpg" class="responsive-img" alt="2019总结及2020规划">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/8.jpg" class="responsive-img" alt="2019总结及2020规划">
                         
                         <span class="card-title">2019总结及2020规划</span>
                     </div>
@@ -1802,7 +1745,7 @@ hexo d</code></pre><p>现在访问我们的网站就可以看到主题已经更�
            <!--<a href="/sitemap.xml" target="_blank">站点地图</a>丨-->
            
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">69.5k
+            <span class="white-color">86.9k
              丨            
             <a href="https://tongji.baidu.com/web/welcome/ico?s=df42dpc7224a5f6a8d435" target="_blank">百度统计</a>丨
            <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278720284'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1278720284%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
@@ -1893,7 +1836,7 @@ hexo d</code></pre><p>现在访问我们的网站就可以看到主题已经更�
       <span class="badge-subject">Link</span><span class="badge-value bg-red">996.ICU</span></a>
     </div>
     <div class="github-badge">
-      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">69.5k</span>
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">86.9k</span>
     </div>
 </footer>
 

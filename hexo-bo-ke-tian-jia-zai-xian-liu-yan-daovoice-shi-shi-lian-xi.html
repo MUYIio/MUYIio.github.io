@@ -615,7 +615,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/16.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -770,7 +770,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    481
+                    495
                 </div>
                 
 
@@ -801,42 +801,16 @@
 <p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.3/Images/posts/DaoVoice/1.png" alt></p>
 <h2 id="2-本地配置部署"><a href="#2-本地配置部署" class="headerlink" title="2.本地配置部署"></a>2.本地配置部署</h2><p><strong>我使用的是<font color="red" size="4">Hexo matery</font>主题，配置如下，不同主题可能需要改动：</strong></p>
 <p>①复制下面代码放到<font color="red" size="4">theme/layout/_partial/head.ejs</font>中的 <font color="red" size="4"> /head&gt; </font>之前</p>
-<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span><span class="token operator">%</span> <span class="token keyword">if</span><span class="token punctuation">(</span>theme<span class="token punctuation">.</span>daovoice<span class="token punctuation">.</span>enable <span class="token operator">&amp;&amp;</span> theme<span class="token punctuation">.</span>daovoice<span class="token punctuation">.</span>appid<span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token operator">%</span><span class="token operator">></span>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;% <span class="keyword">if</span>(theme.daovoice.enable &amp;&amp; theme.daovoice.appid)&#123; %&gt;</span><br><span class="line"></span><br><span class="line">  &lt;script&gt;(<span class="function"><span class="keyword">function</span> (<span class="params">i, s, o, g, r, a, m</span>) </span>&#123;</span><br><span class="line">      i[<span class="string">'DaoVoiceObject'</span>] = r;</span><br><span class="line">      i[r] = i[r] ||</span><br><span class="line">        <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">          (i[r].q = i[r].q || []).push(<span class="built_in">arguments</span>);</span><br><span class="line">        &#125;;</span><br><span class="line">      i[r].l = <span class="number">1</span> * <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">      a = s.createElement(o);</span><br><span class="line">      m = s.getElementsByTagName(o)[<span class="number">0</span>];</span><br><span class="line">      a.async = <span class="number">1</span>;</span><br><span class="line">      a.src = g;</span><br><span class="line">      a.charset = <span class="string">'utf-8'</span>;</span><br><span class="line">      m.parentNode.insertBefore(a, m);</span><br><span class="line">    &#125;)(<span class="built_in">window</span>, <span class="built_in">document</span>, <span class="string">'script'</span>, (<span class="string">'https:'</span> === <span class="built_in">document</span>.location.protocol ? <span class="string">'https:'</span> : <span class="string">'http:'</span>) + <span class="string">"//widget.daovoice.io/widget/&lt;%= theme.daovoice.appid %&gt;.js"</span>, <span class="string">'daovoice'</span>);</span><br><span class="line">    daovoice(<span class="string">'init'</span>, &#123;</span><br><span class="line">      app_id: <span class="string">"&lt;%= theme.daovoice.appid %&gt;"</span>,</span><br><span class="line">    &#125;);</span><br><span class="line">    daovoice(<span class="string">'update'</span>);</span><br><span class="line">  &lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;% &#125; %&gt;</span></span><br></pre></td></tr></table></figure>
 
-  <span class="token operator">&lt;</span>script<span class="token operator">></span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span>i<span class="token punctuation">,</span> s<span class="token punctuation">,</span> o<span class="token punctuation">,</span> g<span class="token punctuation">,</span> r<span class="token punctuation">,</span> a<span class="token punctuation">,</span> m<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      i<span class="token punctuation">[</span><span class="token string">'DaoVoiceObject'</span><span class="token punctuation">]</span> <span class="token operator">=</span> r<span class="token punctuation">;</span>
-      i<span class="token punctuation">[</span>r<span class="token punctuation">]</span> <span class="token operator">=</span> i<span class="token punctuation">[</span>r<span class="token punctuation">]</span> <span class="token operator">||</span>
-        <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-          <span class="token punctuation">(</span>i<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token punctuation">.</span>q <span class="token operator">=</span> i<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token punctuation">.</span>q <span class="token operator">||</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>arguments<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span><span class="token punctuation">;</span>
-      i<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token punctuation">.</span>l <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">*</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      a <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span>o<span class="token punctuation">)</span><span class="token punctuation">;</span>
-      m <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span>o<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-      a<span class="token punctuation">.</span><span class="token keyword">async</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-      a<span class="token punctuation">.</span>src <span class="token operator">=</span> g<span class="token punctuation">;</span>
-      a<span class="token punctuation">.</span>charset <span class="token operator">=</span> <span class="token string">'utf-8'</span><span class="token punctuation">;</span>
-      m<span class="token punctuation">.</span>parentNode<span class="token punctuation">.</span><span class="token function">insertBefore</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> m<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span>window<span class="token punctuation">,</span> document<span class="token punctuation">,</span> <span class="token string">'script'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">'https:'</span> <span class="token operator">===</span> document<span class="token punctuation">.</span>location<span class="token punctuation">.</span>protocol <span class="token operator">?</span> <span class="token string">'https:'</span> <span class="token punctuation">:</span> <span class="token string">'http:'</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"//widget.daovoice.io/widget/&lt;%= theme.daovoice.appid %>.js"</span><span class="token punctuation">,</span> <span class="token string">'daovoice'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">daovoice</span><span class="token punctuation">(</span><span class="token string">'init'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
-      app_id<span class="token punctuation">:</span> <span class="token string">"&lt;%= theme.daovoice.appid %>"</span><span class="token punctuation">,</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">daovoice</span><span class="token punctuation">(</span><span class="token string">'update'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
-
-<span class="token operator">&lt;</span><span class="token operator">%</span> <span class="token punctuation">}</span> <span class="token operator">%</span><span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>②复制下面代码到<font color="red" size="4">theme/_config</font>并填入<font color="red" size="4">ID</font></p>
-<pre class="line-numbers language-htmlh"><code class="language-htmlh"># Online contact 在线客服 Daovoice 参考：http://dashboard.daovoice.io
-daovoice:  # 在线客服 Daovoice 参考：http://dashboard.daovoice.io
-  enable: true # 是否开启在线客服聊天
-  appid: 'xxxxxx'  # 应用ID设置
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Online contact 在线客服 Daovoice 参考：http://dashboard.daovoice.io</span><br><span class="line">daovoice:  # 在线客服 Daovoice 参考：http://dashboard.daovoice.io</span><br><span class="line">  enable: true # 是否开启在线客服聊天</span><br><span class="line">  appid: &apos;xxxxxx&apos;  # 应用ID设置</span><br></pre></td></tr></table></figure>
+
 <p>ID在图示位置：</p>
 <p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.3/Images/posts/DaoVoice/1.png" alt></p>
 <p>③最后:</p>
-<pre class="line-numbers language-c"><code class="language-c">hexo clean    #清除缓存
-hexo g   #生成hexo文件
-hexo s  #预览
-hexo d  #部署<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">hexo clean    #清除缓存</span><br><span class="line">hexo g   #生成hexo文件</span><br><span class="line">hexo s  #预览</span><br><span class="line">hexo d  #部署</span><br></pre></td></tr></table></figure>
+
 <h2 id="3-DaoVoice个性化配置"><a href="#3-DaoVoice个性化配置" class="headerlink" title="3.DaoVoice个性化配置"></a>3.DaoVoice个性化配置</h2><p>选择【聊天设置】个性化设置：</p>
 <p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.3/Images/posts/DaoVoice/3.png" alt><br><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.3/Images/posts/DaoVoice/4.png" alt></p>
 
@@ -1331,7 +1305,7 @@ hexo d  #部署<span aria-hidden="true" class="line-numbers-rows"><span></span><
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/7.jpg" class="responsive-img" alt="Hash算法">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/6.jpg" class="responsive-img" alt="Hash算法">
                         
                         <span class="card-title">Hash算法</span>
                     </div>
@@ -1380,7 +1354,7 @@ hexo d  #部署<span aria-hidden="true" class="line-numbers-rows"><span></span><
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/37.jpg" class="responsive-img" alt="使用JSDelivr加速Github、博客文件">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/38.jpg" class="responsive-img" alt="使用JSDelivr加速Github、博客文件">
                         
                         <span class="card-title">使用JSDelivr加速Github、博客文件</span>
                     </div>
@@ -1594,7 +1568,7 @@ hexo d  #部署<span aria-hidden="true" class="line-numbers-rows"><span></span><
            <!--<a href="/sitemap.xml" target="_blank">站点地图</a>丨-->
            
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">69.5k
+            <span class="white-color">86.9k
              丨            
             <a href="https://tongji.baidu.com/web/welcome/ico?s=df42dpc7224a5f6a8d435" target="_blank">百度统计</a>丨
            <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278720284'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1278720284%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
@@ -1685,7 +1659,7 @@ hexo d  #部署<span aria-hidden="true" class="line-numbers-rows"><span></span><
       <span class="badge-subject">Link</span><span class="badge-value bg-red">996.ICU</span></a>
     </div>
     <div class="github-badge">
-      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">69.5k</span>
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">86.9k</span>
     </div>
 </footer>
 

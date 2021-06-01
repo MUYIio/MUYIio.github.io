@@ -616,7 +616,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/34.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/33.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -771,7 +771,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    384
+                    401
                 </div>
                 
 
@@ -798,10 +798,9 @@
 <p>比如，员工 1 是员工 2 的领导，员工 2 是员工 3 的领导。他们相应的重要度为 15 , 10 , 5 。那么员工 1 的数据结构是 [1, 15, [2]] ，员工 2的 数据结构是 [2, 10, [3]] ，员工 3 的数据结构是 [3, 5, []] 。注意虽然员工 3 也是员工 1 的一个下属，但是由于 并不是直系 下属，因此没有体现在员工 1 的数据结构中。</p>
 <p>现在输入一个公司的所有员工信息，以及单个员工 id ，返回这个员工和他所有下属的重要度之和。</p>
 <p><strong>示例：</strong></p>
-<pre><code>输入：[[1, 5, [2, 3]], [2, 3, []], [3, 3, []]], 1
-输出：11
-解释：
-员工 1 自身的重要度是 5 ，他有两个直系下属 2 和 3 ，而且 2 和 3 的重要度均为 3 。因此员工 1 的总重要度是 5 + 3 + 3 = 11 。</code></pre><p><strong>提示：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：[[1, 5, [2, 3]], [2, 3, []], [3, 3, []]], 1</span><br><span class="line">输出：11</span><br><span class="line">解释：</span><br><span class="line">员工 1 自身的重要度是 5 ，他有两个直系下属 2 和 3 ，而且 2 和 3 的重要度均为 3 。因此员工 1 的总重要度是 5 + 3 + 3 = 11 。</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
 <ul>
 <li>一个员工最多有一个 直系 领导，但是可以有多个 直系 下属</li>
 <li>员工数量不超过 2000 。</li>
@@ -809,24 +808,8 @@
 <p><strong>题解：</strong></p>
 <p>今天的题不是很难，直接遍历所有节点相加就行了，使用哈希表将id指向映射到指针，遍历一遍。</p>
 <p><strong>dfs</strong></p>
-<pre class="line-numbers language-c++"><code class="language-c++">class Solution {
-public:
-    unordered_map<int, Employee*> hash;
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, Employee*&gt; hash;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getImportance</span><span class="params">(<span class="built_in">vector</span>&lt;Employee*&gt; employees, <span class="keyword">int</span> id)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span>&amp; p: employees) hash[p-&gt;id] = p;</span><br><span class="line">        <span class="keyword">return</span> dfs(id);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> id)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">auto</span> p = hash[id];</span><br><span class="line">        <span class="keyword">int</span> res = p-&gt;importance;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> son: p-&gt;subordinates)</span><br><span class="line">            res += dfs(son);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-    int getImportance(vector<Employee*> employees, int id) {
-        for (auto& p: employees) hash[p->id] = p;
-        return dfs(id);
-    }
-
-    int dfs(int id) {
-        auto p = hash[id];
-        int res = p->importance;
-        for (auto son: p->subordinates)
-            res += dfs(son);
-        return res;
-    }
-};
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -1319,7 +1302,7 @@ public:
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/35.jpg" class="responsive-img" alt="【Day06】554.砖墙">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/36.jpg" class="responsive-img" alt="【Day06】554.砖墙">
                         
                         <span class="card-title">【Day06】554.砖墙</span>
                     </div>
@@ -1369,7 +1352,7 @@ public:
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/21.jpg" class="responsive-img" alt="【Day04】137.只出现一次的数字II">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/20.jpg" class="responsive-img" alt="【Day04】137.只出现一次的数字II">
                         
                         <span class="card-title">【Day04】137.只出现一次的数字II</span>
                     </div>
@@ -1379,9 +1362,10 @@ public:
                         
                             137. 只出现一次的数字 II给你一个整数数组 nums ，除某个元素仅出现 一次 外，其余每个元素都恰出现 三次 。请你找出并返回那个只出现了一次的元素。
  示例1：
-输入：nums = [2,2,3,2]
-输出：3示例2：
-输入：nu
+输入：nums = [2,2,3,2]输出：3
+
+示例2：
+输入：n
                         
                     </div>
                     <div class="publish-info">
@@ -1583,7 +1567,7 @@ public:
            <!--<a href="/sitemap.xml" target="_blank">站点地图</a>丨-->
            
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">69.5k
+            <span class="white-color">86.9k
              丨            
             <a href="https://tongji.baidu.com/web/welcome/ico?s=df42dpc7224a5f6a8d435" target="_blank">百度统计</a>丨
            <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278720284'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1278720284%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
@@ -1674,7 +1658,7 @@ public:
       <span class="badge-subject">Link</span><span class="badge-value bg-red">996.ICU</span></a>
     </div>
     <div class="github-badge">
-      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">69.5k</span>
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">86.9k</span>
     </div>
 </footer>
 

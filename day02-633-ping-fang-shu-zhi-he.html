@@ -11,11 +11,12 @@
     <meta name="description" content="题目：
 给定一个非负整数 c ，你要判断是否存在两个整数 a 和 b，使得 a2 + b2 = c 。
 示例 1：
-输入：c = 5
-输出：true
-解释：1 * 1 + 2 * 2 = 5示例 2：
-输入：c = 3
-输出：false示例">
+输入：c = 5输出：true解释：1 * 1 + 2 * 2 = 5
+
+示例 2：
+输入：c = 3输出：false
+
+示">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -622,7 +623,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/37.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/38.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -777,7 +778,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    125
+                    297
                 </div>
                 
 
@@ -803,65 +804,31 @@
                 <p><strong>题目：</strong></p>
 <p>给定一个非负整数 c ，你要判断是否存在两个整数 a 和 b，使得 a2 + b2 = c 。</p>
 <p><strong>示例 1：</strong></p>
-<pre><code>输入：c = 5
-输出：true
-解释：1 * 1 + 2 * 2 = 5</code></pre><p><strong>示例 2：</strong></p>
-<pre><code>输入：c = 3
-输出：false</code></pre><p><strong>示例 3：</strong></p>
-<pre><code>输入：c = 4
-输出：true</code></pre><p><strong>示例 4：</strong></p>
-<pre><code>输入：c = 2
-输出：true</code></pre><p><strong>示例 5：</strong></p>
-<pre><code>输入：c = 1
-输出：true</code></pre><p><strong>枚举</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：c = 5</span><br><span class="line">输出：true</span><br><span class="line">解释：1 * 1 + 2 * 2 = 5</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：c = 3</span><br><span class="line">输出：false</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 3：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：c = 4</span><br><span class="line">输出：true</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 4：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：c = 2</span><br><span class="line">输出：true</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 5：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：c = 1</span><br><span class="line">输出：true</span><br></pre></td></tr></table></figure>
+
+<p><strong>枚举</strong></p>
 <p>对 a 从 0 开始到 n√n 枚举，然后判断是否存在 b。</p>
-<pre class="line-numbers language-c++"><code class="language-c++">class Solution {
-public:
-    bool judgeSquareSum(int c) {
-        for (int i = 0; (long long)(i) * i <= c; i++) {
-            int j = sqrt(c - i * i);
-            if (i * i + j * j == c)
-                return true;
-        }
-        return false;
-    }
-};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">judgeSquareSum</span><span class="params">(<span class="keyword">int</span> c)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; (<span class="keyword">long</span> <span class="keyword">long</span>)(i) * i &lt;= c; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> j = <span class="built_in">sqrt</span>(c - i * i);</span><br><span class="line">            <span class="keyword">if</span> (i * i + j * j == c)</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
 <p><strong>预处理+查询</strong></p>
 <p>如果存在符合条件的a，b，那么a和b一定在1和sqrt(c)之间。</p>
-<pre class="line-numbers language-c++"><code class="language-c++">class Solution {
-public:
-    typedef unsigned long long ULL;
-    bool judgeSquareSum(int c) {
-        if (c == 0) return true;
-        unordered_map<ULL, ULL> um;
-        for (int i = 1; i <= sqrt(c); i++) {
-            um[i*i]++;
-        }
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ULL;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">judgeSquareSum</span><span class="params">(<span class="keyword">int</span> c)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (c == <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;ULL, ULL&gt; um;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="built_in">sqrt</span>(c); i++) &#123;</span><br><span class="line">            um[i*i]++;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="built_in">sqrt</span>(c); i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (i*i == c || um.count(c - i*i)) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-        for (int i = 1; i <= sqrt(c); i++) {
-            if (i*i == c || um.count(c - i*i)) return true;
-        }
-        return false;
-    }
-};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>双指针</strong></p>
-<pre class="line-numbers language-c++"><code class="language-c++">class Solution {
-public:
-    bool judgeSquareSum(int c) {
-        int j = sqrt(c);
-        int i = 0;
-        while (i <= j) {
-            if (i*i > c - j*j) {
-                j--;
-            } else if (i*i < c - j*j) {
-                i++;
-            } else {
-                return true;
-            }
-        }
-        return false;
-    }
-};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">judgeSquareSum</span><span class="params">(<span class="keyword">int</span> c)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> j = <span class="built_in">sqrt</span>(c);</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (i &lt;= j) &#123;</span><br><span class="line">            <span class="keyword">if</span> (i*i &gt; c - j*j) &#123;</span><br><span class="line">                j--;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (i*i &lt; c - j*j) &#123;</span><br><span class="line">                i++;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
 
             </div>
             <hr />
@@ -1354,7 +1321,7 @@ public:
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/31.jpg" class="responsive-img" alt="【Day03】403.青蛙过河">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/30.jpg" class="responsive-img" alt="【Day03】403.青蛙过河">
                         
                         <span class="card-title">【Day03】403.青蛙过河</span>
                     </div>
@@ -1405,7 +1372,7 @@ public:
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/36.jpg" class="responsive-img" alt="【Day01】938.二叉搜索树的范围和">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/35.jpg" class="responsive-img" alt="【Day01】938.二叉搜索树的范围和">
                         
                         <span class="card-title">【Day01】938.二叉搜索树的范围和</span>
                     </div>
@@ -1617,7 +1584,7 @@ public:
            <!--<a href="/sitemap.xml" target="_blank">站点地图</a>丨-->
            
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">69.5k
+            <span class="white-color">86.9k
              丨            
             <a href="https://tongji.baidu.com/web/welcome/ico?s=df42dpc7224a5f6a8d435" target="_blank">百度统计</a>丨
            <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278720284'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1278720284%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
@@ -1708,7 +1675,7 @@ public:
       <span class="badge-subject">Link</span><span class="badge-value bg-red">996.ICU</span></a>
     </div>
     <div class="github-badge">
-      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">69.5k</span>
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">86.9k</span>
     </div>
 </footer>
 

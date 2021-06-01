@@ -621,7 +621,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/1.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -1070,21 +1070,14 @@
 </tbody></table>
 </li>
 <li><p>loop指令框架：</p>
-<pre class="line-numbers language-asm"><code class="language-asm">     mov cx，循环次数
-s：
-     循环执行的程序段
-     loop s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">     mov cx，循环次数</span><br><span class="line">s：</span><br><span class="line">     循环执行的程序段</span><br><span class="line">     loop s</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>在汇编源程序中，数据不能以字母开头。所以大于9FFFH的数要在前面加0。</p>
 </li>
 <li><p>loop指令的每一次都先判断cx的值，不为0则CS：IP指向下一步循环指令的地址，CPU执行。</p>
 </li>
 <li><p>在汇编源程序中，如果用指令访问一个内存单元，则在指令中必须使用 “[…]” 来表示内存单元，如果在 “[]” 里用一个常量 idata 直接给出内存单元的偏移地址，就要在 “[]” 的前面显示的给出段地址所在的段寄存器。</p>
-<pre class="line-numbers language-asm"><code class="language-asm">mov al,ds:[0]
-//正确的表示
-
-mov al,[0]
-//masm就将[idata] 解释为 idata ，而不是一个内存单元地址<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mov al,ds:[0]</span><br><span class="line">//正确的表示</span><br><span class="line"></span><br><span class="line">mov al,[0]</span><br><span class="line">//masm就将[idata] 解释为 idata ，而不是一个内存单元地址</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>用于显示的指明内存单元的段地址的 “ds:” 、”cs:”、”ss:”、”es:”，在汇编语言中成为<strong>段前缀</strong>。</p>
 </li>
@@ -1101,50 +1094,15 @@ mov al,[0]
 <li><p>内存空间的开辟：使用 dw 关键字定义一些字型数据，通常为 0，然后将这一段空间当作栈段来使用。</p>
 </li>
 <li><p>使用内存 0:0~0:15 单元中的内容改写为程序中的数据:</p>
-<pre class="line-numbers language-asm"><code class="language-asm">assume cs:codesg
-codesg segment
-        dw 0123h,0456h,0789h,0abch,0defh,0fedh,0cbah,0987h
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">assume cs:codesg</span><br><span class="line">codesg segment</span><br><span class="line">        dw 0123h,0456h,0789h,0abch,0defh,0fedh,0cbah,0987h</span><br><span class="line">        </span><br><span class="line">start:  mov ax,0</span><br><span class="line">        mov ds,ax</span><br><span class="line">        mov bx,0           ;ds = 0,bx = 0</span><br><span class="line">        mov cx,8           ;循环8次</span><br><span class="line">        </span><br><span class="line">    s:  mov ax,[bx]        ;(ax) = ((ds)*16 + (bx)),将对应的数据送入ax</span><br><span class="line">        mov cs:[bx],ax     ;将ax中的数据放入内存地址 ((cs)*16 + (bx)) 处，[bx]为偏移地址，段地址在cs中</span><br><span class="line">        add bx,2           ;bx + 2</span><br><span class="line">        loop s</span><br><span class="line">        </span><br><span class="line">        mov ax,4c00h</span><br><span class="line">        int 21h</span><br><span class="line">codesg ends</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
 
-start:  mov ax,0
-        mov ds,ax
-        mov bx,0           ;ds = 0,bx = 0
-        mov cx,8           ;循环8次
 
-    s:  mov ax,[bx]        ;(ax) = ((ds)*16 + (bx)),将对应的数据送入ax
-        mov cs:[bx],ax     ;将ax中的数据放入内存地址 ((cs)*16 + (bx)) 处，[bx]为偏移地址，段地址在cs中
-        add bx,2           ;bx + 2
-        loop s
 
-        mov ax,4c00h
-        int 21h
-codesg ends
-end start<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ol>
 <ol start="6">
 <li><p>使用内存 0:0~0:15 单元中的内容改写为程序中的数据（数据的传送用栈来进行。栈空间设置在程序内）：</p>
-<pre class="line-numbers language-asm"><code class="language-asm">assume cs:codesg
-codesg segment
-        dw 0123h,0456h,0789h,0abch,0defh,0fedh,0cbah,0987h
-        dw 0,0,0,0,0,0,0,0,0,0
-
-start:  mov ax,cs 
-        mov ss,ax
-        mov sp,24h          ;或mov sp, 36  ，ss:sp = cs:24h
-        mov ax,0
-        mov ds,ax           ;ds = 0
-        mov bx,0            ;bx = 0
-        mov cx,8            ;循环8次
-
-    s:  push [bx]           ;将[bx]中的数据压入栈中
-        pop cs:[bx]         ;或 pop ss:[bx],
-        add bx,2            ;bx + 2
-        loop s
-
-        mov ax,4c00h
-        int 21h
-codesg ends
-end start<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">assume cs:codesg</span><br><span class="line">codesg segment</span><br><span class="line">        dw 0123h,0456h,0789h,0abch,0defh,0fedh,0cbah,0987h</span><br><span class="line">        dw 0,0,0,0,0,0,0,0,0,0</span><br><span class="line">        </span><br><span class="line">start:  mov ax,cs </span><br><span class="line">        mov ss,ax</span><br><span class="line">        mov sp,24h          ;或mov sp, 36  ，ss:sp = cs:24h</span><br><span class="line">        mov ax,0</span><br><span class="line">        mov ds,ax           ;ds = 0</span><br><span class="line">        mov bx,0            ;bx = 0</span><br><span class="line">        mov cx,8            ;循环8次</span><br><span class="line">        </span><br><span class="line">    s:  push [bx]           ;将[bx]中的数据压入栈中</span><br><span class="line">        pop cs:[bx]         ;或 pop ss:[bx],</span><br><span class="line">        add bx,2            ;bx + 2</span><br><span class="line">        loop s</span><br><span class="line">        </span><br><span class="line">        mov ax,4c00h</span><br><span class="line">        int 21h</span><br><span class="line">codesg ends</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>在汇编程序中，一个段的段名就代表了这个段的段地址，而偏移地址需要根据段中的数据来确定。</p>
 </li>
@@ -1152,77 +1110,22 @@ end start<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
 </li>
 <li><p><strong>汇编语言实验五：</strong></p>
 <p><strong>（1）将下面的程序编译连接，用Debug加载、跟踪，然后回答问题</strong></p>
-<pre class="line-numbers language-asm"><code class="language-asm">assume cs:code,ds:data,ss:stack 
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">assume cs:code,ds:data,ss:stack </span><br><span class="line"></span><br><span class="line">data segment </span><br><span class="line">        dw 0123h,0456h,0789h,0abch,0defh,0fedh,0cbah,0987h </span><br><span class="line">data ends </span><br><span class="line"></span><br><span class="line">stack segment </span><br><span class="line">        dw 0,0,0,0,0,0,0,0 </span><br><span class="line">stack ends </span><br><span class="line"></span><br><span class="line">code segment </span><br><span class="line"></span><br><span class="line">start:  mov ax,stack </span><br><span class="line">        mov ss,ax </span><br><span class="line">        mov sp,16 </span><br><span class="line">        mov ax,data </span><br><span class="line">        mov ds,ax </span><br><span class="line">        </span><br><span class="line">        push ds:[0] </span><br><span class="line">        push ds:[2] </span><br><span class="line">        pop ds:[2] </span><br><span class="line">        pop ds:[0] </span><br><span class="line">		</span><br><span class="line">        mov ax,4c00h </span><br><span class="line">        int 21h </span><br><span class="line"></span><br><span class="line">code ends </span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
 
-data segment 
-        dw 0123h,0456h,0789h,0abch,0defh,0fedh,0cbah,0987h 
-data ends 
-
-stack segment 
-        dw 0,0,0,0,0,0,0,0 
-stack ends 
-
-code segment 
-
-start:  mov ax,stack 
-        mov ss,ax 
-        mov sp,16 
-        mov ax,data 
-        mov ds,ax 
-
-        push ds:[0] 
-        push ds:[2] 
-        pop ds:[2] 
-        pop ds:[0] 
-
-        mov ax,4c00h 
-        int 21h 
-
-code ends 
-end start <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>①CPU执行程序，程序返回前，data段中的数据 不变 。</p>
 <p>②CPU执行程序，程序返回前，CS= 0C88H ，SS= 0C87H ，DS= 0C86H 。</p>
 <p>③设程序加载后，CODE段的段地址为X，则DATA段的段地址为 X-2 ，STACK段的段地址为 X-1 。</p>
 </li>
 </ol>
 <p><strong>（2）将下面的程序编译连接，用Debug加载、跟踪，然后回答问题。</strong></p>
-<pre class="line-numbers language-asm"><code class="language-asm">assume cs:code,ds:data,ss:stack 
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">assume cs:code,ds:data,ss:stack </span><br><span class="line"></span><br><span class="line">data segment </span><br><span class="line">        dw 0123h,0456h</span><br><span class="line">data ends </span><br><span class="line"></span><br><span class="line">stack segment </span><br><span class="line">        dw 0,0</span><br><span class="line">stack ends </span><br><span class="line"></span><br><span class="line">code segment </span><br><span class="line"></span><br><span class="line">start:  mov ax,stack </span><br><span class="line">        mov ss,ax </span><br><span class="line">        mov sp,16 </span><br><span class="line">        mov ax,data </span><br><span class="line">        mov ds,ax </span><br><span class="line">        </span><br><span class="line">        push ds:[0] </span><br><span class="line">        push ds:[2] </span><br><span class="line">        pop ds:[2] </span><br><span class="line">        pop ds:[0] </span><br><span class="line"></span><br><span class="line">        mov ax,4c00h </span><br><span class="line">        int 21h </span><br><span class="line"></span><br><span class="line">code ends </span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
 
-data segment 
-        dw 0123h,0456h
-data ends 
-
-stack segment 
-        dw 0,0
-stack ends 
-
-code segment 
-
-start:  mov ax,stack 
-        mov ss,ax 
-        mov sp,16 
-        mov ax,data 
-        mov ds,ax 
-
-        push ds:[0] 
-        push ds:[2] 
-        pop ds:[2] 
-        pop ds:[0] 
-
-        mov ax,4c00h 
-        int 21h 
-
-code ends 
-end start <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>①CPU执行程序，程序返回前，data段中的数据 不变 。</p>
 <p>②CPU执行程序，程序返回前，CS= 0C88H ，SS= 0C87H ，DS= 0C86H 。</p>
 <p>③设程序加载后，CODE段的段地址为X，则DATA段的段地址为 X-2 ，STACK段的段地址为 X-1 。</p>
 <p>④对于如下定义的段：</p>
-<pre class="line-numbers language-asm"><code class="language-asm">name segment
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">name segment</span><br><span class="line"></span><br><span class="line">……</span><br><span class="line"></span><br><span class="line">name ends</span><br></pre></td></tr></table></figure>
 
-……
-
-name ends<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>如果段中的数据占N个字节，则程序加载后，该段实际占有的空间为 ((N+15)/16)*16 。</p>
 <p>④解析：</p>
 <p>N分为被16整除和不被16整除。</p>
@@ -1231,35 +1134,8 @@ name ends<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
 <p>程序加载后分配空间是以16个字节为单位的，也就是说如果不足16个字节的也分配16个字节。</p>
 <p>两种情况总结成一个通用的公式：((N+15)/16)*16</p>
 <p><strong>（3）将下面的程序编译连接，用Debug加载、跟踪，然后回答问题。</strong></p>
-<pre class="line-numbers language-asm"><code class="language-asm">assume cs:code,ds:data,ss:stack 
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">assume cs:code,ds:data,ss:stack </span><br><span class="line"></span><br><span class="line">code segment </span><br><span class="line"></span><br><span class="line">start:  mov ax,stack </span><br><span class="line">        mov ss,ax </span><br><span class="line">        mov sp,16 </span><br><span class="line">        mov ax,data </span><br><span class="line">        mov ds,ax </span><br><span class="line">        </span><br><span class="line">        push ds:[0] </span><br><span class="line">        push ds:[2] </span><br><span class="line">        pop ds:[2] </span><br><span class="line">        pop ds:[0] </span><br><span class="line">		</span><br><span class="line">        mov ax,4c00h </span><br><span class="line">        int 21h </span><br><span class="line"></span><br><span class="line">code ends </span><br><span class="line"></span><br><span class="line">data segment </span><br><span class="line">        dw 0123h,0456h</span><br><span class="line">data ends </span><br><span class="line"></span><br><span class="line">stack segment </span><br><span class="line">        dw 0,0</span><br><span class="line">stack ends </span><br><span class="line"></span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
 
-code segment 
-
-start:  mov ax,stack 
-        mov ss,ax 
-        mov sp,16 
-        mov ax,data 
-        mov ds,ax 
-
-        push ds:[0] 
-        push ds:[2] 
-        pop ds:[2] 
-        pop ds:[0] 
-
-        mov ax,4c00h 
-        int 21h 
-
-code ends 
-
-data segment 
-        dw 0123h,0456h
-data ends 
-
-stack segment 
-        dw 0,0
-stack ends 
-
-end start <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>①CPU执行程序，程序返回前，data段中的数据 不变 。</p>
 <p>②CPU执行程序，程序返回前，CS= 0C86H ，SS= 0C8AH ，DS= 0C89H 。</p>
 <p>③设程序加载后，CODE段的段地址为X，则DATA段的段地址为 X+3 ，STACK段的段地址为 X+4 。</p>
@@ -1268,76 +1144,11 @@ end start <span aria-hidden="true" class="line-numbers-rows"><span></span><span>
 <p>​     如果指明了程序的入口，CPU会直接从入口处开始执行真正的机器码，直到遇到中断指令返回，比如指令进行到需要栈段空间的时候，CPU 会跳到前面定义的栈段得到分配空间的地址。此种方式能够确保程序逻辑上的正确。因此有必要为程序来指明入口。</p>
 <p>​    综上，只有（3）可以在没有指明程序入口的情况下正确执行。</p>
 <p><strong>（5）程序如下，编写code段中代码，将 a 段和 b 段中的数据依次相加，将结果存到 c 段中。</strong></p>
-<pre class="line-numbers language-asm"><code class="language-asm">assume cd:code
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">assume cd:code</span><br><span class="line"></span><br><span class="line">a segment</span><br><span class="line">    db 1,2,3,4,5,6,7,8</span><br><span class="line">a ends</span><br><span class="line"></span><br><span class="line">b segment </span><br><span class="line">    db 1,2,3,4,5,6,7,8</span><br><span class="line">b ends</span><br><span class="line"></span><br><span class="line">c segment </span><br><span class="line">   db 0,0,0,0,0,0,0,0</span><br><span class="line">c ends</span><br><span class="line"></span><br><span class="line">code segment</span><br><span class="line">	</span><br><span class="line">start: mov ax,a</span><br><span class="line">	   mov ds,ax           ;ds段寄存器地址指向a</span><br><span class="line">	   </span><br><span class="line">	   mov ax,b</span><br><span class="line">	   mov es,ax           ;es段寄存器地址指向b</span><br><span class="line">	   </span><br><span class="line">	   mov ax,c</span><br><span class="line">	   mov ss,ax           ;ss段寄存器地址指向c</span><br><span class="line">	   </span><br><span class="line">	   mov bx,0            ;偏移地址为0</span><br><span class="line">	   mov cx,8            ;循环8次</span><br><span class="line">	   </span><br><span class="line">	s: mov ax,[bx]         ;(ax) = ((ds)*16 + (bx)),将对应的数据送入ax</span><br><span class="line">	   mov ss:[bx],ax      ;将ax中的数据放入内存地址 ((ss)*16 + (bx)) 处，[bx]为偏移地址，段地址在ss中</span><br><span class="line">	   mov ax,es:[bx]      ;(ax) = ((es)*16 + (bx)),将对应的数据送入ax</span><br><span class="line">	   mov ss:[bx],ax      ;将ax中的数据放入内存地址 ((ss)*16 + (bx)) 处，[bx]为偏移地址，段地址在ss中</span><br><span class="line">	   inc bx              ;bx + 1</span><br><span class="line">	   loop s</span><br><span class="line">	   </span><br><span class="line">	   </span><br><span class="line">	   mov ax,4c00h</span><br><span class="line">	   int 21h</span><br><span class="line"></span><br><span class="line">code ends</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
 
-a segment
-    db 1,2,3,4,5,6,7,8
-a ends
-
-b segment 
-    db 1,2,3,4,5,6,7,8
-b ends
-
-c segment 
-   db 0,0,0,0,0,0,0,0
-c ends
-
-code segment
-
-start: mov ax,a
-       mov ds,ax           ;ds段寄存器地址指向a
-
-       mov ax,b
-       mov es,ax           ;es段寄存器地址指向b
-
-       mov ax,c
-       mov ss,ax           ;ss段寄存器地址指向c
-
-       mov bx,0            ;偏移地址为0
-       mov cx,8            ;循环8次
-
-    s: mov ax,[bx]         ;(ax) = ((ds)*16 + (bx)),将对应的数据送入ax
-       mov ss:[bx],ax      ;将ax中的数据放入内存地址 ((ss)*16 + (bx)) 处，[bx]为偏移地址，段地址在ss中
-       mov ax,es:[bx]      ;(ax) = ((es)*16 + (bx)),将对应的数据送入ax
-       mov ss:[bx],ax      ;将ax中的数据放入内存地址 ((ss)*16 + (bx)) 处，[bx]为偏移地址，段地址在ss中
-       inc bx              ;bx + 1
-       loop s
-
-
-       mov ax,4c00h
-       int 21h
-
-code ends
-end start<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>（6）程序如下，编写 code 段中代码，用 push 指令将 a 段中的前8个字型数据，逆序存储到 b 段中。</strong></p>
-<pre class="line-numbers language-asm"><code class="language-asm">assume cs:code
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">assume cs:code</span><br><span class="line"></span><br><span class="line">a segment</span><br><span class="line">    dw 1,2,3,4,5,6,7,8</span><br><span class="line">a ends</span><br><span class="line"></span><br><span class="line">b segment</span><br><span class="line">    dw 0,0,0,0,0,0,0,0</span><br><span class="line">b ends</span><br><span class="line"></span><br><span class="line">code segment</span><br><span class="line"></span><br><span class="line">start: mov ax,a</span><br><span class="line">       mov ds,ax   ;ds指向a段</span><br><span class="line">       </span><br><span class="line">       mov ax,b</span><br><span class="line">       mov bx,0    ;ds:bx 指向a段的第1个单元</span><br><span class="line">       mov ss,ax</span><br><span class="line">       </span><br><span class="line">       mov sp,16   ;设置栈顶指向 b:16</span><br><span class="line">       mov cx,8    ;循环8次</span><br><span class="line"></span><br><span class="line">    s: push [bx]</span><br><span class="line">       add bx,2    ;bx + 2</span><br><span class="line">       loop s      ;将a段中0～16个单元逆次入栈</span><br><span class="line"></span><br><span class="line">code ends</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
 
-a segment
-    dw 1,2,3,4,5,6,7,8
-a ends
-
-b segment
-    dw 0,0,0,0,0,0,0,0
-b ends
-
-code segment
-
-start: mov ax,a
-       mov ds,ax   ;ds指向a段
-
-       mov ax,b
-       mov bx,0    ;ds:bx 指向a段的第1个单元
-       mov ss,ax
-
-       mov sp,16   ;设置栈顶指向 b:16
-       mov cx,8    ;循环8次
-
-    s: push [bx]
-       add bx,2    ;bx + 2
-       loop s      ;将a段中0～16个单元逆次入栈
-
-code ends
-end start<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -1830,7 +1641,7 @@ end start<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/30.jpg" class="responsive-img" alt="汇编语言学习 DOSBox+MASM 安装及使用教程">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/29.jpg" class="responsive-img" alt="汇编语言学习 DOSBox+MASM 安装及使用教程">
                         
                         <span class="card-title">汇编语言学习 DOSBox+MASM 安装及使用教程</span>
                     </div>
@@ -1884,7 +1695,7 @@ end start<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/12.jpg" class="responsive-img" alt="Windows+Ubuntu20.04双系统安装教程">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/11.jpg" class="responsive-img" alt="Windows+Ubuntu20.04双系统安装教程">
                         
                         <span class="card-title">Windows+Ubuntu20.04双系统安装教程</span>
                     </div>
@@ -2098,7 +1909,7 @@ end start<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
            <!--<a href="/sitemap.xml" target="_blank">站点地图</a>丨-->
            
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">69.5k
+            <span class="white-color">86.9k
              丨            
             <a href="https://tongji.baidu.com/web/welcome/ico?s=df42dpc7224a5f6a8d435" target="_blank">百度统计</a>丨
            <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278720284'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1278720284%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
@@ -2189,7 +2000,7 @@ end start<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
       <span class="badge-subject">Link</span><span class="badge-value bg-red">996.ICU</span></a>
     </div>
     <div class="github-badge">
-      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">69.5k</span>
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">86.9k</span>
     </div>
 </footer>
 

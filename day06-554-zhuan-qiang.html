@@ -616,7 +616,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/35.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/36.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -771,7 +771,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    429
+                    450
                 </div>
                 
 
@@ -799,10 +799,12 @@
 <p>给你一个二维数组 wall ，该数组包含这堵墙的相关信息。其中，wall[i] 是一个代表从左至右每块砖的宽度的数组。你需要找出怎样画才能使这条线 穿过的砖块数量最少 ，并且返回 穿过的砖块数量 。</p>
 <p><strong>示例 1：</strong></p>
 <p><img src="https://assets.leetcode.com/uploads/2021/04/24/cutwall-grid.jpg" alt></p>
-<pre><code>输入：wall = [[1,2,2,1],[3,1,2],[1,3,2],[2,4],[3,1,2],[1,3,1,1]]
-输出：2</code></pre><p><strong>示例 2：</strong></p>
-<pre><code>输入：wall = [[1],[1],[1]]
-输出：3</code></pre><p><strong>提示：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：wall = [[1,2,2,1],[3,1,2],[1,3,2],[2,4],[3,1,2],[1,3,1,1]]</span><br><span class="line">输出：2</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：wall = [[1],[1],[1]]</span><br><span class="line">输出：3</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
 <ul>
 <li>n == wall.length</li>
 <li>1 &lt;= n &lt;= 104</li>
@@ -814,22 +816,8 @@
 <p><strong>题解：</strong></p>
 <p><strong>贪心，哈希表</strong></p>
 <p>显然最优的线一定是沿某个块砖的边缘穿过的。<br>统计每一行的砖可以从左到右可以构成的长度值，用 unordered_map 哈希表统计长度值出现的次数。出现次数最多的值就应该是这条线所在的位置。</p>
-<pre class="line-numbers language-c++"><code class="language-c++">class Solution {
-public:
-    int leastBricks(vector<vector<int>>& wall) {
-        unordered_map<int, int> cnt;
-        for (auto& line: wall) {
-            for (int i = 0, s = 0; i + 1 < line.size(); i ++ ) {
-                s += line[i];
-                cnt[s] ++ ;
-            }
-        }
-        int res = 0;
-        for (auto [k, v]: cnt) res = max(res, v);
-        return wall.size() - res;
-    }
-};
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">leastBricks</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; wall)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; cnt;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span>&amp; line: wall) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, s = <span class="number">0</span>; i + <span class="number">1</span> &lt; line.size(); i ++ ) &#123;</span><br><span class="line">                s += line[i];</span><br><span class="line">                cnt[s] ++ ;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> [k, v]: cnt) res = max(res, v);</span><br><span class="line">        <span class="keyword">return</span> wall.size() - res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
 
             </div>
             <hr />
@@ -1322,7 +1310,7 @@ public:
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/33.jpg" class="responsive-img" alt="【Day07】7.整数反转">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/32.jpg" class="responsive-img" alt="【Day07】7.整数反转">
                         
                         <span class="card-title">【Day07】7.整数反转</span>
                     </div>
@@ -1373,7 +1361,7 @@ public:
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/34.jpg" class="responsive-img" alt="【Day05】690.员工的重要性">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/33.jpg" class="responsive-img" alt="【Day05】690.员工的重要性">
                         
                         <span class="card-title">【Day05】690.员工的重要性</span>
                     </div>
@@ -1584,7 +1572,7 @@ public:
            <!--<a href="/sitemap.xml" target="_blank">站点地图</a>丨-->
            
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">69.5k
+            <span class="white-color">86.9k
              丨            
             <a href="https://tongji.baidu.com/web/welcome/ico?s=df42dpc7224a5f6a8d435" target="_blank">百度统计</a>丨
            <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278720284'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1278720284%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
@@ -1675,7 +1663,7 @@ public:
       <span class="badge-subject">Link</span><span class="badge-value bg-red">996.ICU</span></a>
     </div>
     <div class="github-badge">
-      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">69.5k</span>
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">86.9k</span>
     </div>
 </footer>
 

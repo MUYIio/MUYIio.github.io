@@ -616,7 +616,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/4.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -771,14 +771,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    346
+                    529
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
                 
@@ -798,73 +798,20 @@
 <p>第 i 个查询的答案是 xi 和任何 nums 数组中不超过 mi 的元素按位异或（XOR）得到的最大值。换句话说，答案是 max(nums[j] XOR xi) ，其中所有 j 均满足 nums[j] &lt;= mi 。如果 nums 中的所有元素都大于 mi，最终答案就是 -1 。</p>
 <p>返回一个整数数组 answer 作为查询的答案，其中 answer.length == queries.length 且 answer[i] 是第 i 个查询的答案。</p>
 <p><strong>示例 1：</strong></p>
-<pre><code>输入：nums = [0,1,2,3,4], queries = [[3,1],[1,3],[5,6]]
-输出：[3,3,7]
-解释：
-1) 0 和 1 是仅有的两个不超过 1 的整数。0 XOR 3 = 3 而 1 XOR 3 = 2 。二者中的更大值是 3 。
-2) 1 XOR 2 = 3.
-3) 5 XOR 2 = 7.</code></pre><p><strong>示例 2：</strong></p>
-<pre><code>输入：nums = [5,2,4,6,6,3], queries = [[12,4],[8,1],[6,3]]
-输出：[15,-1,5]</code></pre><p><strong>提示：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：nums = [0,1,2,3,4], queries = [[3,1],[1,3],[5,6]]</span><br><span class="line">输出：[3,3,7]</span><br><span class="line">解释：</span><br><span class="line">1) 0 和 1 是仅有的两个不超过 1 的整数。0 XOR 3 = 3 而 1 XOR 3 = 2 。二者中的更大值是 3 。</span><br><span class="line">2) 1 XOR 2 = 3.</span><br><span class="line">3) 5 XOR 2 = 7.</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：nums = [5,2,4,6,6,3], queries = [[12,4],[8,1],[6,3]]</span><br><span class="line">输出：[15,-1,5]</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
 <ul>
 <li>1 &lt;= nums.length, queries.length &lt;= 105</li>
 <li>queries[i].length == 2</li>
 <li>0 &lt;= nums[j], xi, mi &lt;= 109</li>
 </ul>
 <p><strong>题解：</strong></p>
-<pre class="line-numbers language-c++"><code class="language-c++">const int N = 1e5 + 50, M = 32 * N;
-int son[M][2];
-int idx;
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e5</span> + <span class="number">50</span>, M = <span class="number">32</span> * N;</span><br><span class="line"><span class="keyword">int</span> son[M][<span class="number">2</span>];</span><br><span class="line"><span class="keyword">int</span> idx;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">insert</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> p = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">31</span>; i &gt;= <span class="number">0</span>; i--)&#123;</span><br><span class="line">        <span class="keyword">int</span> u = (x &gt;&gt; i) &amp; <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(!son[p][u]) son[p][u] = ++idx;</span><br><span class="line">        p = son[p][u];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>, p = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">31</span>; i &gt;= <span class="number">0</span>; i--)&#123;</span><br><span class="line">        <span class="keyword">int</span> u = (x &gt;&gt; i) &amp; <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(son[p][!u]) &#123;</span><br><span class="line">            ans += (<span class="number">1</span> &lt;&lt; i);</span><br><span class="line">            p = son[p][!u];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> p = son[p][u];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; maximizeXor(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; queries) &#123;</span><br><span class="line">        <span class="built_in">memset</span>(son,<span class="number">0</span>,<span class="keyword">sizeof</span> son);</span><br><span class="line">        idx = <span class="number">0</span>;</span><br><span class="line">        sort(nums.begin(),nums.end());</span><br><span class="line">        <span class="comment">//离线思想，因此需要对queries加一个pos，因为回答是乱序的</span></span><br><span class="line">        <span class="keyword">int</span> pos = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span>&amp; q: queries)&#123;</span><br><span class="line">            q.push_back(pos++);</span><br><span class="line">        &#125;</span><br><span class="line">        sort(queries.begin(),queries.end(),[](<span class="keyword">const</span> <span class="keyword">auto</span>&amp; a,<span class="keyword">const</span> <span class="keyword">auto</span>&amp; b)&#123;</span><br><span class="line">            <span class="keyword">return</span> a[<span class="number">1</span>] &lt; b[<span class="number">1</span>];</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; ans(queries.size());</span><br><span class="line">        <span class="keyword">int</span> cur = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; q : queries)&#123;</span><br><span class="line">            <span class="keyword">int</span> xi = q[<span class="number">0</span>], mi = q[<span class="number">1</span>],id = q[<span class="number">2</span>];</span><br><span class="line">            <span class="keyword">while</span>(cur &lt; nums.size() <span class="keyword">and</span> nums[cur] &lt;= mi)&#123;</span><br><span class="line">                insert(nums[cur]);</span><br><span class="line">                cur++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(cur == <span class="number">0</span>) ans[id] = <span class="number">-1</span>;</span><br><span class="line">            <span class="keyword">else</span> ans[id] = query(xi);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-void insert(int x){
-    int p = 0;
-    for(int i = 31; i >= 0; i--){
-        int u = (x >> i) & 1;
-        if(!son[p][u]) son[p][u] = ++idx;
-        p = son[p][u];
-    }
-}
-int query(int x){
-    int ans = 0, p = 0;
-    for(int i = 31; i >= 0; i--){
-        int u = (x >> i) & 1;
-        if(son[p][!u]) {
-            ans += (1 << i);
-            p = son[p][!u];
-        }
-        else p = son[p][u];
-    }
-    return ans;
-}
-
-class Solution {
-public:
-    vector<int> maximizeXor(vector<int>& nums, vector<vector<int>>& queries) {
-        memset(son,0,sizeof son);
-        idx = 0;
-        sort(nums.begin(),nums.end());
-        //离线思想，因此需要对queries加一个pos，因为回答是乱序的
-        int pos = 0;
-        for(auto& q: queries){
-            q.push_back(pos++);
-        }
-        sort(queries.begin(),queries.end(),[](const auto& a,const auto& b){
-            return a[1] < b[1];
-        });
-        vector<int> ans(queries.size());
-        int cur = 0;
-        for(const auto& q : queries){
-            int xi = q[0], mi = q[1],id = q[2];
-            while(cur < nums.size() and nums[cur] <= mi){
-                insert(nums[cur]);
-                cur++;
-            }
-            if(cur == 0) ans[id] = -1;
-            else ans[id] = query(xi);
-        }
-        return ans;
-    }
-};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -1357,7 +1304,7 @@ public:
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/8.jpg" class="responsive-img" alt="【Day28】664.奇怪的打印机">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/7.jpg" class="responsive-img" alt="【Day28】664.奇怪的打印机">
                         
                         <span class="card-title">【Day28】664.奇怪的打印机</span>
                     </div>
@@ -1411,7 +1358,7 @@ public:
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/18.jpg" class="responsive-img" alt="【Day26】810.黑板异或游戏">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/19.jpg" class="responsive-img" alt="【Day26】810.黑板异或游戏">
                         
                         <span class="card-title">【Day26】810.黑板异或游戏</span>
                     </div>
@@ -1621,7 +1568,7 @@ public:
            <!--<a href="/sitemap.xml" target="_blank">站点地图</a>丨-->
            
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">69.5k
+            <span class="white-color">86.9k
              丨            
             <a href="https://tongji.baidu.com/web/welcome/ico?s=df42dpc7224a5f6a8d435" target="_blank">百度统计</a>丨
            <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278720284'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1278720284%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
@@ -1712,7 +1659,7 @@ public:
       <span class="badge-subject">Link</span><span class="badge-value bg-red">996.ICU</span></a>
     </div>
     <div class="github-badge">
-      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">69.5k</span>
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">86.9k</span>
     </div>
 </footer>
 

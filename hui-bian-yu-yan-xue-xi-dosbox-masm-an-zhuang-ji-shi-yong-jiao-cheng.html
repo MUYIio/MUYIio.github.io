@@ -616,7 +616,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/30.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/29.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -802,8 +802,9 @@
 <h2 id="1】安装DOSBox和MASM"><a href="#1】安装DOSBox和MASM" class="headerlink" title="1】安装DOSBox和MASM"></a>1】安装DOSBox和MASM</h2><h3 id="1-安装DOSBox"><a href="#1-安装DOSBox" class="headerlink" title="1)安装DOSBox"></a>1)安装DOSBox</h3><p>首先官网下载DOSBox<a href="https://www.dosbox.com/download.php?main=1" target="_blank" rel="noopener">传送门</a>，网盘链接：<a href="https://pan.baidu.com/s/13H0IU9xdYUJIQnwv1eE4Ag" target="_blank" rel="noopener">https://pan.baidu.com/s/13H0IU9xdYUJIQnwv1eE4Ag</a>  提取码：2g8s ，包含MASM</p>
 <p>安装过程就不说了，建议安装在D盘，C盘也可以。我这里是安装在C盘，安装好后打开，<strong>注意有两个窗口，不要关闭</strong></p>
 <p>找到文件：<strong>C:\Users\用户\AppData\Local\DOSBox\dosbox-0.74-3.conf</strong>，找不到AppData查看隐藏的文件，使用记事本打开dosbox-0.74-3.conf，在末尾添加下面两行代码：</p>
-<pre><code>mount d d:\masm
- d:</code></pre><p><img src="1.png" alt></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mount d d:\masm</span><br><span class="line"> d:</span><br></pre></td></tr></table></figure>
+
+<p><img src="1.png" alt></p>
 <p>上面代码的意思就是把D盘映射为虚拟C盘，现在打开DOSBox可以看到自动映射了。</p>
 <p><img src="2.png" alt></p>
 <h3 id="2）安装MASM"><a href="#2）安装MASM" class="headerlink" title="2）安装MASM"></a>2）安装MASM</h3><p>自己去下载也可以，网盘里面下载下来直接提取到<strong>D盘根目录</strong>就行了</p>
@@ -813,25 +814,8 @@
 <h2 id="2】使用DOSBox编写汇编程序"><a href="#2】使用DOSBox编写汇编程序" class="headerlink" title="2】使用DOSBox编写汇编程序"></a>2】使用DOSBox编写汇编程序</h2><h3 id="1）编写-helloword-汇编源程序"><a href="#1）编写-helloword-汇编源程序" class="headerlink" title="1）编写 helloword 汇编源程序"></a>1）编写 helloword 汇编源程序</h3><p>打开 DOSBox，输入 <strong>edit</strong> 编写一个汇编源程序</p>
 <p><img src="5.png" alt></p>
 <p>代码：//</p>
-<pre class="line-numbers language-asm"><code class="language-asm">data segment                   ;这里定义一个数据段
-     tab db 'hello world$'     ;这里用内存存放字节数据 'hellow world!',$用来判断字符串是否输出完毕
-data ends                      ;数据段的结束标志
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">data segment                   ;这里定义一个数据段</span><br><span class="line">     tab db &apos;hello world$&apos;     ;这里用内存存放字节数据 &apos;hellow world!&apos;,$用来判断字符串是否输出完毕</span><br><span class="line">data ends                      ;数据段的结束标志</span><br><span class="line"></span><br><span class="line">code segment                   ;这里定义了一个代码段</span><br><span class="line">assume cs:code, ds:data        ;这里把程序中定义的段与对应的段寄存器关联起来</span><br><span class="line">    </span><br><span class="line">start:                         ;这里是一个标号，根据end后面的标号判断这里是程序的开始位置</span><br><span class="line">      mov ax,data</span><br><span class="line">      mov ds,ax                ;这里把数据段的地址放到数据段寄存器ds中</span><br><span class="line">      lea dx,tab               ;dx中放将要显示数据的偏移地址</span><br><span class="line">      mov ah,9h</span><br><span class="line">      int 21h                  ;调用21号中断的9号功能来显示字符串</span><br><span class="line">      </span><br><span class="line">      mov ah,4c00h</span><br><span class="line">      int 21h                  ;程序返回在这里插入图片描述</span><br><span class="line">      </span><br><span class="line">code ends                      ;代码段的结束语</span><br><span class="line">end start                      ;定义程序从哪个标号处开始执行</span><br></pre></td></tr></table></figure>
 
-code segment                   ;这里定义了一个代码段
-assume cs:code, ds:data        ;这里把程序中定义的段与对应的段寄存器关联起来
-
-start:                         ;这里是一个标号，根据end后面的标号判断这里是程序的开始位置
-      mov ax,data
-      mov ds,ax                ;这里把数据段的地址放到数据段寄存器ds中
-      lea dx,tab               ;dx中放将要显示数据的偏移地址
-      mov ah,9h
-      int 21h                  ;调用21号中断的9号功能来显示字符串
-
-      mov ah,4c00h
-      int 21h                  ;程序返回在这里插入图片描述
-
-code ends                      ;代码段的结束语
-end start                      ;定义程序从哪个标号处开始执行<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>编写好后点击 file ，选择 save as …，输入文件名称 <strong>hello</strong> ，后缀是 <strong>.asm</strong> ,然后点击 <strong>ok</strong></p>
 <p>也可使用其他编辑器编写源代码，保存到 MASM 文件夹下，修改后缀为 .ASM就行了。</p>
 <p><img src="6.png" alt></p>
@@ -857,8 +841,9 @@ end start                      ;定义程序从哪个标号处开始执行<span 
 <li>一个源程序编译后，得到了存有机器码的目标文件，目标文件中的有些内容还不能直接用来生成可执行文件，连接程序将这些内容处理为最终的可执行信息。所以，在只有一个源程序文件，而又不需要调用某个库中的子程序的情况下，也必须用连接程序对目标文件进行处理，生成可执行文件。</li>
 </ol>
 <h3 id="4）执行我们编译好的-exe-文件"><a href="#4）执行我们编译好的-exe-文件" class="headerlink" title="4）执行我们编译好的 .exe 文件"></a>4）执行我们编译好的 <strong>.exe</strong> 文件</h3><p>输入:</p>
-<pre><code>hello.exe
-hello</code></pre><p>都可以执行exe文件，当然前提是在 MASM 状态下。如图</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hello.exe</span><br><span class="line">hello</span><br></pre></td></tr></table></figure>
+
+<p>都可以执行exe文件，当然前提是在 MASM 状态下。如图</p>
 <p><img src="11.png" alt></p>
 <p>至此就是编写汇编源程序以及运行的全部内容，我们还可以在此基础上进行debug，查看heelo.exe的执行情况，更多的知识请自行前往学习。</p>
 
@@ -1353,7 +1338,7 @@ hello</code></pre><p>都可以执行exe文件，当然前提是在 MASM 状态�
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/29.jpg" class="responsive-img" alt="《汇编语言》王爽著学习笔记记录(后半部分)">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/30.jpg" class="responsive-img" alt="《汇编语言》王爽著学习笔记记录(后半部分)">
                         
                         <span class="card-title">《汇编语言》王爽著学习笔记记录(后半部分)</span>
                     </div>
@@ -1420,7 +1405,7 @@ or
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/0.jpg" class="responsive-img" alt="《汇编语言》王爽著学习笔记记录(前半部分)">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/1.jpg" class="responsive-img" alt="《汇编语言》王爽著学习笔记记录(前半部分)">
                         
                         <span class="card-title">《汇编语言》王爽著学习笔记记录(前半部分)</span>
                     </div>
@@ -1636,7 +1621,7 @@ or
            <!--<a href="/sitemap.xml" target="_blank">站点地图</a>丨-->
            
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">69.5k
+            <span class="white-color">86.9k
              丨            
             <a href="https://tongji.baidu.com/web/welcome/ico?s=df42dpc7224a5f6a8d435" target="_blank">百度统计</a>丨
            <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278720284'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1278720284%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
@@ -1727,7 +1712,7 @@ or
       <span class="badge-subject">Link</span><span class="badge-value bg-red">996.ICU</span></a>
     </div>
     <div class="github-badge">
-      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">69.5k</span>
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">86.9k</span>
     </div>
 </footer>
 

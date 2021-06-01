@@ -616,7 +616,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/29.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/30.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -771,14 +771,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    712
+                    953
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    4 分
                 </div>
                 
                 
@@ -798,15 +798,12 @@
 <p>请你将这些工作分配给 k 位工人。所有工作都应该分配给工人，且每项工作只能分配给一位工人。工人的 工作时间 是完成分配给他们的所有工作花费时间的总和。请你设计一套最佳的工作分配方案，使工人的 最大工作时间 得以 最小化 。</p>
 <p>返回分配方案中尽可能 最小 的 最大工作时间 。</p>
 <p><strong>示例 1：</strong></p>
-<pre><code>输入：jobs = [3,2,3], k = 3
-输出：3
-解释：给每位工人分配一项工作，最大工作时间是 3 。</code></pre><p><strong>示例 2：</strong></p>
-<pre><code>输入：jobs = [1,2,4,7,8], k = 2
-输出：11
-解释：按下述方式分配工作：
-1 号工人：1、2、8（工作时间 = 1 + 2 + 8 = 11）
-2 号工人：4、7（工作时间 = 4 + 7 = 11）
-最大工作时间是 11 。</code></pre><p><strong>提示：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：jobs = [3,2,3], k = 3</span><br><span class="line">输出：3</span><br><span class="line">解释：给每位工人分配一项工作，最大工作时间是 3 。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：jobs = [1,2,4,7,8], k = 2</span><br><span class="line">输出：11</span><br><span class="line">解释：按下述方式分配工作：</span><br><span class="line">1 号工人：1、2、8（工作时间 = 1 + 2 + 8 = 11）</span><br><span class="line">2 号工人：4、7（工作时间 = 4 + 7 = 11）</span><br><span class="line">最大工作时间是 11 。</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
 <ul>
 <li>1 &lt;= k &lt;= jobs.length &lt;= 12</li>
 <li>1 &lt;= jobs[i] &lt;= 107</li>
@@ -817,65 +814,16 @@
 <p>递归深度为 n=jobs.length 工作数量，每次递归需要检测范围为 k 员工数量并开启分支，最坏情况下走满树时间复杂度为 O(k^n)<br>题设 1 &lt;= k &lt;= jobs.length &lt;= 12，最坏情况下 12^12 = 8.9E12，外面还套了一个二分，还要再乘 log12 = 3.xxxx，远超1s极限算量1E8</p>
 <p>因此我们需要考虑一些剪枝的方法，首先我们可以 sort 一下 jobs ，时长从大到小开始分配，进而能够更快的超出限制，被剪枝掉，其次是朴素写法中存在很多重复的路径</p>
 <p>例如对于第一份工作的分配，所有人工作时长全部是0，我们只需要分配一次</p>
-<pre><code>[t1,0,0,0,0]
-之后的
-[0,t1,0,0,0]
-...</code></pre><p>都是重复操作。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[t1,0,0,0,0]</span><br><span class="line">之后的</span><br><span class="line">[0,t1,0,0,0]</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<p>都是重复操作。</p>
 <p> 56号测试用例：</p>
-<pre><code>[5,5,4,4,4]
-2</code></pre><p>如果先将 5h 分配给两个人block [5,5]，之后分配4时，只需要走一次 [9,5]，后面的[5,9] 是重复操作</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[5,5,4,4,4]</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
+
+<p>如果先将 5h 分配给两个人block [5,5]，之后分配4时，只需要走一次 [9,5]，后面的[5,9] 是重复操作</p>
 <p>由于jobs已排序，因此我们每次枚举到的 block[i] 应当和上一次不一样，才是没走过的路径，进而排除全0时的重复放置，或是出现相同工作时长分配时的重复放置</p>
-<pre class="line-numbers language-c++"><code class="language-c++">class Solution {
-public:
-    int k;
-    vector<int>  block;
-    bool backtracking(vector<int>& jobs,int id,int lim) {
-        if(id==-1) return true; //出口 全部放完了
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> k;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;  block;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">backtracking</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; jobs,<span class="keyword">int</span> id,<span class="keyword">int</span> lim)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(id==<span class="number">-1</span>) <span class="keyword">return</span> <span class="literal">true</span>; <span class="comment">//出口 全部放完了</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">bool</span> res=<span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">int</span> last=INT_MIN; </span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;k;++i) &#123;</span><br><span class="line">            <span class="keyword">if</span>(res) </span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">if</span>(block[i]==last) </span><br><span class="line">                <span class="keyword">continue</span>; <span class="comment">//剪枝 因为jobs已排序所以应枚举和上一次不一样的结果</span></span><br><span class="line"></span><br><span class="line">            last=block[i];</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(block[i]&lt;=lim-jobs[id])&#123; <span class="comment">//小心越界</span></span><br><span class="line">                block[i]+=jobs[id];</span><br><span class="line">                res = backtracking(jobs,id<span class="number">-1</span>,lim);</span><br><span class="line">                block[i]-=jobs[id];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minimumTimeRequired</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; jobs, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>-&gt;k = k;</span><br><span class="line">        <span class="keyword">int</span> s=<span class="number">0</span>; <span class="comment">//区间左端点（最小）</span></span><br><span class="line">        <span class="keyword">int</span> e=<span class="number">0</span>; <span class="comment">//区间右端点（最大）</span></span><br><span class="line">        <span class="keyword">int</span> m;<span class="comment">//中间</span></span><br><span class="line">        <span class="keyword">int</span> n = jobs.size()<span class="number">-1</span>;<span class="comment">//起手下标</span></span><br><span class="line">        block = <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;(k,<span class="number">0</span>); <span class="comment">// 拷贝初始化</span></span><br><span class="line">        sort(jobs.begin(),jobs.end());    </span><br><span class="line">        s=jobs[n];<span class="comment">//结果最小应是 jobs[i] 的最大值</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> i : jobs) &#123; <span class="comment">//最大应是 sum(jobs.begin(),jobs.end()) 小心越界</span></span><br><span class="line">            <span class="keyword">if</span>(e&lt;=INT_MAX-i) e+=i;</span><br><span class="line">            <span class="keyword">else</span> e=INT_MAX;</span><br><span class="line">        &#125;        </span><br><span class="line">        <span class="keyword">while</span>(s!=e) &#123;</span><br><span class="line">            <span class="keyword">int</span> m = (s+e)/<span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span>(backtracking(jobs,n,m)) &#123; <span class="comment">//成功 尝试缩减区间</span></span><br><span class="line">                e=m;<span class="comment">//m无法排除</span></span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;<span class="comment">//失败 扩大</span></span><br><span class="line">                s=m+<span class="number">1</span>;<span class="comment">//m肯定不对最少加1</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> s;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-        bool res=false;
-        int last=INT_MIN; 
-
-        for(int i=0;i<k;++i) {
-            if(res) 
-                break;
-            if(block[i]==last) 
-                continue; //剪枝 因为jobs已排序所以应枚举和上一次不一样的结果
-
-            last=block[i];
-
-            if(block[i]<=lim-jobs[id]){ //小心越界
-                block[i]+=jobs[id];
-                res = backtracking(jobs,id-1,lim);
-                block[i]-=jobs[id];
-            }
-        }
-        return res;
-    }
-    int minimumTimeRequired(vector<int>& jobs, int k) {
-        this->k = k;
-        int s=0; //区间左端点（最小）
-        int e=0; //区间右端点（最大）
-        int m;//中间
-        int n = jobs.size()-1;//起手下标
-        block = vector<int>(k,0); // 拷贝初始化
-        sort(jobs.begin(),jobs.end());    
-        s=jobs[n];//结果最小应是 jobs[i] 的最大值
-
-        for(auto i : jobs) { //最大应是 sum(jobs.begin(),jobs.end()) 小心越界
-            if(e<=INT_MAX-i) e+=i;
-            else e=INT_MAX;
-        }        
-        while(s!=e) {
-            int m = (s+e)/2;
-            if(backtracking(jobs,n,m)) { //成功 尝试缩减区间
-                e=m;//m无法排除
-            }else {//失败 扩大
-                s=m+1;//m肯定不对最少加1
-            }
-        }
-        return s;
-    }
-};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -1368,7 +1316,7 @@ public:
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/12.jpg" class="responsive-img" alt="Windows+Ubuntu20.04双系统安装教程">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/11.jpg" class="responsive-img" alt="Windows+Ubuntu20.04双系统安装教程">
                         
                         <span class="card-title">Windows+Ubuntu20.04双系统安装教程</span>
                     </div>
@@ -1421,7 +1369,7 @@ public:
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/0.jpg" class="responsive-img" alt="【Day11】1486.数组异或操作">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/49.jpg" class="responsive-img" alt="【Day11】1486.数组异或操作">
                         
                         <span class="card-title">【Day11】1486.数组异或操作</span>
                     </div>
@@ -1633,7 +1581,7 @@ public:
            <!--<a href="/sitemap.xml" target="_blank">站点地图</a>丨-->
            
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">69.5k
+            <span class="white-color">86.9k
              丨            
             <a href="https://tongji.baidu.com/web/welcome/ico?s=df42dpc7224a5f6a8d435" target="_blank">百度统计</a>丨
            <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278720284'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1278720284%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
@@ -1724,7 +1672,7 @@ public:
       <span class="badge-subject">Link</span><span class="badge-value bg-red">996.ICU</span></a>
     </div>
     <div class="github-badge">
-      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">69.5k</span>
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">86.9k</span>
     </div>
 </footer>
 

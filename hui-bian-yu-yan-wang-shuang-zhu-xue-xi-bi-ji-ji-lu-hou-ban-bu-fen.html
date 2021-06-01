@@ -633,7 +633,7 @@ or
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/29.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/30.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -845,19 +845,10 @@ or
 </li>
 <li><p>si 和 di 是8086CPU中两个和 bx 功能相近的寄存器， 但不能分为两个 8 为寄存器来使用。</p>
 <ol>
-<li><pre class="line-numbers language-asm"><code class="language-asm">mov bx，0
-mov ax，[bx]
-mov si，0
-mov ax，[si]
-mov di，0
-mov ax，[di]
-mov bx,0
+<li><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mov bx，0</span><br><span class="line">mov ax，[bx]</span><br><span class="line">mov si，0</span><br><span class="line">mov ax，[si]</span><br><span class="line">mov di，0</span><br><span class="line">mov ax，[di]</span><br><span class="line">mov bx,0</span><br><span class="line"></span><br><span class="line">mov ax,[bx + 123]</span><br><span class="line">mov si,0</span><br><span class="line">mov ax,[si + 123]</span><br><span class="line">mov di,0</span><br><span class="line">mov ax,[di + 123]</span><br></pre></td></tr></table></figure>
 
-mov ax,[bx + 123]
-mov si,0
-mov ax,[si + 123]
-mov di,0
-mov ax,[di + 123]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
 </li>
 </ol>
 </li>
@@ -875,139 +866,20 @@ mov ax,[di + 123]<span aria-hidden="true" class="line-numbers-rows"><span></span
 <p>mov ax,[bx + si + idata]  ;(ax) = ((ds) * 16 + (bx) + (si) + idata) </p>
 </blockquote>
 <p>常用形式：</p>
-<pre class="line-numbers language-asm"><code class="language-asm">mov ax,[bx + 200 + si]
-mov ax,[200 + bx + si]
-mov ax,200[bx][si]
-mov ax,[bx].200[si]
-mov ax,[bx] [si].200<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mov ax,[bx + 200 + si]</span><br><span class="line">mov ax,[200 + bx + si]</span><br><span class="line">mov ax,200[bx][si]</span><br><span class="line">mov ax,[bx].200[si]</span><br><span class="line">mov ax,[bx] [si].200</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>将datasg中的每个单词改为大写字母：</p>
-<pre class="line-numbers language-asm"><code class="language-asm"> ;版本1
- ;使用 dx 寄存器临时保存 cx 中的值
-assume cs:codesg,ds:datasg
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"> ;版本1</span><br><span class="line"> ;使用 dx 寄存器临时保存 cx 中的值</span><br><span class="line">assume cs:codesg,ds:datasg</span><br><span class="line"> </span><br><span class="line">datasg segment</span><br><span class="line"> 	db &apos;ibm             &apos;</span><br><span class="line">	db &apos;dec             &apos;</span><br><span class="line">	db &apos;dos             &apos;</span><br><span class="line">	db &apos;vax             &apos;</span><br><span class="line">datasg ends</span><br><span class="line"></span><br><span class="line">codesg segment</span><br><span class="line">start: mov ax,datasg</span><br><span class="line">       mov ds,ax</span><br><span class="line">       mov bx,0                  ;此时指向第一行第一个字节的字母</span><br><span class="line">       </span><br><span class="line">       mov cx,4</span><br><span class="line">       </span><br><span class="line">   s0: mov dx,cx                 ;将 cx 的值暂存到 dx 中</span><br><span class="line">   	   mov si,0</span><br><span class="line">   	   mov cx,3</span><br><span class="line">   	   </span><br><span class="line">    s: mov al,[bx + si]          ;(al) = ((ds) * 16 + (bx) + (si))</span><br><span class="line">       and al,11011111b          ;将小写字母改为大写字母</span><br><span class="line">       mov [bx + si],al          ;((ds) * 16 +(bx) + (si)) = (al)</span><br><span class="line">       inc si                    ;si + 1</span><br><span class="line">       </span><br><span class="line">       loop s</span><br><span class="line">       </span><br><span class="line">       add bx,16                 ;00 → 10 → 20 → 30 ...</span><br><span class="line">       mov cx,dx                 ;将暂存的 cx 返回</span><br><span class="line">       loop s0                   ;cx - 1</span><br><span class="line">	   </span><br><span class="line">codesg ends</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
 
-datasg segment
-     db 'ibm             '
-    db 'dec             '
-    db 'dos             '
-    db 'vax             '
-datasg ends
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"> ;版本2</span><br><span class="line"> ;使用栈空间来暂存数据，前面我们使用的是寄存器，但有些时候寄存器是不足的，不是可取的办法</span><br><span class="line">assume cs:codesg,ds:datasg,ss:stacksg</span><br><span class="line"> </span><br><span class="line">datasg segment</span><br><span class="line"> 	db &apos;ibm             &apos;</span><br><span class="line">	db &apos;dec             &apos;</span><br><span class="line">	db &apos;dos             &apos;</span><br><span class="line">	db &apos;vax             &apos;</span><br><span class="line">datasg ends</span><br><span class="line"></span><br><span class="line">stacksg segnebt</span><br><span class="line">		dw 0,0,0,0,0,0,0,0,0   ;定义一个段用作栈段，容量为16字节</span><br><span class="line">stacksg ends</span><br><span class="line"></span><br><span class="line">codesg segment</span><br><span class="line">start: mov ax,stacksg</span><br><span class="line">       mov ss,ax</span><br><span class="line">       mov sp,16</span><br><span class="line">       mov ax,datasg</span><br><span class="line">       mov ds,ax</span><br><span class="line">       mov bx,0                  ;此时指向第一行第一个字节的字母</span><br><span class="line">       </span><br><span class="line">       mov cx,4</span><br><span class="line">       </span><br><span class="line">   s0: push cx                   ;将外循环 cx 的值压栈</span><br><span class="line">   	   mov si,0</span><br><span class="line">   	   mov cx,3                  ;内循环 cx 的值</span><br><span class="line">   	   </span><br><span class="line">    s: mov al,[bx + si]          ;(al) = ((ds) * 16 + (bx) + (si))</span><br><span class="line">       and al,11011111b          ;将小写字母改为大写字母</span><br><span class="line">       mov [bx + si],al          ;((ds) * 16 +(bx) + (si)) = (al)</span><br><span class="line">       inc si                    ;si + 1</span><br><span class="line">       </span><br><span class="line">       loop s</span><br><span class="line">       </span><br><span class="line">       add bx,16                 ;00 → 10 → 20 → 30 ...</span><br><span class="line">       pop cx                    ;将暂存的 cx 返回</span><br><span class="line">       loop s0                   ;cx - 1</span><br><span class="line">       </span><br><span class="line">       mov ax,4c00H</span><br><span class="line">       int 21H</span><br><span class="line">       </span><br><span class="line">codesg ends</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
 
-codesg segment
-start: mov ax,datasg
-       mov ds,ax
-       mov bx,0                  ;此时指向第一行第一个字节的字母
-
-       mov cx,4
-
-   s0: mov dx,cx                 ;将 cx 的值暂存到 dx 中
-          mov si,0
-          mov cx,3
-
-    s: mov al,[bx + si]          ;(al) = ((ds) * 16 + (bx) + (si))
-       and al,11011111b          ;将小写字母改为大写字母
-       mov [bx + si],al          ;((ds) * 16 +(bx) + (si)) = (al)
-       inc si                    ;si + 1
-
-       loop s
-
-       add bx,16                 ;00 → 10 → 20 → 30 ...
-       mov cx,dx                 ;将暂存的 cx 返回
-       loop s0                   ;cx - 1
-
-codesg ends
-end start<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-asm"><code class="language-asm"> ;版本2
- ;使用栈空间来暂存数据，前面我们使用的是寄存器，但有些时候寄存器是不足的，不是可取的办法
-assume cs:codesg,ds:datasg,ss:stacksg
-
-datasg segment
-     db 'ibm             '
-    db 'dec             '
-    db 'dos             '
-    db 'vax             '
-datasg ends
-
-stacksg segnebt
-        dw 0,0,0,0,0,0,0,0,0   ;定义一个段用作栈段，容量为16字节
-stacksg ends
-
-codesg segment
-start: mov ax,stacksg
-       mov ss,ax
-       mov sp,16
-       mov ax,datasg
-       mov ds,ax
-       mov bx,0                  ;此时指向第一行第一个字节的字母
-
-       mov cx,4
-
-   s0: push cx                   ;将外循环 cx 的值压栈
-          mov si,0
-          mov cx,3                  ;内循环 cx 的值
-
-    s: mov al,[bx + si]          ;(al) = ((ds) * 16 + (bx) + (si))
-       and al,11011111b          ;将小写字母改为大写字母
-       mov [bx + si],al          ;((ds) * 16 +(bx) + (si)) = (al)
-       inc si                    ;si + 1
-
-       loop s
-
-       add bx,16                 ;00 → 10 → 20 → 30 ...
-       pop cx                    ;将暂存的 cx 返回
-       loop s0                   ;cx - 1
-
-       mov ax,4c00H
-       int 21H
-
-codesg ends
-end start<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>在需要暂存数据的时候，一般使用栈来操作</strong></p>
 </li>
 <li><p>将 datasg 段中每个单词前4个字母改为大写：</p>
-<pre class="line-numbers language-asm"><code class="language-asm">assume cs:codesg,ds:datasg,ss:stacksg
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">assume cs:codesg,ds:datasg,ss:stacksg</span><br><span class="line"> </span><br><span class="line">datasg segment</span><br><span class="line"> 	db &apos;1. display      &apos;</span><br><span class="line">	db &apos;2. brows        &apos;</span><br><span class="line">	db &apos;3. replace      &apos;</span><br><span class="line">	db &apos;4. modify       &apos;</span><br><span class="line">datasg ends</span><br><span class="line"></span><br><span class="line">stacksg segnebt</span><br><span class="line">		dw 0,0,0,0,0,0,0,0,0   ;定义一个段用作栈段，容量为16字节</span><br><span class="line">stacksg ends</span><br><span class="line"></span><br><span class="line">codesg segment</span><br><span class="line">start: mov ax,stacksg</span><br><span class="line">       mov ss,ax</span><br><span class="line">       mov sp,16</span><br><span class="line">       mov ax,datasg</span><br><span class="line">       mov ds,ax</span><br><span class="line">       mov bx,0                  ;此时指向第一行第一个字节的字母</span><br><span class="line">       </span><br><span class="line">       mov cx,4</span><br><span class="line">       </span><br><span class="line">   s0: push cx                   ;将外循环 cx 的值压栈</span><br><span class="line">   	   mov si,0</span><br><span class="line">   	   mov cx,4                  ;内循环 cx 的值</span><br><span class="line">   	   </span><br><span class="line">    s: mov al,[bx + 3 + si]      ;(al) = ((ds) * 16 + (bx) + (si) + 3)</span><br><span class="line">       and al,11011111b          ;将小写字母改为大写字母</span><br><span class="line">       mov [bx + 3 + si],al      ;((ds) * 16 +(bx) + (si) + 3) = (al)</span><br><span class="line">       inc si                    ;si + 1</span><br><span class="line">       </span><br><span class="line">       loop s</span><br><span class="line">       </span><br><span class="line">       add bx,16                 ;00 → 10 → 20 → 30 ...</span><br><span class="line">       pop cx                    ;将暂存的 cx 返回</span><br><span class="line">       loop s0                   ;cx - 1</span><br><span class="line">       </span><br><span class="line">       mov ax,4c00H</span><br><span class="line">       int 21H</span><br><span class="line">       </span><br><span class="line">codesg ends</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
 
-datasg segment
-     db '1. display      '
-    db '2. brows        '
-    db '3. replace      '
-    db '4. modify       '
-datasg ends
 
-stacksg segnebt
-        dw 0,0,0,0,0,0,0,0,0   ;定义一个段用作栈段，容量为16字节
-stacksg ends
 
-codesg segment
-start: mov ax,stacksg
-       mov ss,ax
-       mov sp,16
-       mov ax,datasg
-       mov ds,ax
-       mov bx,0                  ;此时指向第一行第一个字节的字母
-
-       mov cx,4
-
-   s0: push cx                   ;将外循环 cx 的值压栈
-          mov si,0
-          mov cx,4                  ;内循环 cx 的值
-
-    s: mov al,[bx + 3 + si]      ;(al) = ((ds) * 16 + (bx) + (si) + 3)
-       and al,11011111b          ;将小写字母改为大写字母
-       mov [bx + 3 + si],al      ;((ds) * 16 +(bx) + (si) + 3) = (al)
-       inc si                    ;si + 1
-
-       loop s
-
-       add bx,16                 ;00 → 10 → 20 → 30 ...
-       pop cx                    ;将暂存的 cx 返回
-       loop s0                   ;cx - 1
-
-       mov ax,4c00H
-       int 21H
-
-codesg ends
-end start<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ol>
 <h3 id="第八章：数据处理的两个基本问题"><a href="#第八章：数据处理的两个基本问题" class="headerlink" title="第八章：数据处理的两个基本问题"></a>第八章：数据处理的两个基本问题</h3><ol>
@@ -1034,30 +906,17 @@ end start<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
 </li>
 <li><p>在8086CPU中，只有bx 、si、di、bp四个寄存器可以用在 […] 中来进行内存单元的寻址。</p>
 <p>在 […] 中，这四个寄存器可以单个出现，或者以4种组合出现：bx和si、bx和di、bp和si、bp和di</p>
-<pre class="line-numbers language-asm"><code class="language-asm">mov ax,[bx]
-mov ax,[si]
-mov ax,[di]
-mov ax,[bp]
-mov ax,[bx + si]
-mov ax,[bx + di]
-mov ax,[bp + si]
-mov ax,[bp + di]
-mov ax,[bx + si + idata]
-mov ax,[bx + di + idata]
-mov ax,[bp + si + idata]
-mov ax,[bp + di + idata]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mov ax,[bx]</span><br><span class="line">mov ax,[si]</span><br><span class="line">mov ax,[di]</span><br><span class="line">mov ax,[bp]</span><br><span class="line">mov ax,[bx + si]</span><br><span class="line">mov ax,[bx + di]</span><br><span class="line">mov ax,[bp + si]</span><br><span class="line">mov ax,[bp + di]</span><br><span class="line">mov ax,[bx + si + idata]</span><br><span class="line">mov ax,[bx + di + idata]</span><br><span class="line">mov ax,[bp + si + idata]</span><br><span class="line">mov ax,[bp + di + idata]</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>使用寄存器 bp 进行寻址，如果没有显性的给出段地址，那么段地址默认在 ss 段寄存器中</p>
-<pre class="line-numbers language-asm"><code class="language-asm">mov ax,[bp] ;(ax) = ((ss) * 16 + (bp))
-mov ax,[bp + si + idata] ;(ax) = ((ss) * 16 + (bp) + (si) + idata)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mov ax,[bp] ;(ax) = ((ss) * 16 + (bp))</span><br><span class="line">mov ax,[bp + si + idata] ;(ax) = ((ss) * 16 + (bp) + (si) + idata)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>处理指令大致分为3类：读取、写入、运算；指令执行前，数据一般在3个地方：CPU内部、内存、端口</p>
 </li>
 <li><p>数据的位置：</p>
 <ol>
 <li><p>立即数（idata）：在汇编指令中字节给出</p>
-<pre class="line-numbers language-asm"><code class="language-asm">mov ax,1
-add bx,2000H<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mov ax,1</span><br><span class="line">add bx,2000H</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>寄存器：要处理的数据在寄存器中，在汇编指令中给出相应的寄存器名就可以。</p>
 </li>
@@ -1182,30 +1041,24 @@ add bx,2000H<span aria-hidden="true" class="line-numbers-rows"><span></span><spa
 <li><p>8086CPU 可以处理 byte 和 word 两种尺寸的数据。</p>
 <ol>
 <li><p>通过寄存器名指明要处理的数据的尺寸：</p>
-<pre class="line-numbers language-asm"><code class="language-asm">;字操作
-mov ax,1
-add ax,1000
-inc ax<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-asm"><code class="language-asm">;字节操作
-mov al
-add al000
-inc al<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">;字操作</span><br><span class="line">mov ax,1</span><br><span class="line">add ax,1000</span><br><span class="line">inc ax</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">;字节操作</span><br><span class="line">mov al</span><br><span class="line">add al000</span><br><span class="line">inc al</span><br></pre></td></tr></table></figure>
+
+
+
 </li>
 </ol>
 </li>
 </ol>
 <ol start="2">
 <li><p>没有寄存器名存在得情况下，用操作符 X ptr 指明内存单元的长度，X 可以为 byte 或 word：</p>
-<pre class="line-numbers language-asm"><code class="language-asm">;word ptr 表示访问一个字单元
-mov word ptr ds:[0],1
-inc word ptr [bx]
-inc word ptr ds:[0]
-add word ptr [bx],2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-asm"><code class="language-asm">;byte ptr 表示访问一个字节单元
-mov byte ptr ds:[0],1
-inc byte ptr [bx]
-inc byte ptr ds:[0]
-add byte ptr [bx],2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">;word ptr 表示访问一个字单元</span><br><span class="line">mov word ptr ds:[0],1</span><br><span class="line">inc word ptr [bx]</span><br><span class="line">inc word ptr ds:[0]</span><br><span class="line">add word ptr [bx],2</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">;byte ptr 表示访问一个字节单元</span><br><span class="line">mov byte ptr ds:[0],1</span><br><span class="line">inc byte ptr [bx]</span><br><span class="line">inc byte ptr ds:[0]</span><br><span class="line">add byte ptr [bx],2</span><br></pre></td></tr></table></figure>
+
+
+
 </li>
 </ol>
 <p>   <strong>在机器指令中指明要访问的是字单元还是字节单元是非常重要的，8086CPU中，一个byte为8bit，而一个字为2byte，如果不指明，那么在访问的时候是有区别的。</strong></p>
@@ -1216,28 +1069,17 @@ add byte ptr [bx],2<span aria-hidden="true" class="line-numbers-rows"><span></sp
 <p>(1)除数：8位和16位两种，在一个reg或内存单元中</p>
 <p>(2)被除数：默认在AX或AX和DX中，除数位8位，被除数位16位，默认在AX中存放；除数位16位，则被除数位32位，DX存放高16位，AX存放低16位。</p>
 <p>(3)结果：如果除数位8位，则AL存储除法操作的商，AH存放余数；如果除数位16位，AX存储除法操作的商，DX存放余数</p>
-<pre class="line-numbers language-asm"><code class="language-asm">;格式
-div reg
-div 内存单元<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-asm"><code class="language-asm">;示例
-div byte ptr ds:[0]      ;(al) = (ax) / ((ds) * 16 + 0 )的商
-                       ;(ah) = (ax) / ((ds) * 16 + 0)的余数
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">;格式</span><br><span class="line">div reg</span><br><span class="line">div 内存单元</span><br></pre></td></tr></table></figure>
 
-div word ptr es:[0]      ;(ax) = [(dx) * 10000H + (ax) / (es) * 16 + 0]的商
-                       ;(dx) = [(dx) * 10000H + (ax) / (es) * 16 + 0]的余数
-
-div byte ptr [bx + si + 8]     ;(al) = (ax) / ((ds) * 16 + (bx) + (si) + 8)的商
-                             ;(ah) = (ax) / ((ds) * 16 + (bx) + (si) + 8)的余数
-
-div word ptr [bx + si + 8]     ;(ax) = [(dx) * 10000H + (ax) / (ds) * 16 + (si) + 8]的商
-                             ;(dx) = [(dx) * 10000H + (ax) / (ds) * 16 + (si) + 8]的余数js<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">;示例</span><br><span class="line">div byte ptr ds:[0]      ;(al) = (ax) / ((ds) * 16 + 0 )的商</span><br><span class="line">					   ;(ah) = (ax) / ((ds) * 16 + 0)的余数</span><br><span class="line">					  </span><br><span class="line">div word ptr es:[0]      ;(ax) = [(dx) * 10000H + (ax) / (es) * 16 + 0]的商</span><br><span class="line">					   ;(dx) = [(dx) * 10000H + (ax) / (es) * 16 + 0]的余数</span><br><span class="line"></span><br><span class="line">div byte ptr [bx + si + 8]     ;(al) = (ax) / ((ds) * 16 + (bx) + (si) + 8)的商</span><br><span class="line">					         ;(ah) = (ax) / ((ds) * 16 + (bx) + (si) + 8)的余数</span><br><span class="line"></span><br><span class="line">div word ptr [bx + si + 8]     ;(ax) = [(dx) * 10000H + (ax) / (ds) * 16 + (si) + 8]的商</span><br><span class="line">					         ;(dx) = [(dx) * 10000H + (ax) / (ds) * 16 + (si) + 8]的余数js</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>计算：100001 / 100</p>
-<pre class="line-numbers language-asm"><code class="language-asm">;100001 > 65535,所以除数得是32位，转为16进制为 186A1H，所以高16位在DX中，低16位在AX中
-mov dx,1
-mov ax,86A1H
-mov bx,100
-div bx<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">;100001 &gt; 65535,所以除数得是32位，转为16进制为 186A1H，所以高16位在DX中，低16位在AX中</span><br><span class="line">mov dx,1</span><br><span class="line">mov ax,86A1H</span><br><span class="line">mov bx,100</span><br><span class="line">div bx</span><br></pre></td></tr></table></figure>
+
+
+
+
+
 </li>
 </ol>
 <ol start="11">
@@ -1275,85 +1117,11 @@ div bx<span aria-hidden="true" class="line-numbers-rows"><span></span><span></sp
 </ol>
 <ol start="12">
 <li><p>汇编语言实验七：</p>
-<pre class="line-numbers language-asm"><code class="language-asm">;题目太长，只贴代码，先思考写代码，而后体会别人的代码
-assume cs:code
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">;题目太长，只贴代码，先思考写代码，而后体会别人的代码</span><br><span class="line">assume cs:code</span><br><span class="line"></span><br><span class="line">data segment</span><br><span class="line"> db &apos;1975&apos;,&apos;1976&apos;,&apos;1977&apos;,&apos;1978&apos;,&apos;1979&apos;,&apos;1980&apos;,&apos;1981&apos;,&apos;1982&apos;,&apos;1983&apos;,&apos;1984&apos;,&apos;1985&apos;</span><br><span class="line"> db &apos;1986&apos;,&apos;1987&apos;,&apos;1988&apos;,&apos;1989&apos;,&apos;1990&apos;,&apos;1991&apos;,&apos;1992&apos;,&apos;1993&apos;,&apos;1994&apos;,&apos;1995&apos;</span><br><span class="line"> </span><br><span class="line"> dd 16,22,382,1356,2390,8000,16000,24486,50065,97479,140417,197514,345980</span><br><span class="line"> dd 590827,803530,1183000,1843000,2758000,3753000,4649000,5937000</span><br><span class="line"> </span><br><span class="line"> dw 3,7,9,13,28,38,130,220,476,778,1001,1442,2258,2793,4037,5635,8226</span><br><span class="line"> dw 11542,14430,15257,17800</span><br><span class="line">data ends</span><br><span class="line"></span><br><span class="line">stack segment</span><br><span class="line"> dw 0,0,0,0,0,0,0</span><br><span class="line">stack ends</span><br><span class="line"></span><br><span class="line">table segment</span><br><span class="line"> db 21 dup (&apos;year summ ne ?? &apos;)</span><br><span class="line">table ends</span><br><span class="line"></span><br><span class="line">code segment</span><br><span class="line"></span><br><span class="line">start:</span><br><span class="line">	mov ax,data</span><br><span class="line">	mov es,ax</span><br><span class="line">	mov si,0</span><br><span class="line"></span><br><span class="line">	mov ax,table</span><br><span class="line">	mov ds,ax</span><br><span class="line">	mov di,0</span><br><span class="line">	</span><br><span class="line">	mov ax,stack</span><br><span class="line">	mov ss,ax</span><br><span class="line">	mov sp,16</span><br><span class="line">	</span><br><span class="line">	mov bx,0</span><br><span class="line">	mov cx,21</span><br><span class="line">s0:</span><br><span class="line">	mov ax,es:[si]	</span><br><span class="line">	mov ds:[di+bx],ax</span><br><span class="line">	add si,2</span><br><span class="line">	add di,2</span><br><span class="line">	mov ax,es:[si]</span><br><span class="line">	mov ds:[di+bx],ax</span><br><span class="line">	</span><br><span class="line">	mov ax,es:[si+82]</span><br><span class="line">	mov ds:[bx+di+3],ax</span><br><span class="line">	mov ax,es:[si+84]</span><br><span class="line">	mov ds:[bx+di+5],ax</span><br><span class="line">	</span><br><span class="line">	add si,2</span><br><span class="line">	mov di,0</span><br><span class="line">	add bx,16</span><br><span class="line">	loop s0</span><br><span class="line">	</span><br><span class="line">	mov bx,0</span><br><span class="line">	mov si,168</span><br><span class="line">	mov di,5</span><br><span class="line">	mov cx,21</span><br><span class="line">s1:	</span><br><span class="line">	mov ax,es:[si]</span><br><span class="line">	mov ds:[bx+di+5],ax</span><br><span class="line">	</span><br><span class="line">	mov ax,ds:[bx+di]</span><br><span class="line">	mov dx,ds:[bx+di+2]</span><br><span class="line">	div word ptr ds:[bx+di+5]</span><br><span class="line">	mov ds:[bx+di+8],ax</span><br><span class="line">	</span><br><span class="line">	add si,2</span><br><span class="line">	add bx,16</span><br><span class="line">	loop s1</span><br><span class="line">	</span><br><span class="line">	mov ax,4c00h</span><br><span class="line">	int 21h</span><br><span class="line">	</span><br><span class="line">code ends</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
 
-data segment
- db '1975','1976','1977','1978','1979','1980','1981','1982','1983','1984','1985'
- db '1986','1987','1988','1989','1990','1991','1992','1993','1994','1995'
 
- dd 16,22,382,1356,2390,8000,16000,24486,50065,97479,140417,197514,345980
- dd 590827,803530,1183000,1843000,2758000,3753000,4649000,5937000
 
- dw 3,7,9,13,28,38,130,220,476,778,1001,1442,2258,2793,4037,5635,8226
- dw 11542,14430,15257,17800
-data ends
 
-stack segment
- dw 0,0,0,0,0,0,0
-stack ends
-
-table segment
- db 21 dup ('year summ ne ?? ')
-table ends
-
-code segment
-
-start:
-    mov ax,data
-    mov es,ax
-    mov si,0
-
-    mov ax,table
-    mov ds,ax
-    mov di,0
-
-    mov ax,stack
-    mov ss,ax
-    mov sp,16
-
-    mov bx,0
-    mov cx,21
-s0:
-    mov ax,es:[si]    
-    mov ds:[di+bx],ax
-    add si,2
-    add di,2
-    mov ax,es:[si]
-    mov ds:[di+bx],ax
-
-    mov ax,es:[si+82]
-    mov ds:[bx+di+3],ax
-    mov ax,es:[si+84]
-    mov ds:[bx+di+5],ax
-
-    add si,2
-    mov di,0
-    add bx,16
-    loop s0
-
-    mov bx,0
-    mov si,168
-    mov di,5
-    mov cx,21
-s1:    
-    mov ax,es:[si]
-    mov ds:[bx+di+5],ax
-
-    mov ax,ds:[bx+di]
-    mov dx,ds:[bx+di+2]
-    div word ptr ds:[bx+di+5]
-    mov ds:[bx+di+8],ax
-
-    add si,2
-    add bx,16
-    loop s1
-
-    mov ax,4c00h
-    int 21h
-
-code ends
-end start<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ol>
 <h3 id="第九章：转移指令的原理"><a href="#第九章：转移指令的原理" class="headerlink" title="第九章：转移指令的原理"></a>第九章：转移指令的原理</h3><ol>
@@ -1370,7 +1138,7 @@ end start<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
 <li><p>转移指令分为无条件转移指令（jmp）和条件转移指令、循环指令、过程、中断等等</p>
 </li>
 <li><p>操作符 offset ，能够取得标号的偏移地址：</p>
-<pre class="line-numbers language-asm"><code class="language-asm">start: mov ax,offset start  ;取得start的偏移地址，相当于 mov ax，0<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">start: mov ax,offset start  ;取得start的偏移地址，相当于 mov ax，0</span><br></pre></td></tr></table></figure>
 </li>
 <li></li>
 </ol>
@@ -1882,7 +1650,7 @@ end start<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/26.jpg" class="responsive-img" alt="【Day13】1482.制作m束花所需的最少天数">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/27.jpg" class="responsive-img" alt="【Day13】1482.制作m束花所需的最少天数">
                         
                         <span class="card-title">【Day13】1482.制作m束花所需的最少天数</span>
                     </div>
@@ -1933,7 +1701,7 @@ end start<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/30.jpg" class="responsive-img" alt="汇编语言学习 DOSBox+MASM 安装及使用教程">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/29.jpg" class="responsive-img" alt="汇编语言学习 DOSBox+MASM 安装及使用教程">
                         
                         <span class="card-title">汇编语言学习 DOSBox+MASM 安装及使用教程</span>
                     </div>
@@ -2148,7 +1916,7 @@ end start<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
            <!--<a href="/sitemap.xml" target="_blank">站点地图</a>丨-->
            
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">69.5k
+            <span class="white-color">86.9k
              丨            
             <a href="https://tongji.baidu.com/web/welcome/ico?s=df42dpc7224a5f6a8d435" target="_blank">百度统计</a>丨
            <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278720284'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1278720284%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
@@ -2239,7 +2007,7 @@ end start<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
       <span class="badge-subject">Link</span><span class="badge-value bg-red">996.ICU</span></a>
     </div>
     <div class="github-badge">
-      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">69.5k</span>
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">86.9k</span>
     </div>
 </footer>
 

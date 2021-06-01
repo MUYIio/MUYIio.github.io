@@ -9,11 +9,7 @@
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
     <meta name="description" content="12. 整数转罗马数字罗马数字包含以下七种字符： I， V， X， L，C，D 和 M。
-字符          数值
-I             1
-V             5
-X             10
-L          ">
+字符          数值I             1V             5X             10L             5">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -620,7 +616,7 @@ L          ">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/9.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -775,7 +771,7 @@ L          ">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    429
+                    435
                 </div>
                 
 
@@ -799,14 +795,9 @@ L          ">
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h4 id="12-整数转罗马数字"><a href="#12-整数转罗马数字" class="headerlink" title="12. 整数转罗马数字"></a><a href="https://leetcode-cn.com/problems/integer-to-roman/" target="_blank" rel="noopener">12. 整数转罗马数字</a></h4><p>罗马数字包含以下七种字符： I， V， X， L，C，D 和 M。</p>
-<pre><code>字符          数值
-I             1
-V             5
-X             10
-L             50
-C             100
-D             500
-M             1000</code></pre><blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">字符          数值</span><br><span class="line">I             1</span><br><span class="line">V             5</span><br><span class="line">X             10</span><br><span class="line">L             50</span><br><span class="line">C             100</span><br><span class="line">D             500</span><br><span class="line">M             1000</span><br></pre></td></tr></table></figure>
+
+<blockquote>
 <p>例如， 罗马数字 2 写做 II ，即为两个并列的 1。12 写做 XII ，即为 X + II 。 27 写做  XXVII, 即为 XX + V + II 。</p>
 </blockquote>
 <p>通常情况下，罗马数字中小的数字在大的数字的右边。但也存在特例，例如 4 不写做 IIII，而是 IV。数字 1 在数字 5 的左边，所表示的数等于大数 5 减小数 1 得到的数值 4 。同样地，数字 9 表示为 IX。这个特殊的规则只适用于以下六种情况：</p>
@@ -817,40 +808,28 @@ M             1000</code></pre><blockquote>
 </ul>
 <p>给你一个整数，将其转为罗马数字。</p>
 <p><strong>示例 1:</strong></p>
-<pre><code>输入: num = 3
-输出: &quot;III&quot;</code></pre><p><strong>示例 2:</strong></p>
-<pre><code>输入: num = 4
-输出: &quot;IV&quot;</code></pre><p><strong>示例 3:</strong></p>
-<pre><code>输入: num = 9
-输出: &quot;IX&quot;</code></pre><p><strong>示例 4:</strong></p>
-<pre><code>输入: num = 58
-输出: &quot;LVIII&quot;
-解释: L = 50, V = 5, III = 3.</code></pre><p><strong>示例 5:</strong></p>
-<pre><code>输入: num = 1994
-输出: &quot;MCMXCIV&quot;
-解释: M = 1000, CM = 900, XC = 90, IV = 4.</code></pre><p><strong>提示：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: num = 3</span><br><span class="line">输出: &quot;III&quot;</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: num = 4</span><br><span class="line">输出: &quot;IV&quot;</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 3:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: num = 9</span><br><span class="line">输出: &quot;IX&quot;</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 4:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: num = 58</span><br><span class="line">输出: &quot;LVIII&quot;</span><br><span class="line">解释: L = 50, V = 5, III = 3.</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 5:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: num = 1994</span><br><span class="line">输出: &quot;MCMXCIV&quot;</span><br><span class="line">解释: M = 1000, CM = 900, XC = 90, IV = 4.</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
 <ul>
 <li>1 &lt;= num &lt;= 3999</li>
 </ul>
 <p><strong>题解：</strong></p>
 <p>第一想到贪心，使用哈希表排序罗马数字并遍历，从高到低进行匹配。暴力匹配也可以的，</p>
-<pre class="line-numbers language-c++"><code class="language-c++">class Solution {
-public:
-    string intToRoman(int num) {
-        int values[] = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
-        string reps[] = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">intToRoman</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> values[] = &#123;<span class="number">1000</span>, <span class="number">900</span>, <span class="number">500</span>, <span class="number">400</span>, <span class="number">100</span>, <span class="number">90</span>, <span class="number">50</span>, <span class="number">40</span>, <span class="number">10</span>, <span class="number">9</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">1</span>&#125;;</span><br><span class="line">        <span class="built_in">string</span> reps[] = &#123;<span class="string">"M"</span>, <span class="string">"CM"</span>, <span class="string">"D"</span>, <span class="string">"CD"</span>, <span class="string">"C"</span>, <span class="string">"XC"</span>, <span class="string">"L"</span>, <span class="string">"XL"</span>, <span class="string">"X"</span>, <span class="string">"IX"</span>, <span class="string">"V"</span>, <span class="string">"IV"</span>, <span class="string">"I"</span>&#125;;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">string</span> ans;</span><br><span class="line">        <span class="keyword">int</span> </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">13</span>; i ++ ) </span><br><span class="line">            <span class="keyword">while</span>(num &gt;= values[i])</span><br><span class="line">            &#123;</span><br><span class="line">                num -= values[i];</span><br><span class="line">                ans += reps[i];</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-        string ans;
-        int 
-        for (int i = 0; i < 13; i ++ ) 
-            while(num >= values[i])
-            {
-                num -= values[i];
-                ans += reps[i];
-            }
-        return ans;
-    }
-};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -1343,7 +1322,7 @@ public:
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/12.jpg" class="responsive-img" alt="【Day19】13.罗马数字转整数">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/13.jpg" class="responsive-img" alt="【Day19】13.罗马数字转整数">
                         
                         <span class="card-title">【Day19】13.罗马数字转整数</span>
                     </div>
@@ -1352,11 +1331,7 @@ public:
                     <div class="summary block-with-text">
                         
                             13. 罗马数字转整数罗马数字包含以下七种字符: I， V， X， L，C，D 和 M。
-字符          数值
-I             1
-V             5
-X             10
-L          
+字符          数值I             1V             5X             10L             5
                         
                     </div>
                     <div class="publish-info">
@@ -1397,7 +1372,7 @@ L
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/18.jpg" class="responsive-img" alt="【Day17】1269.停在原地的方案数">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/17.jpg" class="responsive-img" alt="【Day17】1269.停在原地的方案数">
                         
                         <span class="card-title">【Day17】1269.停在原地的方案数</span>
                     </div>
@@ -1609,7 +1584,7 @@ L
            <!--<a href="/sitemap.xml" target="_blank">站点地图</a>丨-->
            
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">69.5k
+            <span class="white-color">86.9k
              丨            
             <a href="https://tongji.baidu.com/web/welcome/ico?s=df42dpc7224a5f6a8d435" target="_blank">百度统计</a>丨
            <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278720284'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1278720284%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
@@ -1700,7 +1675,7 @@ L
       <span class="badge-subject">Link</span><span class="badge-value bg-red">996.ICU</span></a>
     </div>
     <div class="github-badge">
-      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">69.5k</span>
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">86.9k</span>
     </div>
 </footer>
 

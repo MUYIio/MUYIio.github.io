@@ -617,7 +617,7 @@ Github禁止了百度">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/22.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -776,7 +776,7 @@ Github禁止了百度">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    774
+                    792
                 </div>
                 
 
@@ -833,76 +833,42 @@ Github禁止了百度">
 <li><strong>主动推送</strong></li>
 </ul>
 <p>1.安装插件：</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-baidu-url-submit --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-baidu-url-submit --save</span><br></pre></td></tr></table></figure>
+
 <p>2.在根目录 <code>_config.yml</code> 文件里加入以下代码：</p>
-<pre class="line-numbers language-bash"><code class="language-bash">baidu_url_submit:
-  count: 100                 <span class="token comment" spellcheck="true"># 提交最新的多少个链接</span>
-  host: www.muyiio.com       <span class="token comment" spellcheck="true"># 在百度站长平台中添加的域名</span>
-  token:                     <span class="token comment" spellcheck="true"># 秘钥</span>
-  path: baidu_urls.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">baidu_url_submit:</span><br><span class="line">  count: 100                 <span class="comment"># 提交最新的多少个链接</span></span><br><span class="line">  host: www.muyiio.com       <span class="comment"># 在百度站长平台中添加的域名</span></span><br><span class="line">  token:                     <span class="comment"># 秘钥</span></span><br><span class="line">  path: baidu_urls.txt</span><br></pre></td></tr></table></figure>
+
 <p><code>token</code>可以在推送接口下面看到：</p>
 <p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.8/Images/posts/%E7%99%BE%E5%BA%A6%E6%94%B6%E5%BD%95/9.png" alt></p>
 <p>3.在根目录的 <code>_config.yml</code> 下找到以下配置：</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># URL</span>
-<span class="token comment" spellcheck="true">## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'</span>
-url: https://www.muyiio.com
-root: /
-permalink: :year/:month/:day/:title/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'</span></span><br><span class="line">url: https://www.muyiio.com</span><br><span class="line">root: /</span><br><span class="line">permalink: :year/:month/:day/:title/</span><br></pre></td></tr></table></figure>
+
 <p><code>url:</code>后面填写在百度添加的域名</p>
 <p>4.在<code>_config.yml</code> 加入新的<code>deployer</code></p>
 <ul>
-<li><pre class="line-numbers language-bash"><code class="language-bash">deploy:
-- type: <span class="token function">git</span>
-  repository:
-    github: git@github.com:MUYIio/MUYIio.github.io.git
-    coding: git@e.coding.net:godxiaolon/godxiaolon.git
-    repo: root@118.25.27.52:/home/git/blog.git
-  branch: master
-- type: baidu_url_submitter        <span class="token comment" spellcheck="true">#新加的主动推送</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<li><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">- <span class="built_in">type</span>: git</span><br><span class="line">  repository:</span><br><span class="line">    github: git@github.com:MUYIio/MUYIio.github.io.git</span><br><span class="line">    coding: git@e.coding.net:godxiaolon/godxiaolon.git</span><br><span class="line">    repo: root@118.25.27.52:/home/git/blog.git</span><br><span class="line">  branch: master</span><br><span class="line">- <span class="built_in">type</span>: baidu_url_submitter        <span class="comment">#新加的主动推送</span></span><br></pre></td></tr></table></figure>
+
+
+
 </li>
 </ul>
 <p>5.最后三连上传就可以了,这样显示就是成功</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">{</span><span class="token string">"remain"</span>:2985,<span class="token string">"success"</span>:15<span class="token punctuation">}</span>           <span class="token comment" spellcheck="true">#表示成功15条</span>
-INFO  Deploy done: baidu_url_submitter
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&#123;<span class="string">"remain"</span>:2985,<span class="string">"success"</span>:15&#125;           <span class="comment">#表示成功15条</span></span><br><span class="line">INFO  Deploy <span class="keyword">done</span>: baidu_url_submitter</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><strong>自动推送</strong></li>
 </ul>
 <p>1.复制代码</p>
 <p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.8/Images/posts/%E7%99%BE%E5%BA%A6%E6%94%B6%E5%BD%95/10.png" alt></p>
-<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>script<span class="token operator">></span>
-<span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">var</span> bp <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'script'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">var</span> curProtocol <span class="token operator">=</span> window<span class="token punctuation">.</span>location<span class="token punctuation">.</span>protocol<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">':'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>curProtocol <span class="token operator">===</span> <span class="token string">'https'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        bp<span class="token punctuation">.</span>src <span class="token operator">=</span> <span class="token string">'https://zz.bdstatic.com/linksubmit/push.js'</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">else</span> <span class="token punctuation">{</span>
-        bp<span class="token punctuation">.</span>src <span class="token operator">=</span> <span class="token string">'http://push.zhanzhang.baidu.com/push.js'</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">var</span> s <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">"script"</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-    s<span class="token punctuation">.</span>parentNode<span class="token punctuation">.</span><span class="token function">insertBefore</span><span class="token punctuation">(</span>bp<span class="token punctuation">,</span> s<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> bp = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</span><br><span class="line">    <span class="keyword">var</span> curProtocol = <span class="built_in">window</span>.location.protocol.split(<span class="string">':'</span>)[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">if</span> (curProtocol === <span class="string">'https'</span>) &#123;</span><br><span class="line">        bp.src = <span class="string">'https://zz.bdstatic.com/linksubmit/push.js'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        bp.src = <span class="string">'http://push.zhanzhang.baidu.com/push.js'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> s = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"script"</span>)[<span class="number">0</span>];</span><br><span class="line">    s.parentNode.insertBefore(bp, s);</span><br><span class="line">&#125;)();</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>2.放到<code>\themes\material-x\layout\_partial\head.ejs</code>的<code>&lt;head&gt;</code>与 <code>&lt;/head&gt;</code>标签之间。</p>
 <p>3.如果主题集成了这个功能，比如 next 主题，在 <code>themes\next\layout_scripts\</code> 下有个 <code>baidu_push.swig</code> 写入下面代码：</p>
-<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token punctuation">{</span><span class="token operator">%</span> <span class="token keyword">if</span> theme<span class="token punctuation">.</span>baidu_push <span class="token operator">%</span><span class="token punctuation">}</span>
-<span class="token operator">&lt;</span>script<span class="token operator">></span>
-<span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">var</span> bp <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'script'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">var</span> curProtocol <span class="token operator">=</span> window<span class="token punctuation">.</span>location<span class="token punctuation">.</span>protocol<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">':'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>curProtocol <span class="token operator">===</span> <span class="token string">'https'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        bp<span class="token punctuation">.</span>src <span class="token operator">=</span> <span class="token string">'https://zz.bdstatic.com/linksubmit/push.js'</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">else</span> <span class="token punctuation">{</span>
-        bp<span class="token punctuation">.</span>src <span class="token operator">=</span> <span class="token string">'http://push.zhanzhang.baidu.com/push.js'</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">var</span> s <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">"script"</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-    s<span class="token punctuation">.</span>parentNode<span class="token punctuation">.</span><span class="token function">insertBefore</span><span class="token punctuation">(</span>bp<span class="token punctuation">,</span> s<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&#123;% <span class="keyword">if</span> theme.baidu_push %&#125;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> bp = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</span><br><span class="line">    <span class="keyword">var</span> curProtocol = <span class="built_in">window</span>.location.protocol.split(<span class="string">':'</span>)[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">if</span> (curProtocol === <span class="string">'https'</span>) &#123;</span><br><span class="line">        bp.src = <span class="string">'https://zz.bdstatic.com/linksubmit/push.js'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        bp.src = <span class="string">'http://push.zhanzhang.baidu.com/push.js'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> s = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"script"</span>)[<span class="number">0</span>];</span><br><span class="line">    s.parentNode.insertBefore(bp, s);</span><br><span class="line">&#125;)();</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>然后在文件主题配置文件<code>_config.yml</code> 中设置 即可。</p>
-<pre class="line-numbers language-bash"><code class="language-bash">baidu_push: <span class="token boolean">true</span> <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">baidu_push: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="5】总结"><a href="#5】总结" class="headerlink" title="5】总结"></a>5】总结</h2><ul>
 <li>我只使用了上面两种方法推送，更多的可以自己尝试。</li>
 <li>收录大概需要半个多月，耐心等待。</li>
@@ -1399,7 +1365,7 @@ INFO  Deploy done: baidu_url_submitter
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/5.jpg" class="responsive-img" alt="Hexo博客部署到腾讯云服务器(使用宝塔面板)">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/4.jpg" class="responsive-img" alt="Hexo博客部署到腾讯云服务器(使用宝塔面板)">
                         
                         <span class="card-title">Hexo博客部署到腾讯云服务器(使用宝塔面板)</span>
                     </div>
@@ -1448,7 +1414,7 @@ INFO  Deploy done: baidu_url_submitter
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/16.jpg" class="responsive-img" alt="使用GitHub备份Hexo博客源文件">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/17.jpg" class="responsive-img" alt="使用GitHub备份Hexo博客源文件">
                         
                         <span class="card-title">使用GitHub备份Hexo博客源文件</span>
                     </div>
@@ -1662,7 +1628,7 @@ INFO  Deploy done: baidu_url_submitter
            <!--<a href="/sitemap.xml" target="_blank">站点地图</a>丨-->
            
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">69.5k
+            <span class="white-color">86.9k
              丨            
             <a href="https://tongji.baidu.com/web/welcome/ico?s=df42dpc7224a5f6a8d435" target="_blank">百度统计</a>丨
            <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278720284'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1278720284%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
@@ -1753,7 +1719,7 @@ INFO  Deploy done: baidu_url_submitter
       <span class="badge-subject">Link</span><span class="badge-value bg-red">996.ICU</span></a>
     </div>
     <div class="github-badge">
-      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">69.5k</span>
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">86.9k</span>
     </div>
 </footer>
 

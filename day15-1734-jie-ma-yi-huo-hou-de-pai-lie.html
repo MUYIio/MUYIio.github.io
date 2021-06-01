@@ -616,7 +616,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/24.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/25.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -771,7 +771,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    225
+                    291
                 </div>
                 
 
@@ -798,11 +798,12 @@
 <p>它被加密成另一个长度为 n - 1 的整数数组 encoded ，满足 encoded[i] = perm[i] XOR perm[i + 1] 。比方说，如果 perm = [1,3,2] ，那么 encoded = [2,1] 。</p>
 <p>给你 encoded 数组，请你返回原始数组 perm 。题目保证答案存在且唯一。</p>
 <p><strong>示例 1：</strong></p>
-<pre><code>输入：encoded = [3,1]
-输出：[1,2,3]
-解释：如果 perm = [1,2,3] ，那么 encoded = [1 XOR 2,2 XOR 3] = [3,1]</code></pre><p><strong>示例 2：</strong></p>
-<pre><code>输入：encoded = [6,5,4,6]
-输出：[2,4,1,5,3]</code></pre><p><strong>提示：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：encoded = [3,1]</span><br><span class="line">输出：[1,2,3]</span><br><span class="line">解释：如果 perm = [1,2,3] ，那么 encoded = [1 XOR 2,2 XOR 3] = [3,1]</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：encoded = [6,5,4,6]</span><br><span class="line">输出：[2,4,1,5,3]</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
 <ul>
 <li>3 &lt;= n &lt; 105</li>
 <li>n 是奇数。</li>
@@ -814,28 +815,8 @@
 <p>而B^C^D^E = encoded[1] ^ encode[3]</p>
 <p>A^B^C^D^E = total</p>
 <p>total ^ (B^C^D^E) = first</p>
-<pre class="line-numbers language-c++"><code class="language-c++">class Solution {
-public:
-    vector<int> decode(vector<int>& encoded) {
-        int n = encoded.size() + 1;
-        int total = 0;
-        for (int i = 1; i <= n; i++) {
-            total ^= i;
-        }
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; decode(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; encoded) &#123;</span><br><span class="line">        <span class="keyword">int</span> n = encoded.size() + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> total = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            total ^= i;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> e = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n - <span class="number">1</span>; i += <span class="number">2</span>) &#123;</span><br><span class="line">            e ^= encoded[i];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; ans(n);</span><br><span class="line">        ans[<span class="number">0</span>] = total ^ e;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">            ans[i] = ans[i<span class="number">-1</span>] ^ encoded[i<span class="number">-1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-        int e = 0;
-        for (int i = 1; i < n - 1; i += 2) {
-            e ^= encoded[i];
-        }
-
-        vector<int> ans(n);
-        ans[0] = total ^ e;
-        for (int i = 1; i < n; i++) {
-            ans[i] = ans[i-1] ^ encoded[i-1];
-        }
-        return ans;
-    }
-};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -1328,7 +1309,7 @@ public:
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/21.jpg" class="responsive-img" alt="【Day16】1310.子数组异或查询">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/22.jpg" class="responsive-img" alt="【Day16】1310.子数组异或查询">
                         
                         <span class="card-title">【Day16】1310.子数组异或查询</span>
                     </div>
@@ -1378,7 +1359,7 @@ public:
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/37.jpg" class="responsive-img" alt="【Day14】872.叶子相似的树">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/38.jpg" class="responsive-img" alt="【Day14】872.叶子相似的树">
                         
                         <span class="card-title">【Day14】872.叶子相似的树</span>
                     </div>
@@ -1591,7 +1572,7 @@ public:
            <!--<a href="/sitemap.xml" target="_blank">站点地图</a>丨-->
            
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">69.5k
+            <span class="white-color">86.9k
              丨            
             <a href="https://tongji.baidu.com/web/welcome/ico?s=df42dpc7224a5f6a8d435" target="_blank">百度统计</a>丨
            <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278720284'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1278720284%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
@@ -1682,7 +1663,7 @@ public:
       <span class="badge-subject">Link</span><span class="badge-value bg-red">996.ICU</span></a>
     </div>
     <div class="github-badge">
-      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">69.5k</span>
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">86.9k</span>
     </div>
 </footer>
 

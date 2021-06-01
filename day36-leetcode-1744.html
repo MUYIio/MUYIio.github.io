@@ -4,14 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="【Day14】872.叶子相似的树, 被动学习">
+    <meta name="keywords" content="【Day36】LeetCode 1744, 被动学习">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="872. 叶子相似的树请考虑一棵二叉树上所有的叶子，这些叶子的值按从左到右的顺序排列形成一个 叶值序列 。
-
-举个例子，如上图所示，给定一棵叶值序列为 (6, 7, 4, 9, 8) 的树。
-如果有两棵二叉树的叶值序列是相同，那么我们就认为">
+    <meta name="description" content="1744. 你能在你最喜欢的那天吃到你最喜欢的糖果吗？给你一个下标从 0 开始的正整数数组 candiesCount ，其中 candiesCount[i] 表示你拥有的第 i 类糖果的数目。同时给你一个二维数组 queries ，其中 q">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>【Day14】872.叶子相似的树 | Shawlon`s Blog</title>
+    <title>【Day36】LeetCode 1744 | Shawlon`s Blog</title>
     <link rel="icon" type="image/jpeg" href="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/avatars/favicon.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -618,13 +615,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/38.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/3.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        【Day14】872.叶子相似的树
+                        【Day36】LeetCode 1744
                     </div>
                 </div>
             </div>
@@ -735,8 +732,8 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/eetCode/" target="_blank">
-                            <span class="chip bg-color">;eetCode</span>
+                        <a href="/tags/LeetCode/" target="_blank">
+                            <span class="chip bg-color">LeetCode</span>
                         </a>
                         
                     </div>
@@ -759,7 +756,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-05-10
+                    2021-06-01
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -773,14 +770,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    414
+                    660
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
                 
@@ -796,36 +793,34 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="872-叶子相似的树"><a href="#872-叶子相似的树" class="headerlink" title="872. 叶子相似的树"></a><a href="https://leetcode-cn.com/problems/leaf-similar-trees/" target="_blank" rel="noopener">872. 叶子相似的树</a></h4><p>请考虑一棵二叉树上所有的叶子，这些叶子的值按从左到右的顺序排列形成一个 <em>叶值序列</em> 。</p>
-<p><img src="https://s3-lc-upload.s3.amazonaws.com/uploads/2018/07/16/tree.png" alt></p>
-<p>举个例子，如上图所示，给定一棵叶值序列为 (6, 7, 4, 9, 8) 的树。</p>
-<p>如果有两棵二叉树的叶值序列是相同，那么我们就认为它们是 叶相似 的。</p>
-<p>如果给定的两个根结点分别为 root1 和 root2 的树是叶相似的，则返回 true；否则返回 false 。</p>
+                <h4 id="1744-你能在你最喜欢的那天吃到你最喜欢的糖果吗？"><a href="#1744-你能在你最喜欢的那天吃到你最喜欢的糖果吗？" class="headerlink" title="1744. 你能在你最喜欢的那天吃到你最喜欢的糖果吗？"></a><a href="https://leetcode-cn.com/problems/can-you-eat-your-favorite-candy-on-your-favorite-day/" target="_blank" rel="noopener">1744. 你能在你最喜欢的那天吃到你最喜欢的糖果吗？</a></h4><p>给你一个下标从 <strong>0</strong> 开始的正整数数组 candiesCount ，其中 candiesCount[i] 表示你拥有的第 i 类糖果的数目。同时给你一个二维数组 queries ，其中 queries[i] = [favoriteTypei, favoriteDayi, dailyCapi] 。</p>
+<p>你按照如下规则进行一场游戏：</p>
+<ul>
+<li>你从第 0 天开始吃糖果。</li>
+<li>你在吃完 <strong>所有</strong> 第 i - 1 类糖果之前，<strong>不能</strong> 吃任何一颗第 i 类糖果。</li>
+<li>在吃完所有糖果之前，你必须每天 <strong>至少</strong> 吃 一颗 糖果。</li>
+</ul>
+<p>请你构建一个布尔型数组 answer ，满足 answer.length == queries.length 。answer[i] 为 true 的条件是：在每天吃 <strong>不超过</strong> dailyCapi 颗糖果的前提下，你可以在第 favoriteDayi 天吃到第 favoriteTypei 类糖果；否则 answer[i] 为 false 。注意，只要满足上面 3 条规则中的第二条规则，你就可以在同一天吃不同类型的糖果。</p>
+<p>请你返回得到的数组 answer 。</p>
 <p><strong>示例 1：</strong></p>
-<p><img src="https://assets.leetcode.com/uploads/2020/09/03/leaf-similar-1.jpg" alt></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：root1 = [3,5,1,6,2,9,8,null,null,7,4], root2 = [3,5,1,6,7,4,2,null,null,null,null,null,null,9,8]</span><br><span class="line">输出：true</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：candiesCount = [7,4,5,3,8], queries = [[0,2,2],[4,2,4],[2,13,1000000000]]</span><br><span class="line">输出：[true,false,true]</span><br><span class="line">提示：</span><br><span class="line">1- 在第 0 天吃 2 颗糖果(类型 0），第 1 天吃 2 颗糖果（类型 0），第 2 天你可以吃到类型 0 的糖果。</span><br><span class="line">2- 每天你最多吃 4 颗糖果。即使第 0 天吃 4 颗糖果（类型 0），第 1 天吃 4 颗糖果（类型 0 和类型 1），你也没办法在第 2 天吃到类型 4 的糖果。换言之，你没法在每天吃 4 颗糖果的限制下在第 2 天吃到第 4 类糖果。</span><br><span class="line">3- 如果你每天吃 1 颗糖果，你可以在第 13 天吃到类型 2 的糖果。</span><br></pre></td></tr></table></figure>
 
 <p><strong>示例 2：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：root1 = [1], root2 = [1]</span><br><span class="line">输出：true</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 3：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：root1 = [1], root2 = [2]</span><br><span class="line">输出：false</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 4：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：root1 = [1,2], root2 = [2,2]</span><br><span class="line">输出：true</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 5：</strong></p>
-<p><img src="https://assets.leetcode.com/uploads/2020/09/03/leaf-similar-2.jpg" alt></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：root1 = [1,2,3], root2 = [1,3,2]</span><br><span class="line">输出：false</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：candiesCount = [5,2,6,4,1], queries = [[3,1,2],[4,10,3],[3,10,100],[4,100,30],[1,3,1]]</span><br><span class="line">输出：[false,true,true,false,false]</span><br></pre></td></tr></table></figure>
 
 <p><strong>提示：</strong></p>
 <ul>
-<li>给定的两棵树可能会有 1 到 200 个结点。</li>
-<li>给定的两棵树上的值介于 0 到 200 之间。</li>
+<li>1 &lt;= candiesCount.length &lt;= 105</li>
+<li>1 &lt;= candiesCount[i] &lt;= 105</li>
+<li>1 &lt;= queries.length &lt;= 105</li>
+<li>queries[i].length == 3</li>
+<li>0 &lt;= favoriteTypei &lt; candiesCount.length</li>
+<li>0 &lt;= favoriteDayi &lt;= 109</li>
+<li>1 &lt;= dailyCapi &lt;= 109</li>
 </ul>
 <p><strong>题解：</strong></p>
-<p>将第一次的结果存储下来后，后面直接比较并返回结果。</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">leafSimilar</span><span class="params">(TreeNode* root1, TreeNode* root2)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; r1;</span><br><span class="line">        dfs1(root1, r1);</span><br><span class="line">        <span class="keyword">return</span> dfs2(root2, r1) &amp;&amp; index == r1.size();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">dfs1</span><span class="params">(TreeNode* root, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; res)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!root) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">if</span> (!root-&gt;left &amp;&amp; !root-&gt;right) &#123;</span><br><span class="line">            res.push_back(root-&gt;val);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        dfs1(root-&gt;left, res);</span><br><span class="line">        dfs1(root-&gt;right, res);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">dfs2</span><span class="params">(TreeNode* root, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; res)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!root) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span> (!root-&gt;left &amp;&amp; !root-&gt;right) &#123;</span><br><span class="line">            <span class="keyword">if</span> (index &gt;= res.size()) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">if</span> (root-&gt;val != res[index]) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            index++;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dfs2(root-&gt;left, res) &amp;&amp; dfs2(root-&gt;right, res);</span><br><span class="line">    &#125;</span><br><span class="line">   </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>使用前缀和解题：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">long</span> <span class="keyword">long</span>&gt; sum;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">check</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; candiesCount, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; q)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> favoriteType = q[<span class="number">0</span>], favoriteDay = q[<span class="number">1</span>], dailyCap = q[<span class="number">2</span>];</span><br><span class="line">        <span class="comment">// 第favoriteType类型的前缀和</span></span><br><span class="line">        <span class="keyword">int</span> l = sum[favoriteType + <span class="number">1</span>];</span><br><span class="line">        <span class="comment">// 每天吃一颗糖 </span></span><br><span class="line">        <span class="keyword">if</span> (favoriteDay + <span class="number">1</span> &gt; sum[favoriteType + <span class="number">1</span>]) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="comment">// 吃最多糖</span></span><br><span class="line">        <span class="keyword">if</span> (sum[favoriteType] &gt;= <span class="number">1l</span>l*(favoriteDay + <span class="number">1</span>) * dailyCap) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">bool</span>&gt; canEat(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; candiesCount, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; queries) &#123;</span><br><span class="line">        <span class="keyword">int</span> n = candiesCount.size();</span><br><span class="line">        sum = <span class="built_in">vector</span>&lt;<span class="keyword">long</span> <span class="keyword">long</span>&gt;(n + <span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            sum[i] = sum[i - <span class="number">1</span>] + candiesCount[i - <span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">bool</span>&gt; ans;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> q : queries)</span><br><span class="line">            ans.push_back(check(candiesCount, q));</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 
             </div>
@@ -985,9 +980,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《【Day14】872.叶子相似的树》
+                    《【Day36】LeetCode 1744》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/day14-872-xie-zi-xiang-si-de-shu.html" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/day36-leetcode-1744.html" property="cc:attributionName"
                rel="cc:attributionURL">
                 Tyzhao
             </a> 采用
@@ -1028,7 +1023,7 @@
         repo: 'muyiio.github.io',
         owner: 'MUYIio',
         admin: "MUYIio",
-        id: 'day14-872-xie-zi-xiang-si-de-shu.html',
+        id: 'day36-leetcode-1744.html',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1311,30 +1306,30 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/day15-1734-jie-ma-yi-huo-hou-de-pai-lie.html">
+                <a href="/day36-leetcode-1744.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/25.jpg" class="responsive-img" alt="【Day15】1734.解码异或后的排列">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/3.jpg" class="responsive-img" alt="【Day36】LeetCode 1744">
                         
-                        <span class="card-title">【Day15】1734.解码异或后的排列</span>
+                        <span class="card-title">【Day36】LeetCode 1744</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1734. 解码异或后的排列给你一个整数数组 perm ，它是前 n 个正整数的排列，且 n 是个 奇数 。
-它被加密成另一个长度为 n - 1 的整数数组 encoded ，满足 encoded[i] = perm[i] XOR perm
+                            1744. 你能在你最喜欢的那天吃到你最喜欢的糖果吗？给你一个下标从 0 开始的正整数数组 candiesCount ，其中 candiesCount[i] 表示你拥有的第 i 类糖果的数目。同时给你一个二维数组 queries ，其中 q
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-05-11
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-06-01
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -1347,6 +1342,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1365,26 +1361,28 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/day13-1482-zhi-zuo-m-shu-hua-suo-xu-de-zui-shao-tian-shu.html">
+                <a href="/day35-342-4-de-mi.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/27.jpg" class="responsive-img" alt="【Day13】1482.制作m束花所需的最少天数">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/34.jpg" class="responsive-img" alt="【Day35】342. 4的幂">
                         
-                        <span class="card-title">【Day13】1482.制作m束花所需的最少天数</span>
+                        <span class="card-title">【Day35】342. 4的幂</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1482. 制作 m 束花所需的最少天数给你一个整数数组 bloomDay，以及两个整数 m 和 k 。
-现需要制作 m 束花。制作花束时，需要使用花园中 相邻的 k 朵花 。
-花园中有 n 朵花，第 i 朵花会在 bloomDay[i] 
+                            342. 4的幂给定一个整数，写一个函数来判断它是否是 4 的幂次方。如果是，返回 true ；否则，返回 false 。
+整数 n 是 4 的幂次方需满足：存在整数 x 使得 n == 4x
+示例 1：
+输入：n = 16输出：true
+
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-05-09
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-05-31
                             </span>
                         <span class="publish-author">
                             

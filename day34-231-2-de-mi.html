@@ -11,8 +11,7 @@
     <meta name="description" content="231. 2 的幂给你一个整数 n，请你判断该整数是否是 2 的幂次方。如果是，返回 true ；否则，返回 false 。
 如果存在一个整数 x 使得 n == 2x ，则认为 n 是 2 的幂次方。
 示例 1：
-输入：n = 1
-输出：">
+输入：n = 1输出：t">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -619,7 +618,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/25.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/26.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -774,7 +773,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    228
+                    236
                 </div>
                 
 
@@ -800,18 +799,21 @@
                 <h4 id="231-2-的幂"><a href="#231-2-的幂" class="headerlink" title="231. 2 的幂"></a><a href="https://leetcode-cn.com/problems/power-of-two/" target="_blank" rel="noopener">231. 2 的幂</a></h4><p>给你一个整数 n，请你判断该整数是否是 2 的幂次方。如果是，返回 true ；否则，返回 false 。</p>
 <p>如果存在一个整数 x 使得 n == 2x ，则认为 n 是 2 的幂次方。</p>
 <p><strong>示例 1：</strong></p>
-<pre><code>输入：n = 1
-输出：true
-解释：20 = 1</code></pre><p><strong>示例 2：</strong></p>
-<pre><code>输入：n = 16
-输出：true
-解释：24 = 16</code></pre><p><strong>示例 3：</strong></p>
-<pre><code>输入：n = 3
-输出：false</code></pre><p><strong>示例 4：</strong></p>
-<pre><code>输入：n = 4
-输出：true</code></pre><p><strong>示例 5：</strong></p>
-<pre><code>输入：n = 5
-输出：false</code></pre><p><strong>提示：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：n = 1</span><br><span class="line">输出：true</span><br><span class="line">解释：20 = 1</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：n = 16</span><br><span class="line">输出：true</span><br><span class="line">解释：24 = 16</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 3：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：n = 3</span><br><span class="line">输出：false</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 4：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：n = 4</span><br><span class="line">输出：true</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 5：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：n = 5</span><br><span class="line">输出：false</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
 <ul>
 <li>-231 &lt;= n &lt;= 231 - 1</li>
 </ul>
@@ -824,12 +826,8 @@
 <li>n−1 二进制最高位为 00，其余所有位为 11；</li>
 </ul>
 <p>其次，我们只需要限定n &gt; 0 即可。</p>
-<pre class="line-numbers language-c++"><code class="language-c++">class Solution {
-public:
-    bool isPowerOfTwo(int n) {
-         return n > 0 && (n & (n - 1)) == 0;
-    }
-};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isPowerOfTwo</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">         <span class="keyword">return</span> n &gt; <span class="number">0</span> &amp;&amp; (n &amp; (n - <span class="number">1</span>)) == <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
 
             </div>
             <hr />
@@ -1322,7 +1320,7 @@ public:
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/33.jpg" class="responsive-img" alt="【Day35】342. 4的幂">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/34.jpg" class="responsive-img" alt="【Day35】342. 4的幂">
                         
                         <span class="card-title">【Day35】342. 4的幂</span>
                     </div>
@@ -1333,8 +1331,8 @@ public:
                             342. 4的幂给定一个整数，写一个函数来判断它是否是 4 的幂次方。如果是，返回 true ；否则，返回 false 。
 整数 n 是 4 的幂次方需满足：存在整数 x 使得 n == 4x
 示例 1：
-输入：n = 16
-输出：true
+输入：n = 16输出：true
+
                         
                     </div>
                     <div class="publish-info">
@@ -1375,7 +1373,7 @@ public:
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/1.jpg" class="responsive-img" alt="【Day33】1074.元素和为目标值的子矩阵数量">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/0.jpg" class="responsive-img" alt="【Day33】1074.元素和为目标值的子矩阵数量">
                         
                         <span class="card-title">【Day33】1074.元素和为目标值的子矩阵数量</span>
                     </div>
@@ -1586,7 +1584,7 @@ public:
            <!--<a href="/sitemap.xml" target="_blank">站点地图</a>丨-->
            
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">69.5k
+            <span class="white-color">86.9k
              丨            
             <a href="https://tongji.baidu.com/web/welcome/ico?s=df42dpc7224a5f6a8d435" target="_blank">百度统计</a>丨
            <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278720284'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1278720284%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
@@ -1677,7 +1675,7 @@ public:
       <span class="badge-subject">Link</span><span class="badge-value bg-red">996.ICU</span></a>
     </div>
     <div class="github-badge">
-      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">69.5k</span>
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">86.9k</span>
     </div>
 </footer>
 

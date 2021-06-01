@@ -619,7 +619,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/42.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/43.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -774,7 +774,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    361
+                    380
                 </div>
                 
 
@@ -801,14 +801,18 @@
 <p>请你按照从括号内到外的顺序，逐层反转每对匹配括号中的字符串，并返回最终的结果。</p>
 <p><strong>注意，您的结果中 不应 包含任何括号。</strong></p>
 <p><strong>示例 1：</strong></p>
-<pre><code>输入：s = &quot;(abcd)&quot;
-输出：&quot;dcba&quot;</code></pre><p><strong>示例 2：</strong></p>
-<pre><code>输入：s = &quot;(u(love)i)&quot;
-输出：&quot;iloveu&quot;</code></pre><p><strong>示例 3：</strong></p>
-<pre><code>输入：s = &quot;(ed(et(oc))el)&quot;
-输出：&quot;leetcode&quot;</code></pre><p><strong>示例 4：</strong></p>
-<pre><code>输入：s = &quot;a(bcdefghijkl(mno)p)q&quot;
-输出：&quot;apmnolkjihgfedcbq&quot;</code></pre><p><strong>提示：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：s = &quot;(abcd)&quot;</span><br><span class="line">输出：&quot;dcba&quot;</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：s = &quot;(u(love)i)&quot;</span><br><span class="line">输出：&quot;iloveu&quot;</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 3：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：s = &quot;(ed(et(oc))el)&quot;</span><br><span class="line">输出：&quot;leetcode&quot;</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 4：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：s = &quot;a(bcdefghijkl(mno)p)q&quot;</span><br><span class="line">输出：&quot;apmnolkjihgfedcbq&quot;</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
 <ul>
 <li>0 &lt;= s.length &lt;= 2000</li>
 <li>s 中只有小写英文字母和括号</li>
@@ -819,33 +823,8 @@
 <p>挨个遍历， 左括号和普通字符直接入栈；遇到右括号 ，就依次出栈直到栈顶为左括号 ，出栈的这些字符按出栈顺序链接自然也就是逆序的，然后栈顶左括号出栈 把组合成的逆序串重新压入栈。</p>
 <p>遍历完字符串 栈中从栈底到栈顶 自然也就想要的结果，如果依次出栈 要注意连接顺序，还需要一次整体反转。</p>
 <p><strong>代码：</strong></p>
-<pre class="line-numbers language-c++"><code class="language-c++">class Solution {
-public:
-    string reverseParentheses(string s) {
-        stack<char> st;
-        for (auto c : s) {
-            if (c != ')') {
-                st.push(c);
-            } else {
-                string tmp;
-                while (st.top() != '(') {
-                    tmp += st.top();
-                    st.pop();
-                }
-                st.pop();
-                for (auto s : tmp) {
-                    st.push(s);
-                }
-            }
-        }
-        string ans;
-        while (!st.empty()) {
-            ans = st.top() + ans; st.pop();
-        }
-        return ans;
-    }
-};
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">reverseParentheses</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">stack</span>&lt;<span class="keyword">char</span>&gt; st;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> c : s) &#123;</span><br><span class="line">            <span class="keyword">if</span> (c != <span class="string">')'</span>) &#123;</span><br><span class="line">                st.push(c);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="built_in">string</span> tmp;</span><br><span class="line">                <span class="keyword">while</span> (st.top() != <span class="string">'('</span>) &#123;</span><br><span class="line">                    tmp += st.top();</span><br><span class="line">                    st.pop();</span><br><span class="line">                &#125;</span><br><span class="line">                st.pop();</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">auto</span> s : tmp) &#123;</span><br><span class="line">                    st.push(s);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">string</span> ans;</span><br><span class="line">        <span class="keyword">while</span> (!st.empty()) &#123;</span><br><span class="line">            ans = st.top() + ans; st.pop();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
 
             </div>
             <hr />
@@ -1338,7 +1317,7 @@ public:
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/10.jpg" class="responsive-img" alt="【Day31】461.汉明距离">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/9.jpg" class="responsive-img" alt="【Day31】461.汉明距离">
                         
                         <span class="card-title">【Day31】461.汉明距离</span>
                     </div>
@@ -1353,9 +1332,7 @@ public:
 0 ≤ x, y &lt; 231.
 
 示例:
-输入: x = 1, y = 4
-
-输出:
+输入: x = 1, y = 4输出: 2
                         
                     </div>
                     <div class="publish-info">
@@ -1396,7 +1373,7 @@ public:
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/41.jpg" class="responsive-img" alt="【Day29】1787.使所有区间的异或结果为零">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/40.jpg" class="responsive-img" alt="【Day29】1787.使所有区间的异或结果为零">
                         
                         <span class="card-title">【Day29】1787.使所有区间的异或结果为零</span>
                     </div>
@@ -1606,7 +1583,7 @@ public:
            <!--<a href="/sitemap.xml" target="_blank">站点地图</a>丨-->
            
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">69.5k
+            <span class="white-color">86.9k
              丨            
             <a href="https://tongji.baidu.com/web/welcome/ico?s=df42dpc7224a5f6a8d435" target="_blank">百度统计</a>丨
            <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278720284'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1278720284%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
@@ -1697,7 +1674,7 @@ public:
       <span class="badge-subject">Link</span><span class="badge-value bg-red">996.ICU</span></a>
     </div>
     <div class="github-badge">
-      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">69.5k</span>
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">86.9k</span>
     </div>
 </footer>
 

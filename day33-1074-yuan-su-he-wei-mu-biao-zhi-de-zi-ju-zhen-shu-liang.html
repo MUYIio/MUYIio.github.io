@@ -616,7 +616,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/0.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -771,7 +771,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    399
+                    510
                 </div>
                 
 
@@ -799,14 +799,15 @@
 <p>如果 (x1, y1, x2, y2) 和 (x1’, y1’, x2’, y2’) 两个子矩阵中部分坐标不同（如：x1 != x1’），那么这两个子矩阵也不同。</p>
 <p><strong>示例 1：</strong></p>
 <p><img src="https://assets.leetcode.com/uploads/2020/09/02/mate1.jpg" alt></p>
-<pre><code>输入：matrix = [[0,1,0],[1,1,1],[0,1,0]], target = 0
-输出：4
-解释：四个只含 0 的 1x1 子矩阵。</code></pre><p><strong>示例 2：</strong></p>
-<pre><code>输入：matrix = [[1,-1],[-1,1]], target = 0
-输出：5
-解释：两个 1x2 子矩阵，加上两个 2x1 子矩阵，再加上一个 2x2 子矩阵。</code></pre><p><strong>示例 3：</strong></p>
-<pre><code>输入：matrix = [[904]], target = 0
-输出：0</code></pre><p><strong>提示：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：matrix = [[0,1,0],[1,1,1],[0,1,0]], target = 0</span><br><span class="line">输出：4</span><br><span class="line">解释：四个只含 0 的 1x1 子矩阵。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：matrix = [[1,-1],[-1,1]], target = 0</span><br><span class="line">输出：5</span><br><span class="line">解释：两个 1x2 子矩阵，加上两个 2x1 子矩阵，再加上一个 2x2 子矩阵。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 3：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：matrix = [[904]], target = 0</span><br><span class="line">输出：0</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
 <ul>
 <li>1 &lt;= matrix.length &lt;= 100</li>
 <li>1 &lt;= matrix[0].length &lt;= 100</li>
@@ -815,82 +816,8 @@
 </ul>
 <p><strong>题解：</strong></p>
 <p>二维前缀和的题目，使用哈希表来优化</p>
-<pre class="line-numbers language-c++"><code class="language-c++">#define HT_LENGTH 256
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> HT_LENGTH 256</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">HashTable</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> keys[HT_LENGTH];</span><br><span class="line">    <span class="keyword">int</span> vals[HT_LENGTH];</span><br><span class="line">    </span><br><span class="line">    HashTable() &#123;</span><br><span class="line">        <span class="keyword">this</span>-&gt;clear();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">clear</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        keys[<span class="number">0</span>] = <span class="number">0</span>; vals[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>;i &lt; HT_LENGTH;i++) keys[i] = <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> key, <span class="keyword">int</span>&amp; ret)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">uint32_t</span> ikey = (<span class="keyword">uint32_t</span>)key % HT_LENGTH;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; HT_LENGTH;i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (keys[ikey] == <span class="number">-1</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">if</span> (keys[ikey] == key) &#123;</span><br><span class="line">                ret = vals[ikey];</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            ikey ++;</span><br><span class="line">            ikey = ikey == HT_LENGTH ? <span class="number">0</span> : ikey;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">inc</span><span class="params">(<span class="keyword">int</span> key)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">uint32_t</span> ikey = (<span class="keyword">uint32_t</span>)key % HT_LENGTH;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; HT_LENGTH;i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (keys[ikey] == <span class="number">-1</span>) &#123;</span><br><span class="line">                keys[ikey] = key;</span><br><span class="line">                vals[ikey] = <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (keys[ikey] == key) &#123;</span><br><span class="line">                vals[ikey]++;</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            ikey ++;</span><br><span class="line">            ikey = ikey == HT_LENGTH ? <span class="number">0</span> : ikey;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    HashTable ht;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">numSubmatrixSumTarget</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; matrix, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> rprefix[<span class="number">100</span>][<span class="number">101</span>];</span><br><span class="line">        <span class="keyword">int</span> m = matrix.size(), n = matrix[<span class="number">0</span>].size();</span><br><span class="line">        <span class="keyword">int</span> ret = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; m;i++) &#123;</span><br><span class="line">            rprefix[i][<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>;j &lt;= n;j ++) &#123;</span><br><span class="line">                rprefix[i][j] = rprefix[i][j - <span class="number">1</span>] + matrix[i][j - <span class="number">1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n;i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i;j &lt;= n;j++) &#123;</span><br><span class="line">                ht.clear();</span><br><span class="line">                <span class="keyword">int</span> cprefix = <span class="number">0</span>, val;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> row = <span class="number">0</span>;row &lt; m;row++) &#123;</span><br><span class="line">                    cprefix += rprefix[row][j] - rprefix[row][i - <span class="number">1</span>];</span><br><span class="line">                    <span class="keyword">if</span> (ht.find(cprefix - target, val)) ret += val;</span><br><span class="line">                    ht.inc(cprefix);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-struct HashTable {
-    int keys[HT_LENGTH];
-    int vals[HT_LENGTH];
-
-    HashTable() {
-        this->clear();
-    }
-
-    void clear() {
-        keys[0] = 0; vals[0] = 1;
-        for (int i = 1;i < HT_LENGTH;i++) keys[i] = -1;
-    }
-
-    bool find(int key, int& ret) {
-        uint32_t ikey = (uint32_t)key % HT_LENGTH;
-        for (int i = 0;i < HT_LENGTH;i++) {
-            if (keys[ikey] == -1) return false;
-            if (keys[ikey] == key) {
-                ret = vals[ikey];
-                return true;
-            }
-            ikey ++;
-            ikey = ikey == HT_LENGTH ? 0 : ikey;
-        }
-        return false;
-    }
-
-    void inc(int key) {
-        uint32_t ikey = (uint32_t)key % HT_LENGTH;
-        for (int i = 0;i < HT_LENGTH;i++) {
-            if (keys[ikey] == -1) {
-                keys[ikey] = key;
-                vals[ikey] = 1;
-                return;
-            }
-            if (keys[ikey] == key) {
-                vals[ikey]++;
-                return;
-            }
-            ikey ++;
-            ikey = ikey == HT_LENGTH ? 0 : ikey;
-        }
-    }
-};
-
-class Solution {
-private:
-    HashTable ht;
-public:
-    int numSubmatrixSumTarget(vector<vector<int>>& matrix, int target) {
-        int rprefix[100][101];
-        int m = matrix.size(), n = matrix[0].size();
-        int ret = 0;
-        for (int i = 0;i < m;i++) {
-            rprefix[i][0] = 0;
-            for (int j = 1;j <= n;j ++) {
-                rprefix[i][j] = rprefix[i][j - 1] + matrix[i][j - 1];
-            }
-        }
-
-        for (int i = 1;i <= n;i++) {
-            for (int j = i;j <= n;j++) {
-                ht.clear();
-                int cprefix = 0, val;
-                for (int row = 0;row < m;row++) {
-                    cprefix += rprefix[row][j] - rprefix[row][i - 1];
-                    if (ht.find(cprefix - target, val)) ret += val;
-                    ht.inc(cprefix);
-                }
-            }
-        }
-        return ret;
-    }
-};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -1383,7 +1310,7 @@ public:
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/25.jpg" class="responsive-img" alt="【Day34】231. 2 的幂">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/26.jpg" class="responsive-img" alt="【Day34】231. 2 的幂">
                         
                         <span class="card-title">【Day34】231. 2 的幂</span>
                     </div>
@@ -1394,8 +1321,7 @@ public:
                             231. 2 的幂给你一个整数 n，请你判断该整数是否是 2 的幂次方。如果是，返回 true ；否则，返回 false 。
 如果存在一个整数 x 使得 n == 2x ，则认为 n 是 2 的幂次方。
 示例 1：
-输入：n = 1
-输出：
+输入：n = 1输出：t
                         
                     </div>
                     <div class="publish-info">
@@ -1436,7 +1362,7 @@ public:
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/1.jpg" class="responsive-img" alt="【Day32】477.汉明距离总和">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/2.jpg" class="responsive-img" alt="【Day32】477.汉明距离总和">
                         
                         <span class="card-title">【Day32】477.汉明距离总和</span>
                     </div>
@@ -1447,11 +1373,7 @@ public:
                             477. 汉明距离总和两个整数的 汉明距离 指的是这两个数字的二进制数对应位不同的数量。
 计算一个数组中，任意两个数之间汉明距离的总和。
 示例:
-输入: 4, 14, 2
-
-输出: 6
-
-解释: 在二进制表示中，4表示为0100，14表示为
+输入: 4, 14, 2输出: 6解释: 在二进制表示中，4表示为0100，14表示为1110
                         
                     </div>
                     <div class="publish-info">
@@ -1653,7 +1575,7 @@ public:
            <!--<a href="/sitemap.xml" target="_blank">站点地图</a>丨-->
            
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">69.5k
+            <span class="white-color">86.9k
              丨            
             <a href="https://tongji.baidu.com/web/welcome/ico?s=df42dpc7224a5f6a8d435" target="_blank">百度统计</a>丨
            <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278720284'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1278720284%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
@@ -1744,7 +1666,7 @@ public:
       <span class="badge-subject">Link</span><span class="badge-value bg-red">996.ICU</span></a>
     </div>
     <div class="github-badge">
-      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">69.5k</span>
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">86.9k</span>
     </div>
 </footer>
 
