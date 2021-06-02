@@ -771,7 +771,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    328
+                    313
                 </div>
                 
 
@@ -799,12 +799,11 @@
 <p>给你编码后的数组 encoded 和原数组 arr 的第一个元素 first（arr[0]）。</p>
 <p>请解码返回原数组 arr 。可以证明答案存在并且是唯一的。</p>
 <p><strong>示例 1：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：encoded = [1,2,3], first = 1</span><br><span class="line">输出：[1,0,2,1]</span><br><span class="line">解释：若 arr = [1,0,2,1] ，那么 first = 1 且 encoded = [1 XOR 0, 0 XOR 2, 2 XOR 1] = [1,2,3]</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：encoded = [6,2,7,3], first = 4</span><br><span class="line">输出：[4,2,0,7,4]</span><br></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
+<pre><code>输入：encoded = [1,2,3], first = 1
+输出：[1,0,2,1]
+解释：若 arr = [1,0,2,1] ，那么 first = 1 且 encoded = [1 XOR 0, 0 XOR 2, 2 XOR 1] = [1,2,3]</code></pre><p><strong>示例 2：</strong></p>
+<pre><code>输入：encoded = [6,2,7,3], first = 4
+输出：[4,2,0,7,4]</code></pre><p><strong>提示：</strong></p>
 <ul>
 <li>2 &lt;= n &lt;= 104</li>
 <li>encoded.length == n - 1</li>
@@ -816,8 +815,18 @@
 <p>任意整数和自身做异或运算的结果都等于 0，即 x⊕x=0；</p>
 <p>任意整数和 0 做异或运算的结果都等于其自身，即 x⊕0=0⊕x=x。</p>
 <p>在等号两边同时异或 arr[i]</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; decode(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; encoded, <span class="keyword">int</span> first) &#123;</span><br><span class="line">        <span class="keyword">int</span> n = encoded.size();</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; arr(n + <span class="number">1</span>);</span><br><span class="line">        arr[<span class="number">0</span>] = first;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++)</span><br><span class="line">            arr[i + <span class="number">1</span>] = arr[i] ^ encoded[i];</span><br><span class="line">        <span class="keyword">return</span> arr;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-c++"><code class="language-c++">class Solution {
+public:
+    vector<int> decode(vector<int>& encoded, int first) {
+        int n = encoded.size();
+        vector<int> arr(n + 1);
+        arr[0] = first;
+        for (int i = 0; i < n; i ++)
+            arr[i + 1] = arr[i] ^ encoded[i];
+        return arr;
+    }
+};
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -1572,7 +1581,7 @@
            <!--<a href="/sitemap.xml" target="_blank">站点地图</a>丨-->
            
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">87.2k
+            <span class="white-color">70.4k
              丨            
             <a href="https://tongji.baidu.com/web/welcome/ico?s=df42dpc7224a5f6a8d435" target="_blank">百度统计</a>丨
            <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278720284'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1278720284%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
@@ -1663,7 +1672,7 @@
       <span class="badge-subject">Link</span><span class="badge-value bg-red">996.ICU</span></a>
     </div>
     <div class="github-badge">
-      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">87.2k</span>
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">70.4k</span>
     </div>
 </footer>
 

@@ -771,7 +771,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    682
+                    652
                 </div>
                 
 
@@ -798,12 +798,17 @@
 <p>每次操作中，选择任意一个 nums[i] ，删除它并获得 nums[i] 的点数。之后，你必须删除每个等于 nums[i] - 1 或 nums[i] + 1 的元素。</p>
 <p>开始你拥有 0 个点数。返回你能通过这些操作获得的最大点数。</p>
 <p><strong>示例 1：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：nums = [3,4,2]</span><br><span class="line">输出：6</span><br><span class="line">解释：</span><br><span class="line">删除 4 获得 4 个点数，因此 3 也被删除。</span><br><span class="line">之后，删除 2 获得 2 个点数。总共获得 6 个点数。</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：nums = [2,2,3,3,3,4]</span><br><span class="line">输出：9</span><br><span class="line">解释：</span><br><span class="line">删除 3 获得 3 个点数，接着要删除两个 2 和 4 。</span><br><span class="line">之后，再次删除 3 获得 3 个点数，再次删除 3 获得 3 个点数。</span><br><span class="line">总共获得 9 个点数。</span><br></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
+<pre><code>输入：nums = [3,4,2]
+输出：6
+解释：
+删除 4 获得 4 个点数，因此 3 也被删除。
+之后，删除 2 获得 2 个点数。总共获得 6 个点数。</code></pre><p><strong>示例 2：</strong></p>
+<pre><code>输入：nums = [2,2,3,3,3,4]
+输出：9
+解释：
+删除 3 获得 3 个点数，接着要删除两个 2 和 4 。
+之后，再次删除 3 获得 3 个点数，再次删除 3 获得 3 个点数。
+总共获得 9 个点数。</code></pre><p><strong>提示：</strong></p>
 <ul>
 <li>1 &lt;= nums.length &lt;= 2 * 104</li>
 <li>1 &lt;= nums[i] &lt;= 104</li>
@@ -814,17 +819,29 @@
 <p>如果你看到现在有点迷糊，那么我们先把数字进行整理一下。</p>
 <p>我们在原来的 nums 的基础上构造一个临时的数组 all，这个数组，以元素的值来做下标，下标对应的元素是原来的元素的个数。</p>
 <p>举个例子：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nums = [2, 2, 3, 3, 3, 4]</span><br></pre></td></tr></table></figure>
-
-<p>构造后：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">all=[0, 0, 2, 3, 1];</span><br></pre></td></tr></table></figure>
-
-<p>就是代表着 22 的个数有两个，33 的个数有 33 个，44 的个数有 11 个。</p>
+<pre><code>nums = [2, 2, 3, 3, 3, 4]</code></pre><p>构造后：</p>
+<pre><code>all=[0, 0, 2, 3, 1];</code></pre><p>就是代表着 22 的个数有两个，33 的个数有 33 个，44 的个数有 11 个。</p>
 <p>其实这样就可以变成打家劫舍的问题了呗。</p>
 <p>我们来看看，打家劫舍的最优子结构的公式：</p>
 <p>$$<br>\mathrm{dp}[\mathrm{i}]=\text { Math.max }(\mathrm{d} \mathrm{p}[\mathrm{i}-1], \mathrm{dp}[\mathrm{i}-2]+\mathrm{nums}[\mathrm{i}])<br>$$<br>再来看看现在对这个问题的最优子结构公式：</p>
 <p>$$<br>\mathrm{dp}[\mathrm{i}]=\text { Math.max }\left(\mathrm{dp}[\mathrm{i}-1], \mathrm{dp}[\mathrm{i}-2]+\mathrm{i}^{\star} \mathrm{all}[\mathrm{i}]\right)<br>$$</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">deleteAndEarn</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(nums.size() &lt; <span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> maxn = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> it : nums)</span><br><span class="line">            maxn = max(maxn, it);</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; cnt(maxn+<span class="number">1</span>), dp(maxn+<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> it : nums)</span><br><span class="line">            cnt[it]++;</span><br><span class="line">        dp[<span class="number">1</span>] = cnt[<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= maxn; i++)</span><br><span class="line">            dp[i] = max(dp[i<span class="number">-1</span>], dp[i<span class="number">-2</span>] + cnt[i] * i);</span><br><span class="line">        <span class="keyword">return</span> dp[maxn];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++"><code class="language-c++">class Solution {
+public:
+    int deleteAndEarn(vector<int>& nums) {
+        if(nums.size() < 1) return 0;
+        int maxn = 0;
+        for(int it : nums)
+            maxn = max(maxn, it);
+        vector<int> cnt(maxn+1), dp(maxn+1);
+        for(int it : nums)
+            cnt[it]++;
+        dp[1] = cnt[1];
+        for(int i = 2; i <= maxn; i++)
+            dp[i] = max(dp[i-1], dp[i-2] + cnt[i] * i);
+        return dp[maxn];
+    }
+};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
             </div>
             <hr />
 
@@ -1577,7 +1594,7 @@
            <!--<a href="/sitemap.xml" target="_blank">站点地图</a>丨-->
            
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">87.2k
+            <span class="white-color">70.4k
              丨            
             <a href="https://tongji.baidu.com/web/welcome/ico?s=df42dpc7224a5f6a8d435" target="_blank">百度统计</a>丨
            <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278720284'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1278720284%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
@@ -1668,7 +1685,7 @@
       <span class="badge-subject">Link</span><span class="badge-value bg-red">996.ICU</span></a>
     </div>
     <div class="github-badge">
-      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">87.2k</span>
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">70.4k</span>
     </div>
 </footer>
 

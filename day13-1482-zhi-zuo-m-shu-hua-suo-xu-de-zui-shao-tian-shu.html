@@ -772,14 +772,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    743
+                    668
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    2 分
                 </div>
                 
                 
@@ -800,21 +800,29 @@
 <p>花园中有 n 朵花，第 i 朵花会在 bloomDay[i] 时盛开，恰好 可以用于 一束 花中。</p>
 <p>请你返回从花园中摘 m 束花需要等待的最少的天数。如果不能摘到 m 束花则返回 -1 。</p>
 <p><strong>示例 1：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：bloomDay = [1,10,3,10,2], m = 3, k = 1</span><br><span class="line">输出：3</span><br><span class="line">解释：让我们一起观察这三天的花开过程，x 表示花开，而 _ 表示花还未开。</span><br><span class="line">现在需要制作 3 束花，每束只需要 1 朵。</span><br><span class="line">1 天后：[x, _, _, _, _]   // 只能制作 1 束花</span><br><span class="line">2 天后：[x, _, _, _, x]   // 只能制作 2 束花</span><br><span class="line">3 天后：[x, _, x, _, x]   // 可以制作 3 束花，答案为 3</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：bloomDay = [1,10,3,10,2], m = 3, k = 2</span><br><span class="line">输出：-1</span><br><span class="line">解释：要制作 3 束花，每束需要 2 朵花，也就是一共需要 6 朵花。而花园中只有 5 朵花，无法满足制作要求，返回 -1 。</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 3：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：bloomDay = [7,7,7,7,12,7,7], m = 2, k = 3</span><br><span class="line">输出：12</span><br><span class="line">解释：要制作 2 束花，每束需要 3 朵。</span><br><span class="line">花园在 7 天后和 12 天后的情况如下：</span><br><span class="line">7 天后：[x, x, x, x, _, x, x]</span><br><span class="line">可以用前 3 朵盛开的花制作第一束花。但不能使用后 3 朵盛开的花，因为它们不相邻。</span><br><span class="line">12 天后：[x, x, x, x, x, x, x]</span><br><span class="line">显然，我们可以用不同的方式制作两束花。</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 4：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：bloomDay = [1000000000,1000000000], m = 1, k = 1</span><br><span class="line">输出：1000000000</span><br><span class="line">解释：需要等 1000000000 天才能采到花来制作花束</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 5：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：bloomDay = [1,10,2,9,3,8,4,7,5,6], m = 4, k = 2</span><br><span class="line">输出：9</span><br></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
+<pre><code>输入：bloomDay = [1,10,3,10,2], m = 3, k = 1
+输出：3
+解释：让我们一起观察这三天的花开过程，x 表示花开，而 _ 表示花还未开。
+现在需要制作 3 束花，每束只需要 1 朵。
+1 天后：[x, _, _, _, _]   // 只能制作 1 束花
+2 天后：[x, _, _, _, x]   // 只能制作 2 束花
+3 天后：[x, _, x, _, x]   // 可以制作 3 束花，答案为 3</code></pre><p><strong>示例 2：</strong></p>
+<pre><code>输入：bloomDay = [1,10,3,10,2], m = 3, k = 2
+输出：-1
+解释：要制作 3 束花，每束需要 2 朵花，也就是一共需要 6 朵花。而花园中只有 5 朵花，无法满足制作要求，返回 -1 。</code></pre><p><strong>示例 3：</strong></p>
+<pre><code>输入：bloomDay = [7,7,7,7,12,7,7], m = 2, k = 3
+输出：12
+解释：要制作 2 束花，每束需要 3 朵。
+花园在 7 天后和 12 天后的情况如下：
+7 天后：[x, x, x, x, _, x, x]
+可以用前 3 朵盛开的花制作第一束花。但不能使用后 3 朵盛开的花，因为它们不相邻。
+12 天后：[x, x, x, x, x, x, x]
+显然，我们可以用不同的方式制作两束花。</code></pre><p><strong>示例 4：</strong></p>
+<pre><code>输入：bloomDay = [1000000000,1000000000], m = 1, k = 1
+输出：1000000000
+解释：需要等 1000000000 天才能采到花来制作花束</code></pre><p><strong>示例 5：</strong></p>
+<pre><code>输入：bloomDay = [1,10,2,9,3,8,4,7,5,6], m = 4, k = 2
+输出：9</code></pre><p><strong>提示：</strong></p>
 <ul>
 <li>bloomDay.length == n</li>
 <li>1 &lt;= n &lt;= 10^5</li>
@@ -829,8 +837,44 @@
 <li>[x,maxDay]可以制作出m束</li>
 </ul>
 <p>求出给定花开数组中最大值，进行二分计算即可。</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minDays</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; bloomDay, <span class="keyword">int</span> m, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = bloomDay.size();</span><br><span class="line">        <span class="keyword">if</span> (m * k  &gt; n) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">int</span> l = <span class="number">0</span>, r = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> x : bloomDay) &#123;</span><br><span class="line">            r = max(r, x);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(l &lt; r) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (check(bloomDay, mid, m, k)) &#123;</span><br><span class="line">                r = mid;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                l = mid + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> l;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">check</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; bloomDay, <span class="keyword">int</span> mid, <span class="keyword">int</span> m, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">// 计算是否满足m束花且每一束都有相邻的k个</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; bloomDay.size() &amp;&amp; sum &lt; m; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> cur_sum = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span> (bloomDay[i] &lt;= mid) &#123; <span class="comment">// 可以开</span></span><br><span class="line">                cur_sum++;</span><br><span class="line">                <span class="keyword">int</span> j = i + <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">while</span> (j &lt; bloomDay.size() &amp;&amp; bloomDay[j] &lt;= mid &amp;&amp; cur_sum &lt; k) &#123;</span><br><span class="line">                    j++;</span><br><span class="line">                    cur_sum++;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (cur_sum == k) sum++;</span><br><span class="line">                i = j - <span class="number">1</span>;</span><br><span class="line">            &#125; </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sum &gt;= m;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-c++"><code class="language-c++">class Solution {
+public:
+    int minDays(vector<int>& bloomDay, int m, int k) {
+        int n = bloomDay.size();
+        if (m * k  > n) return -1;
+        int l = 0, r = 0;
+        for (auto x : bloomDay) {
+            r = max(r, x);
+        }
+        while(l < r) {
+            int mid = l + r >> 1;
+            if (check(bloomDay, mid, m, k)) {
+                r = mid;
+            } else {
+                l = mid + 1;
+            }
+        }
+        return l;
+    }
+    bool check(vector<int>& bloomDay, int mid, int m, int k) {
+        int sum = 0;
+        // 计算是否满足m束花且每一束都有相邻的k个
+        for (int i = 0; i < bloomDay.size() && sum < m; i++) {
+            int cur_sum = 0;
+            if (bloomDay[i] <= mid) { // 可以开
+                cur_sum++;
+                int j = i + 1;
+                while (j < bloomDay.size() && bloomDay[j] <= mid && cur_sum < k) {
+                    j++;
+                    cur_sum++;
+                }
+                if (cur_sum == k) sum++;
+                i = j - 1;
+            } 
+        }
+        return sum >= m;
+    }
+};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -1603,7 +1647,7 @@ or
            <!--<a href="/sitemap.xml" target="_blank">站点地图</a>丨-->
            
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">87.2k
+            <span class="white-color">70.4k
              丨            
             <a href="https://tongji.baidu.com/web/welcome/ico?s=df42dpc7224a5f6a8d435" target="_blank">百度统计</a>丨
            <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278720284'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1278720284%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
@@ -1694,7 +1738,7 @@ or
       <span class="badge-subject">Link</span><span class="badge-value bg-red">996.ICU</span></a>
     </div>
     <div class="github-badge">
-      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">87.2k</span>
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">70.4k</span>
     </div>
 </footer>
 

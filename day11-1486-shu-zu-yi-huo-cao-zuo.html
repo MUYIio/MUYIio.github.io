@@ -772,7 +772,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    202
+                    195
                 </div>
                 
 
@@ -799,26 +799,35 @@
 <p>数组 nums 定义为：nums[i] = start + 2*i（下标从 0 开始）且 n == nums.length 。</p>
 <p>请返回 nums 中所有元素按位异或（XOR）后得到的结果。</p>
 <p><strong>示例 1：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：n = 5, start = 0</span><br><span class="line">输出：8</span><br><span class="line">解释：数组 nums 为 [0, 2, 4, 6, 8]，其中 (0 ^ 2 ^ 4 ^ 6 ^ 8) = 8 。</span><br><span class="line">     &quot;^&quot; 为按位异或 XOR 运算符。</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：n = 4, start = 3</span><br><span class="line">输出：8</span><br><span class="line">解释：数组 nums 为 [3, 5, 7, 9]，其中 (3 ^ 5 ^ 7 ^ 9) = 8.</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 3：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：n = 1, start = 7</span><br><span class="line">输出：7</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 4：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：n = 10, start = 5</span><br><span class="line">输出：2</span><br></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
+<pre><code>输入：n = 5, start = 0
+输出：8
+解释：数组 nums 为 [0, 2, 4, 6, 8]，其中 (0 ^ 2 ^ 4 ^ 6 ^ 8) = 8 。
+     &quot;^&quot; 为按位异或 XOR 运算符。</code></pre><p><strong>示例 2：</strong></p>
+<pre><code>输入：n = 4, start = 3
+输出：8
+解释：数组 nums 为 [3, 5, 7, 9]，其中 (3 ^ 5 ^ 7 ^ 9) = 8.</code></pre><p><strong>示例 3：</strong></p>
+<pre><code>输入：n = 1, start = 7
+输出：7</code></pre><p><strong>示例 4：</strong></p>
+<pre><code>输入：n = 10, start = 5
+输出：2</code></pre><p><strong>提示：</strong></p>
 <ul>
 <li>1 &lt;= n &lt;= 1000</li>
 <li>0 &lt;= start &lt;= 1000</li>
 <li>n == nums.length</li>
 </ul>
 <p><strong>题解：</strong></p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">xorOperation</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> start)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">    	<span class="keyword">int</span> result = start, i;</span><br><span class="line">    	<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt; n; i++)</span><br><span class="line">    	&#123;</span><br><span class="line">        	result = result ^ (start + i * <span class="number">2</span>);</span><br><span class="line">    	&#125;</span><br><span class="line">    	<span class="keyword">return</span> result;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-c++"><code class="language-c++">class Solution {
+public:
+    int xorOperation(int n, int start)
+    {
+        int result = start, i;
+        for (i = 1; i < n; i++)
+        {
+            result = result ^ (start + i * 2);
+        }
+        return result;
+    }
+};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -1572,7 +1581,7 @@
            <!--<a href="/sitemap.xml" target="_blank">站点地图</a>丨-->
            
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">87.2k
+            <span class="white-color">70.4k
              丨            
             <a href="https://tongji.baidu.com/web/welcome/ico?s=df42dpc7224a5f6a8d435" target="_blank">百度统计</a>丨
            <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278720284'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1278720284%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
@@ -1663,7 +1672,7 @@
       <span class="badge-subject">Link</span><span class="badge-value bg-red">996.ICU</span></a>
     </div>
     <div class="github-badge">
-      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">87.2k</span>
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">70.4k</span>
     </div>
 </footer>
 

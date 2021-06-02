@@ -779,14 +779,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.2k
+                    1.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    9 分
+                    8 分
                 </div>
                 
                 
@@ -809,18 +809,168 @@
 <p>2</p>
 <h3 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h3><h4 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h4><p>最简单的就是记录每个数字出现的次数，暴力解题。但是时间复杂度为O(n²)。</p>
 <p>c语言代码：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="keyword">int</span> a[<span class="number">101</span>];</span><br><span class="line">	<span class="keyword">int</span> count, max=<span class="number">0</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"数据个数:\n"</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">	<span class="keyword">int</span> i, j, k = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= n; ++i)           <span class="comment">//循环存入数据</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= n; ++i)           <span class="comment">//遍历每一个数据</span></span><br><span class="line">	&#123;</span><br><span class="line">		count = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (j = <span class="number">1</span>; j &lt;= n; ++j)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (a[i] == a[j] &amp;&amp; i != j)       <span class="comment">//遇到相同的数据，计数器加1</span></span><br><span class="line">			&#123;</span><br><span class="line">				count++;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (count &gt; max)                <span class="comment">//寻找有相同数据最多的数</span></span><br><span class="line">		&#123;</span><br><span class="line">			max = count;</span><br><span class="line">			k = a[i];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,k);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++"><code class="language-c++">#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
+int main(void)
+{
+    int n;
+    int a[101];
+    int count, max=0;
+    printf("数据个数:\n");
+    scanf("%d", &n);
+    int i, j, k = 0;
+    for (i = 1; i <= n; ++i)           //循环存入数据
+    {
+        scanf("%d", &a[i]);
+    }
+    for (i = 1; i <= n; ++i)           //遍历每一个数据
+    {
+        count = 0;
+        for (j = 1; j <= n; ++j)
+        {
+            if (a[i] == a[j] && i != j)       //遇到相同的数据，计数器加1
+            {
+                count++;
+            }
+        }
+        if (count > max)                //寻找有相同数据最多的数
+        {
+            max = count;
+            k = a[i];
+        }
+    }
+    printf("%d\n",k);
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="方法二"><a href="#方法二" class="headerlink" title="方法二:"></a>方法二:</h4><p>对所有的数进行递增排序，如果有一个数出现的次数超过50%，那么它一定位于n/2这个位置。时间复杂度为O(nlogn)。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*对于堆，作向下调整，对内部变量h[101]作调整*/</span></span><br><span class="line"><span class="function"><span class="keyword">int</span>* <span class="title">siftdown2</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> num, <span class="keyword">int</span> h[<span class="number">101</span>])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n = num, flag = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> i, j;</span><br><span class="line">	j = x;</span><br><span class="line">	<span class="keyword">while</span> (j &lt;= n &amp;&amp; flag == <span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (h[j] &gt; h[<span class="number">2</span> * j] &amp;&amp; <span class="number">2</span> * j &lt;= n)</span><br><span class="line">		&#123;</span><br><span class="line">			i = <span class="number">2</span> * j;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			i = j;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (h[i] &gt; h[<span class="number">2</span> * j + <span class="number">1</span>] &amp;&amp; <span class="number">2</span> * j + <span class="number">1</span> &lt;= n)</span><br><span class="line">		&#123;</span><br><span class="line">			i = <span class="number">2</span> * j + <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (i != j)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">int</span> t;</span><br><span class="line">			t = a[i];</span><br><span class="line">			a[i] = a[j];</span><br><span class="line">			a[j] = t;</span><br><span class="line">			j = i;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			flag = <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> h;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> count = <span class="number">1</span>, max = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"数据个数:\n"</span>);</span><br><span class="line">	scanf_s(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">	<span class="keyword">int</span> i, k = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= n; ++i)           <span class="comment">//循环存入数据</span></span><br><span class="line">	&#123;</span><br><span class="line">		scanf_s(<span class="string">"%d"</span>, &amp;a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	siftup(n, a);                        <span class="comment">//堆排序</span></span><br><span class="line">	<span class="keyword">int</span> c = a[<span class="number">1</span>]; </span><br><span class="line">	<span class="keyword">int</span> num = n;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= n; ++i)           <span class="comment">//遍历每一个数据</span></span><br><span class="line">	&#123;</span><br><span class="line">		a[<span class="number">1</span>] = a[num];</span><br><span class="line">		--num;</span><br><span class="line">		siftdown2(<span class="number">1</span>, num, a);          <span class="comment">//对于堆，作向下调整，对内部变量h[101]作调整</span></span><br><span class="line">		<span class="keyword">if</span> (a[<span class="number">1</span>] ==c)                  <span class="comment">//找出下一个较小的数，与前一个比较是否相等</span></span><br><span class="line">		&#123;</span><br><span class="line">			count++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (count &gt; max)                <span class="comment">//寻找有相同数据最多的数</span></span><br><span class="line">			&#123;</span><br><span class="line">				max = count;</span><br><span class="line">				k = a[i];</span><br><span class="line">			&#125;</span><br><span class="line">			count = <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		c = a[<span class="number">1</span>];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,k);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token comment" spellcheck="true">/*对于堆，作向下调整，对内部变量h[101]作调整*/</span>
+<span class="token keyword">int</span><span class="token operator">*</span> <span class="token function">siftdown2</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">,</span> <span class="token keyword">int</span> num<span class="token punctuation">,</span> <span class="token keyword">int</span> h<span class="token punctuation">[</span><span class="token number">101</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> n <span class="token operator">=</span> num<span class="token punctuation">,</span> flag <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> i<span class="token punctuation">,</span> j<span class="token punctuation">;</span>
+    j <span class="token operator">=</span> x<span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>j <span class="token operator">&lt;=</span> n <span class="token operator">&amp;&amp;</span> flag <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>h<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">></span> h<span class="token punctuation">[</span><span class="token number">2</span> <span class="token operator">*</span> j<span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token number">2</span> <span class="token operator">*</span> j <span class="token operator">&lt;=</span> n<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            i <span class="token operator">=</span> <span class="token number">2</span> <span class="token operator">*</span> j<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">else</span>
+        <span class="token punctuation">{</span>
+            i <span class="token operator">=</span> j<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>h<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">></span> h<span class="token punctuation">[</span><span class="token number">2</span> <span class="token operator">*</span> j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token number">2</span> <span class="token operator">*</span> j <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">&lt;=</span> n<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            i <span class="token operator">=</span> <span class="token number">2</span> <span class="token operator">*</span> j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">!=</span> j<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">int</span> t<span class="token punctuation">;</span>
+            t <span class="token operator">=</span> a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            a<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> a<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            a<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> t<span class="token punctuation">;</span>
+            j <span class="token operator">=</span> i<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">else</span>
+        <span class="token punctuation">{</span>
+            flag <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> h<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> count <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> max <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"数据个数:\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">scanf_s</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> i<span class="token punctuation">,</span> k <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span>           <span class="token comment" spellcheck="true">//循环存入数据</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">scanf_s</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">siftup</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>                        <span class="token comment" spellcheck="true">//堆排序</span>
+    <span class="token keyword">int</span> c <span class="token operator">=</span> a<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span> 
+    <span class="token keyword">int</span> num <span class="token operator">=</span> n<span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span>           <span class="token comment" spellcheck="true">//遍历每一个数据</span>
+    <span class="token punctuation">{</span>
+        a<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> a<span class="token punctuation">[</span>num<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token operator">--</span>num<span class="token punctuation">;</span>
+        <span class="token function">siftdown2</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> num<span class="token punctuation">,</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>          <span class="token comment" spellcheck="true">//对于堆，作向下调整，对内部变量h[101]作调整</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>a<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span>c<span class="token punctuation">)</span>                  <span class="token comment" spellcheck="true">//找出下一个较小的数，与前一个比较是否相等</span>
+        <span class="token punctuation">{</span>
+            count<span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">else</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>count <span class="token operator">></span> max<span class="token punctuation">)</span>                <span class="token comment" spellcheck="true">//寻找有相同数据最多的数</span>
+            <span class="token punctuation">{</span>
+                max <span class="token operator">=</span> count<span class="token punctuation">;</span>
+                k <span class="token operator">=</span> a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            count <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        c <span class="token operator">=</span> a<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span>k<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="方法三："><a href="#方法三：" class="headerlink" title="方法三："></a>方法三：</h4><p>堆排序一个数组，排好后在主函数中给出第一个数，与第二个数比较，如相等count加1，如不相等，与max比较，更新max，最终找出多数元素</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*对于堆，作向上调整，对内部变量h[101]作调整*/</span></span><br><span class="line"><span class="function"><span class="keyword">int</span>* <span class="title">siftup</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> h[<span class="number">101</span>])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i = n, flag = <span class="number">0</span>, j;</span><br><span class="line">	<span class="keyword">while</span> (i &gt;= <span class="number">1</span> &amp;&amp; flag == <span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (h[i] &lt; h[i / <span class="number">2</span>] &amp;&amp; i &gt;= <span class="number">1</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			j = i / <span class="number">2</span>;</span><br><span class="line">			<span class="keyword">int</span> t;</span><br><span class="line">			t = a[i];</span><br><span class="line">			a[i] = a[j];</span><br><span class="line">			a[j] = t;</span><br><span class="line">			i = j;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			flag = <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> h;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-c"><code class="language-c"><span class="token comment" spellcheck="true">/*对于堆，作向上调整，对内部变量h[101]作调整*/</span>
+<span class="token keyword">int</span><span class="token operator">*</span> <span class="token function">siftup</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">,</span> <span class="token keyword">int</span> h<span class="token punctuation">[</span><span class="token number">101</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> i <span class="token operator">=</span> n<span class="token punctuation">,</span> flag <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> j<span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">>=</span> <span class="token number">1</span> <span class="token operator">&amp;&amp;</span> flag <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>h<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;</span> h<span class="token punctuation">[</span>i <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> i <span class="token operator">>=</span> <span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            j <span class="token operator">=</span> i <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> t<span class="token punctuation">;</span>
+            t <span class="token operator">=</span> a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            a<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> a<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            a<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> t<span class="token punctuation">;</span>
+            i <span class="token operator">=</span> j<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">else</span>
+        <span class="token punctuation">{</span>
+            flag <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> h<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>这个算法的时间复杂度是O(N+M)，空间复杂度也是O(N+M)。但是，如果序列中数的大小跨度比较大这个方法就不行了，空间开销非常大。那么看看下面的方法。</p>
 <h4 id="方法四："><a href="#方法四：" class="headerlink" title="方法四："></a>方法四：</h4><p>也许你不知道，像这种序列的有一个特性，就是在<strong>原序列中去除两个不一样的数，原序列中出现超过50%的那个数，在取出的新序列中出现的次数也一定会超过50%</strong>。现在知道了，有没有想到解题的方法呢？</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[] = &#123;<span class="number">3</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">1</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">3</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="comment">//初始化</span></span><br><span class="line">    <span class="keyword">int</span> count = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> temp = a[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">1</span>; i &lt; <span class="keyword">sizeof</span>(a)/<span class="keyword">sizeof</span>(<span class="keyword">int</span>);i++)</span><br><span class="line">    &#123;</span><br><span class="line">          <span class="keyword">if</span>(count == <span class="number">0</span>)</span><br><span class="line">          &#123;</span><br><span class="line">               temp = a[i];</span><br><span class="line">               count++;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">else</span> <span class="keyword">if</span>(a[i] == temp)</span><br><span class="line">              count++;</span><br><span class="line">          <span class="keyword">else</span> </span><br><span class="line">              count--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"最多的数是:%d\n"</span>,temp);</span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdlib.h></span></span>
 
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> i<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//初始化</span>
+    <span class="token keyword">int</span> count <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> temp <span class="token operator">=</span> a<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token operator">/</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+          <span class="token keyword">if</span><span class="token punctuation">(</span>count <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+          <span class="token punctuation">{</span>
+               temp <span class="token operator">=</span> a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+               count<span class="token operator">++</span><span class="token punctuation">;</span>
+          <span class="token punctuation">}</span>
+          <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> temp<span class="token punctuation">)</span>
+              count<span class="token operator">++</span><span class="token punctuation">;</span>
+          <span class="token keyword">else</span> 
+              count<span class="token operator">--</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"最多的数是:%d\n"</span><span class="token punctuation">,</span>temp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">system</span><span class="token punctuation">(</span><span class="token string">"pause"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>Boyer-Moore 投票算法</strong></p>
 <p><strong>如果我们把众数记为 +1+1，把其他数记为 -1−1，将它们全部加起来，显然和大于 0，从结果本身我们可以看出众数比其他数多。</strong></p>
 <p>Boyer-Moore 算法的本质和分治十分类似。 Boyer-Moore 算法的详细步骤：</p>
@@ -830,31 +980,40 @@
 <p>如果 x 与 candidate 不等，那么计数器 count 的值减少 1。</p>
 <p>在遍历完成后，candidate 即为整个数组的众数。</p>
 <p>举一个具体的例子，例如下面的这个数组：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[7, 7, 5, 7, 5, 1 | 5, 7 | 5, 5, 7, 7 | 7, 7, 7, 7]</span><br></pre></td></tr></table></figure>
-
-<p>在遍历到数组中的第一个元素以及每个在 | 之后的元素时，candidate 都会因为 count 的值变为 0 而发生改变。最后一次 candidate 的值从 5 变为 7，也就是这个数组中的众数。</p>
+<pre><code>[7, 7, 5, 7, 5, 1 | 5, 7 | 5, 5, 7, 7 | 7, 7, 7, 7]</code></pre><p>在遍历到数组中的第一个元素以及每个在 | 之后的元素时，candidate 都会因为 count 的值变为 0 而发生改变。最后一次 candidate 的值从 5 变为 7，也就是这个数组中的众数。</p>
 <p>Boyer-Moore 算法的正确性较难证明，这里给出一种较为详细的用例子辅助证明的思路，供读者参考：</p>
 <p>首先我们根据算法步骤中对 count 的定义，可以发现：在对整个数组进行遍历的过程中，count 的值一定非负。这是因为如果 count 的值为 0，那么在这一轮遍历的开始时刻，我们会将 x 的值赋予 candidate 并在接下来的一步中将 count 的值增加 1。因此 count 的值在遍历的过程中一直保持非负。</p>
 <p>那么 count 本身除了计数器之外，还有什么更深层次的意义呢？我们还是以数组</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[7, 7, 5, 7, 5, 1 | 5, 7 | 5, 5, 7, 7 | 7, 7, 7, 7]</span><br></pre></td></tr></table></figure>
-
-<p>作为例子，首先写下它在每一步遍历时 candidate 和 count 的值：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nums:      [7, 7, 5, 7, 5, 1 | 5, 7 | 5, 5, 7, 7 | 7, 7, 7, 7]</span><br><span class="line">candidate:  7  7  7  7  7  7   5  5   5  5  5  5   7  7  7  7</span><br><span class="line">count:      1  2  1  2  1  0   1  0   1  2  1  0   1  2  3  4</span><br></pre></td></tr></table></figure>
-
-<p>我们再定义一个变量 value，它和真正的众数 maj 绑定。在每一步遍历时，如果当前的数 x 和 maj 相等，那么 value 的值加 1，否则减 1。value 的实际意义即为：到当前的这一步遍历为止，众数出现的次数比非众数多出了多少次。我们将 value 的值也写在下方：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nums:      [7, 7, 5, 7, 5, 1 | 5, 7 | 5, 5, 7, 7 | 7, 7, 7, 7]</span><br><span class="line">value:      1  2  1  2  1  0  -1  0  -1 -2 -1  0   1  2  3  4</span><br></pre></td></tr></table></figure>
-
-<p>有没有发现什么？我们将 count 和 value 放在一起：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nums:      [7, 7, 5, 7, 5, 1 | 5, 7 | 5, 5, 7, 7 | 7, 7, 7, 7]</span><br><span class="line">count:      1  2  1  2  1  0   1  0   1  2  1  0   1  2  3  4</span><br><span class="line">value:      1  2  1  2  1  0  -1  0  -1 -2 -1  0   1  2  3  4</span><br></pre></td></tr></table></figure>
-
-<p>发现在每一步遍历中，count 和 value 要么相等，要么互为相反数！并且在候选众数 candidate 就是 maj 时，它们相等，candidate 是其它的数时，它们互为相反数！</p>
+<pre><code>[7, 7, 5, 7, 5, 1 | 5, 7 | 5, 5, 7, 7 | 7, 7, 7, 7]</code></pre><p>作为例子，首先写下它在每一步遍历时 candidate 和 count 的值：</p>
+<pre><code>nums:      [7, 7, 5, 7, 5, 1 | 5, 7 | 5, 5, 7, 7 | 7, 7, 7, 7]
+candidate:  7  7  7  7  7  7   5  5   5  5  5  5   7  7  7  7
+count:      1  2  1  2  1  0   1  0   1  2  1  0   1  2  3  4</code></pre><p>我们再定义一个变量 value，它和真正的众数 maj 绑定。在每一步遍历时，如果当前的数 x 和 maj 相等，那么 value 的值加 1，否则减 1。value 的实际意义即为：到当前的这一步遍历为止，众数出现的次数比非众数多出了多少次。我们将 value 的值也写在下方：</p>
+<pre><code>nums:      [7, 7, 5, 7, 5, 1 | 5, 7 | 5, 5, 7, 7 | 7, 7, 7, 7]
+value:      1  2  1  2  1  0  -1  0  -1 -2 -1  0   1  2  3  4</code></pre><p>有没有发现什么？我们将 count 和 value 放在一起：</p>
+<pre><code>nums:      [7, 7, 5, 7, 5, 1 | 5, 7 | 5, 5, 7, 7 | 7, 7, 7, 7]
+count:      1  2  1  2  1  0   1  0   1  2  1  0   1  2  3  4
+value:      1  2  1  2  1  0  -1  0  -1 -2 -1  0   1  2  3  4</code></pre><p>发现在每一步遍历中，count 和 value 要么相等，要么互为相反数！并且在候选众数 candidate 就是 maj 时，它们相等，candidate 是其它的数时，它们互为相反数！</p>
 <p>为什么会有这么奇妙的性质呢？这并不难证明：我们将候选众数 candidate 保持不变的连续的遍历称为「一段」。在同一段中，count 的值是根据 candidate == x 的判断进行加减的。那么如果 candidate 恰好为 maj，那么在这一段中，count 和 value 的变化是同步的；如果 candidate 不为 maj，那么在这一段中 count 和 value 的变化是相反的。因此就有了这样一个奇妙的性质。</p>
 <p><strong>这样以来，由于：</strong></p>
 <p>我们证明了 count 的值一直为非负，在最后一步遍历结束后也是如此；</p>
 <p>由于 value 的值与真正的众数 maj 绑定，并且它表示「众数出现的次数比非众数多出了多少次」，那么在最后一步遍历结束后，value 的值为正数；</p>
 <p>在最后一步遍历结束后，count 非负，value 为正数，所以它们不可能互为相反数，只可能相等，即 count == value。因此在最后「一段」中，count 的 value 的变化是同步的，也就是说，candidate 中存储的候选众数就是真正的众数 maj。</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">majorityElement</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> candidate = <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> num : nums) &#123;</span><br><span class="line">            <span class="keyword">if</span> (num == candidate)</span><br><span class="line">                ++count;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (--count &lt; <span class="number">0</span>) &#123;</span><br><span class="line">                candidate = num;</span><br><span class="line">                count = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> candidate;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-c++"><code class="language-c++">class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+        int candidate = -1;
+        int count = 0;
+        for (int num : nums) {
+            if (num == candidate)
+                ++count;
+            else if (--count < 0) {
+                candidate = num;
+                count = 1;
+            }
+        }
+        return candidate;
+    }
+};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>复杂度分析:</strong></p>
 <ul>
 <li><p>时间复杂度：O(n)O(n)。Boyer-Moore 算法只对数组进行了一次遍历。</p>
@@ -1618,7 +1777,7 @@
            <!--<a href="/sitemap.xml" target="_blank">站点地图</a>丨-->
            
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">87.2k
+            <span class="white-color">70.4k
              丨            
             <a href="https://tongji.baidu.com/web/welcome/ico?s=df42dpc7224a5f6a8d435" target="_blank">百度统计</a>丨
            <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278720284'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1278720284%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
@@ -1709,7 +1868,7 @@
       <span class="badge-subject">Link</span><span class="badge-value bg-red">996.ICU</span></a>
     </div>
     <div class="github-badge">
-      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">87.2k</span>
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">70.4k</span>
     </div>
 </footer>
 

@@ -770,7 +770,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    451
+                    440
                 </div>
                 
 
@@ -797,16 +797,34 @@
 <p>换种说法就是，轮到某个玩家时，如果当前黑板上所有数字按位异或运算结果等于 0，这个玩家获胜。</p>
 <p>假设两个玩家每步都使用最优解，当且仅当 Alice 获胜时返回 true。</p>
 <p><strong>示例：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: nums = [1, 1, 2]</span><br><span class="line">输出: false</span><br><span class="line">解释: </span><br><span class="line">Alice 有两个选择: 擦掉数字 1 或 2。</span><br><span class="line">如果擦掉 1, 数组变成 [1, 2]。剩余数字按位异或得到 1 XOR 2 = 3。那么 Bob 可以擦掉任意数字，因为 Alice 会成为擦掉最后一个数字的人，她总是会输。</span><br><span class="line">如果 Alice 擦掉 2，那么数组变成[1, 1]。剩余数字按位异或得到 1 XOR 1 = 0。Alice 仍然会输掉游戏。</span><br></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
+<pre><code>输入: nums = [1, 1, 2]
+输出: false
+解释: 
+Alice 有两个选择: 擦掉数字 1 或 2。
+如果擦掉 1, 数组变成 [1, 2]。剩余数字按位异或得到 1 XOR 2 = 3。那么 Bob 可以擦掉任意数字，因为 Alice 会成为擦掉最后一个数字的人，她总是会输。
+如果 Alice 擦掉 2，那么数组变成[1, 1]。剩余数字按位异或得到 1 XOR 1 = 0。Alice 仍然会输掉游戏。</code></pre><p><strong>提示：</strong></p>
 <ul>
 <li>1 &lt;= N &lt;= 1000</li>
 <li>0 &lt;= nums[i] &lt;= 2^16</li>
 </ul>
 <p><strong>题解：</strong></p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">xorGame</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//数组元素个数是奇数/偶数，有决定性作用：</span></span><br><span class="line">        <span class="comment">//如果是偶数，先手必胜；</span></span><br><span class="line">        <span class="comment">//如果是奇数，只有当一上来所有元素异或的结果为0，先手才获胜，</span></span><br><span class="line">        <span class="comment">//否则，接下来轮到后手，此时元素个数为偶数，则后手必胜，先手必败！</span></span><br><span class="line">        <span class="keyword">int</span> len = nums.size(), t = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(len % <span class="number">2</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">auto</span>&amp; x:nums) t ^= x; <span class="comment">//所有元素异或的结果</span></span><br><span class="line">            <span class="keyword">if</span>(t) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-c++"><code class="language-c++">class Solution {
+public:
+    bool xorGame(vector<int>& nums) {
+        //数组元素个数是奇数/偶数，有决定性作用：
+        //如果是偶数，先手必胜；
+        //如果是奇数，只有当一上来所有元素异或的结果为0，先手才获胜，
+        //否则，接下来轮到后手，此时元素个数为偶数，则后手必胜，先手必败！
+        int len = nums.size(), t = 0;
+        if(len % 2)
+        {
+            for(auto& x:nums) t ^= x; //所有元素异或的结果
+            if(t) return false;
+            else return true;
+        }
+        else return true;
+    }
+};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -1562,7 +1580,7 @@ nums1[i] == num
            <!--<a href="/sitemap.xml" target="_blank">站点地图</a>丨-->
            
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">87.2k
+            <span class="white-color">70.4k
              丨            
             <a href="https://tongji.baidu.com/web/welcome/ico?s=df42dpc7224a5f6a8d435" target="_blank">百度统计</a>丨
            <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278720284'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1278720284%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
@@ -1653,7 +1671,7 @@ nums1[i] == num
       <span class="badge-subject">Link</span><span class="badge-value bg-red">996.ICU</span></a>
     </div>
     <div class="github-badge">
-      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">87.2k</span>
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">70.4k</span>
     </div>
 </footer>
 

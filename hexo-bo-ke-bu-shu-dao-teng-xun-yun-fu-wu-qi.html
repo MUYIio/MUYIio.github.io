@@ -820,116 +820,73 @@
 </blockquote>
 <h1 id="1】Git安装及配置"><a href="#1】Git安装及配置" class="headerlink" title="1】Git安装及配置"></a>1】Git安装及配置</h1><h3 id="一、安装依赖库和编译工具"><a href="#一、安装依赖库和编译工具" class="headerlink" title="一、安装依赖库和编译工具"></a>一、安装依赖库和编译工具</h3><ul>
 <li><p>安装依赖库：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-c++c"><code class="language-c++c">yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 </ul>
 <p>然后会出现：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Is this ok [y/d/N]:</span><br></pre></td></tr></table></figure>
-
-<p>输入<code>y</code>继续安装，后面也一样。</p>
+<pre><code>Is this ok [y/d/N]:</code></pre><p>输入<code>y</code>继续安装，后面也一样。</p>
 <ul>
 <li><p>安装编译工具：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum install gcc perl-ExtUtils-MakeMaker package</span><br></pre></td></tr></table></figure>
-
-</li>
+<pre><code>yum install gcc perl-ExtUtils-MakeMaker package </code></pre></li>
 </ul>
 <h3 id="二、下载-git并解压编译安装"><a href="#二、下载-git并解压编译安装" class="headerlink" title="二、下载 git并解压编译安装"></a>二、下载 git并解压编译安装</h3><ul>
 <li>查看服务器已有的git版本</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure>
-
-<p>然后会看到：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git version 1.8.3.1</span><br></pre></td></tr></table></figure>
-
-<blockquote>
+<pre><code>git --version</code></pre><p>然后会看到：</p>
+<pre><code>git version 1.8.3.1</code></pre><blockquote>
 <p>但是官网版本已经更新了，因为yum仓库的Git版本更新的时间会存在延时，我们这里采用源码包安装方式安装。</p>
 </blockquote>
 <ul>
 <li>将陈旧版本的git删除</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum remove git</span><br></pre></td></tr></table></figure>
-
-<ul>
+<pre><code>yum remove git</code></pre><ul>
 <li><p>选择一个目录来存放下载下来的 git 安装包。这里选择了<code>/usr/local/src</code> 目录</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd /usr/local/src</span><br></pre></td></tr></table></figure>
-
-
-
-</li>
+<pre><code>cd /usr/local/src  </code></pre></li>
 </ul>
 <ul>
 <li>下载最新版git到<code>/usr/local/src</code>，可以在官网找到版本，目前最新版本是2.26.0。</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wget http://ftp.ntu.edu.tw/software/scm/git/git-2.26.0.tar.gz</span><br></pre></td></tr></table></figure>
-
-<ul>
+<pre><code>wget http://ftp.ntu.edu.tw/software/scm/git/git-2.26.0.tar.gz</code></pre><ul>
 <li>解压到当前目录</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tar -zvxf git-2.26.0.tar.gz</span><br></pre></td></tr></table></figure>
-
-<ul>
+<pre><code>tar -zvxf git-2.26.0.tar.gz</code></pre><ul>
 <li>进入 <code>git-2.26.0.tar.gz</code> 目录下</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd git-2.26.0</span><br></pre></td></tr></table></figure>
-
-<ul>
+<pre><code>cd git-2.26.0</code></pre><ul>
 <li>执行编译</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">make prefix=/usr/local/git all</span><br></pre></td></tr></table></figure>
-
-<ul>
+<pre><code>make prefix=/usr/local/git all</code></pre><ul>
 <li>安装 git 到 /usr/local/git 目录下</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">make prefix=/usr/local/git install</span><br></pre></td></tr></table></figure>
-
-<h3 id="三、配置-git-环境变量"><a href="#三、配置-git-环境变量" class="headerlink" title="三、配置 git 环境变量"></a>三、配置 git 环境变量</h3><ul>
+<pre><code>make prefix=/usr/local/git install</code></pre><h3 id="三、配置-git-环境变量"><a href="#三、配置-git-环境变量" class="headerlink" title="三、配置 git 环境变量"></a>三、配置 git 环境变量</h3><ul>
 <li>打开环境变量配置文件</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim /etc/profile</span><br></pre></td></tr></table></figure>
-
-<p>按i进入编辑模式，按向下键到底部，添加下面两行命令：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">PATH=$PATH:/usr/local/git/bin   # git 的目录</span><br><span class="line">export PATH</span><br></pre></td></tr></table></figure>
-
-<p><strong>按<code>esc</code>退出，按<code>:wq</code>保存编辑。(注意是先<code>:</code>再是<code>wq</code>)</strong></p>
+<pre><code>vim /etc/profile</code></pre><p>按i进入编辑模式，按向下键到底部，添加下面两行命令：</p>
+<pre><code>PATH=$PATH:/usr/local/git/bin   # git 的目录
+export PATH</code></pre><p><strong>按<code>esc</code>退出，按<code>:wq</code>保存编辑。(注意是先<code>:</code>再是<code>wq</code>)</strong></p>
 <p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.5/Images/posts/%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8/QQ%E5%9B%BE%E7%89%8720200402004810.png" alt></p>
 <ul>
 <li>使 git 环境变量生效</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure>
-
-<ul>
+<pre><code> source /etc/profile</code></pre><ul>
 <li>验证安装完成，查看 git 的版本号</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure>
-
-<p>这时候我们的git版本已经变成了：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git version 2.26.0</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.5/Images/posts/%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8/QQ%E5%9B%BE%E7%89%8720200402004827.png" alt></p>
+<pre><code>git --version</code></pre><p>这时候我们的git版本已经变成了：</p>
+<pre><code>git version 2.26.0</code></pre><p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.5/Images/posts/%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8/QQ%E5%9B%BE%E7%89%8720200402004827.png" alt></p>
 <h3 id="四、创建-git-用户"><a href="#四、创建-git-用户" class="headerlink" title="四、创建 git 用户"></a>四、创建 git 用户</h3><ul>
 <li>创建git用户</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">adduser git</span><br></pre></td></tr></table></figure>
-
-<ul>
+<pre><code>adduser git</code></pre><ul>
 <li>获取权限</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">chmod 740 /etc/sudoers</span><br><span class="line">vim /etc/sudoers</span><br></pre></td></tr></table></figure>
-
-<p>按 <code>i</code> 键进入文件的编辑模式，按向下键找到如下字段</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">root    ALL=(ALL)       ALL</span><br></pre></td></tr></table></figure>
-
-<p>在其后面增加一句：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git     ALL=(ALL)       ALL</span><br></pre></td></tr></table></figure>
-
-<p><strong>按 <code>Esc</code> 键退出编辑模式，输入<code>:wq</code> 保存退出。（先输入<code>:</code>，然后输入<code>wq</code>回车）</strong></p>
+<pre><code>chmod 740 /etc/sudoers
+vim /etc/sudoers</code></pre><p>按 <code>i</code> 键进入文件的编辑模式，按向下键找到如下字段</p>
+<pre><code>root    ALL=(ALL)       ALL</code></pre><p>在其后面增加一句：</p>
+<pre><code>git     ALL=(ALL)       ALL</code></pre><p><strong>按 <code>Esc</code> 键退出编辑模式，输入<code>:wq</code> 保存退出。（先输入<code>:</code>，然后输入<code>wq</code>回车）</strong></p>
 <ul>
 <li>退回权限</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">chmod 400 /etc/sudoers</span><br></pre></td></tr></table></figure>
-
-<h3 id="五、配置密钥"><a href="#五、配置密钥" class="headerlink" title="五、配置密钥"></a>五、配置密钥</h3><ul>
+<pre><code>chmod 400 /etc/sudoers</code></pre><h3 id="五、配置密钥"><a href="#五、配置密钥" class="headerlink" title="五、配置密钥"></a>五、配置密钥</h3><ul>
 <li>创建密钥</li>
 </ul>
 <p>来到这里的小伙伴应该都已经有了自己的hexo博客，那么肯定已经创建过自己的密钥，一般存放在<code>c/用户/.ssh</code>下。</p>
@@ -940,127 +897,125 @@
 <li>将密钥保存在服务器(之前有密钥的直接复制就可以)</li>
 </ul>
 <p>将<code>id_rsa.pub</code>里面的密钥复制,在服务器运行下面命令，创建.ssh文件夹</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">su git</span><br><span class="line">mkdir ~/.ssh</span><br></pre></td></tr></table></figure>
-
-<p>创建<code>.ssh/authorized_keys</code>文件，打开<code>authorized_keys</code>文件并将刚才在本地机器复制的内容拷贝其中并保存</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim ~/.ssh/authorized_keys</span><br></pre></td></tr></table></figure>
-
-<p><strong>按<code>i</code>进入编辑模式粘贴完按 <code>Esc</code> 键退出编辑模式，输入<code>:wq</code> 保存退出。（先输入<code>:</code>，然后输入<code>wq</code>回车）</strong></p>
+<pre><code>su git
+mkdir ~/.ssh</code></pre><p>创建<code>.ssh/authorized_keys</code>文件，打开<code>authorized_keys</code>文件并将刚才在本地机器复制的内容拷贝其中并保存</p>
+<pre><code>vim ~/.ssh/authorized_keys</code></pre><p><strong>按<code>i</code>进入编辑模式粘贴完按 <code>Esc</code> 键退出编辑模式，输入<code>:wq</code> 保存退出。（先输入<code>:</code>，然后输入<code>wq</code>回车）</strong></p>
 <ul>
 <li>修改权限</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">chmod 755 ~</span><br><span class="line">chmod 700 ~/.ssh</span><br><span class="line">chmod 600 ~/.ssh/authorized_keys</span><br></pre></td></tr></table></figure>
-
-<ul>
+<pre><code>chmod 755 ~
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/authorized_keys</code></pre><ul>
 <li><p>测试本地连接服务器</p>
 <p>在本地电脑git bash here</p>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">//yourIp为远程服务器的ip地址</span><br><span class="line">ssh -v git@yourIp     //yourIp为你的服务器ip</span><br></pre></td></tr></table></figure>
-
-<p>如图则证明本地机器与远程机器已经接通</p>
+<pre><code>//yourIp为远程服务器的ip地址
+ssh -v git@yourIp     //yourIp为你的服务器ip</code></pre><p>如图则证明本地机器与远程机器已经接通</p>
 <p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.5/Images/posts/%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8/QQ%E5%9B%BE%E7%89%8720200402004834.png" alt></p>
 <h3 id="六、创建git仓库"><a href="#六、创建git仓库" class="headerlink" title="六、创建git仓库"></a>六、创建git仓库</h3><ul>
 <li>切换到root用户，创建一个目录用于存储网站的根目录</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">su root</span><br></pre></td></tr></table></figure>
-
-<ul>
+<pre><code>su root</code></pre><ul>
 <li>创建网站的根目录</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir /home/hexo</span><br></pre></td></tr></table></figure>
-
-<ul>
+<pre><code>mkdir /home/hexo</code></pre><ul>
 <li>给予权限</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">chown gitgit -R //hexo</span><br></pre></td></tr></table></figure>
-
-<h1 id="2】安装Nginx"><a href="#2】安装Nginx" class="headerlink" title="2】安装Nginx"></a>2】安装Nginx</h1><blockquote>
+<pre><code>chown gitgit -R //hexo</code></pre><h1 id="2】安装Nginx"><a href="#2】安装Nginx" class="headerlink" title="2】安装Nginx"></a>2】安装Nginx</h1><blockquote>
 <p><em>Nginx</em> (engine x) 是一个高性能的<a href="https://baike.baidu.com/item/HTTP" target="_blank" rel="noopener">HTTP</a>和<a href="https://baike.baidu.com/item/反向代理/7793488" target="_blank" rel="noopener">反向代理</a>web服务器，同时也提供了IMAP/POP3/SMTP<a href="https://baike.baidu.com/item/服务/100571" target="_blank" rel="noopener">服务</a></p>
 </blockquote>
 <h3 id="一、安装配置Nginx"><a href="#一、安装配置Nginx" class="headerlink" title="一、安装配置Nginx"></a>一、安装配置Nginx</h3><ul>
 <li>安装Nginx</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum install -y nginx</span><br></pre></td></tr></table></figure>
-
-<ul>
+<pre><code>yum install -y nginx</code></pre><ul>
 <li>配置Nginx</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nginx -t</span><br></pre></td></tr></table></figure>
+<pre><code>nginx -t</code></pre><p>使用vim打开nginx.conf文件</p>
+<pre><code>vim /etc/nginx/nginx.conf</code></pre><p><strong>按<code>i</code>进入编辑模式粘贴完按 <code>Esc</code> 键退出编辑模式，输入<code>:wq</code> 保存退出。（先输入<code>:</code>，然后输入<code>wq</code>回车）</strong></p>
+<pre class="line-numbers language-j"><code class="language-j">server <span class="token verb keyword">{</span>
+        listen       <span class="token number">80</span> default_server<span class="token verb keyword">;</span>
+        listen       <span class="token verb keyword">[:</span><span class="token conjunction variable">:</span><span class="token verb keyword">]</span><span class="token conjunction variable">:</span><span class="token number">80</span> default_server<span class="token verb keyword">;</span>
+        server_name  www<span class="token conjunction variable">.</span>muyii<span class="token verb keyword">o.</span>com<span class="token verb keyword">;</span>   <span class="token adverb builtin">/</span><span class="token adverb builtin">/</span>你的博客域名
+        root         <span class="token adverb builtin">/</span>home<span class="token adverb builtin">/</span>hexo<span class="token verb keyword">;</span>       <span class="token adverb builtin">/</span><span class="token adverb builtin">/</span>git仓库目录
+    <span class="token verb keyword">#</span> Load configuration files for the default server block<span class="token conjunction variable">.</span>
+    include <span class="token adverb builtin">/</span>etc<span class="token adverb builtin">/</span>nginx<span class="token adverb builtin">/</span>defaul<span class="token adverb builtin">t.</span>d<span class="token adverb builtin">/</span><span class="token verb keyword">*.</span>conf<span class="token verb keyword">;</span>
 
-<p>使用vim打开nginx.conf文件</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim /etc/nginx/nginx.conf</span><br></pre></td></tr></table></figure>
+    location <span class="token adverb builtin">/</span> <span class="token verb keyword">{</span>
+    <span class="token adverb builtin">}</span>
+j
+    error_page <span class="token number">404</span> <span class="token adverb builtin">/</span><span class="token number">404</span><span class="token conjunction variable">.</span>html<span class="token verb keyword">;</span>
+        location <span class="token verb keyword">=</span> <span class="token adverb builtin">/</span><span class="token number">40</span>x<span class="token conjunction variable">.</span>html <span class="token verb keyword">{</span>
+    <span class="token adverb builtin">}</span>
 
-<p><strong>按<code>i</code>进入编辑模式粘贴完按 <code>Esc</code> 键退出编辑模式，输入<code>:wq</code> 保存退出。（先输入<code>:</code>，然后输入<code>wq</code>回车）</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">        listen       80 default_server;</span><br><span class="line">        listen       [::]:80 default_server;</span><br><span class="line">        server_name  www.muyiio.com;   //你的博客域名</span><br><span class="line">        root         /home/hexo;       //git仓库目录</span><br><span class="line">    # Load configuration files for the default server block.</span><br><span class="line">    include /etc/nginx/default.d/*.conf;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line">    &#125;</span><br><span class="line">j</span><br><span class="line">    error_page 404 /404.html;</span><br><span class="line">        location = /40x.html &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    error_page 500 502 503 504 /50x.html;</span><br><span class="line">        location = /50x.html &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+    error_page <span class="token number">500</span> <span class="token number">502</span> <span class="token number">503</span> <span class="token number">504</span> <span class="token adverb builtin">/</span><span class="token number">50</span>x<span class="token conjunction variable">.</span>html<span class="token verb keyword">;</span>
+        location <span class="token verb keyword">=</span> <span class="token adverb builtin">/</span><span class="token number">50</span>x<span class="token conjunction variable">.</span>html <span class="token verb keyword">{</span>
+    <span class="token adverb builtin">}</span>
+<span class="token adverb builtin">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.5/Images/posts/%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8/QQ%E5%9B%BE%E7%89%8720200402004838.png" alt></p>
 <ul>
 <li>启动Nginx</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">systemctl start nginx.service</span><br></pre></td></tr></table></figure>
-
-<ul>
+<pre><code>systemctl start nginx.service</code></pre><ul>
 <li>重启Nginx</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">systemctl restart nginx.service</span><br></pre></td></tr></table></figure>
-
-<h3 id="二、自动化部署"><a href="#二、自动化部署" class="headerlink" title="二、自动化部署"></a>二、自动化部署</h3><ul>
+<pre><code>systemctl restart nginx.service</code></pre><h3 id="二、自动化部署"><a href="#二、自动化部署" class="headerlink" title="二、自动化部署"></a>二、自动化部署</h3><ul>
 <li>获取root权限</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">su root</span><br></pre></td></tr></table></figure>
-
-<ul>
+<pre><code>su root</code></pre><ul>
 <li>建立git仓库</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd /home/git</span><br><span class="line">git init --bare blog.git</span><br></pre></td></tr></table></figure>
-
-<ul>
+<pre><code>cd /home/git
+git init --bare blog.git</code></pre><ul>
 <li>修改blog.git权限</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">chown git:git -R blog.git</span><br></pre></td></tr></table></figure>
-
-<ul>
+<pre><code>chown git:git -R blog.git</code></pre><ul>
 <li>在 <code>/home/hexo/blog.git</code> 下，有一个自动生成的 <code>hooks</code> 文件夹，我们创建一个新的 <code>git</code> 钩子 <code>post-receive</code>，用于自动部署。</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim blog.git/hooks/post-receive</span><br></pre></td></tr></table></figure>
-
-<ul>
+<pre><code>vim blog.git/hooks/post-receive</code></pre><ul>
 <li><strong>按 <code>i</code> 键进入文件的编辑模式</strong>，在该文件中添加两行代码（将下边的代码粘贴进去)，指定 Git 的工作树（源代码）和 Git 目录</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#!/bin/bash </span><br><span class="line">git --work-tree=/home/hexo --git-dir=/home/git/blog.git checkout -f</span><br></pre></td></tr></table></figure>
-
-<p><strong>按 <code>Esc</code> 键退出编辑模式，输入<code>:wq</code> 保存退出。（先输入<code>：</code>，然后输入<code>wq</code>回车）</strong></p>
+<pre><code> #!/bin/bash 
+ git --work-tree=/home/hexo --git-dir=/home/git/blog.git checkout -f </code></pre><p><strong>按 <code>Esc</code> 键退出编辑模式，输入<code>:wq</code> 保存退出。（先输入<code>：</code>，然后输入<code>wq</code>回车）</strong></p>
 <p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.5/Images/posts/%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8/QQ%E5%9B%BE%E7%89%8720200402004843.png" alt></p>
 <ul>
 <li>修改文件权限，使得其可执行。</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">chmod +x /home/git/blog.git/hooks/post-receive</span><br></pre></td></tr></table></figure>
-
-<h1 id="3】配置本地Hexo"><a href="#3】配置本地Hexo" class="headerlink" title="3】配置本地Hexo"></a>3】配置本地Hexo</h1><ul>
+<pre><code>chmod +x /home/git/blog.git/hooks/post-receive</code></pre><h1 id="3】配置本地Hexo"><a href="#3】配置本地Hexo" class="headerlink" title="3】配置本地Hexo"></a>3】配置本地Hexo</h1><ul>
 <li>博客根目录_config下增加</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">    type: git</span><br><span class="line">    repo: root@***(服务器ip,内网外网都行):/home/git/blog.git    #仓库地址</span><br><span class="line">    branch: master    #分支</span><br></pre></td></tr></table></figure>
-
-<ul>
+<pre><code>deploy:
+    type: git
+    repo: root@***(服务器ip,内网外网都行):/home/git/blog.git    #仓库地址
+    branch: master    #分支</code></pre><ul>
 <li>部署</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-
-<ul>
+<pre><code>hexo clean
+hexo g
+hexo d</code></pre><ul>
 <li>输入<code>hexo d</code>的时候，会要求你输入自己的服务器密码</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Branch &apos;master&apos; set up to track remote branch &apos;master&apos; from &apos;https://e.coding.net/godxiaolon/godxiaolon.git&apos;.</span><br><span class="line">On branch master</span><br><span class="line">nothing to commit, working tree clean</span><br><span class="line">root@119.25.56.82&apos;s password:</span><br><span class="line">Enumerating objects: 182, done.</span><br><span class="line">Counting objects: 100% (182/182), done.</span><br><span class="line">Delta compression using up to 12 threads</span><br><span class="line">Compressing objects: 100% (61/61), done.</span><br><span class="line">Writing objects: 100% (95/95), 73.08 KiB | 3.18 MiB/s, done.</span><br><span class="line">Total 95 (delta 45), reused 0 (delta 0)</span><br><span class="line">remote: hooks/post-receive: line 1: t: command not found</span><br><span class="line">To 118.25.27.52:/home/git/hexoBlog.git</span><br><span class="line">   8df3691..7d63b39  HEAD -&gt; master</span><br><span class="line">Branch &apos;master&apos; set up to track remote branch &apos;master&apos; from &apos;root@118.25.27.52:/home/git/hexoBlog.git&apos;.</span><br><span class="line">INFO  Deploy done: git</span><br></pre></td></tr></table></figure>
-
-<blockquote>
+<pre><code>Branch &#39;master&#39; set up to track remote branch &#39;master&#39; from &#39;https://e.coding.net/godxiaolon/godxiaolon.git&#39;.
+On branch master
+nothing to commit, working tree clean
+root@119.25.56.82&#39;s password:
+Enumerating objects: 182, done.
+Counting objects: 100% (182/182), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (61/61), done.
+Writing objects: 100% (95/95), 73.08 KiB | 3.18 MiB/s, done.
+Total 95 (delta 45), reused 0 (delta 0)
+remote: hooks/post-receive: line 1: t: command not found
+To 118.25.27.52:/home/git/hexoBlog.git
+   8df3691..7d63b39  HEAD -&gt; master
+Branch &#39;master&#39; set up to track remote branch &#39;master&#39; from &#39;root@118.25.27.52:/home/git/hexoBlog.git&#39;.
+INFO  Deploy done: git</code></pre><blockquote>
 <p> 输入密码不会有显示，输完回车就可以</p>
 </blockquote>
 <ul>
 <li><strong>如果出现<code>bash: git-receive-pack: command not found</code>,则运行：</strong></li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo ln -s /usr/local/git/bin/git-receive-pack  /usr/bin/git-receive-pack</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.8/Images/posts/%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8/03.png" alt></p>
+<pre><code>sudo ln -s /usr/local/git/bin/git-receive-pack  /usr/bin/git-receive-pack</code></pre><p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.8/Images/posts/%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8/03.png" alt></p>
 <ul>
 <li>访问服务器ip，看看有没有成功</li>
 </ul>
@@ -1825,7 +1780,7 @@
            <!--<a href="/sitemap.xml" target="_blank">站点地图</a>丨-->
            
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">87.2k
+            <span class="white-color">70.4k
              丨            
             <a href="https://tongji.baidu.com/web/welcome/ico?s=df42dpc7224a5f6a8d435" target="_blank">百度统计</a>丨
            <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278720284'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1278720284%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
@@ -1916,7 +1871,7 @@
       <span class="badge-subject">Link</span><span class="badge-value bg-red">996.ICU</span></a>
     </div>
     <div class="github-badge">
-      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">87.2k</span>
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">70.4k</span>
     </div>
 </footer>
 

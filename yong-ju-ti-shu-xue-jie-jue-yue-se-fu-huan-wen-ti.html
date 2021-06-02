@@ -773,14 +773,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    654
+                    541
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    2 分
                 </div>
                 
                 
@@ -922,15 +922,42 @@
 <p>$$<br>又 \because k=\frac{N-n-d}{q-1}=\left\lfloor\frac{N-n-1}{q-1}\right\rfloor<br>$$</p>
 <p>所以他上一次的编号可以写为：<br>$$<br>\left\lfloor\frac{N-n-1}{q-1}\right\rfloor+N-n<br>$$</p>
 <p>因此最后存活的人可以这样计算：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">N = qn</span><br><span class="line"><span class="keyword">while</span> N &gt; n:</span><br><span class="line">    N = k + N - n</span><br><span class="line">ans = N</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-c++"><code class="language-c++">N = qn
+while N > n:
+    N = k + N - n
+ans = N<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>其中<font color="red" size="4"> k </font>等于：<br>$$<br>k=\left\lfloor\frac{N-n-1}{q-1}\right\rfloor<br>$$<br><strong>如果用<font color="red" size="4"> D=qn+1-N </font>代替<font color="red" size="4"> N </font>,那么算法可以简化为：</strong><br>$$<br>\begin{array}{l}<br>D=q n+1-N \<br>=q n+1-\left(\left\lfloor\frac{(q n+1-D)-n-1}{q-1}\right\rfloor+q n+1-D-n\right) \<br>=n+D-\left[\frac{(q-1) n-D}{q-1}\right] \<br>=D-\left\lfloor\frac{D}{q 1}\right\rfloor \<br>=D+\left\lceil\frac{D}{q-1}\right\rceil \<br>=\left\lceil\frac{q}{q-1} D\right\rceil<br>\end{array}<br>$$<br>算法伪代码：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">D = <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> D &lt;= (q<span class="number">-1</span>)n:</span><br><span class="line">    D = k</span><br><span class="line">ans = qn + <span class="number">1</span> - D</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-c++"><code class="language-c++">D = 1
+while D <= (q-1)n:
+    D = k
+ans = qn + 1 - D<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>其中<font color="red" size="4"> k</font> 等于：<br>$$<br>k=\left\lceil\frac{q}{q-1} D\right\rceil<br>$$</p>
 <hr>
-<h3 id="代码展示："><a href="#代码展示：" class="headerlink" title="代码展示："></a>代码展示：</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//c++代码</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"></span><br><span class="line"><span class="function">LL <span class="title">Ceil</span><span class="params">(LL x, LL y)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x / y + (x % y != <span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">LL <span class="title">J</span><span class="params">(LL n, LL q)</span> </span>&#123;</span><br><span class="line">  LL D = <span class="number">1</span>, end = (q - <span class="number">1</span>) * n;</span><br><span class="line">  <span class="keyword">while</span> (D &lt;= end) &#123;</span><br><span class="line">​    D = Ceil(q * D, q - <span class="number">1</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> q * n + <span class="number">1</span> - D;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  LL n, q;</span><br><span class="line">  <span class="keyword">while</span> (~<span class="built_in">scanf</span>(<span class="string">"%lld%lld"</span>, &amp;n, &amp;q)) &#123;</span><br><span class="line">​    <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, J(n, q));</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="代码展示："><a href="#代码展示：" class="headerlink" title="代码展示："></a>代码展示：</h3><pre class="line-numbers language-c++"><code class="language-c++">//c++代码
+#include <bits/stdc++.h>
+using namespace std;
 
+typedef long long LL;
+
+LL Ceil(LL x, LL y) {
+  return x / y + (x % y != 0);
+}
+
+LL J(LL n, LL q) {
+  LL D = 1, end = (q - 1) * n;
+  while (D <= end) {
+​    D = Ceil(q * D, q - 1);
+  }
+  return q * n + 1 - D;
+}
+
+int main() {
+  LL n, q;
+  while (~scanf("%lld%lld", &n, &q)) {
+​    printf("%lld\n", J(n, q));
+  }
+  return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -1686,7 +1713,7 @@
            <!--<a href="/sitemap.xml" target="_blank">站点地图</a>丨-->
            
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">87.2k
+            <span class="white-color">70.4k
              丨            
             <a href="https://tongji.baidu.com/web/welcome/ico?s=df42dpc7224a5f6a8d435" target="_blank">百度统计</a>丨
            <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278720284'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1278720284%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
@@ -1777,7 +1804,7 @@
       <span class="badge-subject">Link</span><span class="badge-value bg-red">996.ICU</span></a>
     </div>
     <div class="github-badge">
-      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">87.2k</span>
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">70.4k</span>
     </div>
 </footer>
 

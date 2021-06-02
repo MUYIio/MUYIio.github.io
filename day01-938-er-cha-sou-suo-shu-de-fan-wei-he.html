@@ -772,7 +772,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    306
+                    263
                 </div>
                 
 
@@ -800,13 +800,11 @@
 <p>给定二叉搜索树的根结点 <code>root</code>，返回值位于范围 <em><code>[low, high]</code></em> 之间的所有结点的值的和。</p>
 <p><strong>示例1：</strong></p>
 <p><img src="https://assets.leetcode.com/uploads/2020/11/05/bst1.jpg" alt></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：root = [10,5,15,3,7,null,18], low = 7, high = 15</span><br><span class="line">输出：32</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2：</strong></p>
+<pre><code>输入：root = [10,5,15,3,7,null,18], low = 7, high = 15
+输出：32</code></pre><p><strong>示例 2：</strong></p>
 <p><img src="https://assets.leetcode.com/uploads/2020/11/05/bst2.jpg" alt></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：root = [10,5,15,3,7,13,18,1,null,6], low = 6, high = 10</span><br><span class="line">输出：23</span><br></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
+<pre><code>输入：root = [10,5,15,3,7,13,18,1,null,6], low = 6, high = 10
+输出：23</code></pre><p><strong>提示：</strong></p>
 <ul>
 <li>树中节点数目在范围 [1, 2 * 104] 内</li>
 <li>1 &lt;= Node.val &lt;= 105</li>
@@ -815,11 +813,42 @@
 </ul>
 <p><strong>题解：</strong></p>
 <p><strong>递归</strong></p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">rangeSumBST</span><span class="params">(TreeNode* root, <span class="keyword">int</span> low, <span class="keyword">int</span> high)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!root) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        sum += rangeSumBST(root-&gt;left, low, high);</span><br><span class="line">        <span class="keyword">if</span> (root-&gt;val &gt;= low &amp;&amp; root-&gt;val &lt;= high) sum += root-&gt;val;</span><br><span class="line">        sum += rangeSumBST(root-&gt;right, low, high);</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-c++"><code class="language-c++">class Solution {
+public:
+    int rangeSumBST(TreeNode* root, int low, int high) {
+        if (!root) return 0;
+        int sum = 0;
+        sum += rangeSumBST(root->left, low, high);
+        if (root->val >= low && root->val <= high) sum += root->val;
+        sum += rangeSumBST(root->right, low, high);
+        return sum;
+    }
+};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>非递归</strong></p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">rangeSumBST</span><span class="params">(TreeNode* root, <span class="keyword">int</span> low, <span class="keyword">int</span> high)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!root) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">queue</span>&lt;TreeNode*&gt; q;</span><br><span class="line">        TreeNode* p = root;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (p || q.size()) &#123;</span><br><span class="line">            <span class="keyword">while</span> (p) &#123;</span><br><span class="line">                q.push(p);</span><br><span class="line">                p = p-&gt;left;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (q.size()) &#123;</span><br><span class="line">                p = q.front();</span><br><span class="line">                q.pop();</span><br><span class="line">                <span class="keyword">if</span> (p-&gt;val &gt;= low &amp;&amp; p-&gt;val &lt;= high) &#123;</span><br><span class="line">                    sum += p-&gt;val;</span><br><span class="line">                &#125;</span><br><span class="line">                p = p-&gt;right;       </span><br><span class="line">            &#125;    </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-c++"><code class="language-c++">class Solution {
+public:
+    int rangeSumBST(TreeNode* root, int low, int high) {
+        if (!root) return 0;
+        queue<TreeNode*> q;
+        TreeNode* p = root;
+        int sum = 0;
+        while (p || q.size()) {
+            while (p) {
+                q.push(p);
+                p = p->left;
+            }
+            if (q.size()) {
+                p = q.front();
+                q.pop();
+                if (p->val >= low && p->val <= high) {
+                    sum += p->val;
+                }
+                p = p->right;       
+            }    
+        }
+        return sum;
+    }
+};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -1323,12 +1352,11 @@
                             题目：
 给定一个非负整数 c ，你要判断是否存在两个整数 a 和 b，使得 a2 + b2 = c 。
 示例 1：
-输入：c = 5输出：true解释：1 * 1 + 2 * 2 = 5
-
-示例 2：
-输入：c = 3输出：false
-
-示
+输入：c = 5
+输出：true
+解释：1 * 1 + 2 * 2 = 5示例 2：
+输入：c = 3
+输出：false示例
                         
                     </div>
                     <div class="publish-info">
@@ -1579,7 +1607,7 @@
            <!--<a href="/sitemap.xml" target="_blank">站点地图</a>丨-->
            
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">87.2k
+            <span class="white-color">70.4k
              丨            
             <a href="https://tongji.baidu.com/web/welcome/ico?s=df42dpc7224a5f6a8d435" target="_blank">百度统计</a>丨
            <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278720284'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1278720284%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
@@ -1670,7 +1698,7 @@
       <span class="badge-subject">Link</span><span class="badge-value bg-red">996.ICU</span></a>
     </div>
     <div class="github-badge">
-      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">87.2k</span>
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">70.4k</span>
     </div>
 </footer>
 

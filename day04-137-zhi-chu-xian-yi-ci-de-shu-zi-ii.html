@@ -10,10 +10,9 @@
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
     <meta name="description" content="137. 只出现一次的数字 II给你一个整数数组 nums ，除某个元素仅出现 一次 外，其余每个元素都恰出现 三次 。请你找出并返回那个只出现了一次的元素。
  示例1：
-输入：nums = [2,2,3,2]输出：3
-
-示例2：
-输入：n">
+输入：nums = [2,2,3,2]
+输出：3示例2：
+输入：nu">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -775,7 +774,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    440
+                    413
                 </div>
                 
 
@@ -800,12 +799,10 @@
             <div id="articleContent">
                 <h4 id="137-只出现一次的数字-II"><a href="#137-只出现一次的数字-II" class="headerlink" title="137. 只出现一次的数字 II"></a><a href="https://leetcode-cn.com/problems/single-number-ii/" target="_blank" rel="noopener">137. 只出现一次的数字 II</a></h4><p>给你一个整数数组 <code>nums</code> ，除某个元素仅出现 <strong>一次</strong> 外，其余每个元素都恰出现 <strong>三次 。</strong>请你找出并返回那个只出现了一次的元素。</p>
 <p> <strong>示例1：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：nums = [2,2,3,2]</span><br><span class="line">输出：3</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例2：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：nums = [0,1,0,1,0,1,99]</span><br><span class="line">输出：99</span><br></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
+<pre><code>输入：nums = [2,2,3,2]
+输出：3</code></pre><p><strong>示例2：</strong></p>
+<pre><code>输入：nums = [0,1,0,1,0,1,99]
+输出：99</code></pre><p><strong>提示：</strong></p>
 <ul>
 <li>1 &lt;= nums.length &lt;= 3 * 104</li>
 <li>-231 &lt;= nums[i] &lt;= 231 - 1</li>
@@ -817,23 +814,45 @@
 <p>对于所有数字中的某二进制位 1 的个数，存在 3 种状态，即对 3 余数为 0,1,2 。由于二进制只能表示 0, 10,1 ，因此需要使用两个二进制位来表示 3 个状态。设此两位分别为 one，two.</p>
 <p><strong>计算 one方法：</strong></p>
 <p>设当前状态为 one ，two 此时输入二进制位 nn 。如下图所示，通过对状态表的情况拆分，可推出 one的计算方法为：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">if two == 0:</span><br><span class="line">  if n == 0:</span><br><span class="line">    one = one</span><br><span class="line">  if n == 1:</span><br><span class="line">    one = ~one</span><br><span class="line">if two == 1:</span><br><span class="line">    one = 0</span><br></pre></td></tr></table></figure>
-
-<p>引入 异或运算 ，可将以上拆分简化为：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">if two == 0:</span><br><span class="line">    one = one ^ n</span><br><span class="line">if two == 1:</span><br><span class="line">    one = 0</span><br></pre></td></tr></table></figure>
-
-<p>引入 与运算 ，可继续简化为：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">one = one ^ n &amp; ~two</span><br></pre></td></tr></table></figure>
-
-<p>同理：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">two = two ^ n &amp; ~one</span><br></pre></td></tr></table></figure>
-
-<p>代码：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">singleNumber</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> two = <span class="number">0</span>, one = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> x: nums) &#123;</span><br><span class="line">            one = (one ^ x) &amp; ~two;</span><br><span class="line">            two = (two ^ x) &amp; ~one;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> one;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
+<pre><code>if two == 0:
+  if n == 0:
+    one = one
+  if n == 1:
+    one = ~one
+if two == 1:
+    one = 0</code></pre><p>引入 异或运算 ，可将以上拆分简化为：</p>
+<pre><code>if two == 0:
+    one = one ^ n
+if two == 1:
+    one = 0</code></pre><p>引入 与运算 ，可继续简化为：</p>
+<pre><code>one = one ^ n &amp; ~two</code></pre><p>同理：</p>
+<pre><code>two = two ^ n &amp; ~one</code></pre><p>代码：</p>
+<pre class="line-numbers language-c++"><code class="language-c++">class Solution {
+public:
+    int singleNumber(vector<int>& nums) {
+        int two = 0, one = 0;
+        for (auto x: nums) {
+            one = (one ^ x) & ~two;
+            two = (two ^ x) & ~one;
+        }
+        return one;
+    }
+};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>哈希表：</strong></p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">singleNumber</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; um;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> x : nums) &#123;</span><br><span class="line">            um[x]++;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> x : um) &#123;</span><br><span class="line">            <span class="keyword">if</span> (x.second == <span class="number">1</span>) <span class="keyword">return</span> x.first;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++"><code class="language-c++">class Solution {
+public:
+    int singleNumber(vector<int>& nums) {
+        unordered_map<int, int> um;
+        for (auto x : nums) {
+            um[x]++;
+        }
 
+        for (auto x : um) {
+            if (x.second == 1) return x.first;
+        }
+        return -1;
+    }
+};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -1588,7 +1607,7 @@
            <!--<a href="/sitemap.xml" target="_blank">站点地图</a>丨-->
            
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">87.2k
+            <span class="white-color">70.4k
              丨            
             <a href="https://tongji.baidu.com/web/welcome/ico?s=df42dpc7224a5f6a8d435" target="_blank">百度统计</a>丨
            <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278720284'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1278720284%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
@@ -1679,7 +1698,7 @@
       <span class="badge-subject">Link</span><span class="badge-value bg-red">996.ICU</span></a>
     </div>
     <div class="github-badge">
-      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">87.2k</span>
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">70.4k</span>
     </div>
 </footer>
 

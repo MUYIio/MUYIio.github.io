@@ -772,14 +772,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    725
+                    397
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    1 分
                 </div>
                 
                 
@@ -800,29 +800,111 @@
 <p>给你两个整数 steps 和 arrLen ，请你计算并返回：在恰好执行 steps 次操作以后，指针仍然指向索引 0 处的方案数。</p>
 <p>由于答案可能会很大，请返回方案数 模 10^9 + 7 后的结果。</p>
 <p><strong>示例 1：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：steps = 3, arrLen = 2</span><br><span class="line">输出：4</span><br><span class="line">解释：3 步后，总共有 4 种不同的方法可以停在索引 0 处。</span><br><span class="line">向右，向左，不动</span><br><span class="line">不动，向右，向左</span><br><span class="line">向右，不动，向左</span><br><span class="line">不动，不动，不动</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例  2：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：steps = 2, arrLen = 4</span><br><span class="line">输出：2</span><br><span class="line">解释：2 步后，总共有 2 种不同的方法可以停在索引 0 处。</span><br><span class="line">向右，向左</span><br><span class="line">不动，不动</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 3：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：steps = 4, arrLen = 2</span><br><span class="line">输出：8</span><br></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1 &lt;= steps &lt;= 500</span><br><span class="line">1 &lt;= arrLen &lt;= 10^6</span><br></pre></td></tr></table></figure>
-
-<p><strong>题解：</strong></p>
+<pre><code>输入：steps = 3, arrLen = 2
+输出：4
+解释：3 步后，总共有 4 种不同的方法可以停在索引 0 处。
+向右，向左，不动
+不动，向右，向左
+向右，不动，向左
+不动，不动，不动</code></pre><p><strong>示例  2：</strong></p>
+<pre><code>输入：steps = 2, arrLen = 4
+输出：2
+解释：2 步后，总共有 2 种不同的方法可以停在索引 0 处。
+向右，向左
+不动，不动</code></pre><p><strong>示例 3：</strong></p>
+<pre><code>输入：steps = 4, arrLen = 2
+输出：8</code></pre><p><strong>提示：</strong></p>
+<pre><code>1 &lt;= steps &lt;= 500
+1 &lt;= arrLen &lt;= 10^6</code></pre><p><strong>题解：</strong></p>
 <p><strong>暴力递归</strong></p>
 <p>pos表示移动的index,st表示当前还剩步数。结果超时- _ -</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"> <span class="keyword">public</span>:</span><br><span class="line">  <span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1000000007</span>;</span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">numWays</span><span class="params">(<span class="keyword">int</span> steps, <span class="keyword">int</span> arrLen)</span> </span>&#123; </span><br><span class="line">      <span class="keyword">int</span> res = dfs(steps, arrLen, <span class="number">0</span>);</span><br><span class="line">      <span class="keyword">return</span> res % N; </span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> st, <span class="keyword">int</span> arrLen, <span class="keyword">int</span> pos)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (st &lt; <span class="number">0</span> || pos &lt; <span class="number">0</span> || pos &gt;= arrLen) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (st == <span class="number">0</span> &amp;&amp; pos == <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (pos &gt;= <span class="number">0</span> &amp;&amp; pos &lt;= arrLen - <span class="number">1</span>)</span><br><span class="line">      <span class="comment">// 不动</span></span><br><span class="line">      ans = dfs(st - <span class="number">1</span>, arrLen, pos);</span><br><span class="line">    <span class="keyword">if</span> (pos &gt;= <span class="number">1</span>)</span><br><span class="line">      <span class="comment">// 向左</span></span><br><span class="line">      ans += dfs(st - <span class="number">1</span>, arrLen, pos - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span> (pos &lt;= arrLen - <span class="number">2</span>)</span><br><span class="line">      <span class="comment">// 向右</span></span><br><span class="line">      ans += dfs(st- <span class="number">1</span>, arrLen, pos + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++"><code class="language-c++">class Solution {
+ public:
+  const int N = 1000000007;
+  int numWays(int steps, int arrLen) { 
+      int res = dfs(steps, arrLen, 0);
+      return res % N; 
+  }
 
+  int dfs(int st, int arrLen, int pos) {
+    if (st < 0 || pos < 0 || pos >= arrLen) return 0;
+    if (st == 0 && pos == 0) {
+      return 1;
+    }
+    int ans = 0;
+    if (pos >= 0 && pos <= arrLen - 1)
+      // 不动
+      ans = dfs(st - 1, arrLen, pos);
+    if (pos >= 1)
+      // 向左
+      ans += dfs(st - 1, arrLen, pos - 1);
+    if (pos <= arrLen - 2)
+      // 向右
+      ans += dfs(st- 1, arrLen, pos + 1);
+    return ans;
+  }
+};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>记忆化搜索</strong></p>
 <p><strong>一开始开辟空间太大，过不了，发现开辟很大空间后，使用map性能比vector好，而实际只需要开辟steps*steps即可。</strong></p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> memo[<span class="number">505</span>][<span class="number">505</span>];</span><br><span class="line"><span class="comment">// vector&lt;vector&lt;int&gt;&gt; memo;</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"> <span class="keyword">public</span>:</span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1000000007</span>;</span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">numWays</span><span class="params">(<span class="keyword">int</span> steps, <span class="keyword">int</span> arrLen)</span> </span>&#123; </span><br><span class="line">      <span class="built_in">memset</span>(memo, <span class="number">-1</span>, <span class="keyword">sizeof</span>(memo));</span><br><span class="line">    <span class="comment">//   memo = vector&lt;vector&lt;int&gt;&gt;(505, vector&lt;int&gt;(505,-1));</span></span><br><span class="line">      <span class="keyword">int</span> res = dfs(steps, arrLen, <span class="number">0</span>);</span><br><span class="line">      <span class="keyword">return</span> res % N; </span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> st, <span class="keyword">int</span> arrLen, <span class="keyword">int</span> pos)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (st &lt; <span class="number">0</span> || pos &lt; <span class="number">0</span> || pos &gt;= arrLen) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (memo[st][pos] != <span class="number">-1</span>) <span class="keyword">return</span> memo[st][pos];</span><br><span class="line">    <span class="keyword">if</span> (st == <span class="number">0</span> &amp;&amp; pos == <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> memo[st][pos] = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (pos &gt;= <span class="number">0</span> &amp;&amp; pos &lt;= arrLen - <span class="number">1</span>) </span><br><span class="line">      <span class="comment">// 不动</span></span><br><span class="line">      ans = dfs(st - <span class="number">1</span>, arrLen, pos) % N;</span><br><span class="line">    <span class="keyword">if</span> (pos &gt;= <span class="number">1</span>)</span><br><span class="line">      <span class="comment">// 向左</span></span><br><span class="line">      ans =  ans % N + dfs(st - <span class="number">1</span>, arrLen, pos - <span class="number">1</span>) % N;</span><br><span class="line">    <span class="keyword">if</span> (pos &lt;= arrLen - <span class="number">2</span>)</span><br><span class="line">      <span class="comment">// 向右</span></span><br><span class="line">      ans = ans % N + dfs(st- <span class="number">1</span>, arrLen, pos + <span class="number">1</span>) % N;</span><br><span class="line">    <span class="keyword">return</span> memo[st][pos] = ans;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++"><code class="language-c++">int memo[505][505];
+// vector<vector<int>> memo;
+class Solution {
+ public:
+  static const int N = 1000000007;
+  int numWays(int steps, int arrLen) { 
+      memset(memo, -1, sizeof(memo));
+    //   memo = vector<vector<int>>(505, vector<int>(505,-1));
+      int res = dfs(steps, arrLen, 0);
+      return res % N; 
+  }
 
+  int dfs(int st, int arrLen, int pos) {
+    if (st < 0 || pos < 0 || pos >= arrLen) return 0;
+    if (memo[st][pos] != -1) return memo[st][pos];
+    if (st == 0 && pos == 0) {
+      return memo[st][pos] = 1;
+    }
+    int ans = 0;
+    if (pos >= 0 && pos <= arrLen - 1) 
+      // 不动
+      ans = dfs(st - 1, arrLen, pos) % N;
+    if (pos >= 1)
+      // 向左
+      ans =  ans % N + dfs(st - 1, arrLen, pos - 1) % N;
+    if (pos <= arrLen - 2)
+      // 向右
+      ans = ans % N + dfs(st- 1, arrLen, pos + 1) % N;
+    return memo[st][pos] = ans;
+  }
+};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>动态规划</strong></p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"> <span class="keyword">public</span>:</span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1000000007</span>;</span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">numWays</span><span class="params">(<span class="keyword">int</span> steps, <span class="keyword">int</span> arrLen)</span> </span>&#123; </span><br><span class="line">      <span class="keyword">int</span> maxLen = min(steps, arrLen);</span><br><span class="line">      <span class="keyword">long</span> <span class="keyword">long</span> dp[steps + <span class="number">1</span>][maxLen + <span class="number">1</span>];</span><br><span class="line">      <span class="built_in">memset</span>(dp, <span class="number">0</span>, <span class="keyword">sizeof</span> dp);</span><br><span class="line">      dp[<span class="number">1</span>][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">      dp[<span class="number">1</span>][<span class="number">1</span>] = <span class="number">1</span>; <span class="comment">// step=1 pos=1</span></span><br><span class="line"></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> s = <span class="number">1</span>; s &lt;= steps; s++) &#123;</span><br><span class="line">          <span class="keyword">for</span> (<span class="keyword">int</span> l = <span class="number">0</span>; l &lt; maxLen; l++) &#123;</span><br><span class="line">            <span class="comment">// 原地</span></span><br><span class="line">            	dp[s][l] = dp[s][l] + dp[s - <span class="number">1</span>][l];</span><br><span class="line">            <span class="comment">// 右</span></span><br><span class="line">            	dp[s][l] = dp[s][l]  + dp[s - <span class="number">1</span>][l + <span class="number">1</span>];</span><br><span class="line">            <span class="comment">// 左</span></span><br><span class="line"></span><br><span class="line">            	<span class="keyword">if</span> (l - <span class="number">1</span> &gt;= <span class="number">0</span>)</span><br><span class="line">            		dp[s][l] =  dp[s][l] + dp[s - <span class="number">1</span>][l - <span class="number">1</span>];</span><br><span class="line">              </span><br><span class="line">              dp[s][l] %= N;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;     </span><br><span class="line">      <span class="keyword">return</span> dp[steps][<span class="number">0</span>]; </span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++"><code class="language-c++">class Solution {
+ public:
+  static const int N = 1000000007;
+  int numWays(int steps, int arrLen) { 
+      int maxLen = min(steps, arrLen);
+      long long dp[steps + 1][maxLen + 1];
+      memset(dp, 0, sizeof dp);
+      dp[1][0] = 1;
+      dp[1][1] = 1; // step=1 pos=1
 
+      for (int s = 1; s <= steps; s++) {
+          for (int l = 0; l < maxLen; l++) {
+            // 原地
+                dp[s][l] = dp[s][l] + dp[s - 1][l];
+            // 右
+                dp[s][l] = dp[s][l]  + dp[s - 1][l + 1];
+            // 左
+
+                if (l - 1 >= 0)
+                    dp[s][l] =  dp[s][l] + dp[s - 1][l - 1];
+
+              dp[s][l] %= N;
+          }
+      }     
+      return dp[steps][0]; 
+  }
+};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -1324,7 +1406,11 @@
                     <div class="summary block-with-text">
                         
                             12. 整数转罗马数字罗马数字包含以下七种字符： I， V， X， L，C，D 和 M。
-字符          数值I             1V             5X             10L             5
+字符          数值
+I             1
+V             5
+X             10
+L          
                         
                     </div>
                     <div class="publish-info">
@@ -1576,7 +1662,7 @@
            <!--<a href="/sitemap.xml" target="_blank">站点地图</a>丨-->
            
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">87.2k
+            <span class="white-color">70.4k
              丨            
             <a href="https://tongji.baidu.com/web/welcome/ico?s=df42dpc7224a5f6a8d435" target="_blank">百度统计</a>丨
            <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278720284'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1278720284%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
@@ -1667,7 +1753,7 @@
       <span class="badge-subject">Link</span><span class="badge-value bg-red">996.ICU</span></a>
     </div>
     <div class="github-badge">
-      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">87.2k</span>
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">70.4k</span>
     </div>
 </footer>
 

@@ -770,14 +770,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    837
+                    662
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    2 分
                 </div>
                 
                 
@@ -796,15 +796,15 @@
                 <h4 id="1787-使所有区间的异或结果为零"><a href="#1787-使所有区间的异或结果为零" class="headerlink" title="1787. 使所有区间的异或结果为零"></a><a href="https://leetcode-cn.com/problems/make-the-xor-of-all-segments-equal-to-zero/" target="_blank" rel="noopener">1787. 使所有区间的异或结果为零</a></h4><p>给你一个整数数组 nums 和一个整数 k 。区间 [left, right]（left &lt;= right）的 异或结果 是对下标位于 left 和 right（包括 left 和 right ）之间所有元素进行 XOR 运算的结果：nums[left] XOR nums[left+1] XOR … XOR nums[right] 。</p>
 <p>返回数组中 <strong>要更改的最小元素数</strong> ，以使所有长度为 k 的区间异或结果等于零。</p>
 <p><strong>示例 1：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：nums = [1,2,0,3,0], k = 1</span><br><span class="line">输出：3</span><br><span class="line">解释：将数组 [1,2,0,3,0] 修改为 [0,0,0,0,0]</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：nums = [3,4,5,2,1,7,3,4,7], k = 3</span><br><span class="line">输出：3</span><br><span class="line">解释：将数组 [3,4,5,2,1,7,3,4,7] 修改为 [3,4,7,3,4,7,3,4,7]</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 3：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：nums = [1,2,4,1,2,5,1,2,6], k = 3</span><br><span class="line">输出：3</span><br><span class="line">解释：将数组[1,2,4,1,2,5,1,2,6] 修改为 [1,2,3,1,2,3,1,2,3]</span><br></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
+<pre><code>输入：nums = [1,2,0,3,0], k = 1
+输出：3
+解释：将数组 [1,2,0,3,0] 修改为 [0,0,0,0,0]</code></pre><p><strong>示例 2：</strong></p>
+<pre><code>输入：nums = [3,4,5,2,1,7,3,4,7], k = 3
+输出：3
+解释：将数组 [3,4,5,2,1,7,3,4,7] 修改为 [3,4,7,3,4,7,3,4,7]</code></pre><p><strong>示例 3：</strong></p>
+<pre><code>输入：nums = [1,2,4,1,2,5,1,2,6], k = 3
+输出：3
+解释：将数组[1,2,4,1,2,5,1,2,6] 修改为 [1,2,3,1,2,3,1,2,3]</code></pre><p><strong>提示：</strong></p>
 <ul>
 <li><p>1 &lt;= k &lt;= nums.length &lt;= 2000</p>
 </li>
@@ -814,8 +814,45 @@
 </ul>
 <p>第一种情况采用贪心的方法求得最优解。因为修改后的元素可能是原序列中没有出现过的元素。如果修改的某一列的元素是原序列中没有出现过的元素，那么这种情况下一定可以用贪心的办法求出最优解，做法是将众数最小的一列中的每个数变成一个全新的，该列中没有出现的，使得每个周期内的元素的异或和为0的数。</p>
 <p>第二种情况采用dp的方法求得最优解在这种情况下，由于没有最终修改后的元素是原数组中存在的数，因此可以从前往后枚举每一列，然后枚举选择第几行的数作为这列元素修改后的元素，由于异或具有交换性质，因此不具有顺序的问题，所以可以采用dp的方法递推出将序列变成数组中本来存在的某个数的情况。边界，f[0] [0] = 0，目标状态是f[k] [0]，状态表示f[i] [j]为前i列异或和为j的情况下的最小值。</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">// 1.某一列用了一个全新的数</span></span><br><span class="line">    <span class="comment">// 2.每一列用了原来的数</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1024</span>, INF = <span class="number">1e8</span>;</span><br><span class="line">    <span class="keyword">int</span> s[<span class="number">1024</span>]; <span class="comment">// 求众数</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minChanges</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = nums.size(), m = (n + k - <span class="number">1</span>) / k;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; f(k + <span class="number">1</span>, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;(N, INF));</span><br><span class="line">        <span class="keyword">int</span> cnt = <span class="number">0</span>, minv = INF; <span class="comment">// 每一列代价</span></span><br><span class="line">        <span class="comment">// f[i][j] 第i列的异或和为j</span></span><br><span class="line">        f[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= k; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> len = m;</span><br><span class="line">            <span class="built_in">memset</span>(s, <span class="number">0</span> , <span class="keyword">sizeof</span> s);</span><br><span class="line">            <span class="keyword">if</span> (n % k &amp;&amp; n % k &lt; i) len--;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; len; j ++) &#123;</span><br><span class="line">                s[nums[j * k + i - <span class="number">1</span>]]++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">int</span> maxv = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; N; j++) &#123;</span><br><span class="line">                maxv = max(maxv, s[j]);</span><br><span class="line">            &#125;</span><br><span class="line">            cnt += len - maxv;</span><br><span class="line">            minv = min(minv, maxv); <span class="comment">// 众数最少的那一列  不用众数  而用全新的数</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; N; j++) &#123; <span class="comment">// 异或和为j</span></span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> u = <span class="number">0</span>; u &lt; len; u++) &#123; <span class="comment">// 每一行</span></span><br><span class="line">                    <span class="keyword">int</span> x = nums[u * k + i - <span class="number">1</span>], cost = len - s[x];</span><br><span class="line">                    f[i][j] = min(f[i][j], f[i - <span class="number">1</span>][j ^ x] + cost);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// cnt: 每一列的代价</span></span><br><span class="line">        <span class="comment">// minv表示 某一列不用众数时的代价 si - maxv -&gt; si 变成全新的数代价</span></span><br><span class="line">        <span class="keyword">return</span> min(cnt + minv, f[k][<span class="number">0</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++"><code class="language-c++">class Solution {
+public:
+    // 1.某一列用了一个全新的数
+    // 2.每一列用了原来的数
 
+    const int N = 1024, INF = 1e8;
+    int s[1024]; // 求众数
+    int minChanges(vector<int>& nums, int k) {
+        int n = nums.size(), m = (n + k - 1) / k;
+        vector<vector<int>> f(k + 1, vector<int>(N, INF));
+        int cnt = 0, minv = INF; // 每一列代价
+        // f[i][j] 第i列的异或和为j
+        f[0][0] = 0;
+        for (int i = 1; i <= k; i++) {
+            int len = m;
+            memset(s, 0 , sizeof s);
+            if (n % k && n % k < i) len--;
+            for (int j = 0; j < len; j ++) {
+                s[nums[j * k + i - 1]]++;
+            }
+            int maxv = 0;
+            for (int j = 0; j < N; j++) {
+                maxv = max(maxv, s[j]);
+            }
+            cnt += len - maxv;
+            minv = min(minv, maxv); // 众数最少的那一列  不用众数  而用全新的数
+
+            for (int j = 0; j < N; j++) { // 异或和为j
+                for (int u = 0; u < len; u++) { // 每一行
+                    int x = nums[u * k + i - 1], cost = len - s[x];
+                    f[i][j] = min(f[i][j], f[i - 1][j ^ x] + cost);
+                }
+            }
+        }
+        // cnt: 每一列的代价
+        // minv表示 某一列不用众数时的代价 si - maxv -> si 变成全新的数代价
+        return min(cnt + minv, f[k][0]);
+    }
+};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -1576,7 +1613,7 @@
            <!--<a href="/sitemap.xml" target="_blank">站点地图</a>丨-->
            
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">87.2k
+            <span class="white-color">70.4k
              丨            
             <a href="https://tongji.baidu.com/web/welcome/ico?s=df42dpc7224a5f6a8d435" target="_blank">百度统计</a>丨
            <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278720284'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1278720284%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
@@ -1667,7 +1704,7 @@
       <span class="badge-subject">Link</span><span class="badge-value bg-red">996.ICU</span></a>
     </div>
     <div class="github-badge">
-      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">87.2k</span>
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">70.4k</span>
     </div>
 </footer>
 

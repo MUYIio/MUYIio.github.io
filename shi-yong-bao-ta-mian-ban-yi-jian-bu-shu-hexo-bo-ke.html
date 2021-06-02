@@ -823,115 +823,93 @@
 </blockquote>
 <h1 id="1】Git安装及配置"><a href="#1】Git安装及配置" class="headerlink" title="1】Git安装及配置"></a>1】Git安装及配置</h1><h3 id="一、安装依赖库和编译工具"><a href="#一、安装依赖库和编译工具" class="headerlink" title="一、安装依赖库和编译工具"></a>一、安装依赖库和编译工具</h3><ul>
 <li><p>安装依赖库：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-bash"><code class="language-bash">yum <span class="token function">install</span> curl-devel expat-devel gettext-devel openssl-devel zlib-devel <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 </ul>
 <p>然后会出现：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Is this ok [y/d/N]:</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-bash"><code class="language-bash">Is this ok <span class="token punctuation">[</span>y/d/N<span class="token punctuation">]</span>:<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>输入<code>y</code>继续安装，后面也一样。</p>
 <ul>
 <li><p>安装编译工具：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum install gcc perl-ExtUtils-MakeMaker package</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-bash"><code class="language-bash">yum <span class="token function">install</span> gcc perl-ExtUtils-MakeMaker package <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 </ul>
 <h3 id="二、下载-git并解压编译安装"><a href="#二、下载-git并解压编译安装" class="headerlink" title="二、下载 git并解压编译安装"></a>二、下载 git并解压编译安装</h3><ul>
 <li>查看服务器已有的git版本</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">git</span> --version<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>然后会看到：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git version 1.8.3.1</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">git</span> version 1.8.3.1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <blockquote>
 <p>但是官网版本已经更新了，因为yum仓库的Git版本更新的时间会存在延时，我们这里采用源码包安装方式安装。</p>
 </blockquote>
 <ul>
 <li>将陈旧版本的git删除</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum remove git</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-bash"><code class="language-bash">yum remove <span class="token function">git</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ul>
 <li><p>选择一个目录来存放下载下来的 git 安装包。这里选择了<code>/usr/local/src</code> 目录</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/src</span><br></pre></td></tr></table></figure>
-
-
-
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">cd</span> /usr/local/src  <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 </ul>
 <ul>
 <li>下载最新版git到<code>/usr/local/src</code>，可以在官网找到版本，目前最新版本是2.26.0。</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget http://ftp.ntu.edu.tw/software/scm/git/git-2.26.0.tar.gz</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">wget</span> http://ftp.ntu.edu.tw/software/scm/git/git-2.26.0.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ul>
 <li>解压到当前目录</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tar -zvxf git-2.26.0.tar.gz</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">tar</span> -zvxf git-2.26.0.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ul>
 <li>进入 <code>git-2.26.0.tar.gz</code> 目录下</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> git-2.26.0</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">cd</span> git-2.26.0<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ul>
 <li>执行编译</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">make prefix=/usr/<span class="built_in">local</span>/git all</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">make</span> prefix<span class="token operator">=</span>/usr/local/git all<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ul>
 <li>安装 git 到 /usr/local/git 目录下</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">make prefix=/usr/<span class="built_in">local</span>/git install</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">make</span> prefix<span class="token operator">=</span>/usr/local/git <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="三、配置-git-环境变量"><a href="#三、配置-git-环境变量" class="headerlink" title="三、配置 git 环境变量"></a>三、配置 git 环境变量</h3><ul>
 <li>打开环境变量配置文件</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim /etc/profile</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-bash"><code class="language-bash">vim /etc/profile<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><strong>按i进入编辑模式，按向下键到底部，添加下面两行命令：</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">PATH=<span class="variable">$PATH</span>:/usr/<span class="built_in">local</span>/git/bin   <span class="comment"># git 的目录</span></span><br><span class="line"><span class="built_in">export</span> PATH</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-bash"><code class="language-bash">PATH<span class="token operator">=</span><span class="token variable">$PATH</span>:/usr/local/git/bin   <span class="token comment" spellcheck="true"># git 的目录</span>
+<span class="token function">export</span> PATH<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p><strong>按<code>esc</code>退出，按<code>:wq</code>保存编辑。(注意是先<code>:</code>再是<code>wq</code>)</strong></p>
 <p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.5/Images/posts/%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8/QQ%E5%9B%BE%E7%89%8720200402004810.png" alt></p>
 <ul>
 <li>使 git 环境变量生效</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> /etc/profile</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-bash"><code class="language-bash"> <span class="token function">source</span> /etc/profile<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ul>
 <li>验证安装完成，查看 git 的版本号</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">git</span> --version<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>这时候我们的git版本已经变成了：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git version 2.26.0</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">git</span> version 2.26.0<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.5/Images/posts/%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8/QQ%E5%9B%BE%E7%89%8720200402004827.png" alt></p>
 <h3 id="四、创建-git-用户"><a href="#四、创建-git-用户" class="headerlink" title="四、创建 git 用户"></a>四、创建 git 用户</h3><ul>
 <li>创建git用户</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">adduser git</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-bash"><code class="language-bash">adduser <span class="token function">git</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ul>
 <li>获取权限</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">chmod 740 /etc/sudoers</span><br><span class="line">vim /etc/sudoers</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">chmod</span> 740 /etc/sudoers
+vim /etc/sudoers<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>按 <code>i</code> 键进入文件的编辑模式，按向下键找到如下字段</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root    ALL=(ALL)       ALL</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-bash"><code class="language-bash">root    ALL<span class="token operator">=</span><span class="token punctuation">(</span>ALL<span class="token punctuation">)</span>       ALL<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>在其后面增加一句：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git     ALL=(ALL)       ALL</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">git</span>     ALL<span class="token operator">=</span><span class="token punctuation">(</span>ALL<span class="token punctuation">)</span>       ALL<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><strong>按 <code>Esc</code> 键退出编辑模式，输入<code>:wq</code> 保存退出。（先输入<code>:</code>，然后输入<code>wq</code>回车）</strong></p>
 <ul>
 <li>退回权限</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">chmod 400 /etc/sudoers</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">chmod</span> 400 /etc/sudoers<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="五、配置密钥"><a href="#五、配置密钥" class="headerlink" title="五、配置密钥"></a>五、配置密钥</h3><ul>
 <li>创建密钥</li>
 </ul>
@@ -943,73 +921,66 @@
 <li>将密钥保存在服务器(之前有密钥的直接复制就可以)</li>
 </ul>
 <p>将<code>id_rsa.pub</code>里面的密钥复制,在服务器运行下面命令，创建.ssh文件夹</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">su git</span><br><span class="line">mkdir ~/.ssh</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">su</span> <span class="token function">git</span>
+<span class="token function">mkdir</span> ~/.ssh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>创建<code>.ssh/authorized_keys</code>文件，打开<code>authorized_keys</code>文件并将刚才在本地机器复制的内容拷贝其中并保存</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim ~/.ssh/authorized_keys</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-bash"><code class="language-bash">vim ~/.ssh/authorized_keys<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><strong>按<code>i</code>进入编辑模式粘贴完按 <code>Esc</code> 键退出编辑模式，输入<code>:wq</code> 保存退出。（先输入<code>:</code>，然后输入<code>wq</code>回车）</strong></p>
 <ul>
 <li>修改权限</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">chmod 755 ~</span><br><span class="line">chmod 700 ~/.ssh</span><br><span class="line">chmod 600 ~/.ssh/authorized_keys</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">chmod</span> 755 ~
+<span class="token function">chmod</span> 700 ~/.ssh
+<span class="token function">chmod</span> 600 ~/.ssh/authorized_keys<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><p>测试本地连接服务器</p>
 <p>在本地电脑git bash here</p>
 </li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">//yourIp为远程服务器的ip地址</span><br><span class="line">ssh -v git@yourIp     //yourIp为你的服务器ip</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-bash"><code class="language-bash">//yourIp为远程服务器的ip地址
+<span class="token function">ssh</span> -v git@yourIp     //yourIp为你的服务器ip<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>如图则证明本地机器与远程机器已经接通</p>
 <p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.5/Images/posts/%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8/QQ%E5%9B%BE%E7%89%8720200402004834.png" alt></p>
 <h3 id="六、创建git仓库"><a href="#六、创建git仓库" class="headerlink" title="六、创建git仓库"></a>六、创建git仓库</h3><ul>
 <li>切换到root用户，创建一个目录用于存储网站的根目录</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">su root</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">su</span> root<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ul>
 <li>创建网站的根目录</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mkdir /home/hexo</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">mkdir</span> /home/hexo<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ul>
 <li>给予权限</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">chown git:git -R /home/hexo</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">chown</span> git:git -R /home/hexo<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="七、自动化部署"><a href="#七、自动化部署" class="headerlink" title="七、自动化部署"></a>七、自动化部署</h3><ul>
 <li>获取root权限</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">su root</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">su</span> root<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ul>
 <li>建立git仓库</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /home/git</span><br><span class="line">git init --bare blog.git</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">cd</span> /home/git
+<span class="token function">git</span> init --bare blog.git<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <ul>
 <li>修改blog.git权限</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">chown git:git -R blog.git</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">chown</span> git:git -R blog.git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ul>
 <li>在 <code>/home/hexo/blog.git</code> 下，有一个自动生成的 <code>hooks</code> 文件夹，我们创建一个新的 <code>git</code> 钩子 <code>post-receive</code>，用于自动部署。</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim blog.git/hooks/post-receive</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-bash"><code class="language-bash">vim blog.git/hooks/post-receive<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ul>
 <li><strong>按 <code>i</code> 键进入文件的编辑模式</strong>，在该文件中添加两行代码（将下边的代码粘贴进去)，指定 Git 的工作树（源代码）和 Git 目录</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash </span></span><br><span class="line">git --work-tree=/home/hexo --git-dir=/home/git/blog.git checkout -f</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-bash"><code class="language-bash"> <span class="token comment" spellcheck="true">#!/bin/bash </span>
+ <span class="token function">git</span> --work-tree<span class="token operator">=</span>/home/hexo --git-dir<span class="token operator">=</span>/home/git/blog.git checkout -f <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p><strong>按 <code>Esc</code> 键退出编辑模式，输入<code>:wq</code> 保存退出。（先输入<code>：</code>，然后输入<code>wq</code>回车）</strong></p>
 <p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.5/Images/posts/%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8/QQ%E5%9B%BE%E7%89%8720200402004843.png" alt></p>
 <ul>
 <li>修改文件权限，使得其可执行。</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">chmod +x /home/git/blog.git/hooks/post-receive</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">chmod</span> +x /home/git/blog.git/hooks/post-receive<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h1 id="2】安装宝塔"><a href="#2】安装宝塔" class="headerlink" title="2】安装宝塔"></a>2】安装宝塔</h1><blockquote>
 <p>宝塔Linux面板是提升运维效率的服务器管理软件，支持一键LAMP/LNMP/集群/监控/网站/FTP/数据库/JAVA等100多项服务器管理功能。支持的操作系统有CentOS，Ubuntu、Debian、Fedora.</p>
 </blockquote>
@@ -1017,33 +988,41 @@
 <ul>
 <li>首先切换到根目录</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">cd</span> ~<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ul>
 <li><strong>安装6.9稳定版（宝塔linux6.x版本基于centos7开发，适用于centos7.x版本）</strong></li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum install -y wget &amp;&amp; wget -O install.sh http://download.bt.cn/install/install_6.0.sh &amp;&amp; bash install.sh</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-bash"><code class="language-bash">yum <span class="token function">install</span> -y <span class="token function">wget</span> <span class="token operator">&amp;&amp;</span> <span class="token function">wget</span> -O install.sh http://download.bt.cn/install/install_6.0.sh <span class="token operator">&amp;&amp;</span> <span class="token function">bash</span> install.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><strong>中间会让你输入<code>y/n</code>继续安装，输入<code>y</code></strong></p>
 <ul>
 <li><strong>7.x版本以下安装宝塔5.9</strong></li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum install -y wget &amp;&amp; wget -O install.sh http://download.bt.cn/install/install.sh &amp;&amp; sh install.sh</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-bash"><code class="language-bash">yum <span class="token function">install</span> -y <span class="token function">wget</span> <span class="token operator">&amp;&amp;</span> <span class="token function">wget</span> -O install.sh http://download.bt.cn/install/install.sh <span class="token operator">&amp;&amp;</span> sh install.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h1 id="3】登录宝塔面板"><a href="#3】登录宝塔面板" class="headerlink" title="3】登录宝塔面板"></a>3】登录宝塔面板</h1><ul>
 <li><strong>宝塔安装完成后会出现以下字样</strong></li>
 </ul>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">================================================================</span><br><span class="line"></span><br><span class="line">BT-Panel default info!</span><br><span class="line">==================================================================</span><br><span class="line"></span><br><span class="line">Bt-Panel-URL: http://119.34.25.52:8888/af293c8c</span><br><span class="line">username: aaaaaaaaa</span><br><span class="line">password: 123456789</span><br><span class="line">Warning:</span><br><span class="line"><span class="attribute">If</span> you cannot access the panel, </span><br><span class="line"></span><br><span class="line">release the following port (<span class="number">8888</span>|<span class="number">888</span>|<span class="number">80</span>|<span class="number">443</span>|<span class="number">20</span>|<span class="number">21</span>) in the security group</span><br><span class="line">==================================================================</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-nginx"><code class="language-nginx"><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">=</span>
 
+BT<span class="token operator">-</span>Panel default info<span class="token operator">!</span>
+<span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span>
+
+Bt<span class="token operator">-</span>Panel<span class="token operator">-</span>URL<span class="token punctuation">:</span> <span class="token keyword">http</span><span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span><span class="token number">119.34</span><span class="token punctuation">.</span><span class="token number">25.52</span><span class="token punctuation">:</span><span class="token number">8888</span><span class="token operator">/</span>af293c8c
+username<span class="token punctuation">:</span> aaaaaaaaa
+password<span class="token punctuation">:</span> <span class="token number">123456789</span>
+Warning<span class="token punctuation">:</span>
+<span class="token keyword">If</span> you cannot access the panel<span class="token punctuation">,</span> 
+
+release the following <span class="token function">port</span> <span class="token punctuation">(</span><span class="token number">8888</span><span class="token operator">|</span><span class="token number">888</span><span class="token operator">|</span><span class="token number">80</span><span class="token operator">|</span><span class="token number">443</span><span class="token operator">|</span><span class="token number">20</span><span class="token operator">|</span><span class="token number">21</span><span class="token punctuation">)</span> in the security group
+<span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>注明：</strong></p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">Bt-Panel-URL: http://119.34.25.52:8888/af293c8c       #登录宝塔面板的地址</span><br><span class="line">username: aaaaaaaaa                                   #账号</span><br><span class="line">password: 123456789                                   #密码</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-nginx"><code class="language-nginx">Bt<span class="token operator">-</span>Panel<span class="token operator">-</span>URL<span class="token punctuation">:</span> <span class="token keyword">http</span><span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span><span class="token number">119.34</span><span class="token punctuation">.</span><span class="token number">25.52</span><span class="token punctuation">:</span><span class="token number">8888</span><span class="token operator">/</span>af293c8c       <span class="token comment" spellcheck="true">#登录宝塔面板的地址</span>
+username<span class="token punctuation">:</span> aaaaaaaaa                                   <span class="token comment" spellcheck="true">#账号</span>
+password<span class="token punctuation">:</span> <span class="token number">123456789</span>                                   <span class="token comment" spellcheck="true">#密码</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>然后我们来到浏览器输入URL进入宝塔面板，再输入账号密码登录。</p>
 <ul>
 <li><strong>不知道账号密码以及登录地址在服务器输入下面命令即可</strong></li>
 </ul>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">/etc/init.d/bt default</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-nginx"><code class="language-nginx"><span class="token operator">/</span>etc<span class="token operator">/</span>init<span class="token punctuation">.</span>d<span class="token operator">/</span>bt default<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ul>
 <li><strong>安装LNMP（推荐）</strong></li>
 </ul>
@@ -1079,27 +1058,38 @@
 <h1 id="5】配置本地Hexo"><a href="#5】配置本地Hexo" class="headerlink" title="5】配置本地Hexo"></a>5】配置本地Hexo</h1><ul>
 <li>博客根目录_config下增加</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">    type: git</span><br><span class="line">    repo: root@***(服务器ip,内网外网都行):/home/git/blog.git    #仓库地址</span><br><span class="line">    branch: master    #分支</span><br></pre></td></tr></table></figure>
-
-<ul>
+<pre><code>deploy:
+    type: git
+    repo: root@***(服务器ip,内网外网都行):/home/git/blog.git    #仓库地址
+    branch: master    #分支</code></pre><ul>
 <li>部署</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-
-<ul>
+<pre><code>hexo clean
+hexo g
+hexo d</code></pre><ul>
 <li>输入<code>hexo d</code>的时候，会要求你输入自己的服务器密码</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Branch &apos;master&apos; set up to track remote branch &apos;master&apos; from &apos;https://e.coding.net/godxiaolon/godxiaolon.git&apos;.</span><br><span class="line">On branch master</span><br><span class="line">nothing to commit, working tree clean</span><br><span class="line">root@119.25.56.82&apos;s password:</span><br><span class="line">Enumerating objects: 182, done.</span><br><span class="line">Counting objects: 100% (182/182), done.</span><br><span class="line">Delta compression using up to 12 threads</span><br><span class="line">Compressing objects: 100% (61/61), done.</span><br><span class="line">Writing objects: 100% (95/95), 73.08 KiB | 3.18 MiB/s, done.</span><br><span class="line">Total 95 (delta 45), reused 0 (delta 0)</span><br><span class="line">remote: hooks/post-receive: line 1: t: command not found</span><br><span class="line">To 118.25.27.52:/home/git/hexoBlog.git</span><br><span class="line">   8df3691..7d63b39  HEAD -&gt; master</span><br><span class="line">Branch &apos;master&apos; set up to track remote branch &apos;master&apos; from &apos;root@118.25.27.52:/home/git/hexoBlog.git&apos;.</span><br><span class="line">INFO  Deploy done: git</span><br></pre></td></tr></table></figure>
-
-<blockquote>
+<pre><code>Branch &#39;master&#39; set up to track remote branch &#39;master&#39; from &#39;https://e.coding.net/godxiaolon/godxiaolon.git&#39;.
+On branch master
+nothing to commit, working tree clean
+root@119.25.56.82&#39;s password:
+Enumerating objects: 182, done.
+Counting objects: 100% (182/182), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (61/61), done.
+Writing objects: 100% (95/95), 73.08 KiB | 3.18 MiB/s, done.
+Total 95 (delta 45), reused 0 (delta 0)
+remote: hooks/post-receive: line 1: t: command not found
+To 118.25.27.52:/home/git/hexoBlog.git
+   8df3691..7d63b39  HEAD -&gt; master
+Branch &#39;master&#39; set up to track remote branch &#39;master&#39; from &#39;root@118.25.27.52:/home/git/hexoBlog.git&#39;.
+INFO  Deploy done: git</code></pre><blockquote>
 <p> 输入密码不会有显示，输完回车就可以</p>
 </blockquote>
 <ul>
 <li><strong>如果出现<code>bash: git-receive-pack: command not found</code>,则运行：</strong></li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo ln -s /usr/local/git/bin/git-receive-pack  /usr/bin/git-receive-pack</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.8/Images/posts/%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8/03.png" alt></p>
+<pre><code>sudo ln -s /usr/local/git/bin/git-receive-pack  /usr/bin/git-receive-pack</code></pre><p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.8/Images/posts/%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8/03.png" alt></p>
 <ul>
 <li>访问服务器ip，看看有没有成功</li>
 </ul>
@@ -1866,7 +1856,7 @@
            <!--<a href="/sitemap.xml" target="_blank">站点地图</a>丨-->
            
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">87.2k
+            <span class="white-color">70.4k
              丨            
             <a href="https://tongji.baidu.com/web/welcome/ico?s=df42dpc7224a5f6a8d435" target="_blank">百度统计</a>丨
            <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278720284'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1278720284%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
@@ -1957,7 +1947,7 @@
       <span class="badge-subject">Link</span><span class="badge-value bg-red">996.ICU</span></a>
     </div>
     <div class="github-badge">
-      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">87.2k</span>
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">70.4k</span>
     </div>
 </footer>
 

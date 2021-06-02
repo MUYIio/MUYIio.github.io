@@ -775,14 +775,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    835
+                    640
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    2 分
                 </div>
                 
                 
@@ -820,21 +820,41 @@
 <li><p>过时的浏览器将无法正常显示，因此，请升级您的浏览器。</p>
 </li>
 </ul>
-<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install --save hexo-blog-encrypt</span><br></pre></td></tr></table></figure>
-
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><pre class="line-numbers language-javascriptj"><code class="language-javascriptj">npm install --save hexo-blog-encrypt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h1 id="快速使用"><a href="#快速使用" class="headerlink" title="快速使用"></a>快速使用</h1><ul>
 <li><strong>将“ <font color="red" size="3">password</font>”添加到您的文章信息头就像这样</strong>：</li>
 </ul>
-<pre><code><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">title: Hello World</span><br><span class="line">date: 2020-03-13 21:12:21</span><br><span class="line">password: muyiio</span><br><span class="line">---</span><br></pre></td></tr></table></figure></code></pre><h1 id="按标签加密"><a href="#按标签加密" class="headerlink" title="按标签加密"></a>按标签加密</h1><ul>
+<pre><code>```javascriptj
+title: Hello World
+date: 2020-03-13 21:12:21
+password: muyiio
+---
+```</code></pre><h1 id="按标签加密"><a href="#按标签加密" class="headerlink" title="按标签加密"></a>按标签加密</h1><ul>
 <li><strong>修改文章信息头如下：</strong></li>
 </ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">title: Hello World</span><br><span class="line">tags:</span><br><span class="line">- 加密文章tag</span><br><span class="line">date: <span class="number">2020</span>-<span class="number">03</span>-<span class="number">13</span> <span class="number">21</span>:<span class="number">12</span>:<span class="number">21</span></span><br><span class="line">password: muyiio</span><br><span class="line"><span class="keyword">abstract</span>: 这里有东西被加密了，需要输入密码查看哦。</span><br><span class="line">message: 您好，这里需要密码。</span><br><span class="line">wrong_pass_message: 抱歉，这个密码看着不太对，请再试试。</span><br><span class="line">wrong_hash_message: 抱歉，这个文章不能被纠正，不过您还是能看看解密后的内容。</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-java"><code class="language-java">title<span class="token operator">:</span> Hello World
+tags<span class="token operator">:</span>
+<span class="token operator">-</span> 加密文章tag
+date<span class="token operator">:</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">03</span><span class="token operator">-</span><span class="token number">13</span> <span class="token number">21</span><span class="token operator">:</span><span class="token number">12</span><span class="token operator">:</span><span class="token number">21</span>
+password<span class="token operator">:</span> muyiio
+<span class="token keyword">abstract</span><span class="token operator">:</span> 这里有东西被加密了，需要输入密码查看哦。
+message<span class="token operator">:</span> 您好，这里需要密码。
+wrong_pass_message<span class="token operator">:</span> 抱歉，这个密码看着不太对，请再试试。
+wrong_hash_message<span class="token operator">:</span> 抱歉，这个文章不能被纠正，不过您还是能看看解密后的内容。
+<span class="token operator">--</span><span class="token operator">-</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><strong>对博客根目录<font color="red" size="3">_config</font>添加如下字段：</strong></li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 安全</span><br><span class="line">encrypt: # hexo-blog-encrypt</span><br><span class="line">  abstract: 这里有东西被加密了，需要输入密码查看哦。</span><br><span class="line">  message: 您好, 这里需要密码.</span><br><span class="line">  tags:</span><br><span class="line">  - &#123;name: tagName, password: 密码A&#125;</span><br><span class="line">  - &#123;name: tagName, password: 密码B&#125;</span><br><span class="line">  template: &lt;div id=&quot;hexo-blog-encrypt&quot; data-wpm=&quot;&#123;&#123;hbeWrongPassMessage&#125;&#125;&quot; data-whm=&quot;&#123;&#123;hbeWrongHashMessage&#125;&#125;&quot;&gt;&lt;div class=&quot;hbe-input-container&quot;&gt;&lt;input type=&quot;password&quot; id=&quot;hbePass&quot; placeholder=&quot;&#123;&#123;hbeMessage&#125;&#125;&quot; /&gt;&lt;label&gt;&#123;&#123;hbeMessage&#125;&#125;&lt;/label&gt;&lt;div class=&quot;bottom-line&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;script id=&quot;hbeData&quot; type=&quot;hbeData&quot; data-hmacdigest=&quot;&#123;&#123;hbeHmacDigest&#125;&#125;&quot;&gt;&#123;&#123;hbeEncryptedData&#125;&#125;&lt;/script&gt;&lt;/div&gt;</span><br><span class="line">  wrong_pass_message: 抱歉, 这个密码看着不太对, 请再试试.</span><br><span class="line">  wrong_hash_message: 抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-javascriptj"><code class="language-javascriptj"># 安全
+encrypt: # hexo-blog-encrypt
+  abstract: 这里有东西被加密了，需要输入密码查看哦。
+  message: 您好, 这里需要密码.
+  tags:
+  - {name: tagName, password: 密码A}
+  - {name: tagName, password: 密码B}
+  template: <div id="hexo-blog-encrypt" data-wpm="{{hbeWrongPassMessage}}" data-whm="{{hbeWrongHashMessage}}"><div class="hbe-input-container"><input type="password" id="hbePass" placeholder="{{hbeMessage}}" /><label>{{hbeMessage}}</label><div class="bottom-line"></div></div><script id="hbeData" type="hbeData" data-hmacdigest="{{hbeHmacDigest}}">{{hbeEncryptedData}}</script></div>
+  wrong_pass_message: 抱歉, 这个密码看着不太对, 请再试试.
+  wrong_hash_message: 抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="对-TOC-文章进行加密"><a href="#对-TOC-文章进行加密" class="headerlink" title="对 TOC 文章进行加密"></a>对 TOC 文章进行加密</h1><p>如果您有一篇文章使用了<font color="red" size="3">TOC</font>，您需要修改模板的部分代码。这里以<font color="red" size="3">matery</font>主题作为示例：</p>
 <ul>
 <li><p><strong>在<font color="red" size="3">hexo/themes/matery/layout/_partial/article.ejs</font>找到<font color="red" size="3">article.ejs</font>。</strong></p>
@@ -844,8 +864,17 @@
 <li><p><strong>使用如下的代码来替代它：</strong></p>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;% if(post.toc == true)&#123; %&gt;</span><br><span class="line">  &lt;div id=&quot;toc-div&quot; class=&quot;toc-article&quot; &lt;% if (post.encrypt == true) &#123; %&gt;style=&quot;display:none&quot; &lt;% &#125; %&gt;&gt;</span><br><span class="line">    &lt;strong class=&quot;toc-title&quot;&gt;Index&lt;/strong&gt;</span><br><span class="line">      &lt;% if (post.encrypt == true) &#123; %&gt;</span><br><span class="line">        &lt;%- toc(post.origin, &#123;list_number: true&#125;) %&gt;</span><br><span class="line">      &lt;% &#125; else &#123; %&gt;</span><br><span class="line">        &lt;%- toc(post.content, &#123;list_number: true&#125;) %&gt;</span><br><span class="line">      &lt;% &#125; %&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br><span class="line">&lt;%- post.content %&gt;</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-javascriptj"><code class="language-javascriptj"><% if(post.toc == true){ %>
+  <div id="toc-div" class="toc-article" <% if (post.encrypt == true) { %>style="display:none" <% } %>>
+    <strong class="toc-title">Index</strong>
+      <% if (post.encrypt == true) { %>
+        <%- toc(post.origin, {list_number: true}) %>
+      <% } else { %>
+        <%- toc(post.content, {list_number: true}) %>
+      <% } %>
+  </div>
+<% } %>
+<%- post.content %><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h1><p>本文转载自作者<a href="https://github.com/MikeCoder/hexo-blog-encrypt" target="_blank" rel="noopener">MikeCoder</a>的<font color="red" size="3">hexo-blog-encrypt</font>项目，对有些地方略有修改。</p>
 <p>项目地址：<a href="https://github.com/MikeCoder/hexo-blog-encrypt" target="_blank" rel="noopener">https://github.com/MikeCoder/hexo-blog-encrypt</a></p>
 <p>发现这个还是挺好玩的~</p>
@@ -1608,7 +1637,7 @@
            <!--<a href="/sitemap.xml" target="_blank">站点地图</a>丨-->
            
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">87.2k
+            <span class="white-color">70.4k
              丨            
             <a href="https://tongji.baidu.com/web/welcome/ico?s=df42dpc7224a5f6a8d435" target="_blank">百度统计</a>丨
            <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278720284'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1278720284%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
@@ -1699,7 +1728,7 @@
       <span class="badge-subject">Link</span><span class="badge-value bg-red">996.ICU</span></a>
     </div>
     <div class="github-badge">
-      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">87.2k</span>
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">70.4k</span>
     </div>
 </footer>
 

@@ -776,7 +776,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    563
+                    562
                 </div>
                 
 
@@ -804,8 +804,8 @@
 <h3 id="暴力解法："><a href="#暴力解法：" class="headerlink" title="暴力解法："></a>暴力解法：</h3><p>n个数的全排列有n！个，那么随机拿出这里面任意一个结果也算公平。但是它的时间复杂度是O(n!)！原地爆炸boom<del>boom</del></p>
 <h3 id="Knuth-洗牌算法"><a href="#Knuth-洗牌算法" class="headerlink" title="Knuth 洗牌算法:"></a>Knuth 洗牌算法:</h3><p>至于Knuth何许人也，感兴趣的可以去查一下。微软是 IT 界老大的年代，比尔盖茨直接说，如果你看完了Knuth写的《The Art of Computer Programming》第一卷本，请给我发简历。</p>
 <p>生成的排列中，也就是我们的结果，<strong>每一个元素都能独立等概率的出现在每一个位置</strong>。或者反过来，<strong>每一个位置都能独立等概率的放置每个元素</strong>。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = n - <span class="number">1</span>; i &gt;= <span class="number">0</span> ; i -- )</span><br><span class="line">    swap(arr[i], arr[rand(<span class="number">0</span>, i)]) <span class="comment">// rand(0, i) 生成 [0, i] 之间的随机整数</span></span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">>=</span> <span class="token number">0</span> <span class="token punctuation">;</span> i <span class="token operator">--</span> <span class="token punctuation">)</span>
+    <span class="token function">swap</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> arr<span class="token punctuation">[</span><span class="token function">rand</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// rand(0, i) 生成 [0, i] 之间的随机整数</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>很好理解，i从后向前，每次生成0~i之间的一个随机数，然后将i和这个随机数交换， swap(arr[i], arr[rand(0, i)]) 看出，i可以跟自己交换。（<strong>假想rand()无偏</strong>）</p>
 <h4 id="为什么公平呢？"><a href="#为什么公平呢？" class="headerlink" title="为什么公平呢？"></a>为什么公平呢？</h4><p><strong>对于生成的排列，每一个元素都能等概率的出现在每一个位置</strong></p>
 <p><strong>示例：</strong>现有6个数从小到大排列：1 2 3 4 5 6</p>
@@ -1580,7 +1580,7 @@
            <!--<a href="/sitemap.xml" target="_blank">站点地图</a>丨-->
            
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">87.2k
+            <span class="white-color">70.4k
              丨            
             <a href="https://tongji.baidu.com/web/welcome/ico?s=df42dpc7224a5f6a8d435" target="_blank">百度统计</a>丨
            <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278720284'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1278720284%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
@@ -1671,7 +1671,7 @@
       <span class="badge-subject">Link</span><span class="badge-value bg-red">996.ICU</span></a>
     </div>
     <div class="github-badge">
-      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">87.2k</span>
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">70.4k</span>
     </div>
 </footer>
 

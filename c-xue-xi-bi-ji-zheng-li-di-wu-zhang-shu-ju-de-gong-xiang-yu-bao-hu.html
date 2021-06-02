@@ -785,14 +785,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2k
+                    400
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    1 分
                 </div>
                 
                 
@@ -824,12 +824,22 @@
 </ul>
 <p><strong>函数原形的作用域</strong></p>
 <p>函数原型中的参数，其作用域始于”(“，结束于”)”。</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//例如，设有下列原型声明：</span></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">area</span><span class="params">(<span class="keyword">double</span> radius)</span></span>;</span><br><span class="line"><span class="comment">//radius 的作用域仅在于此area，不能用于程序正文其他地方，因而可有可无。</span></span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-c++"><code class="language-c++">//例如，设有下列原型声明：
+double area(double radius);
+//radius 的作用域仅在于此area，不能用于程序正文其他地方，因而可有可无。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p><strong>局部作用域</strong></p>
 <p>函数的形参，在块中声明的标识符，其作用域自声明处起，限于块中，例如：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span> a)</span> </span>&#123;</span><br><span class="line">   <span class="keyword">int</span> b = a;</span><br><span class="line">   <span class="built_in">cin</span> &gt;&gt; b;</span><br><span class="line">   <span class="keyword">if</span> (b &gt; <span class="number">0</span>) &#123;</span><br><span class="line">     <span class="keyword">int</span> c;</span><br><span class="line"></span><br><span class="line">     ......</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//a的作用域是整个fun函数，b作用域在fun函数内，而c作用域在if语句内</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++"><code class="language-c++">void fun(int a) {
+   int b = a;
+   cin >> b;
+   if (b > 0) {
+     int c;
 
+     ......
+   }
+}
+
+//a的作用域是整个fun函数，b作用域在fun函数内，而c作用域在if语句内<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>类作用域</strong></p>
 <ul>
 <li><p>类的成员具有类作用域，其范围包括类体和非内联成员函数的函数体。</p>
@@ -839,8 +849,22 @@
 </ul>
 <p><strong>文件作用域</strong></p>
 <p>不在前述各个作用域中出现的声明，就具有文件作用域，这样声明的标识符其作用域开始于声明点，结束于文件尾。</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//example.1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> i;				<span class="comment">//全局变量，文件作用域</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123; </span><br><span class="line">     i = <span class="number">5</span>;			<span class="comment">//为全局变量i赋值</span></span><br><span class="line">     &#123;				<span class="comment">//子块1</span></span><br><span class="line">         <span class="keyword">int</span> i;		<span class="comment">//局部变量，局部作用域</span></span><br><span class="line">         i = <span class="number">7</span>;</span><br><span class="line">         <span class="built_in">cout</span> &lt;&lt; <span class="string">"i = "</span> &lt;&lt; i &lt;&lt; <span class="built_in">endl</span>;<span class="comment">//输出7</span></span><br><span class="line">      &#125;</span><br><span class="line">      <span class="built_in">cout</span> &lt;&lt; “i = ” &lt;&lt; i &lt;&lt; <span class="built_in">endl</span>;<span class="comment">//输出5</span></span><br><span class="line">      <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++"><code class="language-c++">//example.1
+#include <iostream>
+using namespace std;
 
+int i;                //全局变量，文件作用域
+int main() { 
+     i = 5;            //为全局变量i赋值
+     {                //子块1
+         int i;        //局部变量，局部作用域
+         i = 7;
+         cout << "i = " << i << endl;//输出7
+      }
+      cout << “i = ” << i << endl;//输出5
+      return 0;
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="②可见性"><a href="#②可见性" class="headerlink" title="②可见性"></a>②可见性</h3><ul>
 <li><p>可见性是从对标识符的引用的角度来谈的概念</p>
 </li>
@@ -880,8 +904,47 @@
 <li><p>开始于程序执行到声明点时，结束于命名该标识符的作用域结束处。</p>
 </li>
 </ul>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1.变量的生存期与可见性</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> i = <span class="number">1</span>; <span class="comment">// i 为全局变量，具有静态生存期。</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">other</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">int</span> a = <span class="number">2</span>;</span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">int</span> b;</span><br><span class="line">   <span class="comment">// a,b为静态局部变量，具有全局寿命，局部可见。</span></span><br><span class="line">   <span class="comment">//只第一次进入函数时被初始化。</span></span><br><span class="line">  <span class="keyword">int</span> c = <span class="number">10</span>; <span class="comment">// C为局部变量，具有动态生存期，</span></span><br><span class="line">            <span class="comment">//每次进入函数时都初始化。</span></span><br><span class="line">  a += <span class="number">2</span>; i += <span class="number">32</span>; c += <span class="number">5</span>;</span><br><span class="line">  <span class="built_in">cout</span>&lt;&lt;<span class="string">"---OTHER---\n"</span>;</span><br><span class="line">  <span class="built_in">cout</span>&lt;&lt;<span class="string">" i: "</span>&lt;&lt;i&lt;&lt;<span class="string">" a: "</span>&lt;&lt;a&lt;&lt;<span class="string">" b: "</span>&lt;&lt;b&lt;&lt;<span class="string">" c: "</span>&lt;&lt;c&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">  b = a;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">int</span> a;<span class="comment">//静态局部变量，有全局寿命，局部可见。</span></span><br><span class="line">  <span class="keyword">int</span> b = <span class="number">-10</span>; <span class="comment">// b, c为局部变量，具有动态生存期。</span></span><br><span class="line">  <span class="keyword">int</span> c = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"---MAIN---\n"</span>;</span><br><span class="line">  <span class="built_in">cout</span>&lt;&lt;<span class="string">" i: "</span>&lt;&lt;i&lt;&lt;<span class="string">" a: "</span>&lt;&lt;a&lt;&lt;<span class="string">" b: "</span>&lt;&lt;b&lt;&lt;<span class="string">" c: "</span>&lt;&lt;c&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">  c += <span class="number">8</span>; other();</span><br><span class="line">  <span class="built_in">cout</span>&lt;&lt;<span class="string">"---MAIN---\n"</span>;</span><br><span class="line">  <span class="built_in">cout</span>&lt;&lt;<span class="string">" i: "</span>&lt;&lt;i&lt;&lt;<span class="string">" a: "</span>&lt;&lt;a&lt;&lt;<span class="string">" b: "</span>&lt;&lt;b&lt;&lt;<span class="string">" c: "</span>&lt;&lt;c&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">  i += <span class="number">10</span>; other();  </span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//运行结果：</span></span><br><span class="line">---MAIN---</span><br><span class="line"> i: <span class="number">1</span> a: <span class="number">0</span> b: <span class="number">-10</span> c: <span class="number">0</span></span><br><span class="line">---OTHER---</span><br><span class="line"> i: <span class="number">33</span> a: <span class="number">4</span> b: <span class="number">0</span> c: <span class="number">15</span></span><br><span class="line">---MAIN---</span><br><span class="line"> i: <span class="number">33</span> a: <span class="number">0</span> b: <span class="number">-10</span> c: <span class="number">8</span></span><br><span class="line">---OTHER---</span><br><span class="line"> i: <span class="number">75</span> a: <span class="number">6</span> b: <span class="number">4</span> c: <span class="number">15</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++"><code class="language-c++">//1.变量的生存期与可见性
 
+
+#include<iostream>
+using namespace std;
+int i = 1; // i 为全局变量，具有静态生存期。
+void other() {
+  static int a = 2;
+  static int b;
+   // a,b为静态局部变量，具有全局寿命，局部可见。
+   //只第一次进入函数时被初始化。
+  int c = 10; // C为局部变量，具有动态生存期，
+            //每次进入函数时都初始化。
+  a += 2; i += 32; c += 5;
+  cout<<"---OTHER---\n";
+  cout<<" i: "<<i<<" a: "<<a<<" b: "<<b<<" c: "<<c<<endl;
+  b = a;
+}
+
+int main() {
+  static int a;//静态局部变量，有全局寿命，局部可见。
+  int b = -10; // b, c为局部变量，具有动态生存期。
+  int c = 0;
+    cout << "---MAIN---\n";
+  cout<<" i: "<<i<<" a: "<<a<<" b: "<<b<<" c: "<<c<<endl;
+  c += 8; other();
+  cout<<"---MAIN---\n";
+  cout<<" i: "<<i<<" a: "<<a<<" b: "<<b<<" c: "<<c<<endl;
+  i += 10; other();  
+    return 0;
+}
+
+//运行结果：
+---MAIN---
+ i: 1 a: 0 b: -10 c: 0
+---OTHER---
+ i: 33 a: 4 b: 0 c: 15
+---MAIN---
+ i: 33 a: 0 b: -10 c: 8
+---OTHER---
+ i: 75 a: 6 b: 4 c: 15<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="3-类的静态成员"><a href="#3-类的静态成员" class="headerlink" title="3.类的静态成员"></a>3.类的静态成员</h2><p><strong>静态数据成员</strong></p>
 <ul>
 <li><p>用关键字static声明</p>
@@ -893,8 +956,50 @@
 </ul>
 <p><strong>具有静态数据成员的Point类</strong></p>
 <p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.5/Images/posts/C%E7%AC%94%E8%AE%B0/%E5%9B%BE%E7%89%8710.png" alt></p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1.具有静态数据成员的Point类</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span> &#123;</span>	<span class="comment">//Point类定义</span></span><br><span class="line"><span class="keyword">public</span>:	<span class="comment">//外部接口</span></span><br><span class="line">	Point(<span class="keyword">int</span> x = <span class="number">0</span>, <span class="keyword">int</span> y = <span class="number">0</span>) : x(x), y(y) &#123; <span class="comment">//构造函数</span></span><br><span class="line">		<span class="comment">//在构造函数中对count累加，所有对象共同维护同一个count</span></span><br><span class="line">		count++;</span><br><span class="line">	&#125;</span><br><span class="line">	Point(Point &amp;p) &#123;	<span class="comment">//复制构造函数</span></span><br><span class="line">		x = p.x;</span><br><span class="line">		y = p.y;</span><br><span class="line">		count++;</span><br><span class="line">	&#125;</span><br><span class="line">	~Point() &#123;  count--; &#125;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">getX</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> x; &#125;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">getY</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> y; &#125;</span><br><span class="line"></span><br><span class="line"> <span class="function"><span class="keyword">void</span> <span class="title">showCount</span><span class="params">()</span> </span>&#123;		<span class="comment">//输出静态数据成员</span></span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"  Object count = "</span> &lt;&lt; count &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="keyword">private</span>:	<span class="comment">//私有数据成员</span></span><br><span class="line">	<span class="keyword">int</span> x, y;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> count;	<span class="comment">//静态数据成员声明，用于记录点的个数</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">int</span> Point::count = <span class="number">0</span>;<span class="comment">//静态数据成员定义和初始化，使用类名限定</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;	<span class="comment">//主函数</span></span><br><span class="line">	<span class="function">Point <span class="title">a</span><span class="params">(<span class="number">4</span>, <span class="number">5</span>)</span></span>;	<span class="comment">//定义对象a，其构造函数回使count增1</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"Point A: "</span> &lt;&lt; a.getX() &lt;&lt; <span class="string">", "</span> &lt;&lt; a.getY();</span><br><span class="line">	a.showCount();	<span class="comment">//输出对象个数</span></span><br><span class="line"></span><br><span class="line">	<span class="function">Point <span class="title">b</span><span class="params">(a)</span></span>;	<span class="comment">//定义对象b，其构造函数回使count增1</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"Point B: "</span> &lt;&lt; b.getX() &lt;&lt; <span class="string">", "</span> &lt;&lt; b.getY();</span><br><span class="line">	b.showCount();	<span class="comment">//输出对象个数</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//运行结果：</span></span><br><span class="line"> Point A: <span class="number">4</span>, <span class="number">5</span>  Object count=<span class="number">1</span></span><br><span class="line"> Point B: <span class="number">4</span>, <span class="number">5</span>  Object count=<span class="number">2</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++"><code class="language-c++">//1.具有静态数据成员的Point类
 
+#include <iostream>
+using namespace std;
+
+class Point {    //Point类定义
+public:    //外部接口
+    Point(int x = 0, int y = 0) : x(x), y(y) { //构造函数
+        //在构造函数中对count累加，所有对象共同维护同一个count
+        count++;
+    }
+    Point(Point &p) {    //复制构造函数
+        x = p.x;
+        y = p.y;
+        count++;
+    }
+    ~Point() {  count--; }
+    int getX() { return x; }
+    int getY() { return y; }
+
+ void showCount() {        //输出静态数据成员
+        cout << "  Object count = " << count << endl;
+    }
+private:    //私有数据成员
+    int x, y;
+    static int count;    //静态数据成员声明，用于记录点的个数
+};
+int Point::count = 0;//静态数据成员定义和初始化，使用类名限定
+int main() {    //主函数
+    Point a(4, 5);    //定义对象a，其构造函数回使count增1
+    cout << "Point A: " << a.getX() << ", " << a.getY();
+    a.showCount();    //输出对象个数
+
+    Point b(a);    //定义对象b，其构造函数回使count增1
+    cout << "Point B: " << b.getX() << ", " << b.getY();
+    b.showCount();    //输出对象个数
+    return 0;
+}
+
+
+
+//运行结果：
+ Point A: 4, 5  Object count=1
+ Point B: 4, 5  Object count=2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>静态函数成员</strong></p>
 <ul>
 <li>类外代码可以使用类名和作用域操作符来调用静态成员函数。</li>
@@ -902,8 +1007,46 @@
 </ul>
 <p><strong>具有静态数据、函数成员的 Point类</strong></p>
 <p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.5/Images/posts/C%E7%AC%94%E8%AE%B0/%E5%9B%BE%E7%89%8711.png" alt></p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span> &#123;</span>	<span class="comment">//Point类定义</span></span><br><span class="line"><span class="keyword">public</span>:	<span class="comment">//外部接口</span></span><br><span class="line">	Point(<span class="keyword">int</span> x = <span class="number">0</span>, <span class="keyword">int</span> y = <span class="number">0</span>) : x(x), y(y) &#123; <span class="comment">//构造函数</span></span><br><span class="line">		<span class="comment">//在构造函数中对count累加，所有对象共同维护同一个count</span></span><br><span class="line">		count++;</span><br><span class="line">	&#125;	</span><br><span class="line">	Point(Point &amp;p) &#123;	<span class="comment">//复制构造函数</span></span><br><span class="line">		x = p.x;</span><br><span class="line">		y = p.y;</span><br><span class="line">		count++;</span><br><span class="line">	&#125;</span><br><span class="line">	~Point() &#123;  count--; &#125;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">getX</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> x; &#125;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">getY</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> y; &#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">showCount</span><span class="params">()</span> </span>&#123;		<span class="comment">//静态函数成员</span></span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"  Object count = "</span> &lt;&lt; count &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:	<span class="comment">//私有数据成员</span></span><br><span class="line">	<span class="keyword">int</span> x, y;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> count;	<span class="comment">//静态数据成员声明，用于记录点的个数</span></span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">int</span> Point::count = <span class="number">0</span>;<span class="comment">//静态数据成员定义和初始化，使用类名限定</span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;	<span class="comment">//主函数</span></span><br><span class="line">	<span class="function">Point <span class="title">a</span><span class="params">(<span class="number">4</span>, <span class="number">5</span>)</span></span>;	<span class="comment">//定义对象a，其构造函数回使count增1</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"Point A: "</span> &lt;&lt; a.getX() &lt;&lt; <span class="string">", "</span> &lt;&lt; a.getY();</span><br><span class="line">	Point::showCount();	<span class="comment">//输出对象个数</span></span><br><span class="line"> </span><br><span class="line">	<span class="function">Point <span class="title">b</span><span class="params">(a)</span></span>;	<span class="comment">//定义对象b，其构造函数回使count增1</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"Point B: "</span> &lt;&lt; b.getX() &lt;&lt; <span class="string">", "</span> &lt;&lt; b.getY();</span><br><span class="line">	Point::showCount();	<span class="comment">//输出对象个数</span></span><br><span class="line"> </span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
+using namespace std;
 
+class Point {    //Point类定义
+public:    //外部接口
+    Point(int x = 0, int y = 0) : x(x), y(y) { //构造函数
+        //在构造函数中对count累加，所有对象共同维护同一个count
+        count++;
+    }    
+    Point(Point &p) {    //复制构造函数
+        x = p.x;
+        y = p.y;
+        count++;
+    }
+    ~Point() {  count--; }
+    int getX() { return x; }
+    int getY() { return y; }
+
+    static void showCount() {        //静态函数成员
+        cout << "  Object count = " << count << endl;
+    }
+
+private:    //私有数据成员
+    int x, y;
+    static int count;    //静态数据成员声明，用于记录点的个数
+};
+
+int Point::count = 0;//静态数据成员定义和初始化，使用类名限定
+
+int main() {    //主函数
+    Point a(4, 5);    //定义对象a，其构造函数回使count增1
+    cout << "Point A: " << a.getX() << ", " << a.getY();
+    Point::showCount();    //输出对象个数
+
+    Point b(a);    //定义对象b，其构造函数回使count增1
+    cout << "Point B: " << b.getX() << ", " << b.getY();
+    Point::showCount();    //输出对象个数
+
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <hr>
 <h2 id="4-类的友元"><a href="#4-类的友元" class="headerlink" title="4.类的友元"></a>4.类的友元</h2><p>友元是C++提供的一种破坏数据封装和数据隐藏的机制。</p>
 <p>通过将一个模块声明为另一个模块的友元，一个模块能够引用到另一个模块中本是被隐藏的信息。</p>
@@ -1664,7 +1807,7 @@
            <!--<a href="/sitemap.xml" target="_blank">站点地图</a>丨-->
            
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">87.2k
+            <span class="white-color">70.4k
              丨            
             <a href="https://tongji.baidu.com/web/welcome/ico?s=df42dpc7224a5f6a8d435" target="_blank">百度统计</a>丨
            <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278720284'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1278720284%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
@@ -1755,7 +1898,7 @@
       <span class="badge-subject">Link</span><span class="badge-value bg-red">996.ICU</span></a>
     </div>
     <div class="github-badge">
-      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">87.2k</span>
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">70.4k</span>
     </div>
 </footer>
 

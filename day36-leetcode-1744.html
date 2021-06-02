@@ -770,14 +770,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    660
+                    593
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    2 分
                 </div>
                 
                 
@@ -803,11 +803,14 @@
 <p>请你构建一个布尔型数组 answer ，满足 answer.length == queries.length 。answer[i] 为 true 的条件是：在每天吃 <strong>不超过</strong> dailyCapi 颗糖果的前提下，你可以在第 favoriteDayi 天吃到第 favoriteTypei 类糖果；否则 answer[i] 为 false 。注意，只要满足上面 3 条规则中的第二条规则，你就可以在同一天吃不同类型的糖果。</p>
 <p>请你返回得到的数组 answer 。</p>
 <p><strong>示例 1：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：candiesCount = [7,4,5,3,8], queries = [[0,2,2],[4,2,4],[2,13,1000000000]]</span><br><span class="line">输出：[true,false,true]</span><br><span class="line">提示：</span><br><span class="line">1- 在第 0 天吃 2 颗糖果(类型 0），第 1 天吃 2 颗糖果（类型 0），第 2 天你可以吃到类型 0 的糖果。</span><br><span class="line">2- 每天你最多吃 4 颗糖果。即使第 0 天吃 4 颗糖果（类型 0），第 1 天吃 4 颗糖果（类型 0 和类型 1），你也没办法在第 2 天吃到类型 4 的糖果。换言之，你没法在每天吃 4 颗糖果的限制下在第 2 天吃到第 4 类糖果。</span><br><span class="line">3- 如果你每天吃 1 颗糖果，你可以在第 13 天吃到类型 2 的糖果。</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：candiesCount = [5,2,6,4,1], queries = [[3,1,2],[4,10,3],[3,10,100],[4,100,30],[1,3,1]]</span><br><span class="line">输出：[false,true,true,false,false]</span><br></pre></td></tr></table></figure>
-
+<pre><code>输入：candiesCount = [7,4,5,3,8], queries = [[0,2,2],[4,2,4],[2,13,1000000000]]
+输出：[true,false,true]
+提示：
+1- 在第 0 天吃 2 颗糖果(类型 0），第 1 天吃 2 颗糖果（类型 0），第 2 天你可以吃到类型 0 的糖果。
+2- 每天你最多吃 4 颗糖果。即使第 0 天吃 4 颗糖果（类型 0），第 1 天吃 4 颗糖果（类型 0 和类型 1），你也没办法在第 2 天吃到类型 4 的糖果。换言之，你没法在每天吃 4 颗糖果的限制下在第 2 天吃到第 4 类糖果。
+3- 如果你每天吃 1 颗糖果，你可以在第 13 天吃到类型 2 的糖果。</code></pre><p><strong>示例 2：</strong></p>
+<pre class="line-numbers language-text"><code class="language-text">输入：candiesCount = [5,2,6,4,1], queries = [[3,1,2],[4,10,3],[3,10,100],[4,100,30],[1,3,1]]
+输出：[false,true,true,false,false]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p><strong>提示：</strong></p>
 <ul>
 <li>1 &lt;= candiesCount.length &lt;= 105</li>
@@ -820,8 +823,32 @@
 </ul>
 <p><strong>题解：</strong></p>
 <p>使用前缀和解题：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">long</span> <span class="keyword">long</span>&gt; sum;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">check</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; candiesCount, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; q)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> favoriteType = q[<span class="number">0</span>], favoriteDay = q[<span class="number">1</span>], dailyCap = q[<span class="number">2</span>];</span><br><span class="line">        <span class="comment">// 第favoriteType类型的前缀和</span></span><br><span class="line">        <span class="keyword">int</span> l = sum[favoriteType + <span class="number">1</span>];</span><br><span class="line">        <span class="comment">// 每天吃一颗糖 </span></span><br><span class="line">        <span class="keyword">if</span> (favoriteDay + <span class="number">1</span> &gt; sum[favoriteType + <span class="number">1</span>]) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="comment">// 吃最多糖</span></span><br><span class="line">        <span class="keyword">if</span> (sum[favoriteType] &gt;= <span class="number">1l</span>l*(favoriteDay + <span class="number">1</span>) * dailyCap) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">bool</span>&gt; canEat(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; candiesCount, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; queries) &#123;</span><br><span class="line">        <span class="keyword">int</span> n = candiesCount.size();</span><br><span class="line">        sum = <span class="built_in">vector</span>&lt;<span class="keyword">long</span> <span class="keyword">long</span>&gt;(n + <span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            sum[i] = sum[i - <span class="number">1</span>] + candiesCount[i - <span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">bool</span>&gt; ans;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> q : queries)</span><br><span class="line">            ans.push_back(check(candiesCount, q));</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++"><code class="language-c++">class Solution {
+public:
+    vector<long long> sum;
+    bool check(vector<int>& candiesCount, vector<int>& q) {
+        int favoriteType = q[0], favoriteDay = q[1], dailyCap = q[2];
+        // 第favoriteType类型的前缀和
+        int l = sum[favoriteType + 1];
+        // 每天吃一颗糖 
+        if (favoriteDay + 1 > sum[favoriteType + 1]) return false;
+        // 吃最多糖
+        if (sum[favoriteType] >= 1ll*(favoriteDay + 1) * dailyCap) return false;
+        return true;
+    }
+    vector<bool> canEat(vector<int>& candiesCount, vector<vector<int>>& queries) {
+        int n = candiesCount.size();
+        sum = vector<long long>(n + 1, 0);
+        for (int i = 1; i <= n; i++) {
+            sum[i] = sum[i - 1] + candiesCount[i - 1];
+        }
 
+        vector<bool> ans;
+        for (auto q : queries)
+            ans.push_back(check(candiesCount, q));
+        return ans;
+    }
+};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -1379,8 +1406,8 @@
                             342. 4的幂给定一个整数，写一个函数来判断它是否是 4 的幂次方。如果是，返回 true ；否则，返回 false 。
 整数 n 是 4 的幂次方需满足：存在整数 x 使得 n == 4x
 示例 1：
-输入：n = 16输出：true
-
+输入：n = 16
+输出：true
                         
                     </div>
                     <div class="publish-info">
@@ -1582,7 +1609,7 @@
            <!--<a href="/sitemap.xml" target="_blank">站点地图</a>丨-->
            
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">87.2k
+            <span class="white-color">70.4k
              丨            
             <a href="https://tongji.baidu.com/web/welcome/ico?s=df42dpc7224a5f6a8d435" target="_blank">百度统计</a>丨
            <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278720284'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1278720284%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
@@ -1673,7 +1700,7 @@
       <span class="badge-subject">Link</span><span class="badge-value bg-red">996.ICU</span></a>
     </div>
     <div class="github-badge">
-      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">87.2k</span>
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">70.4k</span>
     </div>
 </footer>
 

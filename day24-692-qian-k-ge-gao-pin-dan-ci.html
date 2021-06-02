@@ -773,14 +773,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    409
+                    366
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
                 
@@ -799,12 +799,14 @@
                 <h4 id="692-前K个高频单词"><a href="#692-前K个高频单词" class="headerlink" title="692. 前K个高频单词"></a><a href="https://leetcode-cn.com/problems/top-k-frequent-words/" target="_blank" rel="noopener">692. 前K个高频单词</a></h4><p>给一非空的单词列表，返回前 k 个出现次数最多的单词。</p>
 <p>返回的答案应该按单词出现频率由高到低排序。如果不同的单词有相同出现频率，按字母顺序排序。</p>
 <p><strong>示例 1：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: [&quot;i&quot;, &quot;love&quot;, &quot;leetcode&quot;, &quot;i&quot;, &quot;love&quot;, &quot;coding&quot;], k = 2</span><br><span class="line">输出: [&quot;i&quot;, &quot;love&quot;]</span><br><span class="line">解析: &quot;i&quot; 和 &quot;love&quot; 为出现次数最多的两个单词，均为2次。</span><br><span class="line">    注意，按字母顺序 &quot;i&quot; 在 &quot;love&quot; 之前。</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: [&quot;the&quot;, &quot;day&quot;, &quot;is&quot;, &quot;sunny&quot;, &quot;the&quot;, &quot;the&quot;, &quot;the&quot;, &quot;sunny&quot;, &quot;is&quot;, &quot;is&quot;], k = 4</span><br><span class="line">输出: [&quot;the&quot;, &quot;is&quot;, &quot;sunny&quot;, &quot;day&quot;]</span><br><span class="line">解析: &quot;the&quot;, &quot;is&quot;, &quot;sunny&quot; 和 &quot;day&quot; 是出现次数最多的四个单词，</span><br><span class="line">    出现次数依次为 4, 3, 2 和 1 次。</span><br></pre></td></tr></table></figure>
-
-<p><strong>注意：</strong></p>
+<pre><code>输入: [&quot;i&quot;, &quot;love&quot;, &quot;leetcode&quot;, &quot;i&quot;, &quot;love&quot;, &quot;coding&quot;], k = 2
+输出: [&quot;i&quot;, &quot;love&quot;]
+解析: &quot;i&quot; 和 &quot;love&quot; 为出现次数最多的两个单词，均为2次。
+    注意，按字母顺序 &quot;i&quot; 在 &quot;love&quot; 之前。</code></pre><p><strong>示例 2：</strong></p>
+<pre><code>输入: [&quot;the&quot;, &quot;day&quot;, &quot;is&quot;, &quot;sunny&quot;, &quot;the&quot;, &quot;the&quot;, &quot;the&quot;, &quot;sunny&quot;, &quot;is&quot;, &quot;is&quot;], k = 4
+输出: [&quot;the&quot;, &quot;is&quot;, &quot;sunny&quot;, &quot;day&quot;]
+解析: &quot;the&quot;, &quot;is&quot;, &quot;sunny&quot; 和 &quot;day&quot; 是出现次数最多的四个单词，
+    出现次数依次为 4, 3, 2 和 1 次。</code></pre><p><strong>注意：</strong></p>
 <ul>
 <li>假定 k 总为有效值， 1 ≤ k ≤ 集合元素数。</li>
 <li>输入的单词均由小写字母组成。</li>
@@ -814,8 +816,25 @@
 <p>尝试以 O(n log k) 时间复杂度和 O(n) 空间复杂度解决。</p>
 </blockquote>
 <p><strong>题解：</strong></p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Cmp</span> &#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="keyword">const</span> pair&lt;<span class="built_in">string</span>, <span class="keyword">int</span>&gt;&amp; p1, <span class="keyword">const</span> pair&lt;<span class="built_in">string</span>, <span class="keyword">int</span>&gt;&amp; p2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(p1.second != p2.second) <span class="keyword">return</span> p1.second &gt; p2.second;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> p1.first &lt; p2.first;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; topKFrequent(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; words, <span class="keyword">int</span> k) &#123;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="built_in">string</span>, <span class="keyword">int</span>&gt; m;</span><br><span class="line">        <span class="keyword">for</span>(<span class="built_in">string</span>&amp; word : words) m[word]++;</span><br><span class="line">        <span class="built_in">vector</span>&lt;pair&lt;<span class="built_in">string</span>, <span class="keyword">int</span>&gt;&gt; sorted_list(m.begin(), m.end());</span><br><span class="line">        sort(sorted_list.begin(), sorted_list.end(), Cmp());</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; res;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; k; i++) res.push_back(sorted_list[i].first);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++"><code class="language-c++">struct Cmp {
+    bool operator()(const pair<string, int>& p1, const pair<string, int>& p2) {
+        if(p1.second != p2.second) return p1.second > p2.second;
+        else return p1.first < p2.first;
+    }
+};
 
+class Solution {
+public:
+    vector<string> topKFrequent(vector<string>& words, int k) {
+        unordered_map<string, int> m;
+        for(string& word : words) m[word]++;
+        vector<pair<string, int>> sorted_list(m.begin(), m.end());
+        sort(sorted_list.begin(), sorted_list.end(), Cmp());
+        vector<string> res;
+        for(int i = 0; i < k; i++) res.push_back(sorted_list[i].first);
+        return res;
+    }
+};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -1571,7 +1590,7 @@ nums1[i] == num
            <!--<a href="/sitemap.xml" target="_blank">站点地图</a>丨-->
            
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">87.2k
+            <span class="white-color">70.4k
              丨            
             <a href="https://tongji.baidu.com/web/welcome/ico?s=df42dpc7224a5f6a8d435" target="_blank">百度统计</a>丨
            <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278720284'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1278720284%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
@@ -1662,7 +1681,7 @@ nums1[i] == num
       <span class="badge-subject">Link</span><span class="badge-value bg-red">996.ICU</span></a>
     </div>
     <div class="github-badge">
-      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">87.2k</span>
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">70.4k</span>
     </div>
 </footer>
 

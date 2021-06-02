@@ -772,14 +772,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    647
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    2 分
                 </div>
                 
                 
@@ -801,12 +801,12 @@
 <p>开始时， 青蛙默认已站在第一块石子上，并可以假定它第一步只能跳跃一个单位（即只能从单元格 1 跳至单元格 2 ）。</p>
 <p>如果青蛙上一步跳跃了 k 个单位，那么它接下来的跳跃距离只能选择为 k - 1、k 或 k + 1 个单位。 另请注意，青蛙只能向前方（终点的方向）跳跃。</p>
 <p>  <strong>示例 1：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：stones = [0,1,3,5,6,8,12,17]</span><br><span class="line">输出：true</span><br><span class="line">解释：青蛙可以成功过河，按照如下方案跳跃：跳 1 个单位到第 2 块石子, 然后跳 2 个单位到第 3 块石子, 接着 跳 2 个单位到第 4 块石子, 然后跳 3 个单位到第 6 块石子, 跳 4 个单位到第 7 块石子, 最后，跳 5 个单位到第 8 个石子（即最后一块石子）。</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：stones = [0,1,2,3,4,8,9,11]</span><br><span class="line">输出：false</span><br><span class="line">解释：这是因为第 5 和第 6 个石子之间的间距太大，没有可选的方案供青蛙跳跃过去。</span><br></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
+<pre><code>输入：stones = [0,1,3,5,6,8,12,17]
+输出：true
+解释：青蛙可以成功过河，按照如下方案跳跃：跳 1 个单位到第 2 块石子, 然后跳 2 个单位到第 3 块石子, 接着 跳 2 个单位到第 4 块石子, 然后跳 3 个单位到第 6 块石子, 跳 4 个单位到第 7 块石子, 最后，跳 5 个单位到第 8 个石子（即最后一块石子）。</code></pre><p><strong>示例 2：</strong></p>
+<pre><code>输入：stones = [0,1,2,3,4,8,9,11]
+输出：false
+解释：这是因为第 5 和第 6 个石子之间的间距太大，没有可选的方案供青蛙跳跃过去。</code></pre><p><strong>提示：</strong></p>
 <ul>
 <li>2 &lt;= stones.length &lt;= 2000</li>
 <li>0 &lt;= stones[i] &lt;= 231 - 1</li>
@@ -814,17 +814,108 @@
 </ul>
 <p><strong>题解：</strong></p>
 <p><strong>递归:</strong></p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; um;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">canCross</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; stones)</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; stones.size(); i++) &#123;</span><br><span class="line">            um[stones[i]] = i;  <span class="comment">// key:石子值 value是第几块石子</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (!um.count(<span class="number">1</span>)) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">return</span> dfs(stones, stones.size(), <span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">dfs</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; stones, <span class="keyword">int</span> n, <span class="keyword">int</span> cur, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (cur == n - <span class="number">1</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">-1</span>; i &lt;= <span class="number">1</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (k + i == <span class="number">0</span>) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">int</span> next = stones[cur] + k + i;</span><br><span class="line">            <span class="keyword">if</span> (um.count(next)) &#123; <span class="comment">// 存在</span></span><br><span class="line">                <span class="keyword">bool</span> choose = dfs(stones, n, um[next], k + i);</span><br><span class="line">                <span class="keyword">if</span> (choose) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++"><code class="language-c++">class Solution {
+public:
+    unordered_map<int, int> um;
+    bool canCross(vector<int>& stones) {
 
+        for (int i = 0; i < stones.size(); i++) {
+            um[stones[i]] = i;  // key:石子值 value是第几块石子
+        }
+        if (!um.count(1)) return false;
+        return dfs(stones, stones.size(), 1, 1);
+    }
+    bool dfs(vector<int>& stones, int n, int cur, int k) {
+        if (cur == n - 1) return true;
+        for (int i = -1; i <= 1; i++) {
+            if (k + i == 0) continue;
+            int next = stones[cur] + k + i;
+            if (um.count(next)) { // 存在
+                bool choose = dfs(stones, n, um[next], k + i);
+                if (choose) return true;
+            }
+        }
+        return false;
+    }
+
+};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>dfs记忆化搜索:</strong></p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; um;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; memo;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">canCross</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; stones)</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; stones.size(); i++) &#123;</span><br><span class="line">            um[stones[i]] = i;  <span class="comment">// key:石子值 value是第几块石子</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (!um.count(<span class="number">1</span>)) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        memo = <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;(stones.size(), <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;(stones.size(), <span class="number">-1</span>));</span><br><span class="line">        <span class="keyword">return</span> dfs(stones, stones.size(), <span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">dfs</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; stones, <span class="keyword">int</span> n, <span class="keyword">int</span> cur, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (memo[cur][k] != <span class="number">-1</span>) <span class="keyword">return</span> memo[cur][k];</span><br><span class="line">        <span class="keyword">if</span> (cur == n - <span class="number">1</span>) <span class="keyword">return</span> memo[cur][k] = <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">-1</span>; i &lt;= <span class="number">1</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (k + i == <span class="number">0</span>) <span class="keyword">continue</span>;  <span class="comment">// 原地跳过</span></span><br><span class="line">            <span class="keyword">int</span> next = stones[cur] + k + i;</span><br><span class="line">            <span class="keyword">if</span> (um.count(next)) &#123; <span class="comment">// 存在</span></span><br><span class="line">                <span class="keyword">bool</span> choose = dfs(stones, n, um[next], k + i);</span><br><span class="line">                <span class="keyword">if</span> (choose) <span class="keyword">return</span> memo[cur][k] = <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> memo[cur][k] = <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++"><code class="language-c++">class Solution {
+public:
+    unordered_map<int, int> um;
+    vector<vector<int>> memo;
+    bool canCross(vector<int>& stones) {
 
+        for (int i = 0; i < stones.size(); i++) {
+            um[stones[i]] = i;  // key:石子值 value是第几块石子
+        }
+        if (!um.count(1)) return false;
+        memo = vector<vector<int>>(stones.size(), vector<int>(stones.size(), -1));
+        return dfs(stones, stones.size(), 1, 1);
+    }
+    bool dfs(vector<int>& stones, int n, int cur, int k) {
+        if (memo[cur][k] != -1) return memo[cur][k];
+        if (cur == n - 1) return memo[cur][k] = true;
+        for (int i = -1; i <= 1; i++) {
+            if (k + i == 0) continue;  // 原地跳过
+            int next = stones[cur] + k + i;
+            if (um.count(next)) { // 存在
+                bool choose = dfs(stones, n, um[next], k + i);
+                if (choose) return memo[cur][k] = true;
+            }
+        }
+        return memo[cur][k] = false;
+    }
+
+};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>动态规划：</strong></p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">canCross</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; stones)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = stones.size();</span><br><span class="line">        <span class="keyword">if</span> (stones[<span class="number">1</span>] != <span class="number">1</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">bool</span>&gt;&gt; dp(n, <span class="built_in">vector</span>&lt;<span class="keyword">bool</span>&gt;(n));</span><br><span class="line">        <span class="comment">// dp[i][k] 表示在第i个位置且跳k个单位到第i块石子。</span></span><br><span class="line">        dp[<span class="number">1</span>][<span class="number">1</span>] = <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; i; j++) &#123;</span><br><span class="line">                <span class="keyword">int</span> k = stones[i] - stones[j];</span><br><span class="line">                <span class="keyword">if</span> (k &gt; j + <span class="number">1</span>) <span class="keyword">continue</span>;</span><br><span class="line">                <span class="comment">// 因为题目要求 青蛙第一次只能跳1步，那么第二次至多跳2步，以此类推，青蛙在第i块（i从0开始）石头上至多只能跳i+1步。在第j块石头上至多只能跳 j+1 步 ，如果k &gt; j+1，说明石头 i 隔石头 j 太远了，远到不满足题目的隐藏规则，所以青蛙必定跳不过去。</span></span><br><span class="line">                dp[i][k] = dp[j][k - <span class="number">1</span>] || dp[j][k] || dp[j][k+<span class="number">1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (dp[n<span class="number">-1</span>][i]) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;        </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-c++"><code class="language-c++">class Solution {
+public:
+    bool canCross(vector<int>& stones) {
+        int n = stones.size();
+        if (stones[1] != 1) return false;
+        vector<vector<bool>> dp(n, vector<bool>(n));
+        // dp[i][k] 表示在第i个位置且跳k个单位到第i块石子。
+        dp[1][1] = true;
+        for (int i = 2; i < n; i++) {
+            for (int j = 1; j < i; j++) {
+                int k = stones[i] - stones[j];
+                if (k > j + 1) continue;
+                // 因为题目要求 青蛙第一次只能跳1步，那么第二次至多跳2步，以此类推，青蛙在第i块（i从0开始）石头上至多只能跳i+1步。在第j块石头上至多只能跳 j+1 步 ，如果k > j+1，说明石头 i 隔石头 j 太远了，远到不满足题目的隐藏规则，所以青蛙必定跳不过去。
+                dp[i][k] = dp[j][k - 1] || dp[j][k] || dp[j][k+1];
+            }
+        }
+        for (int i = 1; i < n; i++) {
+            if (dp[n-1][i]) return true;
+        }        
+        return false;
+    }
+};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>另一种动态规划:</strong></p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">canCross</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; stones)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// dp[i][j] 表示 第 i 个石头是否可以跳 j 步</span></span><br><span class="line">        <span class="keyword">int</span> n = stones.size();</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">bool</span>&gt;&gt; dp(n, <span class="built_in">vector</span>&lt;<span class="keyword">bool</span>&gt;(n));</span><br><span class="line">        dp[<span class="number">0</span>][<span class="number">1</span>] = <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">bool</span> flag = <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i - <span class="number">1</span>; j &gt;= <span class="number">0</span>; j--) &#123;</span><br><span class="line">                <span class="keyword">int</span> k = stones[i] - stones[j];</span><br><span class="line">                <span class="keyword">if</span> (k &gt; i) <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">if</span> (dp[j][k]) &#123;</span><br><span class="line">                    dp[i][k - <span class="number">1</span>] = dp[i][k] = dp[i][k + <span class="number">1</span>] = <span class="literal">true</span>;</span><br><span class="line">                    flag = <span class="literal">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (i == n - <span class="number">1</span> &amp;&amp; !flag) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-c++"><code class="language-c++">class Solution {
+public:
+    bool canCross(vector<int>& stones) {
+        // dp[i][j] 表示 第 i 个石头是否可以跳 j 步
+        int n = stones.size();
+        vector<vector<bool>> dp(n, vector<bool>(n));
+        dp[0][1] = true;
+        for (int i = 1; i < n; i++) {
+            bool flag = false;
+            for (int j = i - 1; j >= 0; j--) {
+                int k = stones[i] - stones[j];
+                if (k > i) break;
+                if (dp[j][k]) {
+                    dp[i][k - 1] = dp[i][k] = dp[i][k + 1] = true;
+                    flag = true;
+                }
+            }
+            if (i == n - 1 && !flag) {
+                return false;
+            }
+        }
+        return true;
+    }
+};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -1327,10 +1418,9 @@
                         
                             137. 只出现一次的数字 II给你一个整数数组 nums ，除某个元素仅出现 一次 外，其余每个元素都恰出现 三次 。请你找出并返回那个只出现了一次的元素。
  示例1：
-输入：nums = [2,2,3,2]输出：3
-
-示例2：
-输入：n
+输入：nums = [2,2,3,2]
+输出：3示例2：
+输入：nu
                         
                     </div>
                     <div class="publish-info">
@@ -1382,12 +1472,11 @@
                             题目：
 给定一个非负整数 c ，你要判断是否存在两个整数 a 和 b，使得 a2 + b2 = c 。
 示例 1：
-输入：c = 5输出：true解释：1 * 1 + 2 * 2 = 5
-
-示例 2：
-输入：c = 3输出：false
-
-示
+输入：c = 5
+输出：true
+解释：1 * 1 + 2 * 2 = 5示例 2：
+输入：c = 3
+输出：false示例
                         
                     </div>
                     <div class="publish-info">
@@ -1589,7 +1678,7 @@
            <!--<a href="/sitemap.xml" target="_blank">站点地图</a>丨-->
            
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">87.2k
+            <span class="white-color">70.4k
              丨            
             <a href="https://tongji.baidu.com/web/welcome/ico?s=df42dpc7224a5f6a8d435" target="_blank">百度统计</a>丨
            <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278720284'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1278720284%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
@@ -1680,7 +1769,7 @@
       <span class="badge-subject">Link</span><span class="badge-value bg-red">996.ICU</span></a>
     </div>
     <div class="github-badge">
-      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">87.2k</span>
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">70.4k</span>
     </div>
 </footer>
 

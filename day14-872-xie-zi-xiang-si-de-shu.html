@@ -773,7 +773,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    414
+                    372
                 </div>
                 
 
@@ -803,30 +803,52 @@
 <p>如果给定的两个根结点分别为 root1 和 root2 的树是叶相似的，则返回 true；否则返回 false 。</p>
 <p><strong>示例 1：</strong></p>
 <p><img src="https://assets.leetcode.com/uploads/2020/09/03/leaf-similar-1.jpg" alt></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：root1 = [3,5,1,6,2,9,8,null,null,7,4], root2 = [3,5,1,6,7,4,2,null,null,null,null,null,null,9,8]</span><br><span class="line">输出：true</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：root1 = [1], root2 = [1]</span><br><span class="line">输出：true</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 3：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：root1 = [1], root2 = [2]</span><br><span class="line">输出：false</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 4：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：root1 = [1,2], root2 = [2,2]</span><br><span class="line">输出：true</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 5：</strong></p>
+<pre><code>输入：root1 = [3,5,1,6,2,9,8,null,null,7,4], root2 = [3,5,1,6,7,4,2,null,null,null,null,null,null,9,8]
+输出：true</code></pre><p><strong>示例 2：</strong></p>
+<pre><code>输入：root1 = [1], root2 = [1]
+输出：true</code></pre><p><strong>示例 3：</strong></p>
+<pre><code>输入：root1 = [1], root2 = [2]
+输出：false</code></pre><p><strong>示例 4：</strong></p>
+<pre><code>输入：root1 = [1,2], root2 = [2,2]
+输出：true</code></pre><p><strong>示例 5：</strong></p>
 <p><img src="https://assets.leetcode.com/uploads/2020/09/03/leaf-similar-2.jpg" alt></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：root1 = [1,2,3], root2 = [1,3,2]</span><br><span class="line">输出：false</span><br></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
+<pre><code>输入：root1 = [1,2,3], root2 = [1,3,2]
+输出：false</code></pre><p><strong>提示：</strong></p>
 <ul>
 <li>给定的两棵树可能会有 1 到 200 个结点。</li>
 <li>给定的两棵树上的值介于 0 到 200 之间。</li>
 </ul>
 <p><strong>题解：</strong></p>
 <p>将第一次的结果存储下来后，后面直接比较并返回结果。</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">leafSimilar</span><span class="params">(TreeNode* root1, TreeNode* root2)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; r1;</span><br><span class="line">        dfs1(root1, r1);</span><br><span class="line">        <span class="keyword">return</span> dfs2(root2, r1) &amp;&amp; index == r1.size();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">dfs1</span><span class="params">(TreeNode* root, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; res)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!root) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">if</span> (!root-&gt;left &amp;&amp; !root-&gt;right) &#123;</span><br><span class="line">            res.push_back(root-&gt;val);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        dfs1(root-&gt;left, res);</span><br><span class="line">        dfs1(root-&gt;right, res);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">dfs2</span><span class="params">(TreeNode* root, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; res)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!root) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span> (!root-&gt;left &amp;&amp; !root-&gt;right) &#123;</span><br><span class="line">            <span class="keyword">if</span> (index &gt;= res.size()) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">if</span> (root-&gt;val != res[index]) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            index++;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dfs2(root-&gt;left, res) &amp;&amp; dfs2(root-&gt;right, res);</span><br><span class="line">    &#125;</span><br><span class="line">   </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++"><code class="language-c++">class Solution {
+public:
+    int index = 0;
+    bool leafSimilar(TreeNode* root1, TreeNode* root2) {
+        vector<int> r1;
+        dfs1(root1, r1);
+        return dfs2(root2, r1) && index == r1.size();
+    }
+    void dfs1(TreeNode* root, vector<int>& res) {
+        if (!root) return;
+        if (!root->left && !root->right) {
+            res.push_back(root->val);
+            return;
+        }
+        dfs1(root->left, res);
+        dfs1(root->right, res);
+    }
+    bool dfs2(TreeNode* root, vector<int>& res) {
+        if (!root) return true;
+        if (!root->left && !root->right) {
+            if (index >= res.size()) return false;
+            if (root->val != res[index]) return false;
+            index++;
+            return true;
+        }
+        return dfs2(root->left, res) && dfs2(root->right, res);
+    }
 
+};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -1581,7 +1603,7 @@
            <!--<a href="/sitemap.xml" target="_blank">站点地图</a>丨-->
            
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">87.2k
+            <span class="white-color">70.4k
              丨            
             <a href="https://tongji.baidu.com/web/welcome/ico?s=df42dpc7224a5f6a8d435" target="_blank">百度统计</a>丨
            <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278720284'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1278720284%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
@@ -1672,7 +1694,7 @@
       <span class="badge-subject">Link</span><span class="badge-value bg-red">996.ICU</span></a>
     </div>
     <div class="github-badge">
-      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">87.2k</span>
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">70.4k</span>
     </div>
 </footer>
 

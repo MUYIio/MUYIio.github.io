@@ -9,11 +9,13 @@
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
     <meta name="description" content="前面几章大体上和C差不多，就从函数开始吧。
-第三章 函数1 .函数的定义与使用函数定义的语法形式：类型标识符  函数名（形式参数表）&amp;#123;     语句序列&amp;#125;
-
+第三章 函数1 .函数的定义与使用函数定义的语法形式：类型标识符  函数名（形式参数表）
+{  
+   语句序列
+}
 
 若无返回值，类型标识符写void 
-形式参数表：是被初始化的">
+形式参数表：是被初始化的内部变量，寿命和">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -775,14 +777,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.2k
+                    277
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    19 分
+                    1 分
                 </div>
                 
                 
@@ -799,8 +801,10 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p><strong>前面几章大体上和C差不多，就从函数开始吧。</strong></p>
-<h2 id="第三章-函数"><a href="#第三章-函数" class="headerlink" title="第三章 函数"></a>第三章 函数</h2><h2 id="1-函数的定义与使用"><a href="#1-函数的定义与使用" class="headerlink" title="1 .函数的定义与使用"></a>1 .函数的定义与使用</h2><h3 id="函数定义的语法形式："><a href="#函数定义的语法形式：" class="headerlink" title="函数定义的语法形式："></a>函数定义的语法形式：</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">类型标识符  函数名（形式参数表）</span><br><span class="line">&#123;  </span><br><span class="line">   语句序列</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<h2 id="第三章-函数"><a href="#第三章-函数" class="headerlink" title="第三章 函数"></a>第三章 函数</h2><h2 id="1-函数的定义与使用"><a href="#1-函数的定义与使用" class="headerlink" title="1 .函数的定义与使用"></a>1 .函数的定义与使用</h2><h3 id="函数定义的语法形式："><a href="#函数定义的语法形式：" class="headerlink" title="函数定义的语法形式："></a>函数定义的语法形式：</h3><pre class="line-numbers language-c++"><code class="language-c++">类型标识符  函数名（形式参数表）
+{  
+   语句序列
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>若无返回值，类型标识符写void </li>
 <li>形式参数表：是被初始化的内部变量，寿命和可见性仅限于函数内部 </li>
@@ -817,30 +821,343 @@
 <li>嵌套调用：     在一个函数的函数体中，可以调用另一函数，称为嵌套调用。 </li>
 <li>递归调用：     函数直接或间接调用自身。 </li>
 </ul>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1.编写一个求x的n次方的函数</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//计算x的n次方</span></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">power</span><span class="params">(<span class="keyword">double</span> x,<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> val=<span class="number">1.0</span>;</span><br><span class="line">    <span class="keyword">while</span>(n--)</span><br><span class="line">        val*=x;</span><br><span class="line">    <span class="keyword">return</span> val;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"5 to the power 2 is :"</span>&lt;&lt; power(<span class="number">5</span>, <span class="number">2</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++"><code class="language-c++">//1.编写一个求x的n次方的函数
 
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//2.数制转换</span></span><br><span class="line"><span class="comment">//输入一个8位二进制数，将其转换为十进制数输出。</span></span><br><span class="line"><span class="comment">//例如：11012=1(23)+1(22)+0(21)+1(20)=1310 </span></span><br><span class="line"><span class="comment">//所以，如果输入1101，则应输出13</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">power</span> <span class="params">(<span class="keyword">double</span> x,<span class="keyword">int</span> n)</span></span>; <span class="comment">//计算x的n次方</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span>  value=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt;<span class="string">"Enter an 8 bit binary number "</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">7</span>;i&gt;=<span class="number">0</span>;i--) </span><br><span class="line">    &#123;</span><br><span class="line">      <span class="keyword">char</span> ch;</span><br><span class="line">      <span class="built_in">cin</span>&gt;&gt;ch;</span><br><span class="line">      <span class="keyword">if</span> (ch ==<span class="string">'1'</span>)</span><br><span class="line">            value+=<span class="keyword">static_cast</span>&lt;<span class="keyword">int</span>&gt;(power(<span class="number">2</span>, i));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"Decimal value is "</span>&lt;&lt;value&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">power</span><span class="params">(<span class="keyword">double</span> x,<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> val=<span class="number">1.0</span>;</span><br><span class="line">    <span class="keyword">while</span>(n--) </span><br><span class="line">      val*=x;</span><br><span class="line">    <span class="keyword">return</span> val;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+#include <iostream>
+using namespace std;
 
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/*3.编写程序求π的值</span></span><br><span class="line"><span class="comment">π=16arctan(1/5)-4arctan(1/239)</span></span><br><span class="line"><span class="comment">其中arctan用如下形式的级数计算：</span></span><br><span class="line"><span class="comment">arctanx=x-x^3/3+x^/5-x^7/7+...</span></span><br><span class="line"><span class="comment">直到级数某项绝对值不大于10-15为止；π和x均为double型。*/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">arctan</span><span class="params">(<span class="keyword">double</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> sqr = x * x;</span><br><span class="line">    <span class="keyword">double</span> e = x;</span><br><span class="line">    <span class="keyword">double</span> r = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (e / i &gt; <span class="number">1e-15</span>) &#123;</span><br><span class="line">        <span class="keyword">double</span> f = e / i;</span><br><span class="line">        r = (i % <span class="number">4</span> == <span class="number">1</span>) ? r + f : r - f;</span><br><span class="line">        e = e * sqr;</span><br><span class="line">        i += <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> r;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> a = <span class="number">16.0</span> * arctan(<span class="number">1</span> / <span class="number">5.0</span>); </span><br><span class="line">    <span class="keyword">double</span> b = <span class="number">4.0</span> * arctan(<span class="number">1</span> / <span class="number">239.0</span>); </span><br><span class="line">    <span class="comment">/* 注意：因为整数相除结果取整，如果参数写1/5，1/239，结果就都是0 */</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"PI = "</span> &lt;&lt; a - b &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+//计算x的n次方
+double power(double x,int n)
+{
+    double val=1.0;
+    while(n--)
+        val*=x;
+    return val;
+}
 
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*4.寻找并输出11~999之间的数m，它满足m、m2和m3均为回文数。</span></span><br><span class="line"><span class="comment">回文：各位数字左右对称的整数。</span></span><br><span class="line"><span class="comment">例如：11满足上述条件 </span></span><br><span class="line"><span class="comment">112=121，113=1331。</span></span><br><span class="line"><span class="comment">分析：</span></span><br><span class="line"><span class="comment">10取余的方法，从最低位开始，依次取出该数的各位数字。按反序重新构成新的数，比较与原数是否相等，若相等，则原数为回文。*/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="comment">//判断n是否为回文数</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">symm</span><span class="params">(<span class="keyword">unsigned</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">unsigned</span> i = n;</span><br><span class="line">    <span class="keyword">unsigned</span> m = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (i &gt; <span class="number">0</span>) &#123;</span><br><span class="line">      m = m*<span class="number">10</span>+i%<span class="number">10</span>;</span><br><span class="line">      i/=<span class="number">10</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> m==n;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">unsigned</span> m = <span class="number">11</span>; m &lt; <span class="number">1000</span>; m++)</span><br><span class="line">      <span class="keyword">if</span> (symm(m) &amp;&amp; symm(m * m) &amp;&amp;</span><br><span class="line">          symm(m * m * m)) &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"m = "</span> &lt;&lt; m;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"  m * m = "</span> &lt;&lt; m * m;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"  m * m * m = "</span></span><br><span class="line">             &lt;&lt; m * m * m &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+int main()
+{
+    cout << "5 to the power 2 is :"<< power(5, 2) << endl;
+    return 0;
+}
 
+
+
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-c++"><code class="language-c++">//2.数制转换
+//输入一个8位二进制数，将其转换为十进制数输出。
+//例如：11012=1(23)+1(22)+0(21)+1(20)=1310 
+//所以，如果输入1101，则应输出13
+
+#include <iostream>
+using namespace std;
+
+double power (double x,int n); //计算x的n次方
+
+int main()
+{
+    int  value=0;
+    cout <<"Enter an 8 bit binary number ";
+    for (int i=7;i>=0;i--) 
+    {
+      char ch;
+      cin>>ch;
+      if (ch =='1')
+            value+=static_cast<int>(power(2, i));
+    }
+    cout<<"Decimal value is "<<value<<endl;
+    return 0;
+}
+
+double power(double x,int n)
+{
+    double val=1.0;
+    while(n--) 
+      val*=x;
+    return val;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-c++"><code class="language-c++">
+/*3.编写程序求π的值
+π=16arctan(1/5)-4arctan(1/239)
+其中arctan用如下形式的级数计算：
+arctanx=x-x^3/3+x^/5-x^7/7+...
+直到级数某项绝对值不大于10-15为止；π和x均为double型。*/
+
+#include <iostream>
+using namespace std;
+
+double arctan(double x)
+{
+    double sqr = x * x;
+    double e = x;
+    double r = 0;
+    int i = 1;
+    while (e / i > 1e-15) {
+        double f = e / i;
+        r = (i % 4 == 1) ? r + f : r - f;
+        e = e * sqr;
+        i += 2;
+    }
+    return r;
+}
+
+int main() 
+{
+    double a = 16.0 * arctan(1 / 5.0); 
+    double b = 4.0 * arctan(1 / 239.0); 
+    /* 注意：因为整数相除结果取整，如果参数写1/5，1/239，结果就都是0 */
+
+    cout << "PI = " << a - b << endl;
+    return 0;
+}
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-c++"><code class="language-c++">/*4.寻找并输出11~999之间的数m，它满足m、m2和m3均为回文数。
+回文：各位数字左右对称的整数。
+例如：11满足上述条件 
+112=121，113=1331。
+分析：
+10取余的方法，从最低位开始，依次取出该数的各位数字。按反序重新构成新的数，比较与原数是否相等，若相等，则原数为回文。*/
+
+#include <iostream>
+using namespace std;
+//判断n是否为回文数
+bool symm(unsigned n)
+{
+  unsigned i = n;
+    unsigned m = 0;
+    while (i > 0) {
+      m = m*10+i%10;
+      i/=10;
+  }
+  return m==n;
+}
+
+int main()
+{
+    for(unsigned m = 11; m < 1000; m++)
+      if (symm(m) && symm(m * m) &&
+          symm(m * m * m)) {
+        cout << "m = " << m;
+        cout << "  m * m = " << m * m;
+        cout << "  m * m * m = "
+             << m * m * m << endl;
+      }
+    return 0;
+}
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>/<em>5.计算如下公式，并输出结果：</em><br>$$<br>k =  \begin{cases}     \sqrt{sin^2r+sin^2s} &amp; \text{}\  当r^2\leqslant s^2\     \frac{1}{2}sin(rs) &amp; \text{}\ 当r^2&gt; s^2&amp;  \end{cases}<br>$$<br>其中r、s的值由键盘输入</p>
 <p>sin x的近似值按如下公式计算，计算精度为10-10：</p>
 <p>$$ sinx=\frac{x}{1!}+\frac{x^3}{3!}+\frac{x^5}{5!}+\frac{x^7}{7!}+…=\displaystyle \sum_{n=1}^∞(-1)^{n-1}\frac{x^{2n-1}}{(2n-1)!} $$</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;  /*对C++标准库中数学函数的说明*/</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> TINY_VALUE = <span class="number">1e-10</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">tsin</span><span class="params">(<span class="keyword">double</span> x)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> g = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">double</span> t = x;</span><br><span class="line">    <span class="keyword">int</span> n = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">do</span> &#123;</span><br><span class="line">        g += t;</span><br><span class="line">        n++;</span><br><span class="line">        t = -t * x * x / (<span class="number">2</span> * n - <span class="number">1</span>) / (<span class="number">2</span> * n - <span class="number">2</span>);</span><br><span class="line">    &#125; <span class="keyword">while</span> (<span class="built_in">fabs</span>(t) &gt;= TINY_VALUE); </span><br><span class="line">    <span class="keyword">return</span> g;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> k, r, s;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"r = "</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; r;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"s = "</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; s;</span><br><span class="line">    <span class="keyword">if</span> (r * r &lt;= s * s)</span><br><span class="line">      k=<span class="built_in">sqrt</span>(tsin(r)*tsin(r)+tsin(s)*tsin(s));</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">      k = tsin(r * s) / <span class="number">2</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; k &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//运行结果：</span></span><br><span class="line">r=<span class="number">5</span></span><br><span class="line">s=<span class="number">8</span></span><br><span class="line"><span class="number">1.37781</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
+#include <cmath>  /*对C++标准库中数学函数的说明*/
+using namespace std;
 
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*6.投骰子的随机游戏</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">每个骰子有六面，点数分别为1、2、3、4、5、6。游戏者在程序开始时输入一个无符号整数，作为产生随机数的种子。</span></span><br><span class="line"><span class="comment">每轮投两次骰子，第一轮如果和数为7或11则为胜，游戏结束；和数为2、3或12则为负，游戏结束；和数为其它值则将此值作为自己的点数，继续第二轮、第三轮...直到某轮的和数等于点数则取胜，若在此前出现和数为7则为负。</span></span><br><span class="line"><span class="comment">由rolldice函数负责模拟投骰子、计算和数并输出和数。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">rand</span></span><br><span class="line"><span class="comment">函数原型：int rand(void);</span></span><br><span class="line"><span class="comment">所需头文件：&lt;cstdlib&gt;</span></span><br><span class="line"><span class="comment">功能和返回值：求出并返回一个伪随机数</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">srand</span></span><br><span class="line"><span class="comment">函数原型：void srand(unsigned int seed);</span></span><br><span class="line"><span class="comment">参数：seed产生随机数的种子。</span></span><br><span class="line"><span class="comment">所需头文件：&lt;cstdlib&gt;</span></span><br><span class="line"><span class="comment">功能：为使rand()产生一序列伪随机整数而设置起始点。使用1作为seed参数，可以重新初化rand()。*/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//投骰子、计算和数、输出和数</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">rollDice</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> die1 = <span class="number">1</span> + rand() % <span class="number">6</span>;</span><br><span class="line">    <span class="keyword">int</span> die2 = <span class="number">1</span> + rand() % <span class="number">6</span>;</span><br><span class="line">    <span class="keyword">int</span> sum = die1 + die2;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"player rolled "</span> &lt;&lt; die1 &lt;&lt; <span class="string">" + "</span> &lt;&lt; die2 &lt;&lt; <span class="string">" = "</span> &lt;&lt; sum &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">enum</span> GameStatus &#123; WIN, LOSE, PLAYING &#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> sum, myPoint;</span><br><span class="line">    GameStatus status;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">unsigned</span> seed; </span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"Please enter an unsigned integer: "</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; seed;<span class="comment">//输入随机数种子</span></span><br><span class="line">    srand(seed);<span class="comment">//将种子传递给rand()</span></span><br><span class="line"></span><br><span class="line">    sum = rollDice(); <span class="comment">//第一轮投骰子、计算和数</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">switch</span> (sum) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">7</span>:   <span class="comment">//如果和数为7或11则为胜,状态为WIN</span></span><br><span class="line">    <span class="keyword">case</span> <span class="number">11</span>:</span><br><span class="line">      status = WIN;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">2</span>:   <span class="comment">//和数为2、3或12则为负,状态为LOSE</span></span><br><span class="line">    <span class="keyword">case</span> <span class="number">3</span>: </span><br><span class="line">    <span class="keyword">case</span> <span class="number">12</span>:</span><br><span class="line">      status = LOSE;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>: <span class="comment">/*其它情况,游戏尚无结果,状态为</span></span><br><span class="line"><span class="comment">            PLAYING,记下点数,为下一轮做准备 */</span></span><br><span class="line">      status = PLAYING;</span><br><span class="line">      myPoint = sum;</span><br><span class="line">      <span class="built_in">cout</span> &lt;&lt; <span class="string">"point is "</span> &lt;&lt; myPoint &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (status == PLAYING) &#123; <span class="comment">//只要状态仍为PLAYING,就继续进 行下一轮</span></span><br><span class="line">      sum = rollDice();</span><br><span class="line">      <span class="keyword">if</span> (sum == myPoint)    <span class="comment">//某轮的和数等于点数则取胜</span></span><br><span class="line">        status = WIN;</span><br><span class="line">      <span class="keyword">else</span> <span class="keyword">if</span> (sum == <span class="number">7</span>)    <span class="comment">//出现和数为7则为负</span></span><br><span class="line">        status = LOSE;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//当状态不为PLAYING时上面的循环结束,以下程序段输出游戏结果</span></span><br><span class="line">    <span class="keyword">if</span> (status == WIN)</span><br><span class="line">      <span class="built_in">cout</span> &lt;&lt; <span class="string">"player wins"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">      <span class="built_in">cout</span> &lt;&lt; <span class="string">"player loses"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//运行结果：</span></span><br><span class="line">Please enter an <span class="keyword">unsigned</span> integer:<span class="number">23</span></span><br><span class="line">player rolled <span class="number">6</span> + <span class="number">3</span> = <span class="number">9</span></span><br><span class="line">point is <span class="number">9</span></span><br><span class="line">player rolled <span class="number">5</span> + <span class="number">4</span> = <span class="number">9</span></span><br><span class="line">player wins</span><br></pre></td></tr></table></figure>
+const double TINY_VALUE = 1e-10;
 
+double tsin(double x) 
+{
+    double g = 0;
+    double t = x;
+    int n = 1;
+    do {
+        g += t;
+        n++;
+        t = -t * x * x / (2 * n - 1) / (2 * n - 2);
+    } while (fabs(t) >= TINY_VALUE); 
+    return g;
+} 
+
+int main() 
+{
+    double k, r, s;
+    cout << "r = ";
+    cin >> r;
+    cout << "s = ";
+    cin >> s;
+    if (r * r <= s * s)
+      k=sqrt(tsin(r)*tsin(r)+tsin(s)*tsin(s));
+    else
+      k = tsin(r * s) / 2;
+    cout << k << endl;
+    return 0;
+}
+
+
+
+//运行结果：
+r=5
+s=8
+1.37781
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-c++"><code class="language-c++">/*6.投骰子的随机游戏
+
+每个骰子有六面，点数分别为1、2、3、4、5、6。游戏者在程序开始时输入一个无符号整数，作为产生随机数的种子。
+每轮投两次骰子，第一轮如果和数为7或11则为胜，游戏结束；和数为2、3或12则为负，游戏结束；和数为其它值则将此值作为自己的点数，继续第二轮、第三轮...直到某轮的和数等于点数则取胜，若在此前出现和数为7则为负。
+由rolldice函数负责模拟投骰子、计算和数并输出和数。
+
+rand
+函数原型：int rand(void);
+所需头文件：<cstdlib>
+功能和返回值：求出并返回一个伪随机数
+
+srand
+函数原型：void srand(unsigned int seed);
+参数：seed产生随机数的种子。
+所需头文件：<cstdlib>
+功能：为使rand()产生一序列伪随机整数而设置起始点。使用1作为seed参数，可以重新初化rand()。*/
+
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+
+//投骰子、计算和数、输出和数
+int rollDice() {
+    int die1 = 1 + rand() % 6;
+    int die2 = 1 + rand() % 6;
+    int sum = die1 + die2;
+    cout << "player rolled " << die1 << " + " << die2 << " = " << sum << endl;
+    return sum;
+}
+
+enum GameStatus { WIN, LOSE, PLAYING };
+
+int main() {
+    int sum, myPoint;
+    GameStatus status;
+
+    unsigned seed; 
+    cout<<"Please enter an unsigned integer: ";
+    cin >> seed;//输入随机数种子
+    srand(seed);//将种子传递给rand()
+
+    sum = rollDice(); //第一轮投骰子、计算和数
+
+switch (sum) {
+    case 7:   //如果和数为7或11则为胜,状态为WIN
+    case 11:
+      status = WIN;
+      break;
+    case 2:   //和数为2、3或12则为负,状态为LOSE
+    case 3: 
+    case 12:
+      status = LOSE;
+      break;
+    default: /*其它情况,游戏尚无结果,状态为
+            PLAYING,记下点数,为下一轮做准备 */
+      status = PLAYING;
+      myPoint = sum;
+      cout << "point is " << myPoint << endl;
+      break;
+    }
+
+while (status == PLAYING) { //只要状态仍为PLAYING,就继续进 行下一轮
+      sum = rollDice();
+      if (sum == myPoint)    //某轮的和数等于点数则取胜
+        status = WIN;
+      else if (sum == 7)    //出现和数为7则为负
+        status = LOSE;
+    }
+
+    //当状态不为PLAYING时上面的循环结束,以下程序段输出游戏结果
+    if (status == WIN)
+      cout << "player wins" << endl;
+    else
+      cout << "player loses" << endl;
+
+    return 0;
+}
+//运行结果：
+Please enter an unsigned integer:23
+player rolled 6 + 3 = 9
+point is 9
+player rolled 5 + 4 = 9
+player wins<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>嵌套调用</strong></p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1.输入两个整数，求平方和</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fun2</span><span class="params">(<span class="keyword">int</span> m)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> m * m;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fun1</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> fun2(x) + fun2(y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a, b;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"Please enter two integers (a and b): "</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"The sum of square of a and  b: "</span> &lt;&lt; fun1(a, b) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//运行结果：</span></span><br><span class="line">Please enter two integers(a and b): 3 4</span><br><span class="line">The sum of square of a <span class="keyword">and</span> b: <span class="number">25</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++"><code class="language-c++">//1.输入两个整数，求平方和
 
+#include <iostream>
+using namespace std;
+
+int fun2(int m) 
+{
+    return m * m;
+}
+
+int fun1(int x,int y) 
+{
+    return fun2(x) + fun2(y);
+}
+
+int main() 
+{
+    int a, b;
+    cout<<"Please enter two integers (a and b): ";
+    cin >> a >> b;
+    cout << "The sum of square of a and  b: " << fun1(a, b) << endl;
+    return 0;
+}
+
+
+//运行结果：
+Please enter two integers(a and b): 3 4
+The sum of square of a and b: 25<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>递归调用</strong></p>
 <p>//1.求n!<br>$$<br>n!=  \begin{cases}     1 &amp; \text{}\ (n=0)  \     n(n-1)! &amp; \text{}\ (n&gt; 0)  \ \end{cases}<br>$$</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">unsigned</span> <span class="title">fac</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">unsigned</span> f;</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">0</span>)</span><br><span class="line">      f = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">      f = fac(n - <span class="number">1</span>) * n;</span><br><span class="line">  <span class="keyword">return</span> f;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">unsigned</span> n;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Enter a positive integer:"</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">unsigned</span> y = fac(n);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; n &lt;&lt; <span class="string">"! = "</span> &lt;&lt; y &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//运行结果：</span></span><br><span class="line">Enter a positive integer:<span class="number">8</span></span><br><span class="line"><span class="number">8</span>! = <span class="number">40320</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
+using namespace std;
 
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*2.用递归法计算从n个人中选择k个人组成一个委员会的不同组合数。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">分析：</span></span><br><span class="line"><span class="comment">   由n个人里选k个人的组合数 = 由n-1个人里选k个人的组合数+由n-1个人里选k-1个人的组合数</span></span><br><span class="line"><span class="comment">当n = k或k = 0时，组合数为1*/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">comm</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (k &gt; n)</span><br><span class="line">      <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (n == k || k == <span class="number">0</span>)</span><br><span class="line">      <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">      <span class="keyword">return</span> comm(n - <span class="number">1</span>, k) + comm(n - <span class="number">1</span>, k - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, k;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Please enter two integers n and k: "</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; k;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"C(n, k) = "</span> &lt;&lt; comm(n, k) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+unsigned fac(int n)
+{
+    unsigned f;
+    if (n == 0)
+      f = 1;
+  else
+      f = fac(n - 1) * n;
+  return f;
+}
 
+int main() 
+{
+    unsigned n;
+    cout << "Enter a positive integer:";
+    cin >> n;
+    unsigned y = fac(n);
+    cout << n << "! = " << y << endl;
+    return 0;
+}
+
+//运行结果：
+Enter a positive integer:8
+8! = 40320
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-c++"><code class="language-c++">/*2.用递归法计算从n个人中选择k个人组成一个委员会的不同组合数。
+
+分析：
+   由n个人里选k个人的组合数 = 由n-1个人里选k个人的组合数+由n-1个人里选k-1个人的组合数
+当n = k或k = 0时，组合数为1*/
+
+#include <iostream>
+using namespace std;
+
+int comm(int n, int k) {
+    if (k > n)
+      return 0;
+    else if (n == k || k == 0)
+      return 1;
+    else
+      return comm(n - 1, k) + comm(n - 1, k - 1);
+}
+
+int main() {
+    int n, k;
+    cout << "Please enter two integers n and k: ";
+    cin >> n >> k;
+    cout << "C(n, k) = " << comm(n, k) << endl;
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>3.汉诺塔问题</strong></p>
 <p>有三根针A、B、C。A针上有N个盘子，大的在下，小的在上，要求把这N个盘子从A针移到C针，在移动过程中可以借助B针，每次只允许移动一个盘，且在移动过程中在三根针上都保持大盘在下，小盘在上。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.5/Images/posts/C%E7%AC%94%E8%AE%B0/%E5%9B%BE%E7%89%871.png" alt="img"></p>
@@ -854,8 +1171,46 @@
 <li>①将多个盘子从一个针移到另一个针上，这是一个递归的过程。 hanoi函数实现。</li>
 <li>②将1个盘子从一个针上移到另一针上。 用move函数实现</li>
 </ul>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//3.汉诺塔问题</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//把src针的最上面一个盘子移动到dest针上</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">move</span><span class="params">(<span class="keyword">char</span> src, <span class="keyword">char</span> dest)</span> </span>&#123; </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; src &lt;&lt; <span class="string">" --&gt; "</span> &lt;&lt; dest &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//把n个盘子从src针移动到dest针，以medium针作为中介</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">hanoi</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">char</span> src, <span class="keyword">char</span> medium, <span class="keyword">char</span> dest)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>)</span><br><span class="line">      move(src, dest);</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">      hanoi(n - <span class="number">1</span>, src, dest, medium);</span><br><span class="line">      move(src, dest);</span><br><span class="line">      hanoi(n - <span class="number">1</span>, medium, src, dest);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> m;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Enter the number of diskes: "</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; m;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"the steps to moving "</span> &lt;&lt; m &lt;&lt; <span class="string">" diskes:"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    hanoi(m,<span class="string">'A'</span>,<span class="string">'B'</span>,<span class="string">'C'</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//运行结果：</span></span><br><span class="line">Enter the number of diskes:<span class="number">3</span></span><br><span class="line">the steps to moving <span class="number">3</span> diskes:</span><br><span class="line">A --&gt; C</span><br><span class="line">A --&gt; B</span><br><span class="line">C --&gt; B</span><br><span class="line">A --&gt; C</span><br><span class="line">B --&gt; A</span><br><span class="line">B --&gt; C</span><br><span class="line">A --&gt; C</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++"><code class="language-c++">//3.汉诺塔问题
 
+#include <iostream>
+using namespace std;
+
+//把src针的最上面一个盘子移动到dest针上
+void move(char src, char dest) { 
+    cout << src << " --> " << dest << endl;
+}
+
+//把n个盘子从src针移动到dest针，以medium针作为中介
+void hanoi(int n, char src, char medium, char dest) {
+    if (n == 1)
+      move(src, dest);
+    else {
+      hanoi(n - 1, src, dest, medium);
+      move(src, dest);
+      hanoi(n - 1, medium, src, dest);
+    }
+}
+
+int main() {
+    int m;
+    cout << "Enter the number of diskes: ";
+    cin >> m;
+    cout << "the steps to moving " << m << " diskes:" << endl;
+    hanoi(m,'A','B','C');
+    return 0;
+}
+
+//运行结果：
+Enter the number of diskes:3
+the steps to moving 3 diskes:
+A --> C
+A --> B
+C --> B
+A --> C
+B --> A
+B --> C
+A --> C<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="函数的参数传递"><a href="#函数的参数传递" class="headerlink" title="函数的参数传递"></a>函数的参数传递</h3><ul>
 <li>在函数被调用时才分配形参的存储单元。 </li>
 <li>实参可以是常量、变量或表达式。 </li>
@@ -866,13 +1221,58 @@
 </ul>
 <p><strong>引用传递</strong></p>
 <p>引用(&amp;)是标识符的别名,例如:</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> i,j;</span><br><span class="line"><span class="keyword">int</span> &amp;ri=i;<span class="comment">//建立一个int型的引用ri,并将其初始化为变量i的一个别名</span></span><br><span class="line">j=<span class="number">10</span>;</span><br><span class="line">ri=j;<span class="comment">//相当于 i = j;</span></span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-c++"><code class="language-c++">int i,j;
+int &ri=i;//建立一个int型的引用ri,并将其初始化为变量i的一个别名
+j=10;
+ri=j;//相当于 i = j;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>声明一个引用时，必须同时对它进行初始化，使它指向一个已存在的对象。 一旦一个引用被初始化后，就不能改为指向其它对象。 引用可以作为形参:</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> &amp;a, <span class="keyword">int</span> &amp;b)</span> </span>&#123;...&#125;</span><br><span class="line"><span class="comment">//1.输入两个整数交换后输出</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>&amp; a, <span class="keyword">int</span>&amp; b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t = a;</span><br><span class="line">    a = b;</span><br><span class="line">    b = t;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">5</span>, y = <span class="number">10</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"x = "</span> &lt;&lt; x &lt;&lt; <span class="string">"  y = "</span> &lt;&lt; y &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    swap(x, y);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"x = "</span> &lt;&lt; x &lt;&lt; <span class="string">"  y = "</span> &lt;&lt; y &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//运行结果:</span></span><br><span class="line">x = <span class="number">5</span>   y = <span class="number">10</span></span><br><span class="line">x = <span class="number">10</span>  y = <span class="number">5</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++"><code class="language-c++">void swap(int &a, int &b) {...}
+//1.输入两个整数交换后输出
 
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//2.值传递与引用传递的比较</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fiddle</span><span class="params">(<span class="keyword">int</span> in1, <span class="keyword">int</span> &amp;in2)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    in1 = in1 + <span class="number">100</span>;</span><br><span class="line">    in2 = in2 + <span class="number">100</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"The values are "</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; setw(<span class="number">5</span>) &lt;&lt; in1;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; setw(<span class="number">5</span>) &lt;&lt; in2 &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123; </span><br><span class="line">  <span class="keyword">int</span> v1=<span class="number">7</span>,v2=<span class="number">12</span>;</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; <span class="string">"The values are "</span>;</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; setw(<span class="number">5</span>) &lt;&lt; v1;</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; setw(<span class="number">5</span>) &lt;&lt; v2 &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">  fiddle(v1, v2);</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; <span class="string">"The values are "</span>;</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; setw(<span class="number">5</span>) &lt;&lt; v1;</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; setw(<span class="number">5</span>) &lt;&lt; v2 &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+#include<iostream>
+using namespace std;
+void swap(int& a, int& b) {
+    int t = a;
+    a = b;
+    b = t;
+}
+int main() {
+    int x = 5, y = 10;
+    cout << "x = " << x << "  y = " << y << endl;
+    swap(x, y);
+    cout << "x = " << x << "  y = " << y << endl;
+    return 0;
+}
 
+//运行结果:
+x = 5   y = 10
+x = 10  y = 5
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-c++"><code class="language-c++">//2.值传递与引用传递的比较
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+void fiddle(int in1, int &in2) 
+{
+    in1 = in1 + 100;
+    in2 = in2 + 100;
+    cout<<"The values are ";
+    cout << setw(5) << in1;
+    cout << setw(5) << in2 << endl;
+}
+
+int main() { 
+  int v1=7,v2=12;
+  cout << "The values are ";
+  cout << setw(5) << v1;
+  cout << setw(5) << v2 << endl;
+  fiddle(v1, v2);
+  cout << "The values are ";
+  cout << setw(5) << v1;
+  cout << setw(5) << v2 << endl;
+  return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="2-内联函数"><a href="#2-内联函数" class="headerlink" title="2.内联函数"></a>2.内联函数</h2><ul>
 <li>声明时使用关键字 inline。 </li>
 <li>编译时在调用处用函数体进行替换,节省了参数传递、控制转移等开销。 </li>
@@ -880,42 +1280,162 @@
 <li>内联函数的声明必须出现在内联函数第一次被调用之前。 </li>
 <li>对内联函数不能进行异常接口声明。 </li>
 </ul>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//example:</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> PI = <span class="number">3.14159265358979</span>;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">double</span> <span class="title">calArea</span><span class="params">(<span class="keyword">double</span> radius)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> PI * radius * radius;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">double</span> r = <span class="number">3.0</span>;</span><br><span class="line">    <span class="keyword">double</span> area = calArea(r);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; area &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++"><code class="language-c++">//example:
 
+#include <iostream>
+using namespace std;
+
+const double PI = 3.14159265358979;
+inline double calArea(double radius) {
+    return PI * radius * radius;
+}
+
+int main() {
+    double r = 3.0;
+    double area = calArea(r);
+    cout << area << endl;
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="3-带默认参数值的函数"><a href="#3-带默认参数值的函数" class="headerlink" title="3.带默认参数值的函数"></a>3.带默认参数值的函数</h2><p>函数在声明时可以预先给出默认的形参值，调用时如给出实参，则采用实参值，否则采用预先给出的默认参数值。</p>
 <p>例如：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x = <span class="number">5</span>,<span class="keyword">int</span> y = <span class="number">6</span>)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    add(<span class="number">10</span>,<span class="number">20</span>);<span class="comment">//10+20</span></span><br><span class="line">    add(<span class="number">10</span>);  <span class="comment">//10+6</span></span><br><span class="line">    add();  <span class="comment">//5+6</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-c++"><code class="language-c++">int add(int x = 5,int y = 6) {
+    return x + y;
+}
+int main() {
+    add(10,20);//10+20
+    add(10);  //10+6
+    add();  //5+6
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>默认参数值的说明次序</strong></p>
 <p>有默认参数的形参必须在形参列表的最后，也就是说默认参数值的右面不能有无默认值的参数。因为调用时实参与形参的结合是从左向右的顺序。</p>
 <p>例：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y = <span class="number">5</span>, <span class="keyword">int</span> z = <span class="number">6</span>)</span></span>;<span class="comment">//正确</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x = <span class="number">1</span>, <span class="keyword">int</span> y = <span class="number">5</span>, <span class="keyword">int</span> z)</span></span>;<span class="comment">//错误</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x = <span class="number">1</span>, <span class="keyword">int</span> y, <span class="keyword">int</span> z = <span class="number">6</span>)</span></span>;<span class="comment">//错误</span></span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-c++"><code class="language-c++">int add(int x, int y = 5, int z = 6);//正确
+int add(int x = 1, int y = 5, int z);//错误
+int add(int x = 1, int y, int z = 6);//错误<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p><strong>默认参数值与函数的调用位置</strong></p>
 <p>如果一个函数有原型声明，且原型声明在定义之前，则默认参数值必须在函数原型声明中给出；而如果只有函数的定义，或函数定义在前，则默认参数值需在函数定义中给出。 例：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int add(int x = 5,int y = 6);        int add(int x = 5,int y = 6) &#123;</span><br><span class="line">//原型声明在前                         //只有定义，没有原型声明</span><br><span class="line">int main() &#123;                         return  x + y;</span><br><span class="line">  add();                             &#125;</span><br><span class="line">&#125;                                    int main() &#123;</span><br><span class="line">int add(int x,int y) &#123;               add();</span><br><span class="line">//此处不能再指定默认值                   &#125;</span><br><span class="line">  return x + y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="4-函数重载"><a href="#4-函数重载" class="headerlink" title="4.函数重载"></a>4.函数重载</h2><p>C++允许功能相近的函数在相同的作用域内以相同函数名声明，从而形成重载。方便使用，便于记忆。</p>
+<pre><code>int add(int x = 5,int y = 6);        int add(int x = 5,int y = 6) {
+//原型声明在前                         //只有定义，没有原型声明
+int main() {                         return  x + y;
+  add();                             }
+}                                    int main() {
+int add(int x,int y) {               add();
+//此处不能再指定默认值                   }
+  return x + y;
+}
+</code></pre><h2 id="4-函数重载"><a href="#4-函数重载" class="headerlink" title="4.函数重载"></a>4.函数重载</h2><p>C++允许功能相近的函数在相同的作用域内以相同函数名声明，从而形成重载。方便使用，便于记忆。</p>
 <p>例：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//形参类型不同</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">add</span><span class="params">(<span class="keyword">float</span> x, <span class="keyword">float</span> y)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//形参个数不同</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> z)</span></span>;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++"><code class="language-c++">//形参类型不同
+int add(int x, int y);
+float add(float x, float y);
 
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*1.计算长方体的体积</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">子函数getVolume是计算体积的函数，有三个形参：length（长）、width（宽）、height（高），其中width和height带有默认值。</span></span><br><span class="line"><span class="comment">主函数中以不同形式调用getVolume函数，分析程序的运行结果。*/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getVolume</span><span class="params">(<span class="keyword">int</span> length, <span class="keyword">int</span> width = <span class="number">2</span>, <span class="keyword">int</span> height = <span class="number">3</span>)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> X = <span class="number">10</span>, Y = <span class="number">12</span>, Z = <span class="number">15</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Some box data is "</span> ;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; getVolume(X, Y, Z) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Some box data is "</span> ;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; getVolume(X, Y) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Some box data is "</span> ;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; getVolume(X) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getVolume</span><span class="params">(<span class="keyword">int</span> length, <span class="keyword">int</span> width<span class="comment">/* = 2 */</span>, <span class="keyword">int</span> height<span class="comment">/* = 3 */</span>)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; setw(<span class="number">5</span>) &lt;&lt; length &lt;&lt; setw(<span class="number">5</span>) &lt;&lt; width &lt;&lt; setw(<span class="number">5</span>) &lt;&lt; height &lt;&lt; <span class="string">'\t'</span>;</span><br><span class="line">    <span class="keyword">return</span> length * width * height;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+//形参个数不同
+int add(int x, int y);
+int add(int x, int y, int z);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-c++"><code class="language-c++">/*1.计算长方体的体积
 
+子函数getVolume是计算体积的函数，有三个形参：length（长）、width（宽）、height（高），其中width和height带有默认值。
+主函数中以不同形式调用getVolume函数，分析程序的运行结果。*/
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int getVolume(int length, int width = 2, int height = 3);
+
+int main() {
+    const int X = 10, Y = 12, Z = 15;
+    cout << "Some box data is " ;
+    cout << getVolume(X, Y, Z) << endl;
+    cout << "Some box data is " ;
+    cout << getVolume(X, Y) << endl;
+    cout << "Some box data is " ;
+    cout << getVolume(X) << endl;
+    return 0;
+}
+
+int getVolume(int length, int width/* = 2 */, int height/* = 3 */) {
+    cout << setw(5) << length << setw(5) << width << setw(5) << height << '\t';
+    return length * width * height;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>注意事项</strong></p>
 <ul>
 <li>重载函数的形参必须不同:个数不同或类型不同。 </li>
 <li>编译程序将根据实参和形参的类型及个数的最佳匹配来选择调用哪一个函数。 </li>
 </ul>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>;                     <span class="function"><span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>;                     <span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>;</span><br><span class="line"><span class="comment">//编译器不以形参名来区分                        //编译器不以返回值来区分</span></span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-c++"><code class="language-c++">int add(int x,int y);                     int add(int x,int y);
+int add(int a,int b);                     void add(int x,int y);
+//编译器不以形参名来区分                        //编译器不以返回值来区分<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>不要将不同功能的函数声明为重载函数，以免出现调用结果的误解、混淆。这样不好：</li>
 </ul>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span>               <span class="keyword">float</span> <span class="title">add</span><span class="params">(<span class="keyword">float</span> x,<span class="keyword">float</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;  <span class="keyword">return</span> x + y;  &#125;                 &#123;  <span class="keyword">return</span> x - y;  &#125;</span><br><span class="line"><span class="comment">//编写两个名为sumOfSquare的重载函数，分别求两整数的平方和及两实数的平方和。</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">sumOfSquare</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a * a + b * b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">sumOfSquare</span><span class="params">(<span class="keyword">double</span> a, <span class="keyword">double</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a * a + b * b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> m, n;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Enter two integer: "</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; m &gt;&gt; n;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Their sum of square: "</span> &lt;&lt; sumOfSquare(m, n) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">double</span> x, y;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Enter two real number: "</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; x &gt;&gt; y;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Their sum of square: "</span> &lt;&lt; sumOfSquare(x, y) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//运行结果：</span></span><br><span class="line">Enter two integer: <span class="number">3</span> <span class="number">5</span></span><br><span class="line">Their sum of square: <span class="number">34</span></span><br><span class="line">Enter two real number: <span class="number">2.3</span> <span class="number">5.8</span></span><br><span class="line">Their sum of square: <span class="number">38.93</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++"><code class="language-c++">int add(int x, int y)               float add(float x,float y)
+{  return x + y;  }                 {  return x - y;  }
+//编写两个名为sumOfSquare的重载函数，分别求两整数的平方和及两实数的平方和。
 
+
+
+#include <iostream>
+using namespace std;
+
+int sumOfSquare(int a, int b) {
+    return a * a + b * b;
+}
+double sumOfSquare(double a, double b) {
+    return a * a + b * b;
+}
+int main() {
+    int m, n;
+    cout << "Enter two integer: ";
+    cin >> m >> n;
+    cout << "Their sum of square: " << sumOfSquare(m, n) << endl;
+
+    double x, y;
+    cout << "Enter two real number: ";
+    cin >> x >> y;
+    cout << "Their sum of square: " << sumOfSquare(x, y) << endl;
+
+    return 0;
+}
+
+
+//运行结果：
+Enter two integer: 3 5
+Their sum of square: 34
+Enter two real number: 2.3 5.8
+Their sum of square: 38.93<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="5-使用C-系统函数"><a href="#5-使用C-系统函数" class="headerlink" title="5.使用C++系统函数"></a>5.使用C++系统函数</h2><p>C++的系统库中提供了几百个函数可供程序员使用。 例如：求平方根函数（sprt）、求绝对值函数（abs）等。</p>
 <p>使用系统函数时要包含相应的头文件。 例如：cmath 或 math.h</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*1.从键盘输入一个角度值，求出该角度的正弦值、余弦值和正切值。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">分析：</span></span><br><span class="line"><span class="comment">系统函数中提供了求正弦值、余弦值和正切值的函数：sin()、cos()、tan()，函数的说明在头文件cmath中。*/</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> PI = <span class="number">3.14159265358979</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">double</span> angle;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Please enter an angle: "</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; angle;   <span class="comment">//输入角度值</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">double</span> radian = angle * PI / <span class="number">180</span>;   <span class="comment">//转化为弧度值</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"sin("</span> &lt;&lt; angle &lt;&lt; <span class="string">") = "</span> &lt;&lt; <span class="built_in">sin</span>(radian) &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"cos("</span> &lt;&lt; angle &lt;&lt; <span class="string">") = "</span> &lt;&lt; <span class="built_in">cos</span>(radian) &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"tan("</span> &lt;&lt; angle &lt;&lt; <span class="string">") = "</span> &lt;&lt; <span class="built_in">tan</span>(radian) &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//运行结果：</span></span><br><span class="line"><span class="number">30</span></span><br><span class="line"><span class="built_in">sin</span>(<span class="number">30</span>)=<span class="number">0.5</span></span><br><span class="line"><span class="built_in">cos</span>(<span class="number">30</span>)=<span class="number">0.866025</span></span><br><span class="line"><span class="built_in">tan</span>(<span class="number">30</span>)=<span class="number">0.57735</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++"><code class="language-c++">/*1.从键盘输入一个角度值，求出该角度的正弦值、余弦值和正切值。
+
+分析：
+系统函数中提供了求正弦值、余弦值和正切值的函数：sin()、cos()、tan()，函数的说明在头文件cmath中。*/
+
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+const double PI = 3.14159265358979;
+
+int main() {
+    double angle;
+    cout << "Please enter an angle: ";
+    cin >> angle;   //输入角度值
+
+    double radian = angle * PI / 180;   //转化为弧度值
+    cout << "sin(" << angle << ") = " << sin(radian) <<endl;
+    cout << "cos(" << angle << ") = " << cos(radian) <<endl;
+    cout << "tan(" << angle << ") = " << tan(radian) <<endl;
+    return 0;
+}
+
+//运行结果：
+30
+sin(30)=0.5
+cos(30)=0.866025
+tan(30)=0.57735<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
             </div>
             <hr />
 
@@ -1666,7 +2186,7 @@
            <!--<a href="/sitemap.xml" target="_blank">站点地图</a>丨-->
            
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">87.2k
+            <span class="white-color">70.4k
              丨            
             <a href="https://tongji.baidu.com/web/welcome/ico?s=df42dpc7224a5f6a8d435" target="_blank">百度统计</a>丨
            <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278720284'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1278720284%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
@@ -1757,7 +2277,7 @@
       <span class="badge-subject">Link</span><span class="badge-value bg-red">996.ICU</span></a>
     </div>
     <div class="github-badge">
-      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">87.2k</span>
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">70.4k</span>
     </div>
 </footer>
 

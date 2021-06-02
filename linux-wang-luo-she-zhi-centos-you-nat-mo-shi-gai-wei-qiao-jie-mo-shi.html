@@ -781,7 +781,7 @@ CentOS发行版本：CentOS 8.1
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    1.4k
                 </div>
                 
 
@@ -854,62 +854,48 @@ CentOS发行版本：CentOS 8.1
 <ul>
 <li>获取权限</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo -i</span><br></pre></td></tr></table></figure>
-
-<ul>
+<pre><code>sudo -i</code></pre><ul>
 <li>编辑配置ip地址信息文件（使用vi打开，CentOS自带vi）</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vi /etc/sysconfig/network-scripts/ifcfg-ens33</span><br></pre></td></tr></table></figure>
-
-<p>可以看到我们的网络配置文件：</p>
+<pre><code>vi /etc/sysconfig/network-scripts/ifcfg-ens33</code></pre><p>可以看到我们的网络配置文件：</p>
 <p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.8/Images/posts/NAT%E6%A8%A1%E5%BC%8F%E6%94%B9%E4%B8%BA%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/9.png" alt></p>
 <p><strong>按<code>i</code>进入编辑，按<code>方向键</code>移动</strong></p>
 <p>修改这两个值：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">BOOTPROTO=static       #设置为手动分配IP地址</span><br><span class="line">ONBOOT=yes</span><br></pre></td></tr></table></figure>
-
-<p>在<code>ONBOOT=yes</code>后面增加四个值（上面我们保存的ip）：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">IPADDR=192.168.0.107   # 配置为局域网固定IP(IPv4 地址)</span><br><span class="line">NETMASK=255.255.255.0  # 配置子网掩码</span><br><span class="line">GATEWAY=192.168.0.1    # 配置局域网网关</span><br><span class="line">DNS1=8.8.8.8           # 配置首选DNS，8.8.8.8为免费DNS服务器的IP地址</span><br></pre></td></tr></table></figure>
-
-<p><strong>编辑完成后按<code>esc</code>退出，再按<code>:wq</code>保存（如果无法保存，就按<code>:wq！</code>强制保存）</strong></p>
+<pre><code>BOOTPROTO=static       #设置为手动分配IP地址
+ONBOOT=yes</code></pre><p>在<code>ONBOOT=yes</code>后面增加四个值（上面我们保存的ip）：</p>
+<pre><code>IPADDR=192.168.0.107   # 配置为局域网固定IP(IPv4 地址)
+NETMASK=255.255.255.0  # 配置子网掩码
+GATEWAY=192.168.0.1    # 配置局域网网关
+DNS1=8.8.8.8           # 配置首选DNS，8.8.8.8为免费DNS服务器的IP地址</code></pre><p><strong>编辑完成后按<code>esc</code>退出，再按<code>:wq</code>保存（如果无法保存，就按<code>:wq！</code>强制保存）</strong></p>
 <p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.8/Images/posts/NAT%E6%A8%A1%E5%BC%8F%E6%94%B9%E4%B8%BA%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/10.png" alt></p>
 <ul>
 <li>接下来修改第二个配置，输入下面这个命令</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vi /etc/sysconfig/network</span><br></pre></td></tr></table></figure>
-
-<p>增加这四个配置：</p>
+<pre><code>vi /etc/sysconfig/network</code></pre><p>增加这四个配置：</p>
 <p><strong>按<code>i</code>进入编辑，按<code>方向键</code>移动</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">NETWORKING=yes</span><br><span class="line">NETWORKING_IPV6=no            #关掉IPv6</span><br><span class="line">HOSTNAME=localhost.localdomain</span><br><span class="line">GATEWAY=192.168.0.1           #默认网关地址</span><br></pre></td></tr></table></figure>
-
-<p><strong>编辑完成后按<code>esc</code>退出，再按<code>:wq</code>保存</strong></p>
+<pre><code>NETWORKING=yes
+NETWORKING_IPV6=no            #关掉IPv6
+HOSTNAME=localhost.localdomain
+GATEWAY=192.168.0.1           #默认网关地址</code></pre><p><strong>编辑完成后按<code>esc</code>退出，再按<code>:wq</code>保存</strong></p>
 <p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.8/Images/posts/NAT%E6%A8%A1%E5%BC%8F%E6%94%B9%E4%B8%BA%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/11.png" alt></p>
 <ul>
 <li>启动network服务,输入下面这个命令</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">service network restart</span><br></pre></td></tr></table></figure>
-
-<p><strong>使用CentOS 8.x 版本的就会有问题了，8以下的版本到这里就可以结束了。</strong></p>
+<pre><code>service network restart</code></pre><p><strong>使用CentOS 8.x 版本的就会有问题了，8以下的版本到这里就可以结束了。</strong></p>
 <p>事实上并没有启动network服务，而是：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Redirecting to /bin/systemctl reatart network.service</span><br><span class="line">Failed to restart network.service: Unit network.service not found</span><br></pre></td></tr></table></figure>
-
-<p><strong>查了很多资料才发现centos 8.x 已经替换了原来的network, 新版的叫：NetworkManager，下面给出解决办法</strong></p>
+<pre><code>Redirecting to /bin/systemctl reatart network.service
+Failed to restart network.service: Unit network.service not found</code></pre><p><strong>查了很多资料才发现centos 8.x 已经替换了原来的network, 新版的叫：NetworkManager，下面给出解决办法</strong></p>
 <ul>
 <li>首先安装NetworkManager</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum install NetworkManager*</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.8/Images/posts/NAT%E6%A8%A1%E5%BC%8F%E6%94%B9%E4%B8%BA%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/12.png" alt></p>
+<pre><code>yum install NetworkManager*</code></pre><p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.8/Images/posts/NAT%E6%A8%A1%E5%BC%8F%E6%94%B9%E4%B8%BA%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/12.png" alt></p>
 <ul>
 <li>启动NetworkManager</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">service NetworkManager restart</span><br></pre></td></tr></table></figure>
-
-<ul>
+<pre><code>service NetworkManager restart</code></pre><ul>
 <li>开启NetworkManager网络服务</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">systemctl status NetworkManager</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.8/Images/posts/NAT%E6%A8%A1%E5%BC%8F%E6%94%B9%E4%B8%BA%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/13.png" alt></p>
+<pre><code>systemctl status NetworkManager</code></pre><p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.8/Images/posts/NAT%E6%A8%A1%E5%BC%8F%E6%94%B9%E4%B8%BA%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/13.png" alt></p>
 <h2 id="4】验证网络"><a href="#4】验证网络" class="headerlink" title="4】验证网络"></a>4】验证网络</h2><ul>
 <li>在Windows终端ping我们CentOS的IP：192.168.0.107，可以正常通信。</li>
 </ul>
@@ -1682,7 +1668,7 @@ CentOS发行版本：CentOS 8.1
            <!--<a href="/sitemap.xml" target="_blank">站点地图</a>丨-->
            
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">87.2k
+            <span class="white-color">70.4k
              丨            
             <a href="https://tongji.baidu.com/web/welcome/ico?s=df42dpc7224a5f6a8d435" target="_blank">百度统计</a>丨
            <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278720284'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1278720284%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
@@ -1773,7 +1759,7 @@ CentOS发行版本：CentOS 8.1
       <span class="badge-subject">Link</span><span class="badge-value bg-red">996.ICU</span></a>
     </div>
     <div class="github-badge">
-      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">87.2k</span>
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">70.4k</span>
     </div>
 </footer>
 
