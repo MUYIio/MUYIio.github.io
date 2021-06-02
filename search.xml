@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>【Day37】523.连续的子数组和</title>
+      <link href="/day37-523-lian-xu-de-zi-shu-zu-he.html"/>
+      <url>/day37-523-lian-xu-de-zi-shu-zu-he.html</url>
+      
+        <content type="html"><![CDATA[<h4 id="523-连续的子数组和"><a href="#523-连续的子数组和" class="headerlink" title="523. 连续的子数组和"></a><a href="https://leetcode-cn.com/problems/continuous-subarray-sum/" target="_blank" rel="noopener">523. 连续的子数组和</a></h4><p>给你一个整数数组 nums 和一个整数 k ，编写一个函数来判断该数组是否含有同时满足下述条件的连续子数组：</p><ul><li>子数组大小 <strong>至少为 2</strong> ，且</li><li>子数组元素总和为 k 的倍数。</li></ul><p>如果存在，返回 true ；否则，返回 false 。</p><p>如果存在一个整数 n ，令整数 x 符合 x = n * k ，则称 x 是 k 的一个倍数。</p><p><strong>示例 1：</strong></p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：nums = [23,2,4,6,7], k = 6</span><br><span class="line">输出：true</span><br><span class="line">解释：[2,4] 是一个大小为 2 的子数组，并且和为 6 。</span><br></pre></td></tr></table></figure><p><strong>示例 2：</strong></p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：nums = [23,2,6,4,7], k = 6</span><br><span class="line">输出：true</span><br><span class="line">解释：[23, 2, 6, 4, 7] 是大小为 5 的子数组，并且和为 42 。 </span><br><span class="line">42 是 6 的倍数，因为 42 = 7 * 6 且 7 是一个整数。</span><br></pre></td></tr></table></figure><p><strong>示例 3：</strong></p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：nums = [23,2,6,4,7], k = 13</span><br><span class="line">输出：false</span><br></pre></td></tr></table></figure><p><strong>提示：</strong></p><ul><li>1 &lt;= nums.length &lt;= 105</li><li>0 &lt;= nums[i] &lt;= 109</li><li>0 &lt;= sum(nums[i]) &lt;= 231 - 1</li><li>1 &lt;= k &lt;= 231 - 1</li></ul><p><strong>题解：</strong></p><p>经典的前缀和</p><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">checkSubarraySum</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">unordered_set</span>&lt;<span class="keyword">int</span>&gt; st;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++) &#123;</span><br><span class="line">            sum += nums[i];</span><br><span class="line">            <span class="keyword">if</span>(st.count(sum % k)) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            st.insert((sum - nums[i]) % k); </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 每日一题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>【Day36】LeetCode 1744</title>
       <link href="/day36-leetcode-1744.html"/>
       <url>/day36-leetcode-1744.html</url>
@@ -1646,9 +1671,9 @@
       
         <tags>
             
-            <tag> VMware </tag>
-            
             <tag> CentOS </tag>
+            
+            <tag> VMware </tag>
             
         </tags>
       
