@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>【Day38】525.连续数组</title>
+      <link href="/day38-525-lian-xu-shu-zu.html"/>
+      <url>/day38-525-lian-xu-shu-zu.html</url>
+      
+        <content type="html"><![CDATA[<h4 id="525-连续数组"><a href="#525-连续数组" class="headerlink" title="525. 连续数组"></a><a href="https://leetcode-cn.com/problems/contiguous-array/" target="_blank" rel="noopener">525. 连续数组</a></h4><p>给定一个二进制数组 nums , 找到含有相同数量的 0 和 1 的最长连续子数组，并返回该子数组的长度。</p><p><strong>示例 1:</strong></p><pre><code>输入: nums = [0,1]输出: 2说明: [0, 1] 是具有相同数量0和1的最长连续子数组。</code></pre><p><strong>示例 2:</strong></p><pre><code>输入: nums = [0,1,0]输出: 2说明: [0, 1] (或 [1, 0]) 是具有相同数量0和1的最长连续子数组。</code></pre><p><strong>提示：</strong></p><ul><li>1 &lt;= nums.length &lt;= 105</li><li>nums[i] 不是 0 就是 1</li></ul><p><strong>题解：</strong></p><p>前缀和＋哈希</p><pre class="line-numbers language-c++"><code class="language-c++">class Solution {public:    int findMaxLength(vector<int>& nums) {        for (auto& num : nums) {            num = num == 0 ? -1 : num;        }        map<int, int> m;        int sum = 0, ans = 0;        for (int i = 0; i < nums.size(); i++) {            sum += nums[i];            if (sum == 0) {                ans = i + 1;            }            if (m.count(sum)) {                ans = max(i - m[sum], ans);            } else {                m[sum] = i;            }        }        return ans;    }};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 每日一题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>【Day37】523.连续的子数组和</title>
       <link href="/day37-523-lian-xu-de-zi-shu-zu-he.html"/>
       <url>/day37-523-lian-xu-de-zi-shu-zu-he.html</url>
