@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>【Day39】160.相交链表</title>
+      <link href="/day39-160-xiang-jiao-lian-biao.html"/>
+      <url>/day39-160-xiang-jiao-lian-biao.html</url>
+      
+        <content type="html"><![CDATA[<h4 id="160-相交链表"><a href="#160-相交链表" class="headerlink" title="160. 相交链表"></a><a href="https://leetcode-cn.com/problems/intersection-of-two-linked-lists/" target="_blank" rel="noopener">160. 相交链表</a></h4><p>给你两个单链表的头节点 headA 和 headB ，请你找出并返回两个单链表相交的起始节点。如果两个链表没有交点，返回 null 。</p><p>图示两个链表在节点 c1 开始相交：</p><p><img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/14/160_statement.png" alt></p><p>题目数据 <strong>保证</strong> 整个链式结构中不存在环。</p><p><strong>注意</strong>：函数返回结果后，链表必须 保持其<strong>原始结构</strong> 。</p><p><strong>示例 1：</strong></p><p><img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/14/160_example_1.png" alt></p><pre><code>输入：intersectVal = 8, listA = [4,1,8,4,5], listB = [5,0,1,8,4,5], skipA = 2, skipB = 3输出：Intersected at &#39;8&#39;解释：相交节点的值为 8 （注意，如果两个链表相交则不能为 0）。从各自的表头开始算起，链表 A 为 [4,1,8,4,5]，链表 B 为 [5,0,1,8,4,5]。在 A 中，相交节点前有 2 个节点；在 B 中，相交节点前有 3 个节点。</code></pre><p><strong>示例 2：</strong></p><p><img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/14/160_example_2.png" alt></p><pre><code>输入：intersectVal = 2, listA = [0,9,1,2,4], listB = [3,2,4], skipA = 3, skipB = 1输出：Intersected at &#39;2&#39;解释：相交节点的值为 2 （注意，如果两个链表相交则不能为 0）。从各自的表头开始算起，链表 A 为 [0,9,1,2,4]，链表 B 为 [3,2,4]。在 A 中，相交节点前有 3 个节点；在 B 中，相交节点前有 1 个节点。</code></pre><p><strong>示例 3：</strong></p><p><img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/14/160_example_3.png" alt></p><pre><code>输入：intersectVal = 0, listA = [2,6,4], listB = [1,5], skipA = 3, skipB = 2输出：null解释：从各自的表头开始算起，链表 A 为 [2,6,4]，链表 B 为 [1,5]。由于这两个链表不相交，所以 intersectVal 必须为 0，而 skipA 和 skipB 可以是任意值。这两个链表不相交，因此返回 null 。</code></pre><p><strong>提示：</strong></p><ul><li>listA 中节点数目为 m</li><li>listB 中节点数目为 n</li><li>0 &lt;= m, n &lt;= 3 * 104</li><li>1 &lt;= Node.val &lt;= 105</li><li>0 &lt;= skipA &lt;= m</li><li>0 &lt;= skipB &lt;= n</li><li>如果 listA 和 listB 没有交点，intersectVal 为 0</li><li>如果 listA 和 listB 有交点，intersectVal == listA[skipA + 1] == listB[skipB + 1]</li></ul><p><strong>进阶：</strong>你能否设计一个时间复杂度 <code>O(n)</code> 、仅用 <code>O(1)</code> 内存的解决方案？</p><p><strong>题解：</strong></p><p>pA走过的路径为A链+B链</p><p>pB走过的路径为B链+A链</p><p>pA和pB走过的长度都相同，都是A链和B链的长度之和，相当于将两条链从尾端对齐，如果相交，则会提前在相交点相遇，如果没有相交点，则会在最后相遇。</p><pre><code>pA:1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;6-&gt;null-&gt;9-&gt;5-&gt;6-&gt;nullpB:9-&gt;5-&gt;6-&gt;null-&gt;1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;6-&gt;null</code></pre><pre class="line-numbers language-c++"><code class="language-c++">/** * Definition for singly-linked list. * struct ListNode { *     int val; *     ListNode *next; *     ListNode(int x) : val(x), next(NULL) {} * }; */class Solution {public:    ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {        ListNode *p = headA, *q = headB;        while (p != q) {            p = p ? p->next : headB;            q = q ? q->next : headA;        }        return p;    }};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 每日一题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>【Day38】525.连续数组</title>
       <link href="/day38-525-lian-xu-shu-zu.html"/>
       <url>/day38-525-lian-xu-shu-zu.html</url>
@@ -1696,9 +1721,9 @@
       
         <tags>
             
-            <tag> CentOS </tag>
-            
             <tag> VMware </tag>
+            
+            <tag> CentOS </tag>
             
         </tags>
       
