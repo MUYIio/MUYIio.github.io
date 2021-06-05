@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>【Day40】203.移除链表元素</title>
+      <link href="/day40-203-yi-chu-lian-biao-yuan-su.html"/>
+      <url>/day40-203-yi-chu-lian-biao-yuan-su.html</url>
+      
+        <content type="html"><![CDATA[<h4 id="203-移除链表元素"><a href="#203-移除链表元素" class="headerlink" title="203. 移除链表元素"></a><a href="https://leetcode-cn.com/problems/remove-linked-list-elements/" target="_blank" rel="noopener">203. 移除链表元素</a></h4><p>给你一个链表的头节点 head 和一个整数 val ，请你删除链表中所有满足 Node.val == val 的节点，并返回 新的头节点 。</p><p><strong>示例 1：</strong></p><p><img src="https://assets.leetcode.com/uploads/2021/03/06/removelinked-list.jpg" alt></p><pre><code>输入：head = [1,2,6,3,4,5,6], val = 6输出：[1,2,3,4,5]</code></pre><p><strong>示例 2：</strong></p><pre><code>输入：head = [], val = 1输出：[]</code></pre><p><strong>示例 3：</strong></p><pre><code>输入：head = [7,7,7,7], val = 7输出：[]</code></pre><p><strong>提示：</strong></p><ul><li>列表中的节点在范围 [0, 104] 内</li><li>1 &lt;= Node.val &lt;= 50</li><li>0 &lt;= k &lt;= 50</li></ul><p><strong>题解：</strong></p><pre class="line-numbers language-c++"><code class="language-c++">/** * Definition for singly-linked list. * struct ListNode { *     int val; *     ListNode *next; *     ListNode() : val(0), next(nullptr) {} *     ListNode(int x) : val(x), next(nullptr) {} *     ListNode(int x, ListNode *next) : val(x), next(next) {} * }; */class Solution {public:    ListNode *removeElements(ListNode *head, int val)    {        if (!head)            return head;        head->next = removeElements(head->next, val);        return head->val == val ? head->next : head;    }};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 每日一题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>【Day39】160.相交链表</title>
       <link href="/day39-160-xiang-jiao-lian-biao.html"/>
       <url>/day39-160-xiang-jiao-lian-biao.html</url>
@@ -1721,9 +1746,9 @@
       
         <tags>
             
-            <tag> VMware </tag>
-            
             <tag> CentOS </tag>
+            
+            <tag> VMware </tag>
             
         </tags>
       
