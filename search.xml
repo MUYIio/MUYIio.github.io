@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>【Day41】474.一和零</title>
+      <link href="/day41-474-yi-he-ling.html"/>
+      <url>/day41-474-yi-he-ling.html</url>
+      
+        <content type="html"><![CDATA[<h4 id="474-一和零"><a href="#474-一和零" class="headerlink" title="474. 一和零"></a><a href="https://leetcode-cn.com/problems/ones-and-zeroes/" target="_blank" rel="noopener">474. 一和零</a></h4><p>给你一个二进制字符串数组 strs 和两个整数 m 和 n 。</p><p>请你找出并返回 strs 的最大子集的大小，该子集中 <strong>最多</strong> 有 m 个 0 和 n 个 1 。</p><p>如果 x 的所有元素也是 y 的元素，集合 x 是集合 y 的 <strong>子集</strong> 。</p><p><strong>示例 1：</strong></p><pre><code>输入：strs = [&quot;10&quot;, &quot;0001&quot;, &quot;111001&quot;, &quot;1&quot;, &quot;0&quot;], m = 5, n = 3输出：4解释：最多有 5 个 0 和 3 个 1 的最大子集是 {&quot;10&quot;,&quot;0001&quot;,&quot;1&quot;,&quot;0&quot;} ，因此答案是 4 。其他满足题意但较小的子集包括 {&quot;0001&quot;,&quot;1&quot;} 和 {&quot;10&quot;,&quot;1&quot;,&quot;0&quot;} 。{&quot;111001&quot;} 不满足题意，因为它含 4 个 1 ，大于 n 的值 3 。</code></pre><p><strong>示例 2：</strong></p><pre><code>输入：strs = [&quot;10&quot;, &quot;0&quot;, &quot;1&quot;], m = 1, n = 1输出：2解释：最大的子集是 {&quot;0&quot;, &quot;1&quot;} ，所以答案是 2 。</code></pre><p><strong>提示：</strong></p><ul><li>1 &lt;= strs.length &lt;= 600</li><li>1 &lt;= strs[i].length &lt;= 100</li><li>strs[i] 仅由 ‘0’ 和 ‘1’ 组成</li><li>1 &lt;= m, n &lt;= 100</li></ul><p><strong>题解：</strong></p><p>动态规划</p><pre class="line-numbers language-c++"><code class="language-c++">const int N = 101;class Solution {public:    int dp[N][N];    int findMaxForm(vector<string>& strs, int m, int n)    {        for (auto &str:strs)        {            int one = 0, zero = 0;            for (auto &c:str)            {                if(c=='1')                    ++one;                else                    ++zero;            }            // zero = str.size() - one;            for (int j=m; j>=zero; --j)            {                for (int k=n; k>=one; --k)                {                    dp[j][k] = max(dp[j][k], dp[j-zero][k-one] + 1);                }            }        }        return dp[m][n];    }};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 每日一题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>【Day40】203.移除链表元素</title>
       <link href="/day40-203-yi-chu-lian-biao-yuan-su.html"/>
       <url>/day40-203-yi-chu-lian-biao-yuan-su.html</url>
@@ -1746,9 +1771,9 @@
       
         <tags>
             
-            <tag> CentOS </tag>
-            
             <tag> VMware </tag>
+            
+            <tag> CentOS </tag>
             
         </tags>
       
