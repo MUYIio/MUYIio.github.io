@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.yshawlon.cn/"/>
-  <updated>2021-06-06T11:48:44.669Z</updated>
+  <updated>2021-06-07T15:46:05.468Z</updated>
   <id>https://www.yshawlon.cn/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【Day42】494. 目标和</title>
+    <link href="https://www.yshawlon.cn/day42-494-mu-biao-he.html"/>
+    <id>https://www.yshawlon.cn/day42-494-mu-biao-he.html</id>
+    <published>2021-06-07T03:08:15.000Z</published>
+    <updated>2021-06-07T15:46:05.468Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;494-目标和&quot;&gt;&lt;a href=&quot;#494-目标和&quot; class=&quot;headerlink&quot; title=&quot;494. 目标和&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/target-sum/&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    
+      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
+    
+  </entry>
   
   <entry>
     <title>【Day41】474.一和零</title>
@@ -498,32 +524,6 @@
         
         
           &lt;h4 id=&quot;1738-找出第-K-大的异或坐标值&quot;&gt;&lt;a href=&quot;#1738-找出第-K-大的异或坐标值&quot; class=&quot;headerlink&quot; title=&quot;1738. 找出第 K 大的异或坐标值&quot;&gt;&lt;/a&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
-    
-    
-      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【Day22】1442.形成两个异或相等数组的三元组数目</title>
-    <link href="https://www.yshawlon.cn/day22-1442-xing-cheng-liang-ge-yi-huo-xiang-deng-shu-zu-de-san-yuan-zu-shu-mu.html"/>
-    <id>https://www.yshawlon.cn/day22-1442-xing-cheng-liang-ge-yi-huo-xiang-deng-shu-zu-de-san-yuan-zu-shu-mu.html</id>
-    <published>2021-05-17T17:00:15.000Z</published>
-    <updated>2021-05-18T14:48:39.087Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;1442-形成两个异或相等数组的三元组数目&quot;&gt;&lt;a href=&quot;#1442-形成两个异或相等数组的三元组数目&quot; class=&quot;headerlink&quot; title=&quot;1442. 形成两个异或相等数组的三元组数目&quot;&gt;&lt;/a&gt;&lt;a
         
       
     
