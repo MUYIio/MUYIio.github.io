@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>【Day44】879. 盈利计划</title>
+      <link href="/day44-879-ying-li-ji-hua.html"/>
+      <url>/day44-879-ying-li-ji-hua.html</url>
+      
+        <content type="html"><![CDATA[<h4 id="879-盈利计划"><a href="#879-盈利计划" class="headerlink" title="879. 盈利计划"></a><a href="https://leetcode-cn.com/problems/profitable-schemes/" target="_blank" rel="noopener">879. 盈利计划</a></h4><p>集团里有 n 名员工，他们可以完成各种各样的工作创造利润。</p><p>第 i 种工作会产生 profit[i] 的利润，它要求 group[i] 名成员共同参与。如果成员参与了其中一项工作，就不能参与另一项工作。</p><p>工作的任何至少产生 minProfit 利润的子集称为 <strong>盈利计划</strong> 。并且工作的成员总数最多为 n 。</p><p>有多少种计划可以选择？因为答案很大，所以 <strong>返回结果模</strong> 10^9 + 7 的<strong>值</strong>。</p><p><strong>示例 1：</strong></p><pre><code>输入：n = 5, minProfit = 3, group = [2,2], profit = [2,3]输出：2解释：至少产生 3 的利润，该集团可以完成工作 0 和工作 1 ，或仅完成工作 1 。总的来说，有两种计划。</code></pre><p><strong>示例 2：</strong></p><pre><code>输入：n = 10, minProfit = 5, group = [2,3,5], profit = [6,7,8]输出：7解释：至少产生 5 的利润，只要完成其中一种工作就行，所以该集团可以完成任何工作。有 7 种可能的计划：(0)，(1)，(2)，(0,1)，(0,2)，(1,2)，以及 (0,1,2) 。</code></pre><p><strong>提示：</strong></p><ul><li>1 &lt;= n &lt;= 100</li><li>0 &lt;= minProfit &lt;= 100</li><li>1 &lt;= group.length &lt;= 100</li><li>1 &lt;= group[i] &lt;= 100</li><li>profit.length == group.length</li><li>0 &lt;= profit[i] &lt;= 100</li></ul><p><strong>题解：</strong></p><p>这题不会，贴一个题解吧</p><pre class="line-numbers language-c++"><code class="language-c++">class Solution {public:    int profitableSchemes(int n, int minProfit, vector<int>& group, vector<int>& profit) {        int mod = 1e9 + 7;        int size = group.size();        int dp[n + 1][minProfit + 1];        memset(dp, 0, sizeof(dp));        for (int i = 0; i <= n; ++i) {            dp[i][0] = 1;        }        for (int i = 1; i <= size; ++i) {            int cur_group = group[i - 1], cur_profit = profit[i - 1];            for (int j = n; j >= cur_group; --j) {                for (int k = minProfit; k >= 0; --k) {                    dp[j][k] += dp[j - cur_group][max(k - cur_profit, 0)];                    dp[j][k] %= mod;                }            }        }        return dp[n][minProfit];    }};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 每日一题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>【Day43】1049. 最后一块石头的重量 II</title>
       <link href="/day43-1049-zui-hou-yi-kuai-shi-tou-de-chong-liang-ii.html"/>
       <url>/day43-1049-zui-hou-yi-kuai-shi-tou-de-chong-liang-ii.html</url>
