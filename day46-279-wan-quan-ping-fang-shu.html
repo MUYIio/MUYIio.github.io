@@ -4,12 +4,13 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="【Day23】1738.找出第 K 大的异或坐标值, 被动学习">
+    <meta name="keywords" content="【Day46】279. 完全平方数, 被动学习">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="1738. 找出第 K 大的异或坐标值给你一个二维矩阵 matrix 和一个整数 k ，矩阵大小为 m x n 由非负整数组成。
-矩阵中坐标 (a, b) 的 值 可由对所有满足 0 &amp;lt;= i &amp;lt;= a &amp;lt; m 且 0 &amp;">
+    <meta name="description" content="279. 完全平方数给定正整数 n，找到若干个完全平方数（比如 1, 4, 9, 16, …）使得它们的和等于 n。你需要让组成和的完全平方数的个数最少。
+给你一个整数 n ，返回和为 n 的完全平方数的 最少数量 。
+完全平方数 是一个整">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>【Day23】1738.找出第 K 大的异或坐标值 | Shawlon`s Blog</title>
+    <title>【Day46】279. 完全平方数 | Shawlon`s Blog</title>
     <link rel="icon" type="image/jpeg" href="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/avatars/favicon.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -616,13 +617,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/43.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/18.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        【Day23】1738.找出第 K 大的异或坐标值
+                        【Day46】279. 完全平方数
                     </div>
                 </div>
             </div>
@@ -757,7 +758,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-05-19
+                    2021-06-11
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -771,14 +772,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    741
+                    298
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    1 分
                 </div>
                 
                 
@@ -794,110 +795,47 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="1738-找出第-K-大的异或坐标值"><a href="#1738-找出第-K-大的异或坐标值" class="headerlink" title="1738. 找出第 K 大的异或坐标值"></a><a href="https://leetcode-cn.com/problems/find-kth-largest-xor-coordinate-value/" target="_blank" rel="noopener">1738. 找出第 K 大的异或坐标值</a></h4><p>给你一个二维矩阵 matrix 和一个整数 k ，矩阵大小为 m x n 由非负整数组成。</p>
-<p>矩阵中坐标 (a, b) 的 值 可由对所有满足 0 &lt;= i &lt;= a &lt; m 且 0 &lt;= j &lt;= b &lt; n 的元素 matrix[i][j]（<strong>下标从 0 开始计数</strong>）执行异或运算得到。</p>
-<p>请你找出 matrix 的所有坐标中第 k 大的值（<strong>k 的值从 1 开始计数</strong>）。</p>
+                <h4 id="279-完全平方数"><a href="#279-完全平方数" class="headerlink" title="279. 完全平方数"></a><a href="https://leetcode-cn.com/problems/perfect-squares/" target="_blank" rel="noopener">279. 完全平方数</a></h4><p>给定正整数 n，找到若干个完全平方数（比如 1, 4, 9, 16, …）使得它们的和等于 n。你需要让组成和的完全平方数的个数最少。</p>
+<p>给你一个整数 n ，返回和为 n 的完全平方数的 <strong>最少数量</strong> 。</p>
+<p><strong>完全平方数</strong> 是一个整数，其值等于另一个整数的平方；换句话说，其值等于一个整数自乘的积。例如，1、4、9 和 16 都是完全平方数，而 3 和 11 不是。</p>
 <p><strong>示例 1：</strong></p>
-<pre><code>输入：matrix = [[5,2],[1,6]], k = 1
-输出：7
-解释：坐标 (0,1) 的值是 5 XOR 2 = 7 ，为最大的值。</code></pre><p><strong>示例 2：</strong></p>
-<pre><code>输入：matrix = [[5,2],[1,6]], k = 2
-输出：5
-解释：坐标 (0,0) 的值是 5 = 5 ，为第 2 大的值。</code></pre><p><strong>示例 3：</strong></p>
-<pre><code>输入：matrix = [[5,2],[1,6]], k = 3
-输出：4
-解释：坐标 (1,0) 的值是 5 XOR 1 = 4 ，为第 3 大的值。</code></pre><p><strong>示例 4：</strong></p>
-<pre><code>输入：matrix = [[5,2],[1,6]], k = 4
-输出：0
-解释：坐标 (1,1) 的值是 5 XOR 2 XOR 1 XOR 6 = 0 ，为第 4 大的值。</code></pre><p><strong>提示：</strong></p>
+<pre><code>输入：n = 12
+输出：3 
+解释：12 = 4 + 4 + 4</code></pre><p><strong>示例 2：</strong></p>
+<pre><code>输入：n = 13
+输出：2
+解释：13 = 4 + 9</code></pre><p><strong>提示：</strong></p>
 <ul>
-<li>m == matrix.length</li>
-<li>n == matrix[i].length</li>
-<li>1 &lt;= m, n &lt;= 1000</li>
-<li>0 &lt;= matrix[i][j] &lt;= 106</li>
-<li>1 &lt;= k &lt;= m * n</li>
+<li>1 &lt;= n &lt;= 104</li>
 </ul>
 <p><strong>题解：</strong></p>
-<p><strong>二维差分+最小堆</strong></p>
-<p>前缀和模板+维护k个元素的最小堆</p>
-<pre class="line-numbers language-c++"><code class="language-c++">class Solution {
+<pre class="line-numbers language-c++"><code class="language-c++">//假设最小公式值m = ƒ(n) 
+//那么n的值满足下列公式 ∑(A[i] * A[i]) = n 
+//令 k 为满足最小值 m 的时候，最大的平方数  。 令  d + k * k; = n ;  d >= 0; 
+   // 注意：一定要是满足m最小的时候的k值,一味的取最大平方数,就是贪心算法了
+//得出 f(d) + f(k*k) = f(n);
+//显然 f(k*k) = 1; 则  f(d) + 1 = f(n); 因为 d = n - k*k;
+//则可以推出ƒ(n - k * k) + 1 = ƒ(n) ;  且 k * k <= n;
+
+class Solution {
 public:
-    int prefix[1000][1000];
-    int kthLargestValue(vector<vector<int>>& matrix, int k) {
-        int m = matrix.size();
-        int n = matrix[0].size();
-        prefix[0][0] = matrix[0][0];
-        // 处理第一行
-        for (int i = 1; i < n; i++) {
-            prefix[0][i] = prefix[0][i - 1] ^ matrix[0][i];
-        }
-        // 处理第一列
-        for (int i = 1; i < m; i++) {
-            prefix[i][0] = prefix[i - 1][0] ^ matrix[i][0];
-        }
-
-        for (int i = 1; i < m; i++) {
-            for (int j = 1; j < n; j++) {
-                prefix[i][j] = prefix[i - 1][j] ^ prefix[i][j - 1] ^ matrix[i][j] ^ prefix[i - 1][j - 1];
+    int numSquares(int n) {
+        if (n <= 0) return 0;
+        std::vector<int> nums(n+1);
+        for(int i = 1; i <= n;i++)
+        {
+            int min = i;
+            for(int j = 1;i - j*j >= 0;j++)
+            {
+                int tmp = nums[i-j*j] + 1;
+                min = min > tmp ?  tmp:min; 
             }
+            nums[i] = min;
         }
+        return nums[n];
 
-        priority_queue<int, vector<int>, std::greater<int>> pq;
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                pq.push(prefix[i][j]);
-                if (pq.size() > k) pq.pop();
-            }
-        }
-        return pq.top();
     }
-};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>二分搜值</strong></p>
-<p>每次猜测一个值x，然后遍历前缀和矩阵，统计有多少个元素大于等于x，如果count小于k，那么x肯定不可能是答案，我们将猜测的上界下调至x-1；否则，我们就将猜测的下界调整至x。可以看到问题可以转换为查找最后一个小于等于target的数。因为当查找到大于等于target时要往上不断压缩区间，直到小于等于k为止。</p>
-<pre class="line-numbers language-c++"><code class="language-c++">class Solution {
-public:
-    int prefix[1000][1000];
-    int m, n;
-    int kthLargestValue(vector<vector<int>>& matrix, int k) {
-        m = matrix.size();
-        n = matrix[0].size();
-        prefix[0][0] = matrix[0][0];
-        // 处理第一行
-        for (int i = 1; i < n; i++) {
-            prefix[0][i] = prefix[0][i - 1] ^ matrix[0][i];
-        }
-        // 处理第一列
-        for (int i = 1; i < m; i++) {
-            prefix[i][0] = prefix[i - 1][0] ^ matrix[i][0];
-        }
-
-        for (int i = 1; i < m; i++) {
-            for (int j = 1; j < n; j++) {
-                prefix[i][j] = prefix[i - 1][j] ^ prefix[i][j - 1] ^ matrix[i][j] ^ prefix[i - 1][j - 1];
-            }
-        }
-
-        int left = 0, right = 1e6;
-        while (left < right) {
-            int mid = right - (right - left - 1) / 2;
-            if (count(mid) < k) { // 缩小值
-                right = mid - 1;
-            } else {
-                left = mid;
-            }
-        }
-        return left;
-    }
-    int count (int mid) {
-        int cnt = 0;
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                if (prefix[i][j] >= mid) cnt++;
-            }
-        }
-        return cnt;
-    }
-};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -1056,9 +994,9 @@ public:
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《【Day23】1738.找出第 K 大的异或坐标值》
+                    《【Day46】279. 完全平方数》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/day23-1738-zhao-chu-di-k-da-de-yi-huo-zuo-biao-zhi.html" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/day46-279-wan-quan-ping-fang-shu.html" property="cc:attributionName"
                rel="cc:attributionURL">
                 Tyzhao
             </a> 采用
@@ -1099,7 +1037,7 @@ public:
         repo: 'muyiio.github.io',
         owner: 'MUYIio',
         admin: "MUYIio",
-        id: 'day23-1738-zhao-chu-di-k-da-de-yi-huo-zuo-biao-zhi.html',
+        id: 'day46-279-wan-quan-ping-fang-shu.html',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1382,32 +1320,32 @@ public:
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/day24-692-qian-k-ge-gao-pin-dan-ci.html">
+                <a href="/day46-279-wan-quan-ping-fang-shu.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/16.jpg" class="responsive-img" alt="【Day24】692.前K个高频单词">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/18.jpg" class="responsive-img" alt="【Day46】279. 完全平方数">
                         
-                        <span class="card-title">【Day24】692.前K个高频单词</span>
+                        <span class="card-title">【Day46】279. 完全平方数</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            692. 前K个高频单词给一非空的单词列表，返回前 k 个出现次数最多的单词。
-返回的答案应该按单词出现频率由高到低排序。如果不同的单词有相同出现频率，按字母顺序排序。
-示例 1：
-输入: [&quot;i&quot;, &quot;lov
+                            279. 完全平方数给定正整数 n，找到若干个完全平方数（比如 1, 4, 9, 16, …）使得它们的和等于 n。你需要让组成和的完全平方数的个数最少。
+给你一个整数 n ，返回和为 n 的完全平方数的 最少数量 。
+完全平方数 是一个整
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-05-20
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-06-11
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -1420,6 +1358,7 @@ public:
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1438,27 +1377,28 @@ public:
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/day22-1442-xing-cheng-liang-ge-yi-huo-xiang-deng-shu-zu-de-san-yuan-zu-shu-mu.html">
+                <a href="/day45-518-ling-qian-dui-huan-ii.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/28.jpg" class="responsive-img" alt="【Day22】1442.形成两个异或相等数组的三元组数目">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/41.jpg" class="responsive-img" alt="【Day45】518. 零钱兑换 II">
                         
-                        <span class="card-title">【Day22】1442.形成两个异或相等数组的三元组数目</span>
+                        <span class="card-title">【Day45】518. 零钱兑换 II</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1442. 形成两个异或相等数组的三元组数目 给你一个整数数组 arr 。
-现需要从数组中取三个下标 i、j 和 k ，其中 (0 &lt;= i &lt; j &lt;= k &lt; arr.length) 。
-a 和 b 定义如下：
-
+                            518. 零钱兑换 II给定不同面额的硬币和一个总金额。写出函数来计算可以凑成总金额的硬币组合数。假设每一种面额的硬币有无限个。 
+示例 1:
+输入: amount = 5, coins = [1, 2, 5]
+输出: 4
+解释: 有四种方
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-05-18
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-06-10
                             </span>
                         <span class="publish-author">
                             

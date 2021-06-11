@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>【Day46】279. 完全平方数</title>
+      <link href="/day46-279-wan-quan-ping-fang-shu.html"/>
+      <url>/day46-279-wan-quan-ping-fang-shu.html</url>
+      
+        <content type="html"><![CDATA[<h4 id="279-完全平方数"><a href="#279-完全平方数" class="headerlink" title="279. 完全平方数"></a><a href="https://leetcode-cn.com/problems/perfect-squares/" target="_blank" rel="noopener">279. 完全平方数</a></h4><p>给定正整数 n，找到若干个完全平方数（比如 1, 4, 9, 16, …）使得它们的和等于 n。你需要让组成和的完全平方数的个数最少。</p><p>给你一个整数 n ，返回和为 n 的完全平方数的 <strong>最少数量</strong> 。</p><p><strong>完全平方数</strong> 是一个整数，其值等于另一个整数的平方；换句话说，其值等于一个整数自乘的积。例如，1、4、9 和 16 都是完全平方数，而 3 和 11 不是。</p><p><strong>示例 1：</strong></p><pre><code>输入：n = 12输出：3 解释：12 = 4 + 4 + 4</code></pre><p><strong>示例 2：</strong></p><pre><code>输入：n = 13输出：2解释：13 = 4 + 9</code></pre><p><strong>提示：</strong></p><ul><li>1 &lt;= n &lt;= 104</li></ul><p><strong>题解：</strong></p><pre class="line-numbers language-c++"><code class="language-c++">//假设最小公式值m = ƒ(n) //那么n的值满足下列公式 ∑(A[i] * A[i]) = n //令 k 为满足最小值 m 的时候，最大的平方数  。 令  d + k * k; = n ;  d >= 0;    // 注意：一定要是满足m最小的时候的k值,一味的取最大平方数,就是贪心算法了//得出 f(d) + f(k*k) = f(n);//显然 f(k*k) = 1; 则  f(d) + 1 = f(n); 因为 d = n - k*k;//则可以推出ƒ(n - k * k) + 1 = ƒ(n) ;  且 k * k <= n;class Solution {public:    int numSquares(int n) {        if (n <= 0) return 0;        std::vector<int> nums(n+1);        for(int i = 1; i <= n;i++)        {            int min = i;            for(int j = 1;i - j*j >= 0;j++)            {                int tmp = nums[i-j*j] + 1;                min = min > tmp ?  tmp:min;             }            nums[i] = min;        }        return nums[n];    }};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 每日一题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>【Day45】518. 零钱兑换 II</title>
       <link href="/day45-518-ling-qian-dui-huan-ii.html"/>
       <url>/day45-518-ling-qian-dui-huan-ii.html</url>
