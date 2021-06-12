@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.yshawlon.cn/"/>
-  <updated>2021-06-11T04:52:27.055Z</updated>
+  <updated>2021-06-12T05:17:22.586Z</updated>
   <id>https://www.yshawlon.cn/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【Day47】1449. 数位成本和为目标值的最大数字</title>
+    <link href="https://www.yshawlon.cn/day47-1449-shu-wei-cheng-ben-he-wei-mu-biao-zhi-de-zui-da-shu-zi.html"/>
+    <id>https://www.yshawlon.cn/day47-1449-shu-wei-cheng-ben-he-wei-mu-biao-zhi-de-zui-da-shu-zi.html</id>
+    <published>2021-06-12T05:11:57.000Z</published>
+    <updated>2021-06-12T05:17:22.586Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;1449-数位成本和为目标值的最大数字&quot;&gt;&lt;a href=&quot;#1449-数位成本和为目标值的最大数字&quot; class=&quot;headerlink&quot; title=&quot;1449. 数位成本和为目标值的最大数字&quot;&gt;&lt;/a&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    
+      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
+    
+  </entry>
   
   <entry>
     <title>【Day46】279. 完全平方数</title>
@@ -498,32 +524,6 @@
         
         
           &lt;h4 id=&quot;664-奇怪的打印机&quot;&gt;&lt;a href=&quot;#664-奇怪的打印机&quot; class=&quot;headerlink&quot; title=&quot;664. 奇怪的打印机&quot;&gt;&lt;/a&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
-    
-    
-      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【Day27】1707.与数组中元素的最大异或值</title>
-    <link href="https://www.yshawlon.cn/day27-1707-yu-shu-zu-zhong-yuan-su-de-zui-da-yi-huo-zhi.html"/>
-    <id>https://www.yshawlon.cn/day27-1707-yu-shu-zu-zhong-yuan-su-de-zui-da-yi-huo-zhi.html</id>
-    <published>2021-05-23T04:03:38.000Z</published>
-    <updated>2021-05-23T13:54:10.761Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;1707-与数组中元素的最大异或值&quot;&gt;&lt;a href=&quot;#1707-与数组中元素的最大异或值&quot; class=&quot;headerlink&quot; title=&quot;1707. 与数组中元素的最大异或值&quot;&gt;&lt;/a&gt;&lt;a
         
       
     
