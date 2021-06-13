@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.yshawlon.cn/"/>
-  <updated>2021-06-12T05:17:22.586Z</updated>
+  <updated>2021-06-13T14:30:48.616Z</updated>
   <id>https://www.yshawlon.cn/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【Day48】278. 第一个错误的版本</title>
+    <link href="https://www.yshawlon.cn/day48-278-di-yi-ge-cuo-wu-de-ban-ben.html"/>
+    <id>https://www.yshawlon.cn/day48-278-di-yi-ge-cuo-wu-de-ban-ben.html</id>
+    <published>2021-06-13T10:21:33.000Z</published>
+    <updated>2021-06-13T14:30:48.616Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;278-第一个错误的版本&quot;&gt;&lt;a href=&quot;#278-第一个错误的版本&quot; class=&quot;headerlink&quot; title=&quot;278. 第一个错误的版本&quot;&gt;&lt;/a&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>【Day47】1449. 数位成本和为目标值的最大数字</title>
@@ -498,32 +520,6 @@
         
         
           &lt;h4 id=&quot;1787-使所有区间的异或结果为零&quot;&gt;&lt;a href=&quot;#1787-使所有区间的异或结果为零&quot; class=&quot;headerlink&quot; title=&quot;1787. 使所有区间的异或结果为零&quot;&gt;&lt;/a&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
-    
-    
-      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【Day28】664.奇怪的打印机</title>
-    <link href="https://www.yshawlon.cn/day28-664-qi-guai-de-da-yin-ji.html"/>
-    <id>https://www.yshawlon.cn/day28-664-qi-guai-de-da-yin-ji.html</id>
-    <published>2021-05-24T04:49:06.000Z</published>
-    <updated>2021-05-24T05:14:30.656Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;664-奇怪的打印机&quot;&gt;&lt;a href=&quot;#664-奇怪的打印机&quot; class=&quot;headerlink&quot; title=&quot;664. 奇怪的打印机&quot;&gt;&lt;/a&gt;&lt;a
         
       
     
