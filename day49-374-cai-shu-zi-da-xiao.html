@@ -4,29 +4,16 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="《汇编语言》王爽著学习笔记记录(后半部分), 被动学习">
+    <meta name="keywords" content="【Day49】374. 猜数字大小, 被动学习">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="第七章：更灵活的定位内存地址的方法
-and 和 or 指令：
+    <meta name="description" content="374. 猜数字大小猜数字游戏的规则如下：
 
+每轮游戏，我都会从 1 到 n 随机选择一个数字。 请你猜选出的是哪个数字。
+如果你猜错了，我会告诉你，你猜测的数字比我选出的数字是大了还是小了。
 
-
-指令
-功能
-例
-
-
-
-and
-将操作对象的相应位设为0，其它位不变
-将al的第0位设为0：and al,11111110B
-
-
-or
-逻辑或指令，按位进行或运算
-将al的第">
+你可以通过调用一个预先定义好的接口 int ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -34,7 +21,7 @@ or
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>《汇编语言》王爽著学习笔记记录(后半部分) | Shawlon`s Blog</title>
+    <title>【Day49】374. 猜数字大小 | Shawlon`s Blog</title>
     <link rel="icon" type="image/jpeg" href="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/avatars/favicon.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -633,13 +620,13 @@ or
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/29.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/42.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        《汇编语言》王爽著学习笔记记录(后半部分)
+                        【Day49】374. 猜数字大小
                     </div>
                 </div>
             </div>
@@ -749,11 +736,7 @@ or
                 <div class="col s7">
                     
                     <div class="article-tag">
-                        
-                        <a href="/tags/学习笔记/" target="_blank">
-                            <span class="chip bg-color">学习笔记</span>
-                        </a>
-                        
+                        <span class="chip bg-color">无标签</span>
                     </div>
                     
                 </div>
@@ -762,8 +745,8 @@ or
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/汇编/" class="post-category" target="_blank">
-                            汇编
+                        <a href="/categories/每日一题/" class="post-category" target="_blank">
+                            每日一题
                         </a>
                         
                     </div>
@@ -774,7 +757,7 @@ or
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-05-08
+                    2021-06-14
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -788,14 +771,14 @@ or
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.7k
+                    300
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    12 分
+                    1 分
                 </div>
                 
                 
@@ -811,585 +794,67 @@ or
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="第七章：更灵活的定位内存地址的方法"><a href="#第七章：更灵活的定位内存地址的方法" class="headerlink" title="第七章：更灵活的定位内存地址的方法"></a>第七章：更灵活的定位内存地址的方法</h3><ol>
-<li><p>and 和 or 指令：</p>
-<table>
-<thead>
-<tr>
-<th align="center">指令</th>
-<th align="center">功能</th>
-<th align="center">例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">and</td>
-<td align="center">将操作对象的相应位设为0，其它位不变</td>
-<td align="center">将al的第0位设为0：and al,11111110B</td>
-</tr>
-<tr>
-<td align="center">or</td>
-<td align="center">逻辑或指令，按位进行或运算</td>
-<td align="center">将al的第6位设为1：or al,01000000B</td>
-</tr>
-</tbody></table>
-<p>使用这两个命令可以帮助我们对内存中的数据按位置 0 或 1.</p>
-</li>
-<li><p>指明内存单元的另一个方法：<strong>[bx + idata]来访问一个内存单元(一个变量一个常量)，其代表的是一个偏移地址；</strong>这种内存访问方式为高级语言实现数组提供了便利机制。</p>
-<p><strong>命令 mov ax,[200 + bx] 的含义为： (ax) = ((ds) * 16 + (bx) + 200)</strong></p>
-<p>通用写法：</p>
-<ol>
-<li>mov ax,[bx + 200] </li>
-<li>mov ax,200[bx] </li>
-<li>mov ax,[bx].200 </li>
-</ol>
-</li>
-<li><p>si 和 di 是8086CPU中两个和 bx 功能相近的寄存器， 但不能分为两个 8 为寄存器来使用。</p>
-<ol>
-<li><pre class="line-numbers language-asm"><code class="language-asm">mov bx，0
-mov ax，[bx]
-mov si，0
-mov ax，[si]
-mov di，0
-mov ax，[di]
-mov bx,0
+                <h4 id="374-猜数字大小"><a href="#374-猜数字大小" class="headerlink" title="374. 猜数字大小"></a><a href="https://leetcode-cn.com/problems/guess-number-higher-or-lower/" target="_blank" rel="noopener">374. 猜数字大小</a></h4><p>猜数字游戏的规则如下：</p>
+<ul>
+<li>每轮游戏，我都会从 1 到 n 随机选择一个数字。 请你猜选出的是哪个数字。</li>
+<li>如果你猜错了，我会告诉你，你猜测的数字比我选出的数字是大了还是小了。</li>
+</ul>
+<p>你可以通过调用一个预先定义好的接口 int guess(int num) 来获取猜测结果，返回值一共有 3 种可能的情况（-1，1 或 0）：</p>
+<ul>
+<li>-1：我选出的数字比你猜的数字小 pick &lt; num</li>
+<li>1：我选出的数字比你猜的数字大 pick &gt; num</li>
+<li>0：我选出的数字和你猜的数字一样。恭喜！你猜对了！pick == num</li>
+</ul>
+<p>返回我选出的数字。</p>
+<p><strong>示例 1：</strong></p>
+<pre><code>输入：n = 10, pick = 6
+输出：6</code></pre><p><strong>示例 2：</strong></p>
+<pre><code>输入：n = 1, pick = 1
+输出：1</code></pre><p><strong>示例 3：</strong></p>
+<pre><code>输入：n = 2, pick = 1
+输出：1</code></pre><p><strong>示例 4：</strong></p>
+<pre><code>输入：n = 2, pick = 2
+输出：2</code></pre><p><strong>提示：</strong></p>
+<ul>
+<li>1 &lt;= n &lt;= 231 - 1</li>
+<li>1 &lt;= pick &lt;= n</li>
+</ul>
+<p><strong>题解：</strong></p>
+<pre class="line-numbers language-c++"><code class="language-c++">/** 
+ * Forward declaration of guess API.
+ * @param  num   your guess
+ * @return          -1 if num is lower than the guess number
+ *                  1 if num is higher than the guess number
+ *               otherwise return 0
+ * int guess(int num);
+ */
 
-mov ax,[bx + 123]
-mov si,0
-mov ax,[si + 123]
-mov di,0
-mov ax,[di + 123]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-</ol>
-</li>
-</ol>
-<p>   上面的代码说明了si 与 di 同 bx 使用上的相同之处。</p>
-<ol start="4">
-<li><p>我们可以使用 [bx (si 或 di)]（一个变量） 、[bx (si 或 di) + idata] （一个变量和一个常量）来指明一个内存单元，还有 [bx + si] 、[bx + di] （两个变量）</p>
-<blockquote>
-<p>mov ax,[bx + si]         ;(ax) = ((ds) * 16 + (bx) + (si))</p>
-<p>常用形式: mov ax,[bx] [si]</p>
-</blockquote>
-</li>
-<li><p>更多的内存访问方式：[bx + si + idata] 、[bx + di + idata]（两个变量，一个常量）</p>
-<blockquote>
-<p>mov ax,[bx + si + idata]  ;(ax) = ((ds) * 16 + (bx) + (si) + idata) </p>
-</blockquote>
-<p>常用形式：</p>
-<pre class="line-numbers language-asm"><code class="language-asm">mov ax,[bx + 200 + si]
-mov ax,[200 + bx + si]
-mov ax,200[bx][si]
-mov ax,[bx].200[si]
-mov ax,[bx] [si].200<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p>将datasg中的每个单词改为大写字母：</p>
-<pre class="line-numbers language-asm"><code class="language-asm"> ;版本1
- ;使用 dx 寄存器临时保存 cx 中的值
-assume cs:codesg,ds:datasg
+class Solution {
+public:
+    int guessNumber(int n) {
+        int l = 0;
+        int r = n;
+        while (l <= r)
+        {
+            int m = (l-r)/2 + r;
+            int res = guess(m);
+            if (res == 0)
+            {
+                return m;
+            }
+            else if (res < 0)
+            {
+                r = m-1;
+            }
+            else
+            {
+                l = m + 1;
+            }
+        }
 
-datasg segment
-     db 'ibm             '
-    db 'dec             '
-    db 'dos             '
-    db 'vax             '
-datasg ends
-
-codesg segment
-start: mov ax,datasg
-       mov ds,ax
-       mov bx,0                  ;此时指向第一行第一个字节的字母
-
-       mov cx,4
-
-   s0: mov dx,cx                 ;将 cx 的值暂存到 dx 中
-          mov si,0
-          mov cx,3
-
-    s: mov al,[bx + si]          ;(al) = ((ds) * 16 + (bx) + (si))
-       and al,11011111b          ;将小写字母改为大写字母
-       mov [bx + si],al          ;((ds) * 16 +(bx) + (si)) = (al)
-       inc si                    ;si + 1
-
-       loop s
-
-       add bx,16                 ;00 → 10 → 20 → 30 ...
-       mov cx,dx                 ;将暂存的 cx 返回
-       loop s0                   ;cx - 1
-
-codesg ends
-end start<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-asm"><code class="language-asm"> ;版本2
- ;使用栈空间来暂存数据，前面我们使用的是寄存器，但有些时候寄存器是不足的，不是可取的办法
-assume cs:codesg,ds:datasg,ss:stacksg
-
-datasg segment
-     db 'ibm             '
-    db 'dec             '
-    db 'dos             '
-    db 'vax             '
-datasg ends
-
-stacksg segnebt
-        dw 0,0,0,0,0,0,0,0,0   ;定义一个段用作栈段，容量为16字节
-stacksg ends
-
-codesg segment
-start: mov ax,stacksg
-       mov ss,ax
-       mov sp,16
-       mov ax,datasg
-       mov ds,ax
-       mov bx,0                  ;此时指向第一行第一个字节的字母
-
-       mov cx,4
-
-   s0: push cx                   ;将外循环 cx 的值压栈
-          mov si,0
-          mov cx,3                  ;内循环 cx 的值
-
-    s: mov al,[bx + si]          ;(al) = ((ds) * 16 + (bx) + (si))
-       and al,11011111b          ;将小写字母改为大写字母
-       mov [bx + si],al          ;((ds) * 16 +(bx) + (si)) = (al)
-       inc si                    ;si + 1
-
-       loop s
-
-       add bx,16                 ;00 → 10 → 20 → 30 ...
-       pop cx                    ;将暂存的 cx 返回
-       loop s0                   ;cx - 1
-
-       mov ax,4c00H
-       int 21H
-
-codesg ends
-end start<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>在需要暂存数据的时候，一般使用栈来操作</strong></p>
-</li>
-<li><p>将 datasg 段中每个单词前4个字母改为大写：</p>
-<pre class="line-numbers language-asm"><code class="language-asm">assume cs:codesg,ds:datasg,ss:stacksg
-
-datasg segment
-     db '1. display      '
-    db '2. brows        '
-    db '3. replace      '
-    db '4. modify       '
-datasg ends
-
-stacksg segnebt
-        dw 0,0,0,0,0,0,0,0,0   ;定义一个段用作栈段，容量为16字节
-stacksg ends
-
-codesg segment
-start: mov ax,stacksg
-       mov ss,ax
-       mov sp,16
-       mov ax,datasg
-       mov ds,ax
-       mov bx,0                  ;此时指向第一行第一个字节的字母
-
-       mov cx,4
-
-   s0: push cx                   ;将外循环 cx 的值压栈
-          mov si,0
-          mov cx,4                  ;内循环 cx 的值
-
-    s: mov al,[bx + 3 + si]      ;(al) = ((ds) * 16 + (bx) + (si) + 3)
-       and al,11011111b          ;将小写字母改为大写字母
-       mov [bx + 3 + si],al      ;((ds) * 16 +(bx) + (si) + 3) = (al)
-       inc si                    ;si + 1
-
-       loop s
-
-       add bx,16                 ;00 → 10 → 20 → 30 ...
-       pop cx                    ;将暂存的 cx 返回
-       loop s0                   ;cx - 1
-
-       mov ax,4c00H
-       int 21H
-
-codesg ends
-end start<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-</ol>
-<h3 id="第八章：数据处理的两个基本问题"><a href="#第八章：数据处理的两个基本问题" class="headerlink" title="第八章：数据处理的两个基本问题"></a>第八章：数据处理的两个基本问题</h3><ol>
-<li><p>描述性符号：</p>
-<table>
-<thead>
-<tr>
-<th align="center">符号</th>
-<th align="center">功能</th>
-<th align="center">集合</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">reg</td>
-<td align="center">代表一个寄存器</td>
-<td align="center">ax、bx、cx、dx、ah、al、bh、bl、ch、cl、dh、dl、sp、bp、si、di</td>
-</tr>
-<tr>
-<td align="center">sreg</td>
-<td align="center">代表一个段寄存器</td>
-<td align="center">ds、ss、cs、es</td>
-</tr>
-</tbody></table>
-</li>
-<li><p>在8086CPU中，只有bx 、si、di、bp四个寄存器可以用在 […] 中来进行内存单元的寻址。</p>
-<p>在 […] 中，这四个寄存器可以单个出现，或者以4种组合出现：bx和si、bx和di、bp和si、bp和di</p>
-<pre class="line-numbers language-asm"><code class="language-asm">mov ax,[bx]
-mov ax,[si]
-mov ax,[di]
-mov ax,[bp]
-mov ax,[bx + si]
-mov ax,[bx + di]
-mov ax,[bp + si]
-mov ax,[bp + di]
-mov ax,[bx + si + idata]
-mov ax,[bx + di + idata]
-mov ax,[bp + si + idata]
-mov ax,[bp + di + idata]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p>使用寄存器 bp 进行寻址，如果没有显性的给出段地址，那么段地址默认在 ss 段寄存器中</p>
-<pre class="line-numbers language-asm"><code class="language-asm">mov ax,[bp] ;(ax) = ((ss) * 16 + (bp))
-mov ax,[bp + si + idata] ;(ax) = ((ss) * 16 + (bp) + (si) + idata)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-</li>
-<li><p>处理指令大致分为3类：读取、写入、运算；指令执行前，数据一般在3个地方：CPU内部、内存、端口</p>
-</li>
-<li><p>数据的位置：</p>
-<ol>
-<li><p>立即数（idata）：在汇编指令中字节给出</p>
-<pre class="line-numbers language-asm"><code class="language-asm">mov ax,1
-add bx,2000H<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-</li>
-<li><p>寄存器：要处理的数据在寄存器中，在汇编指令中给出相应的寄存器名就可以。</p>
-</li>
-<li><p>段地址（SA）和偏移地址（EA）：指令要处理的数据在内存中，使用段地址+偏移地址定位内存单元。</p>
-</li>
-</ol>
-</li>
-<li><p><strong>寻址方式总结：</strong></p>
-<table>
-<thead>
-<tr>
-<th align="center">寻址方式</th>
-<th align="center">含义</th>
-<th align="center">名称</th>
-<th align="center">常用格式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">[idata]</td>
-<td align="center">EA = idata;SA = (ds)</td>
-<td align="center">直接寻址</td>
-<td align="center">[idata]</td>
-</tr>
-<tr>
-<td align="center">[bx]</td>
-<td align="center">EA = (bx);SA = (ds)</td>
-<td align="center">寄存器间接寻址</td>
-<td align="center">[bx]</td>
-</tr>
-<tr>
-<td align="center">[si]</td>
-<td align="center">EA = (si) ;SA = (ds)</td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">[di]</td>
-<td align="center">EA = (di);SA = (ds)</td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">[bp]</td>
-<td align="center">EA = (bp);SA = (ds)</td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">[bx + idata]</td>
-<td align="center">EA = (bx) + idata;SA = (ds)</td>
-<td align="center">寄存器相对寻址</td>
-<td align="center">用于结构体:[bx].idata</td>
-</tr>
-<tr>
-<td align="center">[si + idata]</td>
-<td align="center">EA = (si) + idata;SA = (ds)</td>
-<td align="center"></td>
-<td align="center">用于数组:idata[si],idata[di]</td>
-</tr>
-<tr>
-<td align="center">[di + idata]</td>
-<td align="center">EA = (di) + idata;SA = (ds)</td>
-<td align="center"></td>
-<td align="center">用于二维数组:[bx] [idata]</td>
-</tr>
-<tr>
-<td align="center">[bp + idata]</td>
-<td align="center">EA = (bp) + idata;SA = (ss)</td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">[bx + si]</td>
-<td align="center">EA = (bx) + (si);SA = (ds)</td>
-<td align="center">基址变址寻址</td>
-<td align="center">用于二维数组:[bx] [si]</td>
-</tr>
-<tr>
-<td align="center">[bx + di]</td>
-<td align="center">EA = (bx) + (di);SA = (ds)</td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">[bp + si]</td>
-<td align="center">EA = (bp) + (si);SA = (ss)</td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">[bp + di]</td>
-<td align="center">EA = (bp) + (di);SA = (ss)</td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">[bx + si + idata]</td>
-<td align="center">EA = (bx) + (si) + idata;SA = (ds)</td>
-<td align="center">相对基址变址寻址</td>
-<td align="center">用于表格中的数组:[bx].idata[si]</td>
-</tr>
-<tr>
-<td align="center">[bx + di + idata]</td>
-<td align="center">EA = (bx) + (di) + idata;SA = (ds)</td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">[bp + si + idata]</td>
-<td align="center">EA = (bp) + (si) + idata;SA = (ss)</td>
-<td align="center"></td>
-<td align="center">用于二维数组:idata[bx] [si]</td>
-</tr>
-<tr>
-<td align="center">[bp + di + idata]</td>
-<td align="center">EA = (bp) + (di) + idata;SA = (ss)</td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-</tbody></table>
-</li>
-<li><p>8086CPU 可以处理 byte 和 word 两种尺寸的数据。</p>
-<ol>
-<li><p>通过寄存器名指明要处理的数据的尺寸：</p>
-<pre class="line-numbers language-asm"><code class="language-asm">;字操作
-mov ax,1
-add ax,1000
-inc ax<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-asm"><code class="language-asm">;字节操作
-mov al
-add al000
-inc al<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-</ol>
-</li>
-</ol>
-<ol start="2">
-<li><p>没有寄存器名存在得情况下，用操作符 X ptr 指明内存单元的长度，X 可以为 byte 或 word：</p>
-<pre class="line-numbers language-asm"><code class="language-asm">;word ptr 表示访问一个字单元
-mov word ptr ds:[0],1
-inc word ptr [bx]
-inc word ptr ds:[0]
-add word ptr [bx],2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-asm"><code class="language-asm">;byte ptr 表示访问一个字节单元
-mov byte ptr ds:[0],1
-inc byte ptr [bx]
-inc byte ptr ds:[0]
-add byte ptr [bx],2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-</ol>
-<p>   <strong>在机器指令中指明要访问的是字单元还是字节单元是非常重要的，8086CPU中，一个byte为8bit，而一个字为2byte，如果不指明，那么在访问的时候是有区别的。</strong></p>
-<ol start="8">
-<li><p>使用 push 和 pop 指令就代表了是进行字操作，无需指明</p>
-</li>
-<li><p>div 除法指令：</p>
-<p>(1)除数：8位和16位两种，在一个reg或内存单元中</p>
-<p>(2)被除数：默认在AX或AX和DX中，除数位8位，被除数位16位，默认在AX中存放；除数位16位，则被除数位32位，DX存放高16位，AX存放低16位。</p>
-<p>(3)结果：如果除数位8位，则AL存储除法操作的商，AH存放余数；如果除数位16位，AX存储除法操作的商，DX存放余数</p>
-<pre class="line-numbers language-asm"><code class="language-asm">;格式
-div reg
-div 内存单元<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-asm"><code class="language-asm">;示例
-div byte ptr ds:[0]      ;(al) = (ax) / ((ds) * 16 + 0 )的商
-                       ;(ah) = (ax) / ((ds) * 16 + 0)的余数
-
-div word ptr es:[0]      ;(ax) = [(dx) * 10000H + (ax) / (es) * 16 + 0]的商
-                       ;(dx) = [(dx) * 10000H + (ax) / (es) * 16 + 0]的余数
-
-div byte ptr [bx + si + 8]     ;(al) = (ax) / ((ds) * 16 + (bx) + (si) + 8)的商
-                             ;(ah) = (ax) / ((ds) * 16 + (bx) + (si) + 8)的余数
-
-div word ptr [bx + si + 8]     ;(ax) = [(dx) * 10000H + (ax) / (ds) * 16 + (si) + 8]的商
-                             ;(dx) = [(dx) * 10000H + (ax) / (ds) * 16 + (si) + 8]的余数js<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p>计算：100001 / 100</p>
-<pre class="line-numbers language-asm"><code class="language-asm">;100001 > 65535,所以除数得是32位，转为16进制为 186A1H，所以高16位在DX中，低16位在AX中
-mov dx,1
-mov ax,86A1H
-mov bx,100
-div bx<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-</ol>
-<ol start="11">
-<li><p>伪指令 dd 、dup</p>
-<table>
-<thead>
-<tr>
-<th align="center">指令</th>
-<th align="center">功能</th>
-<th align="center">示例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">db</td>
-<td align="center">定义字节型数据</td>
-<td align="center">db 1</td>
-</tr>
-<tr>
-<td align="center">dw</td>
-<td align="center">定义字型数据</td>
-<td align="center">dw 100</td>
-</tr>
-<tr>
-<td align="center">dd</td>
-<td align="center">定义dword双字型数据</td>
-<td align="center">dd 100001</td>
-</tr>
-<tr>
-<td align="center">dup</td>
-<td align="center">与上面3个指令配合使用，用来进行数据的重复</td>
-<td align="center">db(dw、dd) 重复次数 dup (重复的数据)</td>
-</tr>
-</tbody></table>
-</li>
-</ol>
-<ol start="12">
-<li><p>汇编语言实验七：</p>
-<pre class="line-numbers language-asm"><code class="language-asm">;题目太长，只贴代码，先思考写代码，而后体会别人的代码
-assume cs:code
-
-data segment
- db '1975','1976','1977','1978','1979','1980','1981','1982','1983','1984','1985'
- db '1986','1987','1988','1989','1990','1991','1992','1993','1994','1995'
-
- dd 16,22,382,1356,2390,8000,16000,24486,50065,97479,140417,197514,345980
- dd 590827,803530,1183000,1843000,2758000,3753000,4649000,5937000
-
- dw 3,7,9,13,28,38,130,220,476,778,1001,1442,2258,2793,4037,5635,8226
- dw 11542,14430,15257,17800
-data ends
-
-stack segment
- dw 0,0,0,0,0,0,0
-stack ends
-
-table segment
- db 21 dup ('year summ ne ?? ')
-table ends
-
-code segment
-
-start:
-    mov ax,data
-    mov es,ax
-    mov si,0
-
-    mov ax,table
-    mov ds,ax
-    mov di,0
-
-    mov ax,stack
-    mov ss,ax
-    mov sp,16
-
-    mov bx,0
-    mov cx,21
-s0:
-    mov ax,es:[si]    
-    mov ds:[di+bx],ax
-    add si,2
-    add di,2
-    mov ax,es:[si]
-    mov ds:[di+bx],ax
-
-    mov ax,es:[si+82]
-    mov ds:[bx+di+3],ax
-    mov ax,es:[si+84]
-    mov ds:[bx+di+5],ax
-
-    add si,2
-    mov di,0
-    add bx,16
-    loop s0
-
-    mov bx,0
-    mov si,168
-    mov di,5
-    mov cx,21
-s1:    
-    mov ax,es:[si]
-    mov ds:[bx+di+5],ax
-
-    mov ax,ds:[bx+di]
-    mov dx,ds:[bx+di+2]
-    div word ptr ds:[bx+di+5]
-    mov ds:[bx+di+8],ax
-
-    add si,2
-    add bx,16
-    loop s1
-
-    mov ax,4c00h
-    int 21h
-
-code ends
-end start<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-</ol>
-<h3 id="第九章：转移指令的原理"><a href="#第九章：转移指令的原理" class="headerlink" title="第九章：转移指令的原理"></a>第九章：转移指令的原理</h3><ol>
-<li><p><strong>可以修改 IP ，或者同时修改 CS 和 IP 得指令统称为转移指令。</strong></p>
-<ol>
-<li>段内转移：jmp ax<ol>
-<li>短转移IP修改范围：-128~127</li>
-<li>近转移IP修改范围：-32768~32767</li>
-</ol>
-</li>
-<li>段间转移：jmp 1000:0</li>
-</ol>
-</li>
-<li><p>转移指令分为无条件转移指令（jmp）和条件转移指令、循环指令、过程、中断等等</p>
-</li>
-<li><p>操作符 offset ，能够取得标号的偏移地址：</p>
-<pre class="line-numbers language-asm"><code class="language-asm">start: mov ax,offset start  ;取得start的偏移地址，相当于 mov ax，0<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-</li>
-<li></li>
-</ol>
-<h3 id="第十章：CALL和RET指令"><a href="#第十章：CALL和RET指令" class="headerlink" title="第十章：CALL和RET指令"></a>第十章：CALL和RET指令</h3><ol>
-<li><h3 id="第十一章：标志寄存器"><a href="#第十一章：标志寄存器" class="headerlink" title="第十一章：标志寄存器"></a>第十一章：标志寄存器</h3></li>
-<li></li>
-</ol>
-<h3 id="第十二章：内中断"><a href="#第十二章：内中断" class="headerlink" title="第十二章：内中断"></a>第十二章：内中断</h3><ol>
-<li><h3 id="第十三章：int-指令"><a href="#第十三章：int-指令" class="headerlink" title="第十三章：int 指令"></a>第十三章：int 指令</h3></li>
-<li></li>
-</ol>
-<h3 id="第十四章：端口"><a href="#第十四章：端口" class="headerlink" title="第十四章：端口"></a>第十四章：端口</h3><ol>
-<li><h3 id="第十五章：外中断"><a href="#第十五章：外中断" class="headerlink" title="第十五章：外中断"></a>第十五章：外中断</h3></li>
-<li></li>
-</ol>
-<h3 id="第十六章：直接定址表"><a href="#第十六章：直接定址表" class="headerlink" title="第十六章：直接定址表"></a>第十六章：直接定址表</h3><ol>
-<li><h3 id="第十七章：使用BIOS进行键盘输入"><a href="#第十七章：使用BIOS进行键盘输入" class="headerlink" title="第十七章：使用BIOS进行键盘输入"></a>第十七章：使用BIOS进行键盘输入</h3></li>
-<li></li>
-</ol>
+        return -1;
+    }
+};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -1548,9 +1013,9 @@ end start<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《《汇编语言》王爽著学习笔记记录(后半部分)》
+                    《【Day49】374. 猜数字大小》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/hui-bian-yu-yan-wang-shuang-zhu-xue-xi-bi-ji-ji-lu-hou-ban-bu-fen.html" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/day49-374-cai-shu-zi-da-xiao.html" property="cc:attributionName"
                rel="cc:attributionURL">
                 Tyzhao
             </a> 采用
@@ -1591,7 +1056,7 @@ end start<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
         repo: 'muyiio.github.io',
         owner: 'MUYIio',
         admin: "MUYIio",
-        id: 'hui-bian-yu-yan-wang-shuang-zhu-xue-xi-bi-ji-ji-lu-hou-ban-bu-fen.html',
+        id: 'day49-374-cai-shu-zi-da-xiao.html',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1874,31 +1339,35 @@ end start<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/day13-1482-zhi-zuo-m-shu-hua-suo-xu-de-zui-shao-tian-shu.html">
+                <a href="/day49-374-cai-shu-zi-da-xiao.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/26.jpg" class="responsive-img" alt="【Day13】1482.制作m束花所需的最少天数">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/42.jpg" class="responsive-img" alt="【Day49】374. 猜数字大小">
                         
-                        <span class="card-title">【Day13】1482.制作m束花所需的最少天数</span>
+                        <span class="card-title">【Day49】374. 猜数字大小</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1482. 制作 m 束花所需的最少天数给你一个整数数组 bloomDay，以及两个整数 m 和 k 。
-现需要制作 m 束花。制作花束时，需要使用花园中 相邻的 k 朵花 。
-花园中有 n 朵花，第 i 朵花会在 bloomDay[i] 
+                            374. 猜数字大小猜数字游戏的规则如下：
+
+每轮游戏，我都会从 1 到 n 随机选择一个数字。 请你猜选出的是哪个数字。
+如果你猜错了，我会告诉你，你猜测的数字比我选出的数字是大了还是小了。
+
+你可以通过调用一个预先定义好的接口 int 
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-05-09
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-06-14
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -1911,14 +1380,7 @@ end start<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
                         </span>
                     </div>
                 </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/LeetCode/" target="_blank">
-                        <span class="chip bg-color">LeetCode</span>
-                    </a>
-                    
-                </div>
+
                 
             </div>
         </div>
@@ -1929,49 +1391,30 @@ end start<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/hui-bian-yu-yan-xue-xi-dosbox-masm-an-zhuang-ji-shi-yong-jiao-cheng.html">
+                <a href="/day48-278-di-yi-ge-cuo-wu-de-ban-ben.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/30.jpg" class="responsive-img" alt="汇编语言学习 DOSBox+MASM 安装及使用教程">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/29.jpg" class="responsive-img" alt="【Day48】278. 第一个错误的版本">
                         
-                        <span class="card-title">汇编语言学习 DOSBox+MASM 安装及使用教程</span>
+                        <span class="card-title">【Day48】278. 第一个错误的版本</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            学校没有开设《汇编语言》这门课，但我觉得学习汇编挺重要的，对学习计组以及理解计算机原理很有帮助！
-1】安装DOSBox和MASM1)安装DOSBox首先官网下载DOSBox传送门，网盘链接：https://pan.baidu.com/s/1
+                            278. 第一个错误的版本你是产品经理，目前正在带领一个团队开发新的产品。不幸的是，你的产品的最新版本没有通过质量检测。由于每个版本都是基于之前的版本开发的，所以错误的版本之后的所有版本都是错的。
+假设你有 n 个版本 [1, 2, …, 
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-05-08
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-06-13
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/汇编/" class="post-category" target="_blank">
-                                    汇编
-                                </a>
-                            
-                            
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/DOSBox/" target="_blank">
-                        <span class="chip bg-color">DOSBox</span>
-                    </a>
-                    
-                    <a href="/tags/MASM/" target="_blank">
-                        <span class="chip bg-color">MASM</span>
-                    </a>
-                    
                 </div>
                 
             </div>
