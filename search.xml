@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>【Day50】852. 山脉数组的峰顶索引</title>
+      <link href="/day50-852-shan-mai-shu-zu-de-feng-ding-suo-yin.html"/>
+      <url>/day50-852-shan-mai-shu-zu-de-feng-ding-suo-yin.html</url>
+      
+        <content type="html"><![CDATA[<h4 id="852-山脉数组的峰顶索引"><a href="#852-山脉数组的峰顶索引" class="headerlink" title="852. 山脉数组的峰顶索引"></a><a href="https://leetcode-cn.com/problems/peak-index-in-a-mountain-array/" target="_blank" rel="noopener">852. 山脉数组的峰顶索引</a></h4><p>符合下列属性的数组 arr 称为 <strong>山脉数组</strong> ：</p><ul><li>arr.length &gt;= 3</li><li>存在 i（0 &lt; i &lt; arr.length - 1）使得：<ul><li>arr[0] &lt; arr[1] &lt; … arr[i-1] &lt; arr[i]</li><li>arr[i] &gt; arr[i+1] &gt; … &gt; arr[arr.length - 1]</li></ul></li></ul><p> 给你由整数组成的山脉数组 arr ，返回任何满足 arr[0] &lt; arr[1] &lt; … arr[i - 1] &lt; arr[i] &gt; arr[i + 1] &gt; … &gt; arr[arr.length - 1] 的下标 i 。</p><p><strong>示例 1：</strong></p><pre><code>输入：arr = [0,1,0]输出：1</code></pre><p><strong>示例 2：</strong></p><pre><code>输入：arr = [0,2,1,0]输出：1</code></pre><p><strong>示例 3：</strong></p><pre><code>输入：arr = [0,10,5,2]输出：1</code></pre><p><strong>示例 4：</strong></p><pre><code>输入：arr = [3,4,5,1]输出：2</code></pre><p><strong>示例 5：</strong></p><pre><code>输入：arr = [24,69,100,99,79,78,67,36,26,19]输出：2</code></pre><p><strong>提示：</strong></p><ul><li>3 &lt;= arr.length &lt;= 104</li><li>0 &lt;= arr[i] &lt;= 106</li><li>题目数据保证 arr 是一个山脉数组</li></ul><p><strong>题解：</strong></p><p>二分法</p><pre class="line-numbers language-c++"><code class="language-c++">class Solution {public:    int peakIndexInMountainArray(vector<int>& arr) {            //根据 arr[mid-1]和arr[mid]对比        //所以搜索范围是 [1,arr.length -1]        int left = 1;        int right = arr.size() - 1;        while(left < right){            //如果check 函数调整的是left，则+1. 否则有可能陷入死循环            int mid = left + right + 1 >> 1;            if(arr[mid-1] < arr[mid])            left = mid;            else            right = mid -1;        }        return right;    }};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 每日一题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>【Day49】374. 猜数字大小</title>
       <link href="/day49-374-cai-shu-zi-da-xiao.html"/>
       <url>/day49-374-cai-shu-zi-da-xiao.html</url>
