@@ -4,12 +4,13 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="【Day08】1473.粉刷房子III, 被动学习">
+    <meta name="keywords" content="【Day51】877. 石子游戏, 被动学习">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="1473. 粉刷房子 III在一个小城市里，有 m 个房子排成一排，你需要给每个房子涂上 n 种颜色之一（颜色编号为 1 到 n ）。有的房子去年夏天已经涂过颜色了，所以这些房子不需要被重新涂色。
-我们将连续相同颜色尽可能多的房子称为一个街">
+    <meta name="description" content="877. 石子游戏亚历克斯和李用几堆石子在做游戏。偶数堆石子排成一行，每堆都有正整数颗石子 piles[i] 。
+游戏以谁手中的石子最多来决出胜负。石子的总数是奇数，所以没有平局。
+亚历克斯和李轮流进行，亚历克斯先开始。 每回合，玩家从行的">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>【Day08】1473.粉刷房子III | Shawlon`s Blog</title>
+    <title>【Day51】877. 石子游戏 | Shawlon`s Blog</title>
     <link rel="icon" type="image/jpeg" href="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/avatars/favicon.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -616,13 +617,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/41.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/48.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        【Day08】1473.粉刷房子III
+                        【Day51】877. 石子游戏
                     </div>
                 </div>
             </div>
@@ -757,7 +758,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-05-04
+                    2021-06-16
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -771,14 +772,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    941
+                    361
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    1 分
                 </div>
                 
                 
@@ -794,109 +795,34 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="1473-粉刷房子-III"><a href="#1473-粉刷房子-III" class="headerlink" title="1473. 粉刷房子 III"></a><a href="https://leetcode-cn.com/problems/paint-house-iii/" target="_blank" rel="noopener">1473. 粉刷房子 III</a></h4><p>在一个小城市里，有 m 个房子排成一排，你需要给每个房子涂上 n 种颜色之一（颜色编号为 1 到 n ）。有的房子去年夏天已经涂过颜色了，所以这些房子不需要被重新涂色。</p>
-<p>我们将连续相同颜色尽可能多的房子称为一个街区。（比方说 houses = [1,2,2,3,3,2,1,1] ，它包含 5 个街区  [{1}, {2,2}, {3,3}, {2}, {1,1}] 。）</p>
-<p>给你一个数组 houses ，一个 m * n 的矩阵 cost 和一个整数 target ，其中：</p>
+                <h4 id="877-石子游戏"><a href="#877-石子游戏" class="headerlink" title="877. 石子游戏"></a><a href="https://leetcode-cn.com/problems/stone-game/" target="_blank" rel="noopener">877. 石子游戏</a></h4><p>亚历克斯和李用几堆石子在做游戏。偶数堆石子<strong>排成一行</strong>，每堆都有正整数颗石子 piles[i] 。</p>
+<p>游戏以谁手中的石子最多来决出胜负。石子的总数是奇数，所以没有平局。</p>
+<p>亚历克斯和李轮流进行，亚历克斯先开始。 每回合，玩家从行的开始或结束处取走整堆石头。 这种情况一直持续到没有更多的石子堆为止，此时手中石子最多的玩家获胜。</p>
+<p>假设亚历克斯和李都发挥出最佳水平，当亚历克斯赢得比赛时返回 true ，当李赢得比赛时返回 false 。</p>
+<p><strong>示例：</strong></p>
+<pre><code>输入：[5,3,4,5]
+输出：true
+解释：
+亚历克斯先开始，只能拿前 5 颗或后 5 颗石子 。
+假设他取了前 5 颗，这一行就变成了 [3,4,5] 。
+如果李拿走前 3 颗，那么剩下的是 [4,5]，亚历克斯拿走后 5 颗赢得 10 分。
+如果李拿走后 5 颗，那么剩下的是 [3,4]，亚历克斯拿走后 4 颗赢得 9 分。
+这表明，取前 5 颗石子对亚历克斯来说是一个胜利的举动，所以我们返回 true 。</code></pre><p><strong>提示：</strong></p>
 <ul>
-<li>houses[i]：是第 i 个房子的颜色，0 表示这个房子还没有被涂色。</li>
-<li>cost[i][j]：是将第 i 个房子涂成颜色 j+1 的花费。</li>
+<li>2 &lt;= piles.length &lt;= 500</li>
+<li>piles.length 是偶数。</li>
+<li>1 &lt;= piles[i] &lt;= 500</li>
+<li>sum(piles) 是奇数。</li>
 </ul>
-<p>请你返回房子涂色方案的最小总花费，使得每个房子都被涂色后，恰好组成 target 个街区。如果没有可用的涂色方案，请返回 -1 。</p>
-<p><strong>示例 1：</strong></p>
-<pre><code>输入：houses = [0,0,0,0,0], cost = [[1,10],[10,1],[10,1],[1,10],[5,1]], m = 5, n = 2, target = 3
-输出：9
-解释：房子涂色方案为 [1,2,2,1,1]
-此方案包含 target = 3 个街区，分别是 [{1}, {2,2}, {1,1}]。
-涂色的总花费为 (1 + 1 + 1 + 1 + 5) = 9。</code></pre><p><strong>示例 2：</strong></p>
-<pre><code>输入：houses = [0,2,1,2,0], cost = [[1,10],[10,1],[10,1],[1,10],[5,1]], m = 5, n = 2, target = 3
-输出：11
-解释：有的房子已经被涂色了，在此基础上涂色方案为 [2,2,1,2,2]
-此方案包含 target = 3 个街区，分别是 [{2,2}, {1}, {2,2}]。
-给第一个和最后一个房子涂色的花费为 (10 + 1) = 11。</code></pre><p><strong>示例 3：</strong></p>
-<pre><code>输入：houses = [0,0,0,0,0], cost = [[1,10],[10,1],[1,10],[10,1],[1,10]], m = 5, n = 2, target = 5
-输出：5</code></pre><p><strong>示例 4：</strong></p>
-<pre><code>输入：houses = [3,1,2,3], cost = [[1,1,1],[1,1,1],[1,1,1],[1,1,1]], m = 4, n = 3, target = 3
-输出：-1
-解释：房子已经被涂色并组成了 4 个街区，分别是 [{3},{1},{2},{3}] ，无法形成 target = 3 个街区。</code></pre><p><strong>提示：</strong></p>
-<ul>
-<li>m == houses.length == cost.length</li>
-<li>n == cost[i].length</li>
-<li>1 &lt;= m &lt;= 100</li>
-<li>1 &lt;= n &lt;= 20</li>
-<li>1 &lt;= target &lt;= m</li>
-<li>0 &lt;= houses[i] &lt;= n</li>
-<li>1 &lt;= cost[i][j] &lt;= 10^4</li>
-</ul>
-<p><strong>题解·：</strong></p>
-<p>很明显的DP</p>
-<ol>
-<li><p>设状态  f(i,j,k) 表示处理了前 i 个房屋，有 j 个社区，最后一个房屋的颜色为 k 的最小花费，其中房屋的有效下标从 1 开始。建立辅助数组 g(i,j,k) 表示同样含义下，最后一个房屋颜色 不是 k 的最小花费。</p>
-</li>
-<li><p>初始时，f(0,0,k)=g(0,0,k)=0，其余为正无穷或者待定。<br>转移时，分两种情况</p>
-</li>
-<li><p>如果第 i 个房屋已经有了颜色 c，则有两种选择，上一个房屋颜色为 c 或者不为 c，转移<br>$$<br>f(i, j, c)=\min (f(i-1, j, c), g(i-1, j-1, c))<br>$$</p>
-</li>
-<li><p>如果第 i 个房屋没有颜色，则枚举一个颜色 k，然后同样根据上一个房屋的颜色，转移<br>$$<br>f(i, j, k)=\min (f(i-1, j, k), g(i-1, j-1, k))+\operatorname{cost}(i, k-1)_{\text {。 }}<br>$$</p>
-</li>
-<li><p>对于 g 数组的维护如下，假设当前需要维护前 i 个房屋且有 j 个社区下的 g 数组，则我们找 f(i,j,k) 中的最小值 m1 和次小值 m2。如果 m1=m2，则说明对于所有 k， g(i,j,k)=m1；否则，对于 f(i,j,k0)=m1 的那个 k0，其 g(i,j,k0)=m2g，其余 k≠k0都有 g(i,j,k)=m1。</p>
-</li>
-<li><p>最终答案为<br>$$<br>\min (f(m, \text { target }, k)<br>$$</p>
-</li>
-</ol>
+<p><strong>题解：</strong></p>
+<p><strong>博弈论</strong></p>
+<p><a href="https://leetcode-cn.com/problems/stone-game/solution/gong-shui-san-xie-jing-dian-qu-jian-dp-j-wn31/" target="_blank" rel="noopener">三叶的题解</a></p>
 <pre class="line-numbers language-c++"><code class="language-c++">class Solution {
 public:
-    int minCost(vector<int>& houses, vector<vector<int>>& cost, int m, int n, int target) {
-        const int MAX = 0x3f3f3f3f;
-        const int M = 110;
-        const int N = 30;
-
-        int f[M][M][N], g[M][M][N];
-        memset(f, 0x3f, sizeof(f));
-        memset(g, 0x3f, sizeof(g));
-
-        for (int k = 1; k <= n; k++)
-            f[0][0][k] = g[0][0][k] = 0;
-
-        for (int i = 1; i <= m; i++)
-            for (int j = 1; j <= min(i, target); j++) {
-                if (houses[i - 1] > 0) {
-                    int c = houses[i - 1];
-                    f[i][j][c] = min(f[i - 1][j][c], g[i - 1][j - 1][c]);
-                } else {
-                    for (int k = 1; k <= n; k++)
-                        f[i][j][k] = min(f[i - 1][j][k], g[i - 1][j - 1][k])
-                                        + cost[i - 1][k - 1];
-                }
-
-                int m1 = MAX, m2 = MAX;
-                for (int k = 1; k <= n; k++)
-                    if (m1 > f[i][j][k]) {
-                        m2 = m1;
-                        m1 = f[i][j][k];
-                    } else if (m2 > f[i][j][k])
-                        m2 = f[i][j][k];
-
-                if (m1 == m2) {
-                    for (int k = 1; k <= n; k++)
-                        g[i][j][k] = m1;
-                } else {
-                    for (int k = 1; k <= n; k++)
-                        if (f[i][j][k] == m1) g[i][j][k] = m2;
-                        else g[i][j][k] = m1;
-                }
-            }
-
-        int ans = MAX;
-        for (int k = 1; k <= n; k++)
-            ans = min(ans, f[m][target][k]);
-
-        if (ans == MAX)
-            ans = -1;
-
-        return ans;
+    bool stoneGame(vector<int>& piles) {
+        return true;
     }
-};
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -1055,9 +981,9 @@ public:
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《【Day08】1473.粉刷房子III》
+                    《【Day51】877. 石子游戏》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/day08-1473-fen-shua-fang-zi-iii.html" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/day51-877-shi-zi-you-xi.html" property="cc:attributionName"
                rel="cc:attributionURL">
                 Tyzhao
             </a> 采用
@@ -1098,7 +1024,7 @@ public:
         repo: 'muyiio.github.io',
         owner: 'MUYIio',
         admin: "MUYIio",
-        id: 'day08-1473-fen-shua-fang-zi-iii.html',
+        id: 'day51-877-shi-zi-you-xi.html',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1381,30 +1307,32 @@ public:
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/day09-740-shan-chu-bing-huo-de-dian-shu.html">
+                <a href="/day51-877-shi-zi-you-xi.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/11.jpg" class="responsive-img" alt="【Day09】740.删除并获得点数">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/48.jpg" class="responsive-img" alt="【Day51】877. 石子游戏">
                         
-                        <span class="card-title">【Day09】740.删除并获得点数</span>
+                        <span class="card-title">【Day51】877. 石子游戏</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            740. 删除并获得点数给你一个整数数组 nums ，你可以对它进行一些操作。
-每次操作中，选择任意一个 nums[i] ，删除它并获得 nums[i] 的点数。之后，你必须删除每个等于 nums[i] - 1 或 nums[i] + 1 
+                            877. 石子游戏亚历克斯和李用几堆石子在做游戏。偶数堆石子排成一行，每堆都有正整数颗石子 piles[i] 。
+游戏以谁手中的石子最多来决出胜负。石子的总数是奇数，所以没有平局。
+亚历克斯和李轮流进行，亚历克斯先开始。 每回合，玩家从行的
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-05-05
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-06-16
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -1417,6 +1345,7 @@ public:
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1435,26 +1364,28 @@ public:
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/day07-7-zheng-shu-fan-zhuan.html">
+                <a href="/day50-852-shan-mai-shu-zu-de-feng-ding-suo-yin.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/31.jpg" class="responsive-img" alt="【Day07】7.整数反转">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/45.jpg" class="responsive-img" alt="【Day50】852. 山脉数组的峰顶索引">
                         
-                        <span class="card-title">【Day07】7.整数反转</span>
+                        <span class="card-title">【Day50】852. 山脉数组的峰顶索引</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            7. 整数反转给你一个 32 位的有符号整数 x ，返回将 x 中的数字部分反转后的结果。
-如果反转后整数超过 32 位的有符号整数的范围 [−231,  231 − 1] ，就返回 0。
-假设环境不允许存储 64 位整数（有符号或无符号）
+                            852. 山脉数组的峰顶索引符合下列属性的数组 arr 称为 山脉数组 ：
+
+arr.length &gt;= 3
+存在 i（0 &lt; i &lt; arr.length - 1）使得：
+arr[0] &lt; arr[1] &lt; 
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-05-03
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-06-15
                             </span>
                         <span class="publish-author">
                             
