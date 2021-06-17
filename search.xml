@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>【Day52】65. 有效数字</title>
+      <link href="/day52-65-you-xiao-shu-zi.html"/>
+      <url>/day52-65-you-xiao-shu-zi.html</url>
+      
+        <content type="html"><![CDATA[<p><strong>有效数字</strong>（按顺序）可以分成以下几个部分：</p><ol><li>一个 <strong>小数</strong> 或者 <strong>整数</strong></li><li>（可选）一个 ‘e’ 或 ‘E’ ，后面跟着一个 <strong>整数</strong></li></ol><p><strong>小数</strong>（按顺序）可以分成以下几个部分：</p><ol><li>（可选）一个符号字符（’+’ 或 ‘-‘）</li><li>下述格式之一：<ol><li>至少一位数字，后面跟着一个点 ‘.’</li><li>至少一位数字，后面跟着一个点 ‘.’ ，后面再跟着至少一位数字</li><li>一个点 ‘.’ ，后面跟着至少一位数字</li></ol></li></ol><p><strong>整数</strong>（按顺序）可以分成以下几个部分：</p><ul><li>（可选）一个符号字符（’+’ 或 ‘-‘）</li><li>至少一位数字</li></ul><p>部分有效数字列举如下：</p><ul><li>[“2”, “0089”, “-0.1”, “+3.14”, “4.”, “-.9”, “2e10”, “-90E3”, “3e+7”, “+6e-1”, “53.5e93”, “-123.456e789”]</li></ul><p>部分无效数字列举如下：</p><ul><li>[“abc”, “1a”, “1e”, “e3”, “99e2.5”, “–6”, “-+3”, “95a54e53”]</li></ul><p>给你一个字符串 s ，如果 s 是一个 <strong>有效数字</strong> ，请返回 true 。</p><p><strong>示例 1：</strong></p><pre><code>输入：s = &quot;0&quot;输出：true</code></pre><p><strong>示例 2：</strong></p><pre><code>输入：s = &quot;e&quot;输出：false</code></pre><p><strong>示例 3：</strong></p><pre><code>输入：s = &quot;.&quot;输出：false</code></pre><p><strong>示例 4：</strong></p><pre><code>输入：s = &quot;.1&quot;输出：true</code></pre><p><strong>提示：</strong></p><ul><li>1 &lt;= s.length &lt;= 20</li><li>s 仅含英文字母（大写和小写），数字（0-9），加号 ‘+’ ，减号 ‘-‘ ，或者点 ‘.’ 。</li></ul><p><strong>题解：</strong></p><pre class="line-numbers language-c++"><code class="language-c++">class Solution {public:    bool isNumber(string s) {        int l = 0, r = s.size() - 1;        //去掉前后空格        while (l <= r && s[l] == ' ') l ++ ;        while (l <= r && s[r] == ' ') r -- ;        if (l > r) return false;        s = s.substr(l, r - l + 1);        //去掉正负号        if (s[0] == '+' || s[0] == '-') s = s.substr(1);        //如果只有正负号，false        if (s.empty()) return false;        //如果只有一个点，或者.e || .E 返回false        if (s[0] == '.' && (s.size() == 1 || s[1] == 'e' || s[1] == 'E'))            return false;        //记录点和e的次数        int dot = 0, e = 0;        for (int i = 0; i < s.size(); i ++ ) {            if (s[i] == '.') {                //如果出现多个点或者e ，fasle                if (dot > 0 || e > 0) return false;                dot ++ ;            } else if (s[i] == 'e' || s[i] == 'E') {                //如果e的前面没东西或者后面没东西，或者多个e ，false                if (!i || i + 1 == s.size() || e > 0) return false;                //如果e的后面是正负号                if (s[i + 1] == '+' || s[i + 1] == '-') {                    //但是后面没东西了，返回false                    if (i + 2 == s.size()) return false;                    i ++ ;                }                e ++ ;                //不合法            } else if (s[i] < '0' || s[i] > '9') return false;        }        return true;    }};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 每日一题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>【Day51】877. 石子游戏</title>
       <link href="/day51-877-shi-zi-you-xi.html"/>
       <url>/day51-877-shi-zi-you-xi.html</url>
@@ -68,6 +93,12 @@
       </categories>
       
       
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
     </entry>
     
     
@@ -80,6 +111,18 @@
         <content type="html"><![CDATA[<h4 id="278-第一个错误的版本"><a href="#278-第一个错误的版本" class="headerlink" title="278. 第一个错误的版本"></a><a href="https://leetcode-cn.com/problems/first-bad-version/" target="_blank" rel="noopener">278. 第一个错误的版本</a></h4><p>你是产品经理，目前正在带领一个团队开发新的产品。不幸的是，你的产品的最新版本没有通过质量检测。由于每个版本都是基于之前的版本开发的，所以错误的版本之后的所有版本都是错的。</p><p>假设你有 n 个版本 [1, 2, …, n]，你想找出导致之后所有版本出错的第一个错误的版本。</p><p>你可以通过调用 bool isBadVersion(version) 接口来判断版本号 version 是否在单元测试中出错。实现一个函数来查找第一个错误的版本。你应该尽量减少对调用 API 的次数。</p><p><strong>示例:</strong></p><pre><code>给定 n = 5，并且 version = 4 是第一个错误的版本。调用 isBadVersion(3) -&gt; false调用 isBadVersion(5) -&gt; true调用 isBadVersion(4) -&gt; true所以，4 是第一个错误的版本。 </code></pre><p><strong>题解：</strong></p><p>二分</p><pre class="line-numbers language-c++"><code class="language-c++">bool isBadVersion(int version);class Solution {public:    int firstBadVersion(int n) {        int lo = 1;        int hi = n;        while(lo < hi) {            int mid = lo + (hi - lo) / 2;            if (isBadVersion(mid)) {                hi = mid;            } else {                lo = mid + 1;            }        }        return hi;    }};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
       
       
+      <categories>
+          
+          <category> 每日一题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
       
     </entry>
     
@@ -2003,9 +2046,9 @@
       
         <tags>
             
-            <tag> VMware </tag>
-            
             <tag> CentOS </tag>
+            
+            <tag> VMware </tag>
             
         </tags>
       

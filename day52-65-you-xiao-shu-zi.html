@@ -4,13 +4,20 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="如何实现一个公平的洗牌算法, 被动学习">
+    <meta name="keywords" content="【Day52】65. 有效数字, 被动学习">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="问题描述：设计一个公平的洗牌算法
-就像打牌的时候一样，我们洗牌之后并不知道牌的顺序变成什么样，当然，前提是这个牌洗转了。正如这个问题，核心的点是公平，怎样才叫公平呢？
-暴力解法：n个数的全排列有n！个，那么随机拿出这里面任意一个结果也算公平">
+    <meta name="description" content="有效数字（按顺序）可以分成以下几个部分：
+
+一个 小数 或者 整数
+（可选）一个 ‘e’ 或 ‘E’ ，后面跟着一个 整数
+
+小数（按顺序）可以分成以下几个部分：
+
+（可选）一个符号字符（’+’ 或 ‘-‘）
+下述格式之一：
+至少一位数字，">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +25,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>如何实现一个公平的洗牌算法 | Shawlon`s Blog</title>
+    <title>【Day52】65. 有效数字 | Shawlon`s Blog</title>
     <link rel="icon" type="image/jpeg" href="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/avatars/favicon.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -623,7 +630,7 @@
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        如何实现一个公平的洗牌算法
+                        【Day52】65. 有效数字
                     </div>
                 </div>
             </div>
@@ -734,12 +741,8 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/洗牌/" target="_blank">
-                            <span class="chip bg-color">洗牌</span>
-                        </a>
-                        
-                        <a href="/tags/随机/" target="_blank">
-                            <span class="chip bg-color">随机</span>
+                        <a href="/tags/LeetCode/" target="_blank">
+                            <span class="chip bg-color">LeetCode</span>
                         </a>
                         
                     </div>
@@ -750,8 +753,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/算法/" class="post-category" target="_blank">
-                            算法
+                        <a href="/categories/每日一题/" class="post-category" target="_blank">
+                            每日一题
                         </a>
                         
                     </div>
@@ -762,7 +765,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-01-10
+                    2021-06-17
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -776,14 +779,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    562
+                    419
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
                 
@@ -799,32 +802,89 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h3><p>设计一个公平的洗牌算法</p>
-<p>就像打牌的时候一样，我们洗牌之后并不知道牌的顺序变成什么样，当然，前提是这个牌洗转了。正如这个问题，核心的点是<strong>公平</strong>，怎样才叫公平呢？</p>
-<h3 id="暴力解法："><a href="#暴力解法：" class="headerlink" title="暴力解法："></a>暴力解法：</h3><p>n个数的全排列有n！个，那么随机拿出这里面任意一个结果也算公平。但是它的时间复杂度是O(n!)！原地爆炸boom<del>boom</del></p>
-<h3 id="Knuth-洗牌算法"><a href="#Knuth-洗牌算法" class="headerlink" title="Knuth 洗牌算法:"></a>Knuth 洗牌算法:</h3><p>至于Knuth何许人也，感兴趣的可以去查一下。微软是 IT 界老大的年代，比尔盖茨直接说，如果你看完了Knuth写的《The Art of Computer Programming》第一卷本，请给我发简历。</p>
-<p>生成的排列中，也就是我们的结果，<strong>每一个元素都能独立等概率的出现在每一个位置</strong>。或者反过来，<strong>每一个位置都能独立等概率的放置每个元素</strong>。</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">>=</span> <span class="token number">0</span> <span class="token punctuation">;</span> i <span class="token operator">--</span> <span class="token punctuation">)</span>
-    <span class="token function">swap</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> arr<span class="token punctuation">[</span><span class="token function">rand</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// rand(0, i) 生成 [0, i] 之间的随机整数</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>很好理解，i从后向前，每次生成0~i之间的一个随机数，然后将i和这个随机数交换， swap(arr[i], arr[rand(0, i)]) 看出，i可以跟自己交换。（<strong>假想rand()无偏</strong>）</p>
-<h4 id="为什么公平呢？"><a href="#为什么公平呢？" class="headerlink" title="为什么公平呢？"></a>为什么公平呢？</h4><p><strong>对于生成的排列，每一个元素都能等概率的出现在每一个位置</strong></p>
-<p><strong>示例：</strong>现有6个数从小到大排列：1 2 3 4 5 6</p>
+                <p><strong>有效数字</strong>（按顺序）可以分成以下几个部分：</p>
+<ol>
+<li>一个 <strong>小数</strong> 或者 <strong>整数</strong></li>
+<li>（可选）一个 ‘e’ 或 ‘E’ ，后面跟着一个 <strong>整数</strong></li>
+</ol>
+<p><strong>小数</strong>（按顺序）可以分成以下几个部分：</p>
+<ol>
+<li>（可选）一个符号字符（’+’ 或 ‘-‘）</li>
+<li>下述格式之一：<ol>
+<li>至少一位数字，后面跟着一个点 ‘.’</li>
+<li>至少一位数字，后面跟着一个点 ‘.’ ，后面再跟着至少一位数字</li>
+<li>一个点 ‘.’ ，后面跟着至少一位数字</li>
+</ol>
+</li>
+</ol>
+<p><strong>整数</strong>（按顺序）可以分成以下几个部分：</p>
 <ul>
-<li>首先随机选择一个数和6进行交换，假设是3</li>
+<li>（可选）一个符号字符（’+’ 或 ‘-‘）</li>
+<li>至少一位数字</li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.3/Images/posts/%E6%B4%97%E7%89%8C%E7%AE%97%E6%B3%95/1.png" alt></p>
-<p>因为可以和自己交换，我们可以知道3出现在最后的概率是1/6</p>
+<p>部分有效数字列举如下：</p>
 <ul>
-<li>选择到5，假设和2交换</li>
+<li>[“2”, “0089”, “-0.1”, “+3.14”, “4.”, “-.9”, “2e10”, “-90E3”, “3e+7”, “+6e-1”, “53.5e93”, “-123.456e789”]</li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.3/Images/posts/%E6%B4%97%E7%89%8C%E7%AE%97%E6%B3%95/2.png" alt></p>
-<p>同样的第一轮2没有被选中，那么它逃掉的概率是5/6，第二轮被选中的概率是1/5，那么它被选中的概论等于5/6x1/5=1/6</p>
+<p>部分无效数字列举如下：</p>
 <ul>
-<li>到4，假设和1交换</li>
+<li>[“abc”, “1a”, “1e”, “e3”, “99e2.5”, “–6”, “-+3”, “95a54e53”]</li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.3/Images/posts/%E6%B4%97%E7%89%8C%E7%AE%97%E6%B3%95/3.png" alt></p>
-<p>1被选中的概率等于5/6x4/5x1/4=1/6</p>
-<p><strong>看到这里，应该知道后面的概率也是1/6了，所以这个算法是公平的，可以自己去实验一下。最后这个算法的时间复杂度是O(n)</strong></p>
+<p>给你一个字符串 s ，如果 s 是一个 <strong>有效数字</strong> ，请返回 true 。</p>
+<p><strong>示例 1：</strong></p>
+<pre><code>输入：s = &quot;0&quot;
+输出：true</code></pre><p><strong>示例 2：</strong></p>
+<pre><code>输入：s = &quot;e&quot;
+输出：false</code></pre><p><strong>示例 3：</strong></p>
+<pre><code>输入：s = &quot;.&quot;
+输出：false</code></pre><p><strong>示例 4：</strong></p>
+<pre><code>输入：s = &quot;.1&quot;
+输出：true</code></pre><p><strong>提示：</strong></p>
+<ul>
+<li>1 &lt;= s.length &lt;= 20</li>
+<li>s 仅含英文字母（大写和小写），数字（0-9），加号 ‘+’ ，减号 ‘-‘ ，或者点 ‘.’ 。</li>
+</ul>
+<p><strong>题解：</strong></p>
+<pre class="line-numbers language-c++"><code class="language-c++">class Solution {
+public:
+    bool isNumber(string s) {
+        int l = 0, r = s.size() - 1;
+        //去掉前后空格
+        while (l <= r && s[l] == ' ') l ++ ;
+        while (l <= r && s[r] == ' ') r -- ;
+        if (l > r) return false;
+        s = s.substr(l, r - l + 1);
+        //去掉正负号
+        if (s[0] == '+' || s[0] == '-') s = s.substr(1);
+        //如果只有正负号，false
+        if (s.empty()) return false;
+        //如果只有一个点，或者.e || .E 返回false
+        if (s[0] == '.' && (s.size() == 1 || s[1] == 'e' || s[1] == 'E'))
+            return false;
+
+        //记录点和e的次数
+        int dot = 0, e = 0;
+        for (int i = 0; i < s.size(); i ++ ) {
+            if (s[i] == '.') {
+                //如果出现多个点或者e ，fasle
+                if (dot > 0 || e > 0) return false;
+                dot ++ ;
+            } else if (s[i] == 'e' || s[i] == 'E') {
+                //如果e的前面没东西或者后面没东西，或者多个e ，false
+                if (!i || i + 1 == s.size() || e > 0) return false;
+                //如果e的后面是正负号
+                if (s[i + 1] == '+' || s[i + 1] == '-') {
+                    //但是后面没东西了，返回false
+                    if (i + 2 == s.size()) return false;
+                    i ++ ;
+                }
+                e ++ ;
+                //不合法
+            } else if (s[i] < '0' || s[i] > '9') return false;
+        }
+        return true;
+    }
+};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -983,9 +1043,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《如何实现一个公平的洗牌算法》
+                    《【Day52】65. 有效数字》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/ru-he-shi-xian-yi-ge-gong-ping-de-xi-pai-suan-fa.html" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/day52-65-you-xiao-shu-zi.html" property="cc:attributionName"
                rel="cc:attributionURL">
                 Tyzhao
             </a> 采用
@@ -1026,7 +1086,7 @@
         repo: 'muyiio.github.io',
         owner: 'MUYIio',
         admin: "MUYIio",
-        id: 'ru-he-shi-xian-yi-ge-gong-ping-de-xi-pai-suan-fa.html',
+        id: 'day52-65-you-xiao-shu-zi.html',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1309,46 +1369,57 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/yong-ju-ti-shu-xue-jie-jue-yue-se-fu-huan-wen-ti.html">
+                <a href="/day52-65-you-xiao-shu-zi.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/29.jpg" class="responsive-img" alt="用具体数学解决约瑟夫环问题">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/27.jpg" class="responsive-img" alt="【Day52】65. 有效数字">
                         
-                        <span class="card-title">用具体数学解决约瑟夫环问题</span>
+                        <span class="card-title">【Day52】65. 有效数字</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            有 n 个人围成一个圈，每 q 个人踢掉一个人，问最后留下来的人是几号？
+                            有效数字（按顺序）可以分成以下几个部分：
+
+一个 小数 或者 整数
+（可选）一个 ‘e’ 或 ‘E’ ，后面跟着一个 整数
+
+小数（按顺序）可以分成以下几个部分：
+
+（可选）一个符号字符（’+’ 或 ‘-‘）
+下述格式之一：
+至少一位数字，
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-01-10
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-06-17
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/算法/" class="post-category" target="_blank">
-                                    算法
+                            <a href="/categories/每日一题/" class="post-category" target="_blank">
+                                    每日一题
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/约瑟夫环/" target="_blank">
-                        <span class="chip bg-color">约瑟夫环</span>
+                    <a href="/tags/LeetCode/" target="_blank">
+                        <span class="chip bg-color">LeetCode</span>
                     </a>
                     
                 </div>
@@ -1362,31 +1433,33 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/xun-zhao-duo-shu-yuan-su-zhu-yuan-su-wen-ti.html">
+                <a href="/day51-877-shi-zi-you-xi.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/17.jpg" class="responsive-img" alt="寻找多数元素（主元素）问题">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/49.jpg" class="responsive-img" alt="【Day51】877. 石子游戏">
                         
-                        <span class="card-title">寻找多数元素（主元素）问题</span>
+                        <span class="card-title">【Day51】877. 石子游戏</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            给定一个序列，如果其中一个数出现的次数超过50%，请找出这个数
+                            877. 石子游戏亚历克斯和李用几堆石子在做游戏。偶数堆石子排成一行，每堆都有正整数颗石子 piles[i] 。
+游戏以谁手中的石子最多来决出胜负。石子的总数是奇数，所以没有平局。
+亚历克斯和李轮流进行，亚历克斯先开始。 每回合，玩家从行的
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-01-07
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-06-16
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/算法/" class="post-category" target="_blank">
-                                    算法
+                            <a href="/categories/每日一题/" class="post-category" target="_blank">
+                                    每日一题
                                 </a>
                             
                             
@@ -1396,12 +1469,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/主元素/" target="_blank">
-                        <span class="chip bg-color">主元素</span>
-                    </a>
-                    
-                    <a href="/tags/多数元素/" target="_blank">
-                        <span class="chip bg-color">多数元素</span>
+                    <a href="/tags/LeetCode/" target="_blank">
+                        <span class="chip bg-color">LeetCode</span>
                     </a>
                     
                 </div>

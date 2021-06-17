@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.yshawlon.cn/"/>
-  <updated>2021-06-16T15:44:30.869Z</updated>
+  <updated>2021-06-17T15:08:50.140Z</updated>
   <id>https://www.yshawlon.cn/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【Day52】65. 有效数字</title>
+    <link href="https://www.yshawlon.cn/day52-65-you-xiao-shu-zi.html"/>
+    <id>https://www.yshawlon.cn/day52-65-you-xiao-shu-zi.html</id>
+    <published>2021-06-17T02:41:17.000Z</published>
+    <updated>2021-06-17T15:08:50.140Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;strong&gt;有效数字&lt;/strong&gt;（按顺序）可以分成以下几个部分：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;一个 &lt;strong&gt;小数&lt;/strong&gt; 或者 &lt;strong&gt;整数&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;（可选）一个 ‘e’ 或 ‘E’ ，后面跟着一个
+        
+      
+    
+    </summary>
+    
+      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    
+      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
+    
+  </entry>
   
   <entry>
     <title>【Day51】877. 石子游戏</title>
@@ -73,7 +102,7 @@
     <link href="https://www.yshawlon.cn/day49-374-cai-shu-zi-da-xiao.html"/>
     <id>https://www.yshawlon.cn/day49-374-cai-shu-zi-da-xiao.html</id>
     <published>2021-06-14T06:44:30.000Z</published>
-    <updated>2021-06-14T15:01:36.440Z</updated>
+    <updated>2021-06-17T14:40:56.355Z</updated>
     
     <summary type="html">
     
@@ -90,6 +119,8 @@
       <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
     
     
+      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
+    
   </entry>
   
   <entry>
@@ -97,7 +128,7 @@
     <link href="https://www.yshawlon.cn/day48-278-di-yi-ge-cuo-wu-de-ban-ben.html"/>
     <id>https://www.yshawlon.cn/day48-278-di-yi-ge-cuo-wu-de-ban-ben.html</id>
     <published>2021-06-13T10:21:33.000Z</published>
-    <updated>2021-06-13T14:30:48.616Z</updated>
+    <updated>2021-06-17T14:41:18.216Z</updated>
     
     <summary type="html">
     
@@ -111,6 +142,10 @@
     
     </summary>
     
+      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    
+      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
     
   </entry>
   
@@ -492,32 +527,6 @@
         
         
           &lt;h4 id=&quot;1074-元素和为目标值的子矩阵数量&quot;&gt;&lt;a href=&quot;#1074-元素和为目标值的子矩阵数量&quot; class=&quot;headerlink&quot; title=&quot;1074. 元素和为目标值的子矩阵数量&quot;&gt;&lt;/a&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
-    
-    
-      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【Day32】477.汉明距离总和</title>
-    <link href="https://www.yshawlon.cn/day32-477-han-ming-ju-chi-zong-he.html"/>
-    <id>https://www.yshawlon.cn/day32-477-han-ming-ju-chi-zong-he.html</id>
-    <published>2021-05-28T14:08:47.000Z</published>
-    <updated>2021-05-28T14:47:44.156Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;477-汉明距离总和&quot;&gt;&lt;a href=&quot;#477-汉明距离总和&quot; class=&quot;headerlink&quot; title=&quot;477. 汉明距离总和&quot;&gt;&lt;/a&gt;&lt;a
         
       
     
