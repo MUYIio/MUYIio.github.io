@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.yshawlon.cn/"/>
-  <updated>2021-06-17T15:08:50.140Z</updated>
+  <updated>2021-06-18T14:28:43.762Z</updated>
   <id>https://www.yshawlon.cn/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【Day53】483. 最小好进制</title>
+    <link href="https://www.yshawlon.cn/day53-483-zui-xiao-hao-jin-zhi.html"/>
+    <id>https://www.yshawlon.cn/day53-483-zui-xiao-hao-jin-zhi.html</id>
+    <published>2021-06-18T05:35:44.000Z</published>
+    <updated>2021-06-18T14:28:43.762Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;483-最小好进制&quot;&gt;&lt;a href=&quot;#483-最小好进制&quot; class=&quot;headerlink&quot; title=&quot;483. 最小好进制&quot;&gt;&lt;/a&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    
+      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
+    
+  </entry>
   
   <entry>
     <title>【Day52】65. 有效数字</title>
@@ -501,32 +527,6 @@
         
         
           &lt;h4 id=&quot;231-2-的幂&quot;&gt;&lt;a href=&quot;#231-2-的幂&quot; class=&quot;headerlink&quot; title=&quot;231. 2 的幂&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/power-of-two/&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
-    
-    
-      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【Day33】1074.元素和为目标值的子矩阵数量</title>
-    <link href="https://www.yshawlon.cn/day33-1074-yuan-su-he-wei-mu-biao-zhi-de-zi-ju-zhen-shu-liang.html"/>
-    <id>https://www.yshawlon.cn/day33-1074-yuan-su-he-wei-mu-biao-zhi-de-zi-ju-zhen-shu-liang.html</id>
-    <published>2021-05-29T02:50:36.000Z</published>
-    <updated>2021-05-29T15:55:41.924Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;1074-元素和为目标值的子矩阵数量&quot;&gt;&lt;a href=&quot;#1074-元素和为目标值的子矩阵数量&quot; class=&quot;headerlink&quot; title=&quot;1074. 元素和为目标值的子矩阵数量&quot;&gt;&lt;/a&gt;&lt;a
         
       
     
