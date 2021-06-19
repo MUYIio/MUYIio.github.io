@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>【Day54】1239. 串联字符串的最大长度</title>
+      <link href="/day54-1239-chuan-lian-zi-fu-chuan-de-zui-da-chang-du.html"/>
+      <url>/day54-1239-chuan-lian-zi-fu-chuan-de-zui-da-chang-du.html</url>
+      
+        <content type="html"><![CDATA[<h4 id="1239-串联字符串的最大长度"><a href="#1239-串联字符串的最大长度" class="headerlink" title="1239. 串联字符串的最大长度"></a><a href="https://leetcode-cn.com/problems/maximum-length-of-a-concatenated-string-with-unique-characters/" target="_blank" rel="noopener">1239. 串联字符串的最大长度</a></h4><p>给定一个字符串数组 arr，字符串 s 是将 arr 某一子序列字符串连接所得的字符串，如果 s 中的每一个字符都只出现过一次，那么它就是一个可行解。</p><p>请返回所有可行解 s 中最长长度。</p><p><strong>示例 1：</strong></p><pre><code>输入：arr = [&quot;un&quot;,&quot;iq&quot;,&quot;ue&quot;]输出：4解释：所有可能的串联组合是 &quot;&quot;,&quot;un&quot;,&quot;iq&quot;,&quot;ue&quot;,&quot;uniq&quot; 和 &quot;ique&quot;，最大长度为 4。</code></pre><p><strong>示例 2：</strong></p><pre><code>输入：arr = [&quot;cha&quot;,&quot;r&quot;,&quot;act&quot;,&quot;ers&quot;]输出：6解释：可能的解答有 &quot;chaers&quot; 和 &quot;acters&quot;。</code></pre><p><strong>示例 3：</strong></p><pre><code>输入：arr = [&quot;abcdefghijklmnopqrstuvwxyz&quot;]输出：26</code></pre><p><strong>提示：</strong></p><ul><li>1 &lt;= arr.length &lt;= 16</li><li>1 &lt;= arr[i].length &lt;= 26</li><li>arr[i] 中只含有小写英文字母</li></ul><p><strong>题解：</strong></p><pre class="line-numbers language-c++"><code class="language-c++">class Solution {public:    int maxLength(vector<string> &arr) {        int ans = 0;        vector<int> masks = {0};        for (string &s : arr) {            int mask = 0;            for (char ch : s) {                ch -= 'a';                if ((mask >> ch) & 1) { // 若 mask 已有 ch，则说明 s 含有重复字母，无法构成可行解                    mask = 0;                    break;                }                mask |= 1 << ch; // 将 ch 加入 mask 中            }            if (mask == 0) {                continue;            }            int n = masks.size();            for (int i = 0; i < n; ++i) {                int m = masks[i];                if ((m & mask) == 0) { // m 和 mask 无公共元素                    masks.push_back(m | mask);                    ans = max(ans, __builtin_popcount(m | mask));                }            }        }        return ans;    }};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 每日一题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>【Day53】483. 最小好进制</title>
       <link href="/day53-483-zui-xiao-hao-jin-zhi.html"/>
       <url>/day53-483-zui-xiao-hao-jin-zhi.html</url>
@@ -2071,9 +2096,9 @@
       
         <tags>
             
-            <tag> VMware </tag>
-            
             <tag> CentOS </tag>
+            
+            <tag> VMware </tag>
             
         </tags>
       
