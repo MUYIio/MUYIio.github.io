@@ -4,20 +4,12 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="【Day31】461.汉明距离, 被动学习">
+    <meta name="keywords" content="【Day55】1600.皇位继承顺序, 被动学习">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="461. 汉明距离两个整数之间的汉明距离指的是这两个数字对应二进制位不同的位置的数目。
-给出两个整数 x 和 y，计算它们之间的汉明距离。
-注意：
-
-0 ≤ x, y &amp;lt; 231.
-
-示例:
-输入: x = 1, y = 4
-
-输出:">
+    <meta name="description" content="1600. 皇位继承顺序一个王国里住着国王、他的孩子们、他的孙子们等等。每一个时间点，这个家庭里有人出生也有人死亡。
+这个王国有一个明确规定的皇位继承顺序，第一继承人总是国王自己。我们定义递归函数 Successor(x, curOrder">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -25,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>【Day31】461.汉明距离 | Shawlon`s Blog</title>
+    <title>【Day55】1600.皇位继承顺序 | Shawlon`s Blog</title>
     <link rel="icon" type="image/jpeg" href="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/avatars/favicon.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -624,13 +616,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/23.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        【Day31】461.汉明距离
+                        【Day55】1600.皇位继承顺序
                     </div>
                 </div>
             </div>
@@ -765,7 +757,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-05-27
+                    2021-06-20
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -779,14 +771,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    172
+                    982
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    4 分
                 </div>
                 
                 
@@ -802,39 +794,90 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="461-汉明距离"><a href="#461-汉明距离" class="headerlink" title="461. 汉明距离"></a><a href="https://leetcode-cn.com/problems/hamming-distance/" target="_blank" rel="noopener">461. 汉明距离</a></h4><p>两个整数之间的汉明距离指的是这两个数字对应二进制位不同的位置的数目。</p>
-<p>给出两个整数 x 和 y，计算它们之间的汉明距离。</p>
-<p><strong>注意：</strong></p>
+                <h4 id="1600-皇位继承顺序"><a href="#1600-皇位继承顺序" class="headerlink" title="1600. 皇位继承顺序"></a><a href="https://leetcode-cn.com/problems/throne-inheritance/" target="_blank" rel="noopener">1600. 皇位继承顺序</a></h4><p>一个王国里住着国王、他的孩子们、他的孙子们等等。每一个时间点，这个家庭里有人出生也有人死亡。</p>
+<p>这个王国有一个明确规定的皇位继承顺序，第一继承人总是国王自己。我们定义递归函数 Successor(x, curOrder) ，给定一个人 x 和当前的继承顺序，该函数返回 x 的下一继承人。</p>
+<blockquote>
+<p>Successor(x, curOrder):<br>    如果 x 没有孩子或者所有 x 的孩子都在 curOrder 中：<br>        如果 x 是国王，那么返回 null<br>        否则，返回 Successor(x 的父亲, curOrder)<br>    否则，返回 x 不在 curOrder 中最年长的孩子</p>
+</blockquote>
+<p>比方说，假设王国由国王，他的孩子 Alice 和 Bob （Alice 比 Bob 年长）和 Alice 的孩子 Jack 组成。</p>
+<ol>
+<li>一开始， curOrder 为 [“king”].</li>
+<li>调用 Successor(king, curOrder) ，返回 Alice ，所以我们将 Alice 放入 curOrder 中，得到 [“king”, “Alice”] 。</li>
+<li>调用 Successor(Alice, curOrder) ，返回 Jack ，所以我们将 Jack 放入 curOrder 中，得到 [“king”, “Alice”, “Jack”] 。</li>
+<li>调用 Successor(Jack, curOrder) ，返回 Bob ，所以我们将 Bob 放入 curOrder 中，得到 [“king”, “Alice”, “Jack”, “Bob”] 。</li>
+<li>调用 Successor(Bob, curOrder) ，返回 null 。最终得到继承顺序为 [“king”, “Alice”, “Jack”, “Bob”] 。</li>
+</ol>
+<p>通过以上的函数，我们总是能得到一个唯一的继承顺序。</p>
+<p>请你实现 ThroneInheritance 类：</p>
 <ul>
-<li>0 ≤ x, y &lt; 231.</li>
+<li>ThroneInheritance(string kingName) 初始化一个 ThroneInheritance 类的对象。国王的名字作为构造函数的参数传入。</li>
+<li>void birth(string parentName, string childName) 表示 parentName 新拥有了一个名为 childName 的孩子。</li>
+<li>void death(string name) 表示名为 name 的人死亡。一个人的死亡不会影响 Successor 函数，也不会影响当前的继承顺序。你可以只将这个人标记为死亡状态。</li>
+<li>string[] getInheritanceOrder() 返回 除去 死亡人员的当前继承顺序列表。</li>
 </ul>
-<p><strong>示例:</strong></p>
-<pre><code>输入: x = 1, y = 4
-
-输出: 2
-
-解释:
-1   (0 0 0 1)
-4   (0 1 0 0)
-       ↑   ↑
-
-上面的箭头指出了对应二进制位不同的位置。</code></pre><p><strong>题解：</strong></p>
-<p>可以考虑为求异或结果值当中1的个数，进一步转换为求二进制中1的个数。</p>
-<pre class="line-numbers language-c++"><code class="language-c++">class Solution {
+<p><strong>示例：</strong></p>
+<p><strong>输入：</strong></p>
+<pre><code>[&quot;ThroneInheritance&quot;, &quot;birth&quot;, &quot;birth&quot;, &quot;birth&quot;, &quot;birth&quot;, &quot;birth&quot;, &quot;birth&quot;, &quot;getInheritanceOrder&quot;, &quot;death&quot;, &quot;getInheritanceOrder&quot;]
+[[&quot;king&quot;], [&quot;king&quot;, &quot;andy&quot;], [&quot;king&quot;, &quot;bob&quot;], [&quot;king&quot;, &quot;catherine&quot;], [&quot;andy&quot;, &quot;matthew&quot;], [&quot;bob&quot;, &quot;alex&quot;], [&quot;bob&quot;, &quot;asha&quot;], [null], [&quot;bob&quot;], [null]]</code></pre><p><strong>输出：</strong></p>
+<pre><code>[null, null, null, null, null, null, null, [&quot;king&quot;, &quot;andy&quot;, &quot;matthew&quot;, &quot;bob&quot;, &quot;alex&quot;, &quot;asha&quot;, &quot;catherine&quot;], null, [&quot;king&quot;, &quot;andy&quot;, &quot;matthew&quot;, &quot;alex&quot;, &quot;asha&quot;, &quot;catherine&quot;]]</code></pre><p><strong>解释：</strong></p>
+<pre><code>ThroneInheritance t= new ThroneInheritance(&quot;king&quot;); // 继承顺序：king
+t.birth(&quot;king&quot;, &quot;andy&quot;); // 继承顺序：king &gt; andy
+t.birth(&quot;king&quot;, &quot;bob&quot;); // 继承顺序：king &gt; andy &gt; bob
+t.birth(&quot;king&quot;, &quot;catherine&quot;); // 继承顺序：king &gt; andy &gt; bob &gt; catherine
+t.birth(&quot;andy&quot;, &quot;matthew&quot;); // 继承顺序：king &gt; andy &gt; matthew &gt; bob &gt; catherine
+t.birth(&quot;bob&quot;, &quot;alex&quot;); // 继承顺序：king &gt; andy &gt; matthew &gt; bob &gt; alex &gt; catherine
+t.birth(&quot;bob&quot;, &quot;asha&quot;); // 继承顺序：king &gt; andy &gt; matthew &gt; bob &gt; alex &gt; asha &gt; catherine
+t.getInheritanceOrder(); // 返回 [&quot;king&quot;, &quot;andy&quot;, &quot;matthew&quot;, &quot;bob&quot;, &quot;alex&quot;, &quot;asha&quot;, &quot;catherine&quot;]
+t.death(&quot;bob&quot;); // 继承顺序：king &gt; andy &gt; matthew &gt; bob（已经去世）&gt; alex &gt; asha &gt; catherine
+t.getInheritanceOrder(); // 返回 [&quot;king&quot;, &quot;andy&quot;, &quot;matthew&quot;, &quot;alex&quot;, &quot;asha&quot;, &quot;catherine&quot;]</code></pre><p><strong>提示：</strong></p>
+<ol>
+<li>1 &lt;= kingName.length, parentName.length, childName.length, name.length &lt;= 15</li>
+<li>kingName，parentName， childName 和 name 仅包含小写英文字母。</li>
+<li>所有的参数 childName 和 kingName 互不相同。</li>
+<li>所有 death 函数中的死亡名字 name 要么是国王，要么是已经出生了的人员名字。</li>
+<li>每次调用 birth(parentName, childName) 时，测试用例都保证 parentName 对应的人员是活着的。</li>
+<li>最多调用 105 次birth 和 death 。</li>
+<li>最多调用 10 次 getInheritanceOrder 。</li>
+</ol>
+<p><strong>题解：</strong></p>
+<pre class="line-numbers language-c++"><code class="language-c++">class ThroneInheritance {
 public:
-    int lowbit(int x) {
-        return x & (-x);
+    string root;
+    unordered_map<string, bool> isdeath;
+    unordered_map<string, vector<string>> family;
+    ThroneInheritance(string kingName) {
+        root = kingName;
     }
-    int hammingDistance(int x, int y) {
-        int ret = x ^ y;
-        int ans = 0;
-        while (ret) {
-            ret -= lowbit(ret);
-            ans++;
-        }
+
+    void birth(string parentName, string childName) {
+        family[parentName].push_back(childName);
+    }
+
+    void death(string name) {
+        isdeath[name] = true;
+    }
+
+    void dfs(vector<string>& ans, string root) {
+        if (!isdeath[root])
+            ans.push_back(root);
+        for (string str: family[root])
+            dfs(ans, str);
+    }
+
+    vector<string> getInheritanceOrder() {
+        vector<string> ans;
+        dfs(ans, root);
         return ans;
     }
-};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+};
+
+/**
+ * Your ThroneInheritance object will be instantiated and called as such:
+ * ThroneInheritance* obj = new ThroneInheritance(kingName);
+ * obj->birth(parentName,childName);
+ * obj->death(name);
+ * vector<string> param_3 = obj->getInheritanceOrder();
+ */<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -993,9 +1036,9 @@ public:
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《【Day31】461.汉明距离》
+                    《【Day55】1600.皇位继承顺序》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/day31-461-han-ming-ju-chi.html" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/day55-1600-huang-wei-ji-cheng-shun-xu.html" property="cc:attributionName"
                rel="cc:attributionURL">
                 Tyzhao
             </a> 采用
@@ -1036,7 +1079,7 @@ public:
         repo: 'muyiio.github.io',
         owner: 'MUYIio',
         admin: "MUYIio",
-        id: 'day31-461-han-ming-ju-chi.html',
+        id: 'day55-1600-huang-wei-ji-cheng-shun-xu.html',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1319,36 +1362,31 @@ public:
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/day32-477-han-ming-ju-chi-zong-he.html">
+                <a href="/day55-1600-huang-wei-ji-cheng-shun-xu.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/0.jpg" class="responsive-img" alt="【Day32】477.汉明距离总和">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/23.jpg" class="responsive-img" alt="【Day55】1600.皇位继承顺序">
                         
-                        <span class="card-title">【Day32】477.汉明距离总和</span>
+                        <span class="card-title">【Day55】1600.皇位继承顺序</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            477. 汉明距离总和两个整数的 汉明距离 指的是这两个数字的二进制数对应位不同的数量。
-计算一个数组中，任意两个数之间汉明距离的总和。
-示例:
-输入: 4, 14, 2
-
-输出: 6
-
-解释: 在二进制表示中，4表示为0100，14表示为
+                            1600. 皇位继承顺序一个王国里住着国王、他的孩子们、他的孙子们等等。每一个时间点，这个家庭里有人出生也有人死亡。
+这个王国有一个明确规定的皇位继承顺序，第一继承人总是国王自己。我们定义递归函数 Successor(x, curOrder
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-05-28
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-06-20
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -1361,6 +1399,7 @@ public:
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1379,28 +1418,27 @@ public:
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/day30-1190-fan-zhuan-mei-dui-gua-hao-jian-de-zi-chuan.html">
+                <a href="/day54-1239-chuan-lian-zi-fu-chuan-de-zui-da-chang-du.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/41.jpg" class="responsive-img" alt="【Day30】1190.反转每对括号间的子串">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/30.jpg" class="responsive-img" alt="【Day54】1239. 串联字符串的最大长度">
                         
-                        <span class="card-title">【Day30】1190.反转每对括号间的子串</span>
+                        <span class="card-title">【Day54】1239. 串联字符串的最大长度</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1190. 反转每对括号间的子串给出一个字符串 s（仅含有小写英文字母和括号）。
-请你按照从括号内到外的顺序，逐层反转每对匹配括号中的字符串，并返回最终的结果。
-注意，您的结果中 不应 包含任何括号。
+                            1239. 串联字符串的最大长度给定一个字符串数组 arr，字符串 s 是将 arr 某一子序列字符串连接所得的字符串，如果 s 中的每一个字符都只出现过一次，那么它就是一个可行解。
+请返回所有可行解 s 中最长长度。
 示例 1：
-输入：s = &quot;
+输入：a
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-05-26
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-06-19
                             </span>
                         <span class="publish-author">
                             
