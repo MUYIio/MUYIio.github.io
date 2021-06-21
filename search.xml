@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>【Day56】401.二进制手表</title>
+      <link href="/day56-401-er-jin-zhi-shou-biao.html"/>
+      <url>/day56-401-er-jin-zhi-shou-biao.html</url>
+      
+        <content type="html"><![CDATA[<h4 id="401-二进制手表"><a href="#401-二进制手表" class="headerlink" title="401. 二进制手表"></a><a href="https://leetcode-cn.com/problems/binary-watch/" target="_blank" rel="noopener">401. 二进制手表</a></h4><p>二进制手表顶部有 4 个 LED 代表 小时（0-11），底部的 6 个 LED 代表 分钟（0-59）。每个 LED 代表一个 0 或 1，最低位在右侧。</p><ul><li>例如，下面的二进制手表读取 “3:25” 。</li></ul><p><img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2021/03/29/binary_clock_samui_moon.jpg" alt="（图源：WikiMedia - Binary clock samui moon.jpg ，许可协议：Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0) ）"></p><p>给你一个整数 turnedOn ，表示当前亮着的 LED 的数量，返回二进制手表可以表示的所有可能时间。你可以 <strong>按任意顺序</strong> 返回答案。</p><p>小时不会以零开头：</p><ul><li>例如，”01:00” 是无效的时间，正确的写法应该是 “1:00” 。</li></ul><p>分钟必须由两位数组成，可能会以零开头：</p><p>例如，”10:2” 是无效的时间，正确的写法应该是 “10:02” 。</p><p><strong>示例 1：</strong></p><pre><code>输入：turnedOn = 1输出：[&quot;0:01&quot;,&quot;0:02&quot;,&quot;0:04&quot;,&quot;0:08&quot;,&quot;0:16&quot;,&quot;0:32&quot;,&quot;1:00&quot;,&quot;2:00&quot;,&quot;4:00&quot;,&quot;8:00&quot;]</code></pre><p><strong>示例 2：</strong></p><pre><code>输入：turnedOn = 9输出：[]</code></pre><p><strong>提示：</strong></p><ul><li>0 &lt;= turnedOn &lt;= 10</li></ul><p><strong>题解：</strong></p><pre class="line-numbers language-c++"><code class="language-c++">class Solution {public:    vector<string> readBinaryWatch(int num) {        vector<string> res;        //直接遍历  0:00 -> 12:00   每个时间有多少1        for (int i = 0; i < 12; i++) {            for (int j = 0; j < 60; j++) {                if (count1(i) + count1(j) == num) {                    res.push_back(to_string(i)+":"+                                  (j < 10 ? "0"+to_string(j) : to_string(j)));                }            }        }        return res;    }    //计算二进制中1的个数    int count1(int n) {        int res = 0;        while (n != 0) {            n = n & (n - 1);            res++;        }        return res;    }};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 每日一题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>【Day55】1600.皇位继承顺序</title>
       <link href="/day55-1600-huang-wei-ji-cheng-shun-xu.html"/>
       <url>/day55-1600-huang-wei-ji-cheng-shun-xu.html</url>
@@ -2121,9 +2146,9 @@
       
         <tags>
             
-            <tag> VMware </tag>
-            
             <tag> CentOS </tag>
+            
+            <tag> VMware </tag>
             
         </tags>
       
