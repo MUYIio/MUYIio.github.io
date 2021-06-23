@@ -4,14 +4,13 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="用具体数学解决约瑟夫环问题, 被动学习">
+    <meta name="keywords" content="【Day57】剑指 Offer 15.二进制中1的个数, 被动学习">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="问题描述：有 n 个人围成一个圈，每 q 个人踢掉一个人，问最后留下来的人是几号？
-使用链表暴力求解时间复杂度是 O(qn)，递归的话是 O(n) ,使用这个方法可以加速到 O(logn).
-
-解法思路：假设初始编号为 1，2，3 … n ">
+    <meta name="description" content="剑指 Offer 15. 二进制中1的个数请实现一个函数，输入一个整数（以二进制串形式），输出该数二进制表示中 1 的个数。例如，把 9 表示成二进制是 1001，有 2 位是 1。因此，如果输入 9，则该函数输出 2。
+示例 1：
+输入：">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>用具体数学解决约瑟夫环问题 | Shawlon`s Blog</title>
+    <title>【Day57】剑指 Offer 15.二进制中1的个数 | Shawlon`s Blog</title>
     <link rel="icon" type="image/jpeg" href="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/avatars/favicon.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -618,13 +617,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/28.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/25.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        用具体数学解决约瑟夫环问题
+                        【Day57】剑指 Offer 15.二进制中1的个数
                     </div>
                 </div>
             </div>
@@ -735,8 +734,8 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/约瑟夫环/" target="_blank">
-                            <span class="chip bg-color">约瑟夫环</span>
+                        <a href="/tags/LeetCode/" target="_blank">
+                            <span class="chip bg-color">LeetCode</span>
                         </a>
                         
                     </div>
@@ -747,8 +746,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/算法/" class="post-category" target="_blank">
-                            算法
+                        <a href="/categories/每日一题/" class="post-category" target="_blank">
+                            每日一题
                         </a>
                         
                     </div>
@@ -759,7 +758,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-01-10
+                    2021-06-23
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -773,14 +772,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    541
+                    227
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
                 
@@ -796,168 +795,35 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h3><p><strong>有 n 个人围成一个圈，每 q 个人踢掉一个人，问最后留下来的人是几号？</strong></p>
-<p>使用链表暴力求解时间复杂度是 O(qn)，递归的话是 O(n) ,使用这个方法可以加速到 O(logn).</p>
-<hr>
-<h3 id="解法思路："><a href="#解法思路：" class="headerlink" title="解法思路："></a>解法思路：</h3><p>假设初始编号为<font color="red" size="4"> 1，2，3 … n </font>，现在考虑一种新的编号方式。</p>
-<p>第一个人不会被踢掉，那么他的编号从<font color="red" size="4"> n </font>开始往后加<font color="red" size="4"> 1 </font>，变成<font color="red" size="4"> n+1 </font>，然后第二个人编号变为<font color="red" size="4"> n+2 </font>，直到第<font color="red" size="4"> q </font>个人，他被踢掉了。</p>
-<p>然后第<font color="red" size="4"> q+1 </font>个人编号继续加<font color="red" size="4"> 1 </font>，变成了<font color="red" size="4"> n+q </font>，依次下去。</p>
-<p>考虑当前踢到的人编号为<font color="red" size="4"> kq</font>，那么此时已经踢掉了<font color="red" size="4"> k </font>个人，所以接下去的人新的编号为<font color="red" size="4"> n+k(q-1)+1…</font>。</p>
-<p>所以编号为<font color="red" size="4"> kq+d </font>的人编号变成了<font color="red" size="4"> n+k(q-1)+d </font> ，其中<font color="red" size="4"> 1&lt;=d&lt;q</font>;</p>
-<p><strong>直到最后，可以发现活下来的人编号为<font color="red" size="4"> qn </font>，问题是怎么根据这个编号推出他原来的编号？</strong></p>
-<p>以 n=10 , q=3 为例，下图就是每个人新的编号：</p>
-<table>
-<thead>
-<tr>
-<th align="center">1</th>
-<th align="center">2</th>
-<th align="center">3</th>
-<th align="center">4</th>
-<th align="center">5</th>
-<th align="center">6</th>
-<th align="center">7</th>
-<th align="center">8</th>
-<th align="center">9</th>
-<th align="center">10</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">11</td>
-<td align="center">12</td>
-<td align="center">T</td>
-<td align="center">13</td>
-<td align="center">14</td>
-<td align="center">T</td>
-<td align="center">15</td>
-<td align="center">16</td>
-<td align="center">T</td>
-<td align="center">17</td>
-</tr>
-<tr>
-<td align="center">18</td>
-<td align="center">T</td>
-<td align="center"></td>
-<td align="center">19</td>
-<td align="center">20</td>
-<td align="center"></td>
-<td align="center">T</td>
-<td align="center">21</td>
-<td align="center"></td>
-<td align="center">22</td>
-</tr>
-<tr>
-<td align="center">T</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center">23</td>
-<td align="center">24</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center">T</td>
-<td align="center"></td>
-<td align="center">25</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center">26</td>
-<td align="center">T</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center">27</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center">28</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center">T</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center">29</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center">30</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-</tbody></table>
-<p><strong>令：</strong><br>$$<br>\quad N=n+k(q-1)+d<br>$$<br>则他上一次的编号为：<br>$$<br>\quad kq+d=kq+N-n-k(q-1)=k+N-n<br>$$</p>
-<p>$$<br>又 \because k=\frac{N-n-d}{q-1}=\left\lfloor\frac{N-n-1}{q-1}\right\rfloor<br>$$</p>
-<p>所以他上一次的编号可以写为：<br>$$<br>\left\lfloor\frac{N-n-1}{q-1}\right\rfloor+N-n<br>$$</p>
-<p>因此最后存活的人可以这样计算：</p>
-<pre class="line-numbers language-c++"><code class="language-c++">N = qn
-while N > n:
-    N = k + N - n
-ans = N<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>其中<font color="red" size="4"> k </font>等于：<br>$$<br>k=\left\lfloor\frac{N-n-1}{q-1}\right\rfloor<br>$$<br><strong>如果用<font color="red" size="4"> D=qn+1-N </font>代替<font color="red" size="4"> N </font>,那么算法可以简化为：</strong><br>$$<br>\begin{array}{l}<br>D=q n+1-N \<br>=q n+1-\left(\left\lfloor\frac{(q n+1-D)-n-1}{q-1}\right\rfloor+q n+1-D-n\right) \<br>=n+D-\left[\frac{(q-1) n-D}{q-1}\right] \<br>=D-\left\lfloor\frac{D}{q 1}\right\rfloor \<br>=D+\left\lceil\frac{D}{q-1}\right\rceil \<br>=\left\lceil\frac{q}{q-1} D\right\rceil<br>\end{array}<br>$$<br>算法伪代码：</p>
-<pre class="line-numbers language-c++"><code class="language-c++">D = 1
-while D <= (q-1)n:
-    D = k
-ans = qn + 1 - D<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>其中<font color="red" size="4"> k</font> 等于：<br>$$<br>k=\left\lceil\frac{q}{q-1} D\right\rceil<br>$$</p>
-<hr>
-<h3 id="代码展示："><a href="#代码展示：" class="headerlink" title="代码展示："></a>代码展示：</h3><pre class="line-numbers language-c++"><code class="language-c++">//c++代码
-#include <bits/stdc++.h>
-using namespace std;
-
-typedef long long LL;
-
-LL Ceil(LL x, LL y) {
-  return x / y + (x % y != 0);
-}
-
-LL J(LL n, LL q) {
-  LL D = 1, end = (q - 1) * n;
-  while (D <= end) {
-​    D = Ceil(q * D, q - 1);
-  }
-  return q * n + 1 - D;
-}
-
-int main() {
-  LL n, q;
-  while (~scanf("%lld%lld", &n, &q)) {
-​    printf("%lld\n", J(n, q));
-  }
-  return 0;
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                <h4 id="剑指-Offer-15-二进制中1的个数"><a href="#剑指-Offer-15-二进制中1的个数" class="headerlink" title="剑指 Offer 15. 二进制中1的个数"></a><a href="https://leetcode-cn.com/problems/er-jin-zhi-zhong-1de-ge-shu-lcof/" target="_blank" rel="noopener">剑指 Offer 15. 二进制中1的个数</a></h4><p>请实现一个函数，输入一个整数（以二进制串形式），输出该数二进制表示中 1 的个数。例如，把 9 表示成二进制是 1001，有 2 位是 1。因此，如果输入 9，则该函数输出 2。</p>
+<p><strong>示例 1：</strong></p>
+<pre><code>输入：00000000000000000000000000001011
+输出：3
+解释：输入的二进制串 00000000000000000000000000001011 中，共有三位为 &#39;1&#39;。</code></pre><p><strong>示例 2：</strong></p>
+<pre><code>输入：00000000000000000000000010000000
+输出：1
+解释：输入的二进制串 00000000000000000000000010000000 中，共有一位为 &#39;1&#39;。</code></pre><p><strong>示例 3：</strong></p>
+<pre><code>输入：11111111111111111111111111111101
+输出：31
+解释：输入的二进制串 11111111111111111111111111111101 中，共有 31 位为 &#39;1&#39;。</code></pre><p><strong>提示：</strong></p>
+<ul>
+<li>输入必须是长度为 32 的 二进制串 。</li>
+</ul>
+<blockquote>
+<p>注意：本题与主站 191 题相同：<a href="https://leetcode-cn.com/problems/number-of-1-bits/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/number-of-1-bits/</a></p>
+</blockquote>
+<p><strong>题解：</strong></p>
+<p>右移再 &amp; 1</p>
+<pre class="line-numbers language-c++"><code class="language-c++">class Solution {
+public:
+    int hammingWeight(uint32_t n) {
+        int ans = 0;
+        for (int i = 0; i < 32; i++) {
+            ans += ((n >> i) & 1);
+        }
+        return ans;
+    }
+};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -1116,9 +982,9 @@ int main() {
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《用具体数学解决约瑟夫环问题》
+                    《【Day57】剑指 Offer 15.二进制中1的个数》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/yong-ju-ti-shu-xue-jie-jue-yue-se-fu-huan-wen-ti.html" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/day57-jian-zhi-offer-15-er-jin-zhi-zhong-1-de-ge-shu.html" property="cc:attributionName"
                rel="cc:attributionURL">
                 Tyzhao
             </a> 采用
@@ -1159,7 +1025,7 @@ int main() {
         repo: 'muyiio.github.io',
         owner: 'MUYIio',
         admin: "MUYIio",
-        id: 'yong-ju-ti-shu-xue-jie-jue-yue-se-fu-huan-wen-ti.html',
+        id: 'day57-jian-zhi-offer-15-er-jin-zhi-zhong-1-de-ge-shu.html',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1442,46 +1308,50 @@ int main() {
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/hexo-wang-zhan-bu-shu-node-ban-ben-guo-gao-pei-zhi-wen-ti.html">
+                <a href="/day57-jian-zhi-offer-15-er-jin-zhi-zhong-1-de-ge-shu.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/9.jpg" class="responsive-img" alt="Hexo网站部署node版本过高配置问题">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/25.jpg" class="responsive-img" alt="【Day57】剑指 Offer 15.二进制中1的个数">
                         
-                        <span class="card-title">Hexo网站部署node版本过高配置问题</span>
+                        <span class="card-title">【Day57】剑指 Offer 15.二进制中1的个数</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            node版本过高导致无法部署hexo，通过替换版本解决。
+                            剑指 Offer 15. 二进制中1的个数请实现一个函数，输入一个整数（以二进制串形式），输出该数二进制表示中 1 的个数。例如，把 9 表示成二进制是 1001，有 2 位是 1。因此，如果输入 9，则该函数输出 2。
+示例 1：
+输入：
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-02-19
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-06-23
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Blog/" class="post-category" target="_blank">
-                                    Blog
+                            <a href="/categories/每日一题/" class="post-category" target="_blank">
+                                    每日一题
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Hexo/" target="_blank">
-                        <span class="chip bg-color">Hexo</span>
+                    <a href="/tags/LeetCode/" target="_blank">
+                        <span class="chip bg-color">LeetCode</span>
                     </a>
                     
                 </div>
@@ -1495,31 +1365,36 @@ int main() {
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/ru-he-shi-xian-yi-ge-gong-ping-de-xi-pai-suan-fa.html">
+                <a href="/day56-401-er-jin-zhi-shou-biao.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/28.jpg" class="responsive-img" alt="如何实现一个公平的洗牌算法">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/34.jpg" class="responsive-img" alt="【Day56】401.二进制手表">
                         
-                        <span class="card-title">如何实现一个公平的洗牌算法</span>
+                        <span class="card-title">【Day56】401.二进制手表</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            每一个元素都能独立等概率的出现在每一个位置，每一个位置都能独立等概率的放置每个元素
+                            401. 二进制手表二进制手表顶部有 4 个 LED 代表 小时（0-11），底部的 6 个 LED 代表 分钟（0-59）。每个 LED 代表一个 0 或 1，最低位在右侧。
+
+例如，下面的二进制手表读取 “3:25” 。
+
+
+给你一个整
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-01-10
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-06-21
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/算法/" class="post-category" target="_blank">
-                                    算法
+                            <a href="/categories/每日一题/" class="post-category" target="_blank">
+                                    每日一题
                                 </a>
                             
                             
@@ -1529,12 +1404,8 @@ int main() {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/洗牌/" target="_blank">
-                        <span class="chip bg-color">洗牌</span>
-                    </a>
-                    
-                    <a href="/tags/随机/" target="_blank">
-                        <span class="chip bg-color">随机</span>
+                    <a href="/tags/LeetCode/" target="_blank">
+                        <span class="chip bg-color">LeetCode</span>
                     </a>
                     
                 </div>
