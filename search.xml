@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>【Day58】149. 直线上最多的点数</title>
+      <link href="/day58-149-zhi-xian-shang-zui-duo-de-dian-shu.html"/>
+      <url>/day58-149-zhi-xian-shang-zui-duo-de-dian-shu.html</url>
+      
+        <content type="html"><![CDATA[<h4 id="149-直线上最多的点数"><a href="#149-直线上最多的点数" class="headerlink" title="149. 直线上最多的点数"></a><a href="https://leetcode-cn.com/problems/max-points-on-a-line/" target="_blank" rel="noopener">149. 直线上最多的点数</a></h4><p>给你一个数组 points ，其中 points[i] = [xi, yi] 表示 <strong>X-Y</strong> 平面上的一个点。求最多有多少个点在同一条直线上。</p><p><strong>示例 1：</strong></p><p><img src="https://assets.leetcode.com/uploads/2021/02/25/plane1.jpg" alt></p><pre><code>输入：points = [[1,1],[2,2],[3,3]]输出：3</code></pre><p><strong>示例 2：</strong></p><p><img src="https://assets.leetcode.com/uploads/2021/02/25/plane2.jpg" alt></p><pre><code>输入：points = [[1,1],[3,2],[5,3],[4,1],[2,3],[1,4]]输出：4</code></pre><p><strong>提示：</strong></p><ul><li>1 &lt;= points.length &lt;= 300</li><li>points[i].length == 2</li><li>-104 &lt;= xi, yi &lt;= 104</li><li>points 中的所有点 互不相同</li></ul><p><strong>题解：</strong></p><p>直接枚举，比较斜率</p><pre class="line-numbers language-c++"><code class="language-c++">class Solution {public:    int maxPoints(vector<vector<int>>& points) {        int len = points.size();        // 点的数量不够        if(len < 3) {            return len;        }        int maxNum = 2;        // 遍历每两个点        for(int i = 0; i < len - 1; i ++) {            for(int j = i + 1; j < len; j ++) {                // 统计斜率相等个数                int count = 2;                long long dx = points[i][0] - points[j][0];                long long dy = points[i][1] - points[j][1];                // 与其他点比较                for(int k = j + 1; k < len; k ++) {                    // 如果斜率相等                    if(dx * (points[i][1] - points[k][1]) == dy * (points[i][0] - points[k][0])) {                        count ++;                    }                }                maxNum = max(maxNum, count);                if(maxNum > len / 2) return maxNum;            }          }        return maxNum;    }};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 每日一题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>【Day57】剑指 Offer 15.二进制中1的个数</title>
       <link href="/day57-jian-zhi-offer-15-er-jin-zhi-zhong-1-de-ge-shu.html"/>
       <url>/day57-jian-zhi-offer-15-er-jin-zhi-zhong-1-de-ge-shu.html</url>
