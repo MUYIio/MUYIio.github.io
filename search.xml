@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>【Day59】752.打开转盘锁</title>
+      <link href="/day59-752-da-kai-zhuan-pan-suo.html"/>
+      <url>/day59-752-da-kai-zhuan-pan-suo.html</url>
+      
+        <content type="html"><![CDATA[<h4 id="752-打开转盘锁"><a href="#752-打开转盘锁" class="headerlink" title="752. 打开转盘锁"></a><a href="https://leetcode-cn.com/problems/open-the-lock/" target="_blank" rel="noopener">752. 打开转盘锁</a></h4><p>你有一个带有四个圆形拨轮的转盘锁。每个拨轮都有10个数字： ‘0’, ‘1’, ‘2’, ‘3’, ‘4’, ‘5’, ‘6’, ‘7’, ‘8’, ‘9’ 。每个拨轮可以自由旋转：例如把 ‘9’ 变为 ‘0’，’0’ 变为 ‘9’ 。每次旋转都只能旋转一个拨轮的一位数字。</p><p>锁的初始数字为 ‘0000’ ，一个代表四个拨轮的数字的字符串。</p><p>列表 deadends 包含了一组死亡数字，一旦拨轮的数字和列表里的任何一个元素相同，这个锁将会被永久锁定，无法再被旋转。</p><p>字符串 target 代表可以解锁的数字，你需要给出解锁需要的最小旋转次数，如果无论如何不能解锁，返回 -1 。</p><p><strong>示例 1:</strong></p><pre><code>输入：deadends = [&quot;0201&quot;,&quot;0101&quot;,&quot;0102&quot;,&quot;1212&quot;,&quot;2002&quot;], target = &quot;0202&quot;输出：6解释：可能的移动序列为 &quot;0000&quot; -&gt; &quot;1000&quot; -&gt; &quot;1100&quot; -&gt; &quot;1200&quot; -&gt; &quot;1201&quot; -&gt; &quot;1202&quot; -&gt; &quot;0202&quot;。注意 &quot;0000&quot; -&gt; &quot;0001&quot; -&gt; &quot;0002&quot; -&gt; &quot;0102&quot; -&gt; &quot;0202&quot; 这样的序列是不能解锁的，因为当拨动到 &quot;0102&quot; 时这个锁就会被锁定。</code></pre><p><strong>示例 2:</strong></p><pre><code>输入: deadends = [&quot;8888&quot;], target = &quot;0009&quot;输出：1解释：把最后一位反向旋转一次即可 &quot;0000&quot; -&gt; &quot;0009&quot;。</code></pre><p><strong>示例 3:</strong></p><pre><code>输入: deadends = [&quot;8887&quot;,&quot;8889&quot;,&quot;8878&quot;,&quot;8898&quot;,&quot;8788&quot;,&quot;8988&quot;,&quot;7888&quot;,&quot;9888&quot;], target = &quot;8888&quot;输出：-1解释：无法旋转到目标数字且不被锁定。</code></pre><p><strong>示例 4:</strong></p><pre><code>输入: deadends = [&quot;0000&quot;], target = &quot;8888&quot;输出：-1</code></pre><p><strong>提示：</strong></p><ul><li>1 &lt;= deadends.length &lt;= 500</li><li>deadends[i].length == 4</li><li>target.length == 4</li><li>target 不在 deadends 之中</li><li>target 和 deadends[i] 仅由若干位数字组成</li></ul><p><strong>题解：</strong></p><pre class="line-numbers language-c++"><code class="language-c++">class Solution {public:    int seen[10010];//记录搜到过的轮盘锁数字    int ans = -1;    bool dead[10010];//记录死亡数字    int q[10010];//模拟队列    int openLock(vector<string>& deadends, string target) {         for(auto d : deadends){            //将死亡数字转int作为下标存储在dead数组中            int tmp = stoi(d);            dead[tmp] = 1;        }        //如果"0000"是死亡数字直接返回0,如果target为0000直接返回-1        if(dead[0])return -1;        if(target == "0000") return 0;        int tar=stoi(target);        bfs(tar);        return ans;    }    int numsadd(int num)    {        if(num == 10)        return -9;        if(num == -1)        return -9;        else return 1;    }    void bfs(int target)    {            //hh队头，tt队尾        int hh=0,tt=0;        //先将队头初始化为0,代表从"0000"开始旋转        q[0] = 0;        while(hh <= tt){            auto t = q[hh++];            int prev = t;            for(int i = 1 ; i <= 1000 ; i *= 10){                int num = t / i % 10;                 int temp=t;                //正向旋转当前位的数字                int tmp = temp + numsadd(num+1)*i;                if(!seen[tmp] && !dead[tmp]){                    //满足条件就将temp插入队尾                    q[++tt] = tmp;                    //更新新转盘锁数字的操作次数                    seen[tmp] = seen[prev]+1;                }                //反向旋转当前位的数字                tmp = temp - numsadd(num-1)*i;                if(!seen[tmp] && !dead[tmp]){                    q[++tt] = tmp;                    seen[tmp] = seen[prev]+1;                }                       }            if(seen[target] != 0){                ans = seen[target];                break;            }        }    }};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 每日一题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>【Day58】149. 直线上最多的点数</title>
       <link href="/day58-149-zhi-xian-shang-zui-duo-de-dian-shu.html"/>
       <url>/day58-149-zhi-xian-shang-zui-duo-de-dian-shu.html</url>
@@ -2196,9 +2221,9 @@
       
         <tags>
             
-            <tag> CentOS </tag>
-            
             <tag> VMware </tag>
+            
+            <tag> CentOS </tag>
             
         </tags>
       
