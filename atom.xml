@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.yshawlon.cn/"/>
-  <updated>2021-07-17T14:32:35.510Z</updated>
+  <updated>2021-07-18T14:14:35.030Z</updated>
   <id>https://www.yshawlon.cn/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>使用Java设计一个记事本</title>
-    <link href="https://www.yshawlon.cn/shi-yong-java-she-ji-yi-ge-ji-shi-ben.html"/>
-    <id>https://www.yshawlon.cn/shi-yong-java-she-ji-yi-ge-ji-shi-ben.html</id>
+    <title>使用Java开发一个记事本</title>
+    <link href="https://www.yshawlon.cn/shi-yong-java-kai-fa-yi-ge-ji-shi-ben.html"/>
+    <id>https://www.yshawlon.cn/shi-yong-java-kai-fa-yi-ge-ji-shi-ben.html</id>
     <published>2021-07-17T14:20:07.000Z</published>
-    <updated>2021-07-17T14:32:35.510Z</updated>
+    <updated>2021-07-18T14:14:35.030Z</updated>
     
     <summary type="html">
     
