@@ -152,3 +152,4 @@ class CursorSpecialEffects {
 
 const cursorSpecialEffects = new CursorSpecialEffects()
 cursorSpecialEffects.init()
+
