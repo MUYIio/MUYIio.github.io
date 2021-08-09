@@ -642,10 +642,19 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 
                 
                 
+                <a href="/categories/C/" title="C++: 4">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F9EBEA;">C++
+                        <span class="tag-length">4</span>
+                    </span>
+                </a>
+                
+                
                 <a href="/categories/Blog/" title="Blog: 12">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F9EBEA;">Blog
+                            style="background-color: #F5EEF8;">Blog
                         <span class="tag-length">12</span>
                     </span>
                 </a>
@@ -654,17 +663,8 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 <a href="/categories/随笔/" title="随笔: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F5EEF8;">随笔
+                            style="background-color: #D5F5E3;">随笔
                         <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/C/" title="C++: 4">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #D5F5E3;">C++
-                        <span class="tag-length">4</span>
                     </span>
                 </a>
                 
@@ -802,7 +802,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                         <div class="card-image tag-image">
                             
                             
-                            <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/2.jpg" class="responsive-img" alt="Hexo博客部署到腾讯云服务器(使用宝塔面板)">
+                            <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/5.jpg" class="responsive-img" alt="Hexo博客部署到腾讯云服务器(使用宝塔面板)">
                             
                             <span class="card-title">Hexo博客部署到腾讯云服务器(使用宝塔面板)</span>
                         </div>
@@ -848,7 +848,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                         <div class="card-image tag-image">
                             
                             
-                            <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/14.jpg" class="responsive-img" alt="Hexo 博客部署到腾讯云服务器">
+                            <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/17.jpg" class="responsive-img" alt="Hexo 博客部署到腾讯云服务器">
                             
                             <span class="card-title">Hexo 博客部署到腾讯云服务器</span>
                         </div>
@@ -899,7 +899,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             &copy; 2021 Yshawlon. All Rights Reserved.
 
            <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/avatars/icp.png" style="width:18px;height:18px;margin-bottom:-2px" alt="ICP">
-           <a href="http://www.beian.miit.gov.cn/" target="_blank">渝ICP备2020014220号-1</a>丨
+           <a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank">渝ICP备2020014220号-1</a>丨
            <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/avatars/moeicp.png" style="width:18px;height:18px;margin-bottom:-3px" alt="MOE ICP">
            <a href="https://icp.gov.moe/" target="_blank">萌ICP备20216999号</a>丨            
            <!--<a href="/sitemap.xml" target="_blank">站点地图</a>丨-->
@@ -1054,7 +1054,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
         var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
         var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
         var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
-        document.getElementById("sitetime").innerHTML = "本站已运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+        document.getElementById("sitetime").innerHTML = " | 本站已运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
     }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
     siteTime();
 </script>
