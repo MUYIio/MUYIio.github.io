@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.yshawlon.cn/"/>
-  <updated>2021-07-18T14:14:35.030Z</updated>
+  <updated>2021-10-18T08:57:56.492Z</updated>
   <id>https://www.yshawlon.cn/</id>
   
   <author>
@@ -15,6 +15,46 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>C++ 中关于Lambda 表达式的总结</title>
+    <link href="https://www.yshawlon.cn/c-zhong-guan-yu-lambda-biao-da-shi-de-zong-jie.html"/>
+    <id>https://www.yshawlon.cn/c-zhong-guan-yu-lambda-biao-da-shi-de-zong-jie.html</id>
+    <published>2021-10-18T08:57:56.000Z</published>
+    <updated>2021-10-18T08:57:56.492Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>暑假LeetCode刷题集合（下）</title>
+    <link href="https://www.yshawlon.cn/shu-jia-leetcode-shua-ti-ji-he-xia.html"/>
+    <id>https://www.yshawlon.cn/shu-jia-leetcode-shua-ti-ji-he-xia.html</id>
+    <published>2021-07-27T08:48:27.000Z</published>
+    <updated>2021-10-18T14:05:04.982Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;【Day31】461-汉明距离&quot;&gt;&lt;a href=&quot;#【Day31】461-汉明距离&quot; class=&quot;headerlink&quot; title=&quot;【Day31】461. 汉明距离&quot;&gt;&lt;/a&gt;【Day31】461. 汉明距离&lt;/h2&gt;&lt;h4
+        
+      
+    
+    </summary>
+    
+      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    
+      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
+    
+  </entry>
   
   <entry>
     <title>使用Java开发一个记事本</title>
@@ -45,11 +85,11 @@
   </entry>
   
   <entry>
-    <title>【Day59】752.打开转盘锁</title>
-    <link href="https://www.yshawlon.cn/day59-752-da-kai-zhuan-pan-suo.html"/>
-    <id>https://www.yshawlon.cn/day59-752-da-kai-zhuan-pan-suo.html</id>
-    <published>2021-06-25T14:01:37.000Z</published>
-    <updated>2021-06-25T14:06:00.409Z</updated>
+    <title>暑假LeetCode刷题集合（上）</title>
+    <link href="https://www.yshawlon.cn/shu-jia-leetcode-shua-ti-ji-he-shang.html"/>
+    <id>https://www.yshawlon.cn/shu-jia-leetcode-shua-ti-ji-he-shang.html</id>
+    <published>2021-06-27T13:12:16.000Z</published>
+    <updated>2021-10-18T14:05:21.303Z</updated>
     
     <summary type="html">
     
@@ -57,7 +97,8 @@
       
         
         
-          &lt;h4 id=&quot;752-打开转盘锁&quot;&gt;&lt;a href=&quot;#752-打开转盘锁&quot; class=&quot;headerlink&quot; title=&quot;752. 打开转盘锁&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/open-the-lock/&quot;
+          &lt;p&gt;&lt;strong&gt;最近决定巩固一下算法，开始刷leetcode每日一题，具体刷多久还不知道，刚开始是有点吃力，慢慢来。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;【Day01】938-二叉搜索树的范围和&quot;&gt;&lt;a href=&quot;#【Day01】938-二叉搜索树的范围和&quot;
         
       
     
@@ -71,37 +112,31 @@
   </entry>
   
   <entry>
-    <title>【Day58】149. 直线上最多的点数</title>
-    <link href="https://www.yshawlon.cn/day58-149-zhi-xian-shang-zui-duo-de-dian-shu.html"/>
-    <id>https://www.yshawlon.cn/day58-149-zhi-xian-shang-zui-duo-de-dian-shu.html</id>
-    <published>2021-06-24T14:05:28.000Z</published>
-    <updated>2021-06-24T14:26:03.220Z</updated>
+    <title>《X86汇编语言从实模式到保护模式》阅读笔记</title>
+    <link href="https://www.yshawlon.cn/x86-hui-bian-yu-yan-cong-shi-mo-shi-dao-bao-hu-mo-shi-yue-du-bi-ji.html"/>
+    <id>https://www.yshawlon.cn/x86-hui-bian-yu-yan-cong-shi-mo-shi-dao-bao-hu-mo-shi-yue-du-bi-ji.html</id>
+    <published>2021-05-16T14:57:10.000Z</published>
+    <updated>2021-08-01T12:29:12.976Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h4 id=&quot;149-直线上最多的点数&quot;&gt;&lt;a href=&quot;#149-直线上最多的点数&quot; class=&quot;headerlink&quot; title=&quot;149. 直线上最多的点数&quot;&gt;&lt;/a&gt;&lt;a
-        
-      
-    
     </summary>
     
-      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+      <category term="操作系统" scheme="https://www.yshawlon.cn/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+      <category term="汇编" scheme="https://www.yshawlon.cn/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%B1%87%E7%BC%96/"/>
     
     
-      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
+      <category term="学习笔记" scheme="https://www.yshawlon.cn/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
-    <title>【Day57】剑指 Offer 15.二进制中1的个数</title>
-    <link href="https://www.yshawlon.cn/day57-jian-zhi-offer-15-er-jin-zhi-zhong-1-de-ge-shu.html"/>
-    <id>https://www.yshawlon.cn/day57-jian-zhi-offer-15-er-jin-zhi-zhong-1-de-ge-shu.html</id>
-    <published>2021-06-23T11:06:28.000Z</published>
-    <updated>2021-06-23T11:57:25.915Z</updated>
+    <title>《汇编语言》王爽著学习笔记记录(后半部分)</title>
+    <link href="https://www.yshawlon.cn/hui-bian-yu-yan-wang-shuang-zhu-xue-xi-bi-ji-ji-lu-hou-ban-bu-fen.html"/>
+    <id>https://www.yshawlon.cn/hui-bian-yu-yan-wang-shuang-zhu-xue-xi-bi-ji-ji-lu-hou-ban-bu-fen.html</id>
+    <published>2021-05-08T15:08:22.000Z</published>
+    <updated>2021-09-26T08:53:02.161Z</updated>
     
     <summary type="html">
     
@@ -109,25 +144,25 @@
       
         
         
-          &lt;h4 id=&quot;剑指-Offer-15-二进制中1的个数&quot;&gt;&lt;a href=&quot;#剑指-Offer-15-二进制中1的个数&quot; class=&quot;headerlink&quot; title=&quot;剑指 Offer 15. 二进制中1的个数&quot;&gt;&lt;/a&gt;&lt;a
+          &lt;h3 id=&quot;第七章：更灵活的定位内存地址的方法&quot;&gt;&lt;a href=&quot;#第七章：更灵活的定位内存地址的方法&quot; class=&quot;headerlink&quot;
         
       
     
     </summary>
     
-      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+      <category term="汇编" scheme="https://www.yshawlon.cn/categories/%E6%B1%87%E7%BC%96/"/>
     
     
-      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
+      <category term="学习笔记" scheme="https://www.yshawlon.cn/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
-    <title>【Day56】401.二进制手表</title>
-    <link href="https://www.yshawlon.cn/day56-401-er-jin-zhi-shou-biao.html"/>
-    <id>https://www.yshawlon.cn/day56-401-er-jin-zhi-shou-biao.html</id>
-    <published>2021-06-21T04:21:38.000Z</published>
-    <updated>2021-06-21T13:39:12.195Z</updated>
+    <title>汇编语言学习 DOSBox+MASM 安装及使用教程</title>
+    <link href="https://www.yshawlon.cn/hui-bian-yu-yan-xue-xi-dosbox-masm-an-zhuang-ji-shi-yong-jiao-cheng.html"/>
+    <id>https://www.yshawlon.cn/hui-bian-yu-yan-xue-xi-dosbox-masm-an-zhuang-ji-shi-yong-jiao-cheng.html</id>
+    <published>2021-05-08T06:19:14.000Z</published>
+    <updated>2021-05-23T16:48:28.390Z</updated>
     
     <summary type="html">
     
@@ -135,25 +170,28 @@
       
         
         
-          &lt;h4 id=&quot;401-二进制手表&quot;&gt;&lt;a href=&quot;#401-二进制手表&quot; class=&quot;headerlink&quot; title=&quot;401. 二进制手表&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/binary-watch/&quot;
+          &lt;p&gt;学校没有开设《汇编语言》这门课，但我觉得学习汇编挺重要的，对学习计组以及理解计算机原理很有帮助！&lt;/p&gt;
+&lt;h2 id=&quot;1】安装DOSBox和MASM&quot;&gt;&lt;a href=&quot;#1】安装DOSBox和MASM&quot; class=&quot;headerlink&quot;
         
       
     
     </summary>
     
-      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+      <category term="汇编" scheme="https://www.yshawlon.cn/categories/%E6%B1%87%E7%BC%96/"/>
     
     
-      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
+      <category term="DOSBox" scheme="https://www.yshawlon.cn/tags/DOSBox/"/>
+    
+      <category term="MASM" scheme="https://www.yshawlon.cn/tags/MASM/"/>
     
   </entry>
   
   <entry>
-    <title>【Day55】1600.皇位继承顺序</title>
-    <link href="https://www.yshawlon.cn/day55-1600-huang-wei-ji-cheng-shun-xu.html"/>
-    <id>https://www.yshawlon.cn/day55-1600-huang-wei-ji-cheng-shun-xu.html</id>
-    <published>2021-06-20T09:43:34.000Z</published>
-    <updated>2021-06-20T12:54:24.255Z</updated>
+    <title>《汇编语言》王爽著学习笔记记录(前半部分)</title>
+    <link href="https://www.yshawlon.cn/hui-bian-yu-yan-wang-shuang-zhu-xue-xi-bi-ji-ji-lu.html"/>
+    <id>https://www.yshawlon.cn/hui-bian-yu-yan-wang-shuang-zhu-xue-xi-bi-ji-ji-lu.html</id>
+    <published>2021-05-08T06:17:32.000Z</published>
+    <updated>2021-05-18T16:48:16.923Z</updated>
     
     <summary type="html">
     
@@ -161,25 +199,26 @@
       
         
         
-          &lt;h4 id=&quot;1600-皇位继承顺序&quot;&gt;&lt;a href=&quot;#1600-皇位继承顺序&quot; class=&quot;headerlink&quot; title=&quot;1600. 皇位继承顺序&quot;&gt;&lt;/a&gt;&lt;a
+          &lt;p&gt;看了看书发现书上的一些概念容易忘记，就顺手打下来，考虑到篇幅过长，分为前后两个部分。&lt;/p&gt;
+&lt;h3 id=&quot;第一章：基础知识&quot;&gt;&lt;a href=&quot;#第一章：基础知识&quot; class=&quot;headerlink&quot;
         
       
     
     </summary>
     
-      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+      <category term="汇编" scheme="https://www.yshawlon.cn/categories/%E6%B1%87%E7%BC%96/"/>
     
     
-      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
+      <category term="学习笔记" scheme="https://www.yshawlon.cn/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
-    <title>【Day54】1239. 串联字符串的最大长度</title>
-    <link href="https://www.yshawlon.cn/day54-1239-chuan-lian-zi-fu-chuan-de-zui-da-chang-du.html"/>
-    <id>https://www.yshawlon.cn/day54-1239-chuan-lian-zi-fu-chuan-de-zui-da-chang-du.html</id>
-    <published>2021-06-19T09:01:21.000Z</published>
-    <updated>2021-06-19T15:13:34.826Z</updated>
+    <title>Windows+Ubuntu20.04双系统安装教程</title>
+    <link href="https://www.yshawlon.cn/windows-ubuntu20-04-shuang-xi-tong-an-zhuang-jiao-cheng.html"/>
+    <id>https://www.yshawlon.cn/windows-ubuntu20-04-shuang-xi-tong-an-zhuang-jiao-cheng.html</id>
+    <published>2021-05-08T06:07:52.000Z</published>
+    <updated>2021-05-08T06:09:11.064Z</updated>
     
     <summary type="html">
     
@@ -187,25 +226,28 @@
       
         
         
-          &lt;h4 id=&quot;1239-串联字符串的最大长度&quot;&gt;&lt;a href=&quot;#1239-串联字符串的最大长度&quot; class=&quot;headerlink&quot; title=&quot;1239. 串联字符串的最大长度&quot;&gt;&lt;/a&gt;&lt;a
+          &lt;p&gt;由于需要在Linux下写代码，之前虚拟机安装过centos，但运行速度不理想，使用颇为受限，故安装双系统，这篇教程没有繁琐赘述，重要之处以及我所遇到的一些BUG都会详细说明。&lt;/p&gt;
+&lt;h2 id=&quot;1-为什么选择Ubuntu20-04&quot;&gt;&lt;a
         
       
     
     </summary>
     
-      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+      <category term="双系统" scheme="https://www.yshawlon.cn/categories/%E5%8F%8C%E7%B3%BB%E7%BB%9F/"/>
     
     
-      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
+      <category term="Ubuntu20.04" scheme="https://www.yshawlon.cn/tags/Ubuntu20-04/"/>
+    
+      <category term="Windows" scheme="https://www.yshawlon.cn/tags/Windows/"/>
     
   </entry>
   
   <entry>
-    <title>【Day53】483. 最小好进制</title>
-    <link href="https://www.yshawlon.cn/day53-483-zui-xiao-hao-jin-zhi.html"/>
-    <id>https://www.yshawlon.cn/day53-483-zui-xiao-hao-jin-zhi.html</id>
-    <published>2021-06-18T05:35:44.000Z</published>
-    <updated>2021-06-18T14:28:43.762Z</updated>
+    <title>Hexo网站部署node版本过高配置问题</title>
+    <link href="https://www.yshawlon.cn/hexo-wang-zhan-bu-shu-node-ban-ben-guo-gao-pei-zhi-wen-ti.html"/>
+    <id>https://www.yshawlon.cn/hexo-wang-zhan-bu-shu-node-ban-ben-guo-gao-pei-zhi-wen-ti.html</id>
+    <published>2021-02-19T11:16:24.000Z</published>
+    <updated>2021-04-26T07:12:32.836Z</updated>
     
     <summary type="html">
     
@@ -213,25 +255,26 @@
       
         
         
-          &lt;h4 id=&quot;483-最小好进制&quot;&gt;&lt;a href=&quot;#483-最小好进制&quot; class=&quot;headerlink&quot; title=&quot;483. 最小好进制&quot;&gt;&lt;/a&gt;&lt;a
+          &lt;p&gt;前几天更新了node，部署博客的时候发现部署不了了。主要的提示如下，查了一下发现是node版本过高，更新前是13.x，更新后是14.15.5。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The “mode” argument must be integer. Received an
         
       
     
     </summary>
     
-      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+      <category term="Blog" scheme="https://www.yshawlon.cn/categories/Blog/"/>
     
     
-      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
+      <category term="Hexo" scheme="https://www.yshawlon.cn/tags/Hexo/"/>
     
   </entry>
   
   <entry>
-    <title>【Day52】65. 有效数字</title>
-    <link href="https://www.yshawlon.cn/day52-65-you-xiao-shu-zi.html"/>
-    <id>https://www.yshawlon.cn/day52-65-you-xiao-shu-zi.html</id>
-    <published>2021-06-17T02:41:17.000Z</published>
-    <updated>2021-06-17T15:08:50.140Z</updated>
+    <title>用具体数学解决约瑟夫环问题</title>
+    <link href="https://www.yshawlon.cn/yong-ju-ti-shu-xue-jie-jue-yue-se-fu-huan-wen-ti.html"/>
+    <id>https://www.yshawlon.cn/yong-ju-ti-shu-xue-jie-jue-yue-se-fu-huan-wen-ti.html</id>
+    <published>2021-01-10T05:03:34.000Z</published>
+    <updated>2021-01-13T08:18:22.955Z</updated>
     
     <summary type="html">
     
@@ -239,28 +282,25 @@
       
         
         
-          &lt;p&gt;&lt;strong&gt;有效数字&lt;/strong&gt;（按顺序）可以分成以下几个部分：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;一个 &lt;strong&gt;小数&lt;/strong&gt; 或者 &lt;strong&gt;整数&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;（可选）一个 ‘e’ 或 ‘E’ ，后面跟着一个
+          &lt;h3 id=&quot;问题描述：&quot;&gt;&lt;a href=&quot;#问题描述：&quot; class=&quot;headerlink&quot; title=&quot;问题描述：&quot;&gt;&lt;/a&gt;问题描述：&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;有 n 个人围成一个圈，每 q
         
       
     
     </summary>
     
-      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+      <category term="算法" scheme="https://www.yshawlon.cn/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
+      <category term="约瑟夫环" scheme="https://www.yshawlon.cn/tags/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF/"/>
     
   </entry>
   
   <entry>
-    <title>【Day51】877. 石子游戏</title>
-    <link href="https://www.yshawlon.cn/day51-877-shi-zi-you-xi.html"/>
-    <id>https://www.yshawlon.cn/day51-877-shi-zi-you-xi.html</id>
-    <published>2021-06-16T13:14:40.000Z</published>
-    <updated>2021-06-16T15:44:30.869Z</updated>
+    <title>如何实现一个公平的洗牌算法</title>
+    <link href="https://www.yshawlon.cn/ru-he-shi-xian-yi-ge-gong-ping-de-xi-pai-suan-fa.html"/>
+    <id>https://www.yshawlon.cn/ru-he-shi-xian-yi-ge-gong-ping-de-xi-pai-suan-fa.html</id>
+    <published>2021-01-10T05:02:38.000Z</published>
+    <updated>2021-02-19T15:33:42.494Z</updated>
     
     <summary type="html">
     
@@ -268,25 +308,27 @@
       
         
         
-          &lt;h4 id=&quot;877-石子游戏&quot;&gt;&lt;a href=&quot;#877-石子游戏&quot; class=&quot;headerlink&quot; title=&quot;877. 石子游戏&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/stone-game/&quot;
+          &lt;h3 id=&quot;问题描述：&quot;&gt;&lt;a href=&quot;#问题描述：&quot; class=&quot;headerlink&quot;
         
       
     
     </summary>
     
-      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+      <category term="算法" scheme="https://www.yshawlon.cn/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
+      <category term="洗牌" scheme="https://www.yshawlon.cn/tags/%E6%B4%97%E7%89%8C/"/>
+    
+      <category term="随机" scheme="https://www.yshawlon.cn/tags/%E9%9A%8F%E6%9C%BA/"/>
     
   </entry>
   
   <entry>
-    <title>【Day50】852. 山脉数组的峰顶索引</title>
-    <link href="https://www.yshawlon.cn/day50-852-shan-mai-shu-zu-de-feng-ding-suo-yin.html"/>
-    <id>https://www.yshawlon.cn/day50-852-shan-mai-shu-zu-de-feng-ding-suo-yin.html</id>
-    <published>2021-06-15T07:51:24.000Z</published>
-    <updated>2021-06-15T14:53:06.649Z</updated>
+    <title>寻找多数元素（主元素）问题</title>
+    <link href="https://www.yshawlon.cn/xun-zhao-duo-shu-yuan-su-zhu-yuan-su-wen-ti.html"/>
+    <id>https://www.yshawlon.cn/xun-zhao-duo-shu-yuan-su-zhu-yuan-su-wen-ti.html</id>
+    <published>2021-01-06T16:31:05.000Z</published>
+    <updated>2021-03-25T06:51:37.432Z</updated>
     
     <summary type="html">
     
@@ -294,25 +336,27 @@
       
         
         
-          &lt;h4 id=&quot;852-山脉数组的峰顶索引&quot;&gt;&lt;a href=&quot;#852-山脉数组的峰顶索引&quot; class=&quot;headerlink&quot; title=&quot;852. 山脉数组的峰顶索引&quot;&gt;&lt;/a&gt;&lt;a
+          &lt;h3 id=&quot;问题描述：&quot;&gt;&lt;a href=&quot;#问题描述：&quot; class=&quot;headerlink&quot;
         
       
     
     </summary>
     
-      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+      <category term="算法" scheme="https://www.yshawlon.cn/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
+      <category term="主元素" scheme="https://www.yshawlon.cn/tags/%E4%B8%BB%E5%85%83%E7%B4%A0/"/>
+    
+      <category term="多数元素" scheme="https://www.yshawlon.cn/tags/%E5%A4%9A%E6%95%B0%E5%85%83%E7%B4%A0/"/>
     
   </entry>
   
   <entry>
-    <title>【Day49】374. 猜数字大小</title>
-    <link href="https://www.yshawlon.cn/day49-374-cai-shu-zi-da-xiao.html"/>
-    <id>https://www.yshawlon.cn/day49-374-cai-shu-zi-da-xiao.html</id>
-    <published>2021-06-14T06:44:30.000Z</published>
-    <updated>2021-06-17T14:40:56.355Z</updated>
+    <title>怎样告别我的2020呢？</title>
+    <link href="https://www.yshawlon.cn/zen-yang-gao-bie-wo-de-2020-ni.html"/>
+    <id>https://www.yshawlon.cn/zen-yang-gao-bie-wo-de-2020-ni.html</id>
+    <published>2020-12-31T15:33:07.000Z</published>
+    <updated>2021-01-16T06:13:41.332Z</updated>
     
     <summary type="html">
     
@@ -320,25 +364,26 @@
       
         
         
-          &lt;h4 id=&quot;374-猜数字大小&quot;&gt;&lt;a href=&quot;#374-猜数字大小&quot; class=&quot;headerlink&quot; title=&quot;374. 猜数字大小&quot;&gt;&lt;/a&gt;&lt;a
+          &lt;p&gt;赶在2021前写下这篇文章，想要总结一下2020，实在没什么好总结的，就是一团糟。&lt;/p&gt;
+&lt;h2 id=&quot;一】&quot;&gt;&lt;a href=&quot;#一】&quot; class=&quot;headerlink&quot;
         
       
     
     </summary>
     
-      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+      <category term="随笔" scheme="https://www.yshawlon.cn/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
-      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
+      <category term="随笔" scheme="https://www.yshawlon.cn/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
   <entry>
-    <title>【Day48】278. 第一个错误的版本</title>
-    <link href="https://www.yshawlon.cn/day48-278-di-yi-ge-cuo-wu-de-ban-ben.html"/>
-    <id>https://www.yshawlon.cn/day48-278-di-yi-ge-cuo-wu-de-ban-ben.html</id>
-    <published>2021-06-13T10:21:33.000Z</published>
-    <updated>2021-06-17T14:41:18.216Z</updated>
+    <title>Hash算法</title>
+    <link href="https://www.yshawlon.cn/hash-suan-fa.html"/>
+    <id>https://www.yshawlon.cn/hash-suan-fa.html</id>
+    <published>2020-12-29T14:37:41.000Z</published>
+    <updated>2021-01-02T13:40:07.850Z</updated>
     
     <summary type="html">
     
@@ -346,25 +391,25 @@
       
         
         
-          &lt;h4 id=&quot;278-第一个错误的版本&quot;&gt;&lt;a href=&quot;#278-第一个错误的版本&quot; class=&quot;headerlink&quot; title=&quot;278. 第一个错误的版本&quot;&gt;&lt;/a&gt;&lt;a
+          &lt;h2 id=&quot;哈希算法-Hash-Function&quot;&gt;&lt;a href=&quot;#哈希算法-Hash-Function&quot; class=&quot;headerlink&quot; title=&quot;哈希算法(Hash Function)&quot;&gt;&lt;/a&gt;哈希算法(Hash
         
       
     
     </summary>
     
-      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+      <category term="算法" scheme="https://www.yshawlon.cn/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
+      <category term="Hash" scheme="https://www.yshawlon.cn/tags/Hash/"/>
     
   </entry>
   
   <entry>
-    <title>【Day47】1449. 数位成本和为目标值的最大数字</title>
-    <link href="https://www.yshawlon.cn/day47-1449-shu-wei-cheng-ben-he-wei-mu-biao-zhi-de-zui-da-shu-zi.html"/>
-    <id>https://www.yshawlon.cn/day47-1449-shu-wei-cheng-ben-he-wei-mu-biao-zhi-de-zui-da-shu-zi.html</id>
-    <published>2021-06-12T05:11:57.000Z</published>
-    <updated>2021-06-12T05:17:22.586Z</updated>
+    <title>Hexo博客添加在线留言DaoVoice实时联系</title>
+    <link href="https://www.yshawlon.cn/hexo-bo-ke-tian-jia-zai-xian-liu-yan-daovoice-shi-shi-lian-xi.html"/>
+    <id>https://www.yshawlon.cn/hexo-bo-ke-tian-jia-zai-xian-liu-yan-daovoice-shi-shi-lian-xi.html</id>
+    <published>2020-12-16T03:05:03.000Z</published>
+    <updated>2021-02-19T15:37:46.603Z</updated>
     
     <summary type="html">
     
@@ -372,25 +417,25 @@
       
         
         
-          &lt;h4 id=&quot;1449-数位成本和为目标值的最大数字&quot;&gt;&lt;a href=&quot;#1449-数位成本和为目标值的最大数字&quot; class=&quot;headerlink&quot; title=&quot;1449. 数位成本和为目标值的最大数字&quot;&gt;&lt;/a&gt;&lt;a
+          &lt;p&gt;&lt;strong&gt;DaoVoice简介：&lt;/strong&gt;DaoVoice 是一款革命性的应用运营平台，致力于帮助企业实现以用户为中心的「精益运营」体系。融合「在线聊天」、「客服支持」、「用户画像」、「消息推送」、「行为引导」等功能为一体，
         
       
     
     </summary>
     
-      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+      <category term="Blog" scheme="https://www.yshawlon.cn/categories/Blog/"/>
     
     
-      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
+      <category term="DaoVoice" scheme="https://www.yshawlon.cn/tags/DaoVoice/"/>
     
   </entry>
   
   <entry>
-    <title>【Day46】279. 完全平方数</title>
-    <link href="https://www.yshawlon.cn/day46-279-wan-quan-ping-fang-shu.html"/>
-    <id>https://www.yshawlon.cn/day46-279-wan-quan-ping-fang-shu.html</id>
-    <published>2021-06-11T04:45:15.000Z</published>
-    <updated>2021-06-11T04:52:27.055Z</updated>
+    <title>使用JSDelivr加速Github、博客文件</title>
+    <link href="https://www.yshawlon.cn/shi-yong-jsdelivr-jia-su-github-bo-ke-wen-jian.html"/>
+    <id>https://www.yshawlon.cn/shi-yong-jsdelivr-jia-su-github-bo-ke-wen-jian.html</id>
+    <published>2020-12-13T09:15:54.000Z</published>
+    <updated>2021-01-02T13:49:02.838Z</updated>
     
     <summary type="html">
     
@@ -398,25 +443,28 @@
       
         
         
-          &lt;h4 id=&quot;279-完全平方数&quot;&gt;&lt;a href=&quot;#279-完全平方数&quot; class=&quot;headerlink&quot; title=&quot;279. 完全平方数&quot;&gt;&lt;/a&gt;&lt;a
+          &lt;p&gt;&lt;strong&gt;前言&lt;/strong&gt;：当我们博客添加了本地视频或者大量图片等等，会导致加载时间过长，这里我们用JSDelivr对其进行加速，相当于免费的的CDN。&lt;/p&gt;
+&lt;h2 id=&quot;一、新建一个GitHub仓库&quot;&gt;&lt;a href=&quot;#一、新建一个GitHub仓库&quot;
         
       
     
     </summary>
     
-      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+      <category term="Blog" scheme="https://www.yshawlon.cn/categories/Blog/"/>
     
     
-      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
+      <category term="Github" scheme="https://www.yshawlon.cn/tags/Github/"/>
+    
+      <category term="JSDelivr" scheme="https://www.yshawlon.cn/tags/JSDelivr/"/>
     
   </entry>
   
   <entry>
-    <title>【Day45】518. 零钱兑换 II</title>
-    <link href="https://www.yshawlon.cn/day45-518-ling-qian-dui-huan-ii.html"/>
-    <id>https://www.yshawlon.cn/day45-518-ling-qian-dui-huan-ii.html</id>
-    <published>2021-06-10T15:28:45.000Z</published>
-    <updated>2021-06-10T15:35:22.218Z</updated>
+    <title>个人博客、网站被恶意DDOS攻击怎么办</title>
+    <link href="https://www.yshawlon.cn/ge-ren-bo-ke-wang-zhan-bei-e-yi-ddos-gong-ji-zen-me-ban.html"/>
+    <id>https://www.yshawlon.cn/ge-ren-bo-ke-wang-zhan-bei-e-yi-ddos-gong-ji-zen-me-ban.html</id>
+    <published>2020-07-05T15:53:34.000Z</published>
+    <updated>2021-02-19T15:35:27.005Z</updated>
     
     <summary type="html">
     
@@ -424,25 +472,26 @@
       
         
         
-          &lt;h4 id=&quot;518-零钱兑换-II&quot;&gt;&lt;a href=&quot;#518-零钱兑换-II&quot; class=&quot;headerlink&quot; title=&quot;518. 零钱兑换 II&quot;&gt;&lt;/a&gt;&lt;a
+          &lt;p&gt;&lt;strong&gt;起因&lt;/strong&gt;：几天前我的博客遭受DDOS攻击，攻击次数高达85万次，腾讯云COS加CDN欠费400，作为一个小白碰到有点不知所措，所以记录一下我处理的过程。&lt;/p&gt;
+&lt;p&gt;&lt;img
         
       
     
     </summary>
     
-      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+      <category term="DDOS" scheme="https://www.yshawlon.cn/categories/DDOS/"/>
     
     
-      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
+      <category term="随笔" scheme="https://www.yshawlon.cn/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
   <entry>
-    <title>【Day44】879. 盈利计划</title>
-    <link href="https://www.yshawlon.cn/day44-879-ying-li-ji-hua.html"/>
-    <id>https://www.yshawlon.cn/day44-879-ying-li-ji-hua.html</id>
-    <published>2021-06-09T13:17:34.000Z</published>
-    <updated>2021-06-09T13:47:27.451Z</updated>
+    <title>C++学习笔记整理-函数</title>
+    <link href="https://www.yshawlon.cn/c-xue-xi-bi-ji-zheng-li-di-san-zhang-han-shu.html"/>
+    <id>https://www.yshawlon.cn/c-xue-xi-bi-ji-zheng-li-di-san-zhang-han-shu.html</id>
+    <published>2020-05-08T11:54:09.000Z</published>
+    <updated>2021-05-18T07:52:44.799Z</updated>
     
     <summary type="html">
     
@@ -450,25 +499,26 @@
       
         
         
-          &lt;h4 id=&quot;879-盈利计划&quot;&gt;&lt;a href=&quot;#879-盈利计划&quot; class=&quot;headerlink&quot; title=&quot;879. 盈利计划&quot;&gt;&lt;/a&gt;&lt;a
+          &lt;p&gt;&lt;strong&gt;前面几章大体上和C差不多，就从函数开始吧。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;第三章-函数&quot;&gt;&lt;a href=&quot;#第三章-函数&quot; class=&quot;headerlink&quot; title=&quot;第三章 函数&quot;&gt;&lt;/a&gt;第三章 函数&lt;/h2&gt;&lt;h2
         
       
     
     </summary>
     
-      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+      <category term="C++" scheme="https://www.yshawlon.cn/categories/C/"/>
     
     
-      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
+      <category term="学习笔记" scheme="https://www.yshawlon.cn/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
-    <title>【Day43】1049. 最后一块石头的重量 II</title>
-    <link href="https://www.yshawlon.cn/day43-1049-zui-hou-yi-kuai-shi-tou-de-chong-liang-ii.html"/>
-    <id>https://www.yshawlon.cn/day43-1049-zui-hou-yi-kuai-shi-tou-de-chong-liang-ii.html</id>
-    <published>2021-06-08T12:40:52.000Z</published>
-    <updated>2021-06-08T14:48:48.272Z</updated>
+    <title>C++学习笔记整理-类与对象</title>
+    <link href="https://www.yshawlon.cn/c-xue-xi-bi-ji-zheng-li-di-si-zhang-lei-yu-dui-xiang.html"/>
+    <id>https://www.yshawlon.cn/c-xue-xi-bi-ji-zheng-li-di-si-zhang-lei-yu-dui-xiang.html</id>
+    <published>2020-04-26T10:53:44.000Z</published>
+    <updated>2021-05-18T07:56:39.107Z</updated>
     
     <summary type="html">
     
@@ -476,68 +526,16 @@
       
         
         
-          &lt;h4 id=&quot;1049-最后一块石头的重量-II&quot;&gt;&lt;a href=&quot;#1049-最后一块石头的重量-II&quot; class=&quot;headerlink&quot; title=&quot;1049. 最后一块石头的重量 II&quot;&gt;&lt;/a&gt;&lt;a
+          &lt;h1 id=&quot;第四章-类和对象&quot;&gt;&lt;a href=&quot;#第四章-类和对象&quot; class=&quot;headerlink&quot; title=&quot;第四章 类和对象&quot;&gt;&lt;/a&gt;第四章 类和对象&lt;/h1&gt;&lt;h2 id=&quot;1-面向对象程序设计的基本特点&quot;&gt;&lt;a
         
       
     
     </summary>
     
-      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+      <category term="C++" scheme="https://www.yshawlon.cn/categories/C/"/>
     
     
-      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【Day42】494. 目标和</title>
-    <link href="https://www.yshawlon.cn/day42-494-mu-biao-he.html"/>
-    <id>https://www.yshawlon.cn/day42-494-mu-biao-he.html</id>
-    <published>2021-06-07T03:08:15.000Z</published>
-    <updated>2021-06-07T15:46:05.468Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;494-目标和&quot;&gt;&lt;a href=&quot;#494-目标和&quot; class=&quot;headerlink&quot; title=&quot;494. 目标和&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/target-sum/&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
-    
-    
-      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【Day41】474.一和零</title>
-    <link href="https://www.yshawlon.cn/day41-474-yi-he-ling.html"/>
-    <id>https://www.yshawlon.cn/day41-474-yi-he-ling.html</id>
-    <published>2021-06-06T10:48:24.000Z</published>
-    <updated>2021-06-06T11:48:44.669Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;474-一和零&quot;&gt;&lt;a href=&quot;#474-一和零&quot; class=&quot;headerlink&quot; title=&quot;474. 一和零&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/ones-and-zeroes/&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
-    
-    
-      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
+      <category term="学习笔记" scheme="https://www.yshawlon.cn/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
