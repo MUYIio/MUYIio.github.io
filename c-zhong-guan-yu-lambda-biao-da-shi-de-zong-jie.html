@@ -8,7 +8,9 @@
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="C++ 中关于Lambda 表达式的总结 | Shawlon`s Blog">
+    <meta name="description" content="Lambda表达式是C++ 11新特性之一，总的来说就是一个函数，第一眼看到这个函数也是一脸懵逼，怎么没有见到过这个写法？于是查找了一些资料，按照我的理解记录一下
+Lambda基本语法Lambda标准语法定义：
+[capture] (par">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -615,7 +617,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/38.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/40.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -731,11 +733,24 @@
                 <div class="col s7">
                     
                     <div class="article-tag">
-                        <span class="chip bg-color">无标签</span>
+                        
+                        <a href="/tags/Lambda/" target="_blank">
+                            <span class="chip bg-color">Lambda</span>
+                        </a>
+                        
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                        <a href="/categories/C/" class="post-category" target="_blank">
+                            C++
+                        </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -757,14 +772,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    743
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
                 
@@ -780,7 +795,104 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <p>Lambda表达式是C++ 11新特性之一，总的来说就是一个函数，第一眼看到这个函数也是一脸懵逼，怎么没有见到过这个写法？于是查找了一些资料，按照我的理解记录一下</p>
+<h2 id="Lambda基本语法"><a href="#Lambda基本语法" class="headerlink" title="Lambda基本语法"></a>Lambda基本语法</h2><p>Lambda标准语法定义：</p>
+<pre><code>[capture] (parameters) mutable -&gt;ret-type{body};</code></pre><p><strong>说明：</strong></p>
+<ul>
+<li><p>1.[capture]：捕捉列表。捕捉列表总是出现在Lambda函数的开始处。实际上，[]是Lambda引出符。编译器根据该引出符判断接下来的代码是否是Lambda函数。捕捉列表能够捕捉上下文中的变量以供Lambda函数使用，捕获列表可以是下面的类型：</p>
+<blockquote>
+<ul>
+<li><p>1.[var]表示值传递方式捕捉变量var；</p>
+</li>
+<li><p>2.[=]表示值传递方式捕捉所有父作用域的变量（包括this）；</p>
+<pre class="line-numbers language-c++"><code class="language-c++">auto f1 = [=]{return a + 1;};    //按值捕获a<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>3.[&amp;var]表示引用传递捕捉变量var；</p>
+</li>
+<li><p>4.[&amp;]表示引用传递方式捕捉所有父作用域的变量（包括this）；</p>
+<pre class="line-numbers language-c++"><code class="language-c++">auto f2 = [&]{return a + 1;};    //按引用捕获a<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>5.[this]表示值传递方式捕捉当前的this指针。</p>
+</li>
+<li><p>6.[ ]表示不捕获任何变量。</p>
+</li>
+</ul>
+<p><strong>捕获列表也可以组合：</strong></p>
+<ul>
+<li>1.[=,&amp;a,&amp;b]表示以引用传递的方式捕捉变量a和b，以值传递方式捕捉其它所有变量;</li>
+<li>2.[&amp;,a,this]表示以值传递的方式捕捉变量a和this，引用传递方式捕捉其它所有变量。</li>
+</ul>
+<p><strong>如果重复是不允许的：</strong></p>
+<ul>
+<li><p>1.[=,x]这里已经以值传递方式捕捉了所有变量，但重复捕捉x;</p>
+</li>
+<li><p>2.[&amp;,&amp;this]&amp;已经相当于以引用传递方式捕捉了所有变量，再捕捉this则会重复。</p>
+</li>
+</ul>
+</blockquote>
+</li>
+<li><p>2.(parameters)：参数列表。与普通函数的参数列表一致。如果不需要参数传递，则可以连同括号“()”一起省略;</p>
+</li>
+<li><p>3.mutable：mutable修饰符。默认情况下，Lambda函数总是一个const函数，mutable可以取消其常量性。在使用该修饰符时，参数列表不可省略（即使参数为空）;</p>
+</li>
+<li><p>4.-&gt;ret-type：返回类型。可以指定，也可以不指定，不指定编译器则会自动推导返回类型，例如：</p>
+<pre class="line-numbers language-c++"><code class="language-c++">[](double x ) {int y = x ;};<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>如果函数有多个返回值，编译器不能推导，需要自行添加，例如：</p>
+<pre class="line-numbers language-c++"><code class="language-c++">[](double x )->double{int y = x ;return x - y;};<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>5.{body}：函数体。内容与普通函数一样，不过除了可以使用参数之外，还可以使用所有捕获的变量。</p>
+</li>
+</ul>
+<h2 id="Lambda函数具体使用"><a href="#Lambda函数具体使用" class="headerlink" title="Lambda函数具体使用"></a>Lambda函数具体使用</h2><p>1.其中上面讲到了<strong>父作用域</strong>，简单来说就是包含Lambda函数的<code>{ }</code>代码段。</p>
+<p><strong>2. 另外，Lambda是匿名函数，但通常会给它取名，例如：</strong></p>
+<pre class="line-numbers language-c++"><code class="language-c++">auto f = [](int x ) {return x % 3 ==0;};<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这样就可以在程序中更方便的调用Lambda函数了：</p>
+<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
+using namespace std;
+int main()
+{
+    int a = 10, b = 5;
+    auto f = [=]{return a + b;};   //[=]按值捕获了a和b
+    cout << f() << endl;         //值为15
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>3.保持Lambda函数引用的变量的值是最新的：</strong></p>
+<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
+using namespace std;
+int main()
+{
+    int a = 8;
+    auto f1 = [=]{return a + 1;};  //按值捕获a
+    auto f2 = [&]{return a + 1;};  //按引用捕获a
+    cout << f1() << endl;
+    cout << f2()<< endl;
+    a++;
+    cout << f1() << endl;
+    cout << f2() << endl;
+    return 0;
+}
+
+程序结果：
+    8
+    8
+    8
+    9<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>按值捕获可以看作Lambda函数生成了一个const类型的变量，它的值是不会因为外部更新而更新的；同样引用捕获相当于调用a的内存地址，保证实时更新，如果想要Lambda函数在调用时访问的外部变量是最新的，我们就需要使用按引用捕获。</p>
+<p>如果非要做到修改值捕获变量的值，就可以使用mutale关键字；默认情况下，lambda函数是一个const函数，而mutable也可以取消常量性，例如：</p>
+<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
+using namespace std;
+int main()
+{
+    int a = 10;
+    auto f = [=]()mutable{return a *= 10;};//取消常量性
+    cout << f() << endl;
+    return 0;
+}
+
+程序结果：
+    100<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p> mutable 修饰的 Lambda 表达式就算没有参数也要写明参数列表，这里的<code>()</code>表示没有省略，只是没有参数而已。</p>
+
             </div>
             <hr />
 
@@ -1273,7 +1385,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/38.jpg" class="responsive-img" alt="C++ 中关于Lambda 表达式的总结">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/40.jpg" class="responsive-img" alt="C++ 中关于Lambda 表达式的总结">
                         
                         <span class="card-title">C++ 中关于Lambda 表达式的总结</span>
                     </div>
@@ -1281,7 +1393,7 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            Lambda表达式是C++ 11新特性之一，总的来说就是一个函数。
                         
                     </div>
                     <div class="publish-info">
@@ -1290,10 +1402,25 @@
                             </span>
                         <span class="publish-author">
                             
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/C/" class="post-category" target="_blank">
+                                    C++
+                                </a>
+                            
+                            
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Lambda/" target="_blank">
+                        <span class="chip bg-color">Lambda</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -1308,7 +1435,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/33.jpg" class="responsive-img" alt="暑假LeetCode刷题集合（下）">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/31.jpg" class="responsive-img" alt="暑假LeetCode刷题集合（下）">
                         
                         <span class="card-title">暑假LeetCode刷题集合（下）</span>
                     </div>
@@ -1518,7 +1645,7 @@
            <!--<a href="/sitemap.xml" target="_blank">站点地图</a>丨-->
            
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">68.3k
+            <span class="white-color">69k
              丨            
             <a href="https://tongji.baidu.com/web/welcome/ico?s=df42dpc7224a5f6a8d435" target="_blank">百度统计</a>丨
            <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278720284'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1278720284%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
@@ -1609,7 +1736,7 @@
       <span class="badge-subject">Link</span><span class="badge-value bg-red">996.ICU</span></a>
     </div>
     <div class="github-badge">
-      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">68.3k</span>
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">69k</span>
     </div>
 </footer>
 

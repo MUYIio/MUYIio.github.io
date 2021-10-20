@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.yshawlon.cn/"/>
-  <updated>2021-10-18T08:57:56.492Z</updated>
+  <updated>2021-10-20T14:44:40.420Z</updated>
   <id>https://www.yshawlon.cn/</id>
   
   <author>
@@ -21,12 +21,25 @@
     <link href="https://www.yshawlon.cn/c-zhong-guan-yu-lambda-biao-da-shi-de-zong-jie.html"/>
     <id>https://www.yshawlon.cn/c-zhong-guan-yu-lambda-biao-da-shi-de-zong-jie.html</id>
     <published>2021-10-18T08:57:56.000Z</published>
-    <updated>2021-10-18T08:57:56.492Z</updated>
+    <updated>2021-10-20T14:44:40.420Z</updated>
     
     <summary type="html">
     
+      
+      
+        
+        
+          &lt;p&gt;Lambda表达式是C++ 11新特性之一，总的来说就是一个函数，第一眼看到这个函数也是一脸懵逼，怎么没有见到过这个写法？于是查找了一些资料，按照我的理解记录一下&lt;/p&gt;
+&lt;h2 id=&quot;Lambda基本语法&quot;&gt;&lt;a href=&quot;#Lambda基本语法&quot;
+        
+      
+    
     </summary>
     
+      <category term="C++" scheme="https://www.yshawlon.cn/categories/C/"/>
+    
+    
+      <category term="Lambda" scheme="https://www.yshawlon.cn/tags/Lambda/"/>
     
   </entry>
   
@@ -61,7 +74,7 @@
     <link href="https://www.yshawlon.cn/shi-yong-java-kai-fa-yi-ge-ji-shi-ben.html"/>
     <id>https://www.yshawlon.cn/shi-yong-java-kai-fa-yi-ge-ji-shi-ben.html</id>
     <published>2021-07-17T14:20:07.000Z</published>
-    <updated>2021-07-18T14:14:35.030Z</updated>
+    <updated>2021-10-20T13:17:18.866Z</updated>
     
     <summary type="html">
     
@@ -89,7 +102,7 @@
     <link href="https://www.yshawlon.cn/shu-jia-leetcode-shua-ti-ji-he-shang.html"/>
     <id>https://www.yshawlon.cn/shu-jia-leetcode-shua-ti-ji-he-shang.html</id>
     <published>2021-06-27T13:12:16.000Z</published>
-    <updated>2021-10-18T14:05:21.303Z</updated>
+    <updated>2021-10-20T13:18:37.250Z</updated>
     
     <summary type="html">
     
@@ -136,7 +149,7 @@
     <link href="https://www.yshawlon.cn/hui-bian-yu-yan-wang-shuang-zhu-xue-xi-bi-ji-ji-lu-hou-ban-bu-fen.html"/>
     <id>https://www.yshawlon.cn/hui-bian-yu-yan-wang-shuang-zhu-xue-xi-bi-ji-ji-lu-hou-ban-bu-fen.html</id>
     <published>2021-05-08T15:08:22.000Z</published>
-    <updated>2021-09-26T08:53:02.161Z</updated>
+    <updated>2021-10-20T13:16:23.895Z</updated>
     
     <summary type="html">
     
@@ -162,7 +175,7 @@
     <link href="https://www.yshawlon.cn/hui-bian-yu-yan-xue-xi-dosbox-masm-an-zhuang-ji-shi-yong-jiao-cheng.html"/>
     <id>https://www.yshawlon.cn/hui-bian-yu-yan-xue-xi-dosbox-masm-an-zhuang-ji-shi-yong-jiao-cheng.html</id>
     <published>2021-05-08T06:19:14.000Z</published>
-    <updated>2021-05-23T16:48:28.390Z</updated>
+    <updated>2021-10-20T13:14:18.522Z</updated>
     
     <summary type="html">
     
@@ -191,7 +204,7 @@
     <link href="https://www.yshawlon.cn/hui-bian-yu-yan-wang-shuang-zhu-xue-xi-bi-ji-ji-lu.html"/>
     <id>https://www.yshawlon.cn/hui-bian-yu-yan-wang-shuang-zhu-xue-xi-bi-ji-ji-lu.html</id>
     <published>2021-05-08T06:17:32.000Z</published>
-    <updated>2021-05-18T16:48:16.923Z</updated>
+    <updated>2021-10-20T13:12:16.826Z</updated>
     
     <summary type="html">
     
