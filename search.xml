@@ -135,7 +135,7 @@
       <link href="/x86-hui-bian-yu-yan-cong-shi-mo-shi-dao-bao-hu-mo-shi-yue-du-bi-ji.html"/>
       <url>/x86-hui-bian-yu-yan-cong-shi-mo-shi-dao-bao-hu-mo-shi-yue-du-bi-ji.html</url>
       
-        <content type="html"><![CDATA[<p><img src="06.jpg" alt></p>]]></content>
+        <content type="html"><![CDATA[<h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><p>处理器基本工作：取指令，执行指令，数据访问，万变不离其宗。而处理器访问内存地址通过内存的分段机制来实现。分段机制为： 逻辑地址（20位）=段寄存器地址左移4位（16位）+偏移地址（16位）。<br> 使用上述方式是有历史原因，由于早期只有16位的寄存器，16位的只能达到64KB内存，为了能够表示更大的内存，8086提供20位的地址线可以达到1MB。将16位的段地址+16位的偏移地址不足以得到20位的物理地址，于是将16位的端寄存器左移4位+偏移地址，形成20位的物理地址。</p><p>分段机制最重要两个寄存器。CS：代码段寄存器，用于表示cpu从代码段哪个位置执行；DS：数据段寄存器，指向数据段。</p><p><img src="06.jpg" alt></p>]]></content>
       
       
       <categories>

@@ -155,7 +155,7 @@
     <link href="https://www.yshawlon.cn/x86-hui-bian-yu-yan-cong-shi-mo-shi-dao-bao-hu-mo-shi-yue-du-bi-ji.html"/>
     <id>https://www.yshawlon.cn/x86-hui-bian-yu-yan-cong-shi-mo-shi-dao-bao-hu-mo-shi-yue-du-bi-ji.html</id>
     <published>2021-05-16T14:57:10.000Z</published>
-    <updated>2021-10-29T08:32:30.252Z</updated>
+    <updated>2021-10-29T08:40:26.833Z</updated>
     
     <summary type="html">
     
@@ -163,7 +163,7 @@
       
         
         
-          &lt;p&gt;&lt;img src=&quot;06.jpg&quot;
+          &lt;h1 id=&quot;基本概念&quot;&gt;&lt;a href=&quot;#基本概念&quot; class=&quot;headerlink&quot; title=&quot;基本概念&quot;&gt;&lt;/a&gt;基本概念&lt;/h1&gt;&lt;p&gt;处理器基本工作：取指令，执行指令，数据访问，万变不离其宗。而处理器访问内存地址通过内存的分段机制来实现。分段机制为：
         
       
     
