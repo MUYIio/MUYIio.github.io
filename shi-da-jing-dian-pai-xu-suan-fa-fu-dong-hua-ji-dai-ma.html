@@ -4,16 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="对 Hexo 博客文章进行加密, 被动学习">
+    <meta name="keywords" content="十大经典排序算法(附动画及代码), 被动学习">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="写在前面
-有时候我们可能需要写一些私密的博客，通过密码验证的方式让人不能随意浏览。
-
-这在wordpress，emlog或其他博客系统中都很容易实现，然而hexo除外。:(
-
-为了解决这个问题，我们需要安装“ hexo-blog-encry">
+    <meta name="description" content="十大经典排序算法(附动画及代码) | Shawlon`s Blog">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>对 Hexo 博客文章进行加密 | Shawlon`s Blog</title>
+    <title>十大经典排序算法(附动画及代码) | Shawlon`s Blog</title>
     <link rel="icon" type="image/jpeg" href="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/avatars/favicon.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -620,13 +615,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/45.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/26.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        对 Hexo 博客文章进行加密
+                        十大经典排序算法(附动画及代码)
                     </div>
                 </div>
             </div>
@@ -736,24 +731,11 @@
                 <div class="col s7">
                     
                     <div class="article-tag">
-                        
-                        <a href="/tags/Hexo/" target="_blank">
-                            <span class="chip bg-color">Hexo</span>
-                        </a>
-                        
+                        <span class="chip bg-color">无标签</span>
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fa fa-bookmark fa-fw icon-category"></i>
-                        
-                        <a href="/categories/Blog/" class="post-category" target="_blank">
-                            Blog
-                        </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -761,7 +743,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-03-12
+                    2021-12-14
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -775,14 +757,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    640
+                    0
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
                 
@@ -798,87 +780,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><ul>
-<li><p>有时候我们可能需要写一些私密的博客，通过密码验证的方式让人不能随意浏览。</p>
-</li>
-<li><p>这在wordpress，emlog或其他博客系统中都很容易实现，然而hexo除外。:(</p>
-</li>
-<li><p>为了解决这个问题，我们需要安装“ hexo-blog-encrypt”扩展。</p>
-</li>
-</ul>
-<h1 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h1><ul>
-<li><p>一旦你输入了正确的密码，它就会被存储在本地浏览器的localStorage中。按个按钮，密码将会被清空。若博客中又脚本，它将被正确地执行。</p>
-</li>
-<li><p>支持按标签加密。</p>
-</li>
-<li><p>所有的核心功能都是由原生的API所提供的。在Node.js中，我们使用Crypto。在浏览器中，我们使用Web Crypto API。</p>
-</li>
-<li><p>PBKDF2，SHA256被用作复制密钥，AES256-CBC被用作加解密，我们还使用HMAC来验证密文的来源，并确保其纠正。</p>
-</li>
-<li><p>广泛地使用Promise来进行异步操作，从而确保线程不被杜塞。</p>
-</li>
-<li><p>过时的浏览器将无法正常显示，因此，请升级您的浏览器。</p>
-</li>
-</ul>
-<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><pre class="line-numbers language-javascriptj"><code class="language-javascriptj">npm install --save hexo-blog-encrypt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h1 id="快速使用"><a href="#快速使用" class="headerlink" title="快速使用"></a>快速使用</h1><ul>
-<li><strong>将“ <font color="red" size="3">password</font>”添加到您的文章信息头就像这样</strong>：</li>
-</ul>
-<pre><code>```javascriptj
-title: Hello World
-date: 2020-03-13 21:12:21
-password: muyiio
----
-```</code></pre><h1 id="按标签加密"><a href="#按标签加密" class="headerlink" title="按标签加密"></a>按标签加密</h1><ul>
-<li><strong>修改文章信息头如下：</strong></li>
-</ul>
-<pre class="line-numbers language-java"><code class="language-java">title<span class="token operator">:</span> Hello World
-tags<span class="token operator">:</span>
-<span class="token operator">-</span> 加密文章tag
-date<span class="token operator">:</span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">03</span><span class="token operator">-</span><span class="token number">13</span> <span class="token number">21</span><span class="token operator">:</span><span class="token number">12</span><span class="token operator">:</span><span class="token number">21</span>
-password<span class="token operator">:</span> muyiio
-<span class="token keyword">abstract</span><span class="token operator">:</span> 这里有东西被加密了，需要输入密码查看哦。
-message<span class="token operator">:</span> 您好，这里需要密码。
-wrong_pass_message<span class="token operator">:</span> 抱歉，这个密码看着不太对，请再试试。
-wrong_hash_message<span class="token operator">:</span> 抱歉，这个文章不能被纠正，不过您还是能看看解密后的内容。
-<span class="token operator">--</span><span class="token operator">-</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li><strong>对博客根目录<font color="red" size="3">_config</font>添加如下字段：</strong></li>
-</ul>
-<pre class="line-numbers language-javascriptj"><code class="language-javascriptj"># 安全
-encrypt: # hexo-blog-encrypt
-  abstract: 这里有东西被加密了，需要输入密码查看哦。
-  message: 您好, 这里需要密码.
-  tags:
-  - {name: tagName, password: 密码A}
-  - {name: tagName, password: 密码B}
-  template: <div id="hexo-blog-encrypt" data-wpm="{{hbeWrongPassMessage}}" data-whm="{{hbeWrongHashMessage}}"><div class="hbe-input-container"><input type="password" id="hbePass" placeholder="{{hbeMessage}}" /><label>{{hbeMessage}}</label><div class="bottom-line"></div></div><script id="hbeData" type="hbeData" data-hmacdigest="{{hbeHmacDigest}}">{{hbeEncryptedData}}</script></div>
-  wrong_pass_message: 抱歉, 这个密码看着不太对, 请再试试.
-  wrong_hash_message: 抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="对-TOC-文章进行加密"><a href="#对-TOC-文章进行加密" class="headerlink" title="对 TOC 文章进行加密"></a>对 TOC 文章进行加密</h1><p>如果您有一篇文章使用了<font color="red" size="3">TOC</font>，您需要修改模板的部分代码。这里以<font color="red" size="3">matery</font>主题作为示例：</p>
-<ul>
-<li><p><strong>在<font color="red" size="3">hexo/themes/matery/layout/_partial/article.ejs</font>找到<font color="red" size="3">article.ejs</font>。</strong></p>
-</li>
-<li><p><strong>然后找到<font color="red" size="3">&lt;％post.content％&gt;</font>这段代码，通常在<font color="red" size="3">30</font>行左右。</strong></p>
-</li>
-<li><p><strong>使用如下的代码来替代它：</strong></p>
-</li>
-</ul>
-<pre class="line-numbers language-javascriptj"><code class="language-javascriptj"><% if(post.toc == true){ %>
-  <div id="toc-div" class="toc-article" <% if (post.encrypt == true) { %>style="display:none" <% } %>>
-    <strong class="toc-title">Index</strong>
-      <% if (post.encrypt == true) { %>
-        <%- toc(post.origin, {list_number: true}) %>
-      <% } else { %>
-        <%- toc(post.content, {list_number: true}) %>
-      <% } %>
-  </div>
-<% } %>
-<%- post.content %><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h1><p>本文转载自作者<a href="https://github.com/MikeCoder/hexo-blog-encrypt" target="_blank" rel="noopener">MikeCoder</a>的<font color="red" size="3">hexo-blog-encrypt</font>项目，对有些地方略有修改。</p>
-<p>项目地址：<a href="https://github.com/MikeCoder/hexo-blog-encrypt" target="_blank" rel="noopener">https://github.com/MikeCoder/hexo-blog-encrypt</a></p>
-<p>发现这个还是挺好玩的~</p>
-
+                
             </div>
             <hr />
 
@@ -1036,9 +938,9 @@ encrypt: # hexo-blog-encrypt
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《对 Hexo 博客文章进行加密》
+                    《十大经典排序算法(附动画及代码)》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/dui-hexo-bo-ke-wen-zhang-jin-xing-jia-mi.html" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/shi-da-jing-dian-pai-xu-suan-fa-fu-dong-hua-ji-dai-ma.html" property="cc:attributionName"
                rel="cc:attributionURL">
                 Tyzhao
             </a> 采用
@@ -1079,7 +981,7 @@ encrypt: # hexo-blog-encrypt
         repo: 'muyiio.github.io',
         owner: 'MUYIio',
         admin: "MUYIio",
-        id: 'dui-hexo-bo-ke-wen-zhang-jin-xing-jia-mi.html',
+        id: 'shi-da-jing-dian-pai-xu-suan-fa-fu-dong-hua-ji-dai-ma.html',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1362,53 +1264,36 @@ encrypt: # hexo-blog-encrypt
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/shi-yong-picgo-teng-xun-yun-dui-xiang-cun-chu-cos-zuo-wei-tu-chuang.html">
+                <a href="/shi-da-jing-dian-pai-xu-suan-fa-fu-dong-hua-ji-dai-ma.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/35.jpg" class="responsive-img" alt="使用 PicGo+腾讯云对象存储COS 作为图床">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/26.jpg" class="responsive-img" alt="十大经典排序算法(附动画及代码)">
                         
-                        <span class="card-title">使用 PicGo+腾讯云对象存储COS 作为图床</span>
+                        <span class="card-title">十大经典排序算法(附动画及代码)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            选择PicGo+对象存储COS图床来储存文章图片，优化访问速度也为了更加方便。
+                            
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-03-27
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-12-14
+                            </span>
                         <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/图床/" class="post-category" target="_blank">
-                                    图床
-                                </a>
-                            
                             
                         </span>
                     </div>
                 </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/PicGo/" target="_blank">
-                        <span class="chip bg-color">PicGo</span>
-                    </a>
-                    
-                    <a href="/tags/COS/" target="_blank">
-                        <span class="chip bg-color">COS</span>
-                    </a>
-                    
-                </div>
+
                 
             </div>
         </div>
@@ -1419,31 +1304,31 @@ encrypt: # hexo-blog-encrypt
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/vmware-an-zhuang-centos-8-1-wan-zheng-jiao-cheng.html">
+                <a href="/shi-yong-java-arrays-lei-jin-xing-pai-xu.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/45.jpg" class="responsive-img" alt="VMware 安装 CentOS 8.1 完整教程 ">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/16.jpg" class="responsive-img" alt="使用Java Arrays类进行排序">
                         
-                        <span class="card-title">VMware 安装 CentOS 8.1 完整教程 </span>
+                        <span class="card-title">使用Java Arrays类进行排序</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            这篇文章详细的记录我安装CentOS 8.1的过程，其他CentOS 8系列的发行版本安装可作参考。
+                            C语言有qsort()函数，C++有sort()函数，java语言有Arrays类（与Array区分）
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-03-05
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-10-21
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Linux/" class="post-category" target="_blank">
-                                    Linux
+                            <a href="/categories/Java/" class="post-category" target="_blank">
+                                    Java
                                 </a>
                             
                             
@@ -1453,12 +1338,8 @@ encrypt: # hexo-blog-encrypt
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/VMware/" target="_blank">
-                        <span class="chip bg-color">VMware</span>
-                    </a>
-                    
-                    <a href="/tags/CentOS/" target="_blank">
-                        <span class="chip bg-color">CentOS</span>
+                    <a href="/tags/排序/" target="_blank">
+                        <span class="chip bg-color">排序</span>
                     </a>
                     
                 </div>
