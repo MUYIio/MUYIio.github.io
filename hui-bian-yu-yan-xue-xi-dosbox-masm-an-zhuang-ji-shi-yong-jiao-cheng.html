@@ -616,7 +616,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/29.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/28.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -803,15 +803,15 @@
 <p>安装过程就不说了，建议安装在D盘，C盘也可以。我这里是安装在C盘，安装好后打开，<strong>注意有两个窗口，不要关闭</strong></p>
 <p>找到文件：<strong>C:\Users\用户\AppData\Local\DOSBox\dosbox-0.74-3.conf</strong>，找不到AppData查看隐藏的文件，使用记事本打开dosbox-0.74-3.conf，在末尾添加下面两行代码：</p>
 <pre><code>mount d d:\masm
- d:</code></pre><p><img src="1.png" alt></p>
+ d:</code></pre><p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@2.1/Images/posts/DOSBox/01.png" alt></p>
 <p>上面代码的意思就是把D盘映射为虚拟C盘，现在打开DOSBox可以看到自动映射了。</p>
-<p><img src="2.png" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@2.1/Images/posts/DOSBox/2.png" alt></p>
 <h3 id="2）安装MASM"><a href="#2）安装MASM" class="headerlink" title="2）安装MASM"></a>2）安装MASM</h3><p>自己去下载也可以，网盘里面下载下来直接提取到<strong>D盘根目录</strong>就行了</p>
-<p><img src="3.png" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@2.1/Images/posts/DOSBox/3.png" alt></p>
 <p>没有提取    MASM是无法进行debug的，现在打开就可以愉快的开始使用了。</p>
-<p><img src="4.png" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@2.1/Images/posts/DOSBox/4.png" alt></p>
 <h2 id="2】使用DOSBox编写汇编程序"><a href="#2】使用DOSBox编写汇编程序" class="headerlink" title="2】使用DOSBox编写汇编程序"></a>2】使用DOSBox编写汇编程序</h2><h3 id="1）编写-helloword-汇编源程序"><a href="#1）编写-helloword-汇编源程序" class="headerlink" title="1）编写 helloword 汇编源程序"></a>1）编写 helloword 汇编源程序</h3><p>打开 DOSBox，输入 <strong>edit</strong> 编写一个汇编源程序</p>
-<p><img src="5.png" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@2.1/Images/posts/DOSBox/5.png" alt></p>
 <p>代码：//</p>
 <pre class="line-numbers language-asm"><code class="language-asm">data segment                   ;这里定义一个数据段
      tab db 'hello world$'     ;这里用内存存放字节数据 'hellow world!',$用来判断字符串是否输出完毕
@@ -834,20 +834,20 @@ code ends                      ;代码段的结束语
 end start                      ;定义程序从哪个标号处开始执行<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>编写好后点击 file ，选择 save as …，输入文件名称 <strong>hello</strong> ，后缀是 <strong>.asm</strong> ,然后点击 <strong>ok</strong></p>
 <p>也可使用其他编辑器编写源代码，保存到 MASM 文件夹下，修改后缀为 .ASM就行了。</p>
-<p><img src="6.png" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@2.1/Images/posts/DOSBox/6.png" alt></p>
 <p>打开 D:\MASM 就可以看见我们编写的源程序了。</p>
-<p><img src="7.png" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@2.1/Images/posts/DOSBox/7.png" alt></p>
 <h3 id="2）编译"><a href="#2）编译" class="headerlink" title="2）编译"></a>2）编译</h3><p>打开DOSBox，输入 <strong>masm</strong> ，确认后弹出的第一行输入要编译的源程序的名称：hello.asm ,也可以直接输入 MASM hello.asm ，都一样。</p>
 <blockquote>
 <p>“[.ASM]”提示我们，默认的文件扩展名是asm，比如，要编译的源程序文件名是“p1.asm”，只要在这里输入“p1”即可。可如果源程序文件不是以asm为扩展名的话，就要输入它的全名。比如源程序文件名为“p1.txt”，就要输入全名。</p>
 <p>在输入源程序文件名的时候一定要指明它所在的路径。如果文件就在当前路径下，只输入文件名就可以，可如果文件在其他的目录中，则要输入路径，比如，要编译的文件p1.txt在“c:\windows\desktop”下，则要输入“c:\windows\desktop\p1.txt”。这里，我们要编译的文件是C盘根目录下的1.asm，所以此处输入“c:\1.asm”。</p>
 </blockquote>
 <p>在输入源程序文件名后，程序会继续提示我们要编译出的目标文件的名称，目标文件是我们对一个源程序编译要得到的最终结果。注意屏幕上的显示 “[ hello.OBJ ] “,因为我们已经输入了源程序文件名为 hello.asm ,则编译程序默认输出文件名为 hello.obj ，所以不必再指定文件名。直接按 ENTER ，在当前目录下生成 hello.obj 文件。 </p>
-<p><img src="8.png" alt></p>
-<p><img src="9.png" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@2.1/Images/posts/DOSBox/8.png" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@2.1/Images/posts/DOSBox/9.png" alt></p>
 <p>我们到MASM文件夹下可以看到多了一个 <strong>hello.obj</strong> 文件，源程序的编译最后两行如果出现警告和错误必须要改正，否则无法生成obj文件。</p>
 <h3 id="3）连接"><a href="#3）连接" class="headerlink" title="3）连接"></a>3）连接</h3><p>接着上面的顺序，现在已经生成了一个<strong>hello.obj</strong> 文件，我们需要对目标文件进行连接，从而得到可执行文件。    输入 LINK ，弹出的第一行输入 <strong>obj</strong> 文件名称，比如 <strong>hello</strong>，也可以直接输入 <strong>LINK hello.obj</strong></p>
-<p><img src="10.png" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@2.1/Images/posts/DOSBox/10.png" alt></p>
 <p>这里出现一个警告：没有栈段，我们不予理会。</p>
 <p>连接成功后会在 MASM 目录下生成一个 hello.exe 文件，如果出现错误，则无法生成。</p>
 <p>连接的作用：</p>
@@ -859,7 +859,7 @@ end start                      ;定义程序从哪个标号处开始执行<span 
 <h3 id="4）执行我们编译好的-exe-文件"><a href="#4）执行我们编译好的-exe-文件" class="headerlink" title="4）执行我们编译好的 .exe 文件"></a>4）执行我们编译好的 <strong>.exe</strong> 文件</h3><p>输入:</p>
 <pre><code>hello.exe
 hello</code></pre><p>都可以执行exe文件，当然前提是在 MASM 状态下。如图</p>
-<p><img src="11.png" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@2.1/Images/posts/DOSBox/11.png" alt></p>
 <p>至此就是编写汇编源程序以及运行的全部内容，我们还可以在此基础上进行debug，查看heelo.exe的执行情况，更多的知识请自行前往学习。</p>
 
             </div>
@@ -1353,7 +1353,7 @@ hello</code></pre><p>都可以执行exe文件，当然前提是在 MASM 状态�
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/30.jpg" class="responsive-img" alt="《汇编语言》王爽著学习笔记记录(后半部分)">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/31.jpg" class="responsive-img" alt="《汇编语言》王爽著学习笔记记录(后半部分)">
                         
                         <span class="card-title">《汇编语言》王爽著学习笔记记录(后半部分)</span>
                     </div>
@@ -1402,7 +1402,7 @@ hello</code></pre><p>都可以执行exe文件，当然前提是在 MASM 状态�
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/1.jpg" class="responsive-img" alt="《汇编语言》王爽著学习笔记记录(前半部分)">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/2.jpg" class="responsive-img" alt="《汇编语言》王爽著学习笔记记录(前半部分)">
                         
                         <span class="card-title">《汇编语言》王爽著学习笔记记录(前半部分)</span>
                     </div>
@@ -1612,7 +1612,7 @@ hello</code></pre><p>都可以执行exe文件，当然前提是在 MASM 状态�
            <!--<a href="/sitemap.xml" target="_blank">站点地图</a>丨-->
            
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">69.9k
+            <span class="white-color">72.7k
              丨            
             <a href="https://tongji.baidu.com/web/welcome/ico?s=df42dpc7224a5f6a8d435" target="_blank">百度统计</a>丨
            <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278720284'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1278720284%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
@@ -1703,7 +1703,7 @@ hello</code></pre><p>都可以执行exe文件，当然前提是在 MASM 状态�
       <span class="badge-subject">Link</span><span class="badge-value bg-red">996.ICU</span></a>
     </div>
     <div class="github-badge">
-      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">69.9k</span>
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">72.7k</span>
     </div>
 </footer>
 
