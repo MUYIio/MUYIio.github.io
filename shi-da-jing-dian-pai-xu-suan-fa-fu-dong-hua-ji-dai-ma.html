@@ -12,7 +12,8 @@
 稳定：如果a原本在b前面，且a=b，排序之后a仍然在b的前面。
 不稳定：如果a原本在b的前面，且a=b，排序之后 a 可能会出现在 b 的后面。
 
-$$\begin{array}{|l|l|l|l|l|l|l">
+
+$$\begin{array}{|l|l|l|l|l|l|">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -805,6 +806,7 @@ $$\begin{array}{|l|l|l|l|l|l|l">
 <li><strong>稳定</strong>：如果a原本在b前面，且a=b，排序之后a仍然在b的前面。</li>
 <li><strong>不稳定</strong>：如果a原本在b的前面，且a=b，排序之后 a 可能会出现在 b 的后面。</li>
 </ul>
+<p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@2.1/Images/posts/qSort/14.png" alt></p>
 <p>$$<br>\begin{array}{|l|l|l|l|l|l|l|}<br>\hline \text { 排序算法 } &amp; \text { 时间复杂度 (最好) } &amp; \text { 时间复杂度 (最坏) } &amp; \text { 时间复杂度 (平均) } &amp; \text { 空间复杂度 } &amp; \text { 穆定性 } &amp; \text { 是否基于比较 } \<br>\hline \text { 冒渄序 } &amp; O(n) &amp; O\left(n^{2}\right) &amp; O\left(n^{2}\right) &amp; O(1) &amp; \checkmark &amp; \checkmark \<br>\hline \text { 选择排序 } &amp; O\left(n^{2}\right) &amp; O\left(n^{2}\right) &amp; O\left(n^{2}\right) &amp; O(1) &amp; \times &amp; \checkmark \<br>\hline \text { 挿入排序 } &amp; O(n) &amp; O\left(n^{2}\right) &amp; O\left(n^{2}\right) &amp; O(1) &amp; \checkmark &amp; \checkmark \<br>\hline \text { 快速排序 } &amp; O(n \log n) &amp; O\left(n^{2}\right) &amp; O(n \log n) &amp; O(\log n) \sim O(n) &amp; \times &amp; \checkmark \<br>\hline \text { 归并排序 } &amp; O(n \log n) &amp; O(n \log n) &amp; O(n \log n) &amp; O(n) &amp; \checkmark &amp; \checkmark \<br>\hline \text { 希尔排序 } &amp; O\left(n^{1.3}\right) &amp; O\left(n^{2}\right) &amp; O(n \log n) \sim O\left(n^{2}\right) &amp; O(1) &amp; \times &amp; \checkmark \<br>\hline \text { 计数排序 } &amp; O(n+k) &amp; O(n+k) &amp; O(n+k) &amp; O(n+k) &amp; \checkmark &amp; \times \<br>\hline \text { 基数排序 } &amp; O(n k) &amp; O(n k) &amp; O(n k) &amp; O(n+k) &amp; \checkmark &amp; \times \<br>\hline \text { 桶非序 } &amp; O(n) &amp; O(n) &amp; O(n) &amp; O(n+m) &amp; \checkmark &amp; \times \<br>\hline \text { 堆排序 } &amp; O(n \log n) &amp; O(n \log n) &amp; O(n \log n) &amp; O(1) &amp; \times &amp; \checkmark \<br>\hline<br>\end{array}<br>$$</p>
 <h2 id="一、冒泡排序（Bubble-Sort）"><a href="#一、冒泡排序（Bubble-Sort）" class="headerlink" title="一、冒泡排序（Bubble Sort）"></a>一、冒泡排序（Bubble Sort）</h2><h3 id="1、原理"><a href="#1、原理" class="headerlink" title="1、原理"></a>1、原理</h3><p>​    基本思想：通过无序区中相邻元素关键字间的比较和位置的交换，使关键字最小的元素像气泡一样浮到最顶部；接着对剩下的元素排序，使得第二小的元素到达顶部，同样的方法直到所有元素排序完成。</p>
 <h3 id="2、步骤"><a href="#2、步骤" class="headerlink" title="2、步骤"></a>2、步骤</h3><ul>
