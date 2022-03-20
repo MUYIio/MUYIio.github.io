@@ -4,15 +4,12 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="2019总结及2020规划, 被动学习">
+    <meta name="keywords" content="操作系统实现第一篇, 被动学习">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="
-
-
-博客搭建了快半个月了吧，没有前端知识搞起来还是挺麻烦，有些东西要很久才能完全掌握，可能是我愚钝吧，不过在这里还是要感谢给我解答困惑的前辈，让我少走了许多弯路。
-既然是个人博客，总该写点什么首先，感谢屏幕前的你来到我的博客，想要写点什么">
+    <meta name="description" content="—很早之前就想自己实现一个操作系统，现在才正式开始，我也不知道什么时候能啃下这个庞然大物；这篇博客将尽可能详细，记录学习过程，有感兴趣的小伙伴也可以加入我不论什么时候
+什么是操作系统？">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>2019总结及2020规划 | Shawlon`s Blog</title>
+    <title>操作系统实现第一篇 | Shawlon`s Blog</title>
     <link rel="icon" type="image/jpeg" href="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/avatars/favicon.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -619,13 +616,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/24.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        2019总结及2020规划
+                        操作系统实现第一篇
                     </div>
                 </div>
             </div>
@@ -736,8 +733,8 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/随笔/" target="_blank">
-                            <span class="chip bg-color">随笔</span>
+                        <a href="/tags/学习笔记/" target="_blank">
+                            <span class="chip bg-color">学习笔记</span>
                         </a>
                         
                     </div>
@@ -748,8 +745,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/随笔/" class="post-category" target="_blank">
-                            随笔
+                        <a href="/categories/操作系统/" class="post-category" target="_blank">
+                            操作系统
                         </a>
                         
                     </div>
@@ -760,7 +757,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-01-17
+                    2022-03-20
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -774,14 +771,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    84
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    1 分
                 </div>
                 
                 
@@ -797,82 +794,8 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="530" height="86" src="//music.163.com/outchain/player?type=2&id=416892296&auto=1&height=66"></iframe>
-
-<hr>
-<p>博客搭建了快半个月了吧，没有前端知识搞起来还是挺麻烦，有些东西要很久才能完全掌握，可能是我愚钝吧，不过在这里还是要感谢给我解答困惑的前辈，让我少走了许多弯路。<br><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.5/Images/posts/2019%E6%80%BB%E7%BB%93/1.jpg" alt></p>
-<p>既然是个人博客，总该写点什么<br>首先，感谢屏幕前的你来到我的博客，想要写点什么可是脑子里没东西，就写点自我介绍还有对过去的总结以及未来规划吧</p>
-<h1 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h1><hr>
-<p>大一学生，重庆工商大学派斯学院 计算机科学与技术专业，没什么特长，资质平平，平凡得不能再平凡。</p>
-<p>有谁甘做一个平凡的人呢？</p>
-<p>我也想活的恣意潇洒，做自己喜欢的事，最近看了阎真写的《沧浪之水》、《活着之上》，方才明白我的这些想法不外乎幼稚而已。认清现实，选择自己的一条路走下去才是目前该做的事。<br>刚好今年第一天搭建成功自己的博客，对于我来说是一件很有成就感的事，用它来记录以后学习中一些不成熟的思考吧，也当做归纳笔记，帮助自己复习，能够与广大的互联网朋友们交流心得体会。</p>
-<hr>
-<h1 id="2019"><a href="#2019" class="headerlink" title="2019"></a>2019</h1><h2 id="上半年"><a href="#上半年" class="headerlink" title="上半年"></a>上半年</h2><p>经历一千多万人的高考上岸，有一部分原因是没发挥好，更多的原因是自己没努力吧，其实心中是很明白自己如果想过上更好的生活就要努力，但是往往做不到严于律己；要做的事情明日复明日，也就只剩下悲叹了。</p>
-<p>高中在学习上只学自己喜欢的科目，英语烂的一塌糊涂，现在真正需要用到英语，连上个GitHub都要用Google翻译，书到用时方恨少。提高英语能力已经迫在眉睫，不能再这样下去了。</p>
-<hr>
-<h2 id="下半年"><a href="#下半年" class="headerlink" title="下半年"></a>下半年</h2><p>我的大学跟好的学校比起来确实差的太多，半年下来，我也更明白一个人的能力并不与他上哪个学校直接相关，感觉像是在安慰自己，，，所以给自己制定目标，自学是一个大学生最基本的能力，以此来弥补学校的差距吧</p>
-<p>半学期下来，也没有什么记忆深刻的事情，就连这些也就是无病呻吟而已</p>
-<p><strong>学习上：</strong></p>
-<p>虽然学校不够好，硬件设施也比较老旧，但是上课的老师大多数是本部过来，算是个意外之喜吧。没有参加任何部门和社团，我不觉得这样没有意义，相反，我找不到参加的理由。</p>
-<p>课程还是比较轻松，期末考试比想象中简单，目前还没学习专业课程，虽然是大学，但是每天还是稀里糊涂的忙着，不知道干了什么一天就过去了。希望下学期不会有这样的感受了，加油吧</p>
-<p><strong>生活上：</strong></p>
-<ul>
-<li><strong><em>健身停止</em></strong></li>
-</ul>
-<p>高中健身接近两年，上了大学没有好像没有动力了，腹肌没有了胸肌还在，以前崇拜肌肉巨兽，现在手机里都看不到他们的照片了，心里没有健身的想法了，或许是大学生活把自己腐朽了吧。</p>
-<ul>
-<li><strong><em>学会滑板</em></strong></li>
-</ul>
-<p>因为滑板，认识了很多朋友，不论是校友还是校外的都能因为滑板聚在一起滑板，当做出一个新动作的时候换来的开心是其它事情无法代替的，有时候为了一个动作死磕几天或者一个月都会坚持下去……总之滑板带给我的是无拘无束的快乐还有不放弃的滑板精神！<br><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.5/Images/posts/2019%E6%80%BB%E7%BB%93/2.jpg" alt> </p>
-<p>想起《我的少女时代》里的一句话，送给因为滑板遇见的一切：</p>
-<blockquote>
-<p>每人都有一颗林真心，遇见是最美好的小幸运，谢谢你出现在我的青春里。</p>
-</blockquote>
-<hr>
-<h1 id="2020目标和规划"><a href="#2020目标和规划" class="headerlink" title="2020目标和规划"></a>2020目标和规划</h1><h2 id="生活上："><a href="#生活上：" class="headerlink" title="生活上："></a><strong>生活上：</strong></h2><p>两个心愿：</p>
-<ul>
-<li>云南旅行</li>
-<li>明年暑假骑自行车回家<br><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.5/Images/posts/2019%E6%80%BB%E7%BB%93/3.jpg" alt></li>
-</ul>
-<hr>
-<h2 id="学习上："><a href="#学习上：" class="headerlink" title="学习上："></a><strong>学习上：</strong></h2><p>目前还没找到自己的方向，但我挺喜欢操作系统这块的，准备深入学习。另外，准备明年参加ACM，或许有点晚，先开始再说。</p>
-<p>阿城《棋王》里有这样一句话:</p>
-<blockquote>
-<p>天地广阔，有所作为</p>
-</blockquote>
-<p>1024+996=2020，2020注定是不平凡的一年，定下目标，努力实现。</p>
-<h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a><strong><em>目标</em></strong></h2><ul>
-<li><p>寒假学完c++</p>
-</li>
-<li><p>寒假出一篇博客搭建教程</p>
-</li>
-<li><p>提高英语水平</p>
-</li>
-<li><p>坚持写博客<br><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.5/Images/posts/2019%E6%80%BB%E7%BB%93/4.jpg" alt></p>
-</li>
-</ul>
-<h2 id="计划要看的专业书籍"><a href="#计划要看的专业书籍" class="headerlink" title="计划要看的专业书籍"></a><strong><em>计划要看的专业书籍</em></strong></h2><ul>
-<li><p>《数据结构与算法》</p>
-</li>
-<li><p>《操作系统真象还原》</p>
-</li>
-<li><p>《从实模式到保护模式》</p>
-</li>
-<li><p>《现代操作系统》</p>
-</li>
-<li><p>《汇编语言》</p>
-</li>
-<li><p>《linux内核完全剖析》</p>
-</li>
-<li><p>《c++ primer plus》</p>
-</li>
-</ul>
-<p>最后:</p>
-<blockquote>
-<p>业精于勤，荒于嬉；行成于思，毁于随。</p>
-</blockquote>
-<p>自勉。</p>
-
+                <h2 id="—"><a href="#—" class="headerlink" title="—"></a>—</h2><p>很早之前就想自己实现一个操作系统，现在才正式开始，我也不知道什么时候能啃下这个庞然大物；这篇博客将尽可能详细，记录学习过程，有感兴趣的小伙伴也可以加入我<del>不论什么时候</del></p>
+<h2 id="什么是操作系统？"><a href="#什么是操作系统？" class="headerlink" title="什么是操作系统？"></a>什么是操作系统？</h2>
             </div>
             <hr />
 
@@ -1030,9 +953,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《2019总结及2020规划》
+                    《操作系统实现第一篇》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019-zong-jie-ji-2020-gui-hua.html" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/cao-zuo-xi-tong-shi-xian-di-yi-pian.html" property="cc:attributionName"
                rel="cc:attributionURL">
                 Tyzhao
             </a> 采用
@@ -1073,7 +996,7 @@
         repo: 'MUYIio.github.io',
         owner: 'MUYIio',
         admin: "MUYIio",
-        id: '2019-zong-jie-ji-2020-gui-hua.html',
+        id: 'cao-zuo-xi-tong-shi-xian-di-yi-pian.html',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1356,92 +1279,37 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/1.html">
+                <a href="/cao-zuo-xi-tong-shi-xian-di-yi-pian.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/36.jpg" class="responsive-img" alt="Github + Hexo 搭建个人博客超详细教程">
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/24.jpg" class="responsive-img" alt="操作系统实现第一篇">
                         
-                        <span class="card-title">Github + Hexo 搭建个人博客超详细教程</span>
+                        <span class="card-title">操作系统实现第一篇</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            搭建博客的初衷是希望用博客记录下自己的学习过程，帮助自己复习。
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-18
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Blog/" class="post-category" target="_blank">
-                                    Blog
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Github/" target="_blank">
-                        <span class="chip bg-color">Github</span>
-                    </a>
-                    
-                    <a href="/tags/Hexo/" target="_blank">
-                        <span class="chip bg-color">Hexo</span>
-                    </a>
-                    
-                    <a href="/tags/博客搭建/" target="_blank">
-                        <span class="chip bg-color">博客搭建</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
-            </div>
-            <div class="card">
-                <a href="/2019-zong-jie-ji-2020-gui-hua.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/10.jpg" class="responsive-img" alt="2019总结及2020规划">
-                        
-                        <span class="card-title">2019总结及2020规划</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            首先，感谢屏幕前的你来到我的博客，第一篇博客记录一下今年的规划。
+                            —很早之前就想自己实现一个操作系统，现在才正式开始，我也不知道什么时候能啃下这个庞然大物；这篇博客将尽可能详细，记录学习过程，有感兴趣的小伙伴也可以加入我不论什么时候
+什么是操作系统？
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-17
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2022-03-20
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/随笔/" class="post-category" target="_blank">
-                                    随笔
+                            <a href="/categories/操作系统/" class="post-category" target="_blank">
+                                    操作系统
                                 </a>
                             
                             
@@ -1452,8 +1320,61 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/随笔/" target="_blank">
-                        <span class="chip bg-color">随笔</span>
+                    <a href="/tags/学习笔记/" target="_blank">
+                        <span class="chip bg-color">学习笔记</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/shi-da-jing-dian-pai-xu-suan-fa-fu-dong-hua-ji-dai-ma.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.2/Images/featureimages/24.jpg" class="responsive-img" alt="十大经典排序算法(附动画及代码)">
+                        
+                        <span class="card-title">十大经典排序算法(附动画及代码)</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            关于各种排序算法的笔记总结，含代码展示和动画演示！
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-12-14
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/算法/" class="post-category" target="_blank">
+                                    算法
+                                </a>
+                            
+                            <a href="/categories/算法/C/" class="post-category" target="_blank">
+                                    C++
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/排序/" target="_blank">
+                        <span class="chip bg-color">排序</span>
                     </a>
                     
                 </div>
@@ -1599,6 +1520,25 @@
     
 
 </main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+<!-- 代码语言 -->
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+<!-- 代码块复制 -->
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="/libs/codeBlock/clipboard.min.js"></script>
+<!-- 代码块收缩 -->
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script> 
+<!-- 代码块折行 -->
+<style type="text/css">code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }</style>
 
 
     <footer class="page-footer bg-color">
