@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>看板娘登陆平台</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
 <script src="../live2d.min.js"></script>
 <style>
 html, body {
@@ -56,9 +56,11 @@ body {
 	margin-bottom: 20px;
 	border-radius: 20px;
 }
-#stage button {
+#stage a {
 	position: absolute;
-	padding: 0;
+	width: 2em;
+	height: 2em;
+	border-radius: 50%;
 }
 #inner {
 	position: relative;
@@ -263,22 +265,20 @@ body {
 			</div>
 			<canvas class="mb-4" id="live2d" width="800" height="800"></canvas>
 		</div>
-		<button class="btn btn-link" id="info"><i class="fa fa-lg fa-info"></i></button>
-		<button class="btn btn-link" id="refresh"><i class="fa fa-lg fa-sync-alt"></i></button>
+		<a id="info" href="javascript:info()"><i class="fa fa-lg fa-info"></i></a>
+		<a id="refresh" href="javascript:refresh()"><i class="fa fa-lg fa-refresh"></i></a>
 	</div>
-	<h1 class="h3 mb-3 fw-normal">看板娘登陆平台</h1>
+	<h1 class="h3 mb-3 font-weight-normal">看板娘登陆平台</h1>
 	<label for="room" class="sr-only">用户名</label>
 	<input type="text" name="room" class="form-control" placeholder="用户名" required autofocus>
 	<label for="pass" class="sr-only">密码</label>
 	<input type="password" name="pass" class="form-control" placeholder="密码" required>
-	<div class="checkbox mb-4">
+	<div class="checkbox mb-3">
 		<label>
 			<input type="checkbox" value="remember-me"> 记住我
 		</label>
 	</div>
-	<div class="d-grid">
-		<button class="btn btn-lg btn-primary" type="submit">登录</button>
-	</div>
+	<button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
 	<p class="mt-5 mb-3 text-muted">Copyleft &copy; Mimi 2019</p>
 </form>
 <script>
@@ -307,8 +307,7 @@ window.addEventListener("load", () => {
 		return;
 	}
 
-	const apiPath = "https://live2d.fghrsh.net/api";
-	let state = 0, loading = false,
+	let apiPath = "https://live2d.fghrsh.net/api", state = 0,
 		modelId = localStorage.getItem("modelId"),
 		modelTexturesId = localStorage.getItem("modelTexturesId");
 	if (modelId === null) {
@@ -339,7 +338,7 @@ window.addEventListener("load", () => {
 				setTimeout(() => {
 					state = 2;
 					coverPosition("80%");
-					loading = false;
+					document.getElementById("refresh").setAttribute("href", "javascript:refresh()");
 				}, 1000);
 			});
 	}
@@ -357,21 +356,20 @@ window.addEventListener("load", () => {
 		document.getElementById("cover").style.bottom = pos;
 	}
 
-	document.getElementById("info").addEventListener("click", () => {
+	window.info = function() {
 		fetch("https://v1.hitokoto.cn")
 			.then(response => response.json())
 			.then(result => {
 				alert("「" + result.hitokoto + "」——" + result.from);
 			});
-	});
+	};
 
-	document.getElementById("refresh").addEventListener("click", () => {
-		if (loading) return;
+	window.refresh = function() {
 		state = 0;
 		coverPosition("10%");
-		loading = true;
+		document.getElementById("refresh").setAttribute("href", "javascript:void(0)");
 		setTimeout(loadRandModel, 1000);
-	});
+	};
 
 	document.getElementById("handle").addEventListener("click", () => {
 		if (state === 1) {
