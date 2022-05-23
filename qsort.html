@@ -779,14 +779,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.5k
+                    4.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    9 分
+                    17 分
                 </div>
                 
                 
@@ -806,28 +806,28 @@
 <li><strong>稳定</strong>：如果a原本在b前面，且a=b，排序之后a仍然在b的前面。</li>
 <li><strong>不稳定</strong>：如果a原本在b的前面，且a=b，排序之后 a 可能会出现在 b 的后面。</li>
 </ul>
-<p><img src="qSort/14.png" alt></p>
+<p><img src="14.png" alt></p>
 <h2 id="一、冒泡排序（Bubble-Sort）"><a href="#一、冒泡排序（Bubble-Sort）" class="headerlink" title="一、冒泡排序（Bubble Sort）"></a>一、冒泡排序（Bubble Sort）</h2><h3 id="1、原理"><a href="#1、原理" class="headerlink" title="1、原理"></a>1、原理</h3><p>​    基本思想：通过无序区中相邻元素关键字间的比较和位置的交换，使关键字最小的元素像气泡一样浮到最顶部；接着对剩下的元素排序，使得第二小的元素到达顶部，同样的方法直到所有元素排序完成。</p>
 <h3 id="2、步骤"><a href="#2、步骤" class="headerlink" title="2、步骤"></a>2、步骤</h3><ul>
 <li><strong>①</strong> 比较相邻的元素。如果第一个比第二个大，就交换它们两个；</li>
 <li><strong>②</strong> 对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对，这样在最后的元素应该会是最大的数；</li>
 <li><strong>③</strong> 针对所有的元素重复步骤 <strong>①</strong> ~ <strong>②</strong>，除了最后一个元素，直到排序完成。</li>
 </ul>
-<h3 id="3、动画演示"><a href="#3、动画演示" class="headerlink" title="3、动画演示"></a>3、动画演示</h3><p><img src="qSort/1.gif" alt></p>
-<h3 id="4、代码实现"><a href="#4、代码实现" class="headerlink" title="4、代码实现"></a>4、代码实现</h3><pre class="line-numbers language-c++"><code class="language-c++">void bubble_sort()
-{
-    for (int i = n-1; i >= 1; i -- )
-    {
-        bool flag = true;
-        for (int j = 1; j <= i; j ++ )
-            if (a[j-1] > a[j])
-            {
-                swap(a[j-1], a[j]);
-                flag = false;
-            }
-        if (flag) return;
-    }
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="3、动画演示"><a href="#3、动画演示" class="headerlink" title="3、动画演示"></a>3、动画演示</h3><p><img src="1.gif" alt></p>
+<h3 id="4、代码实现"><a href="#4、代码实现" class="headerlink" title="4、代码实现"></a>4、代码实现</h3><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token function">bubble_sort</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> n<span class="token number">-1</span><span class="token punctuation">;</span> i <span class="token operator">>=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">--</span> <span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">bool</span> flag <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;=</span> i<span class="token punctuation">;</span> j <span class="token operator">++</span> <span class="token punctuation">)</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>a<span class="token punctuation">[</span>j<span class="token number">-1</span><span class="token punctuation">]</span> <span class="token operator">></span> a<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                <span class="token function">swap</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span>j<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> a<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                flag <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>flag<span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="二、选择排序（Selection-Sort）"><a href="#二、选择排序（Selection-Sort）" class="headerlink" title="二、选择排序（Selection Sort）"></a>二、选择排序（Selection Sort）</h2><h3 id="1、原理-1"><a href="#1、原理-1" class="headerlink" title="1、原理"></a>1、原理</h3><p>​    选择排序是一种简单直观的排序算法。它的工作原理：首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置，然后，再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。以此类推，直到所有元素均排序完毕。</p>
 <h3 id="2、步骤-1"><a href="#2、步骤-1" class="headerlink" title="2、步骤"></a>2、步骤</h3><p>n个记录的直接选择排序可经过n-1趟直接选择排序得到有序结果。具体算法描述如下：</p>
 <ul>
@@ -835,20 +835,20 @@
 <li>第i趟排序<code>(i=1,2,3…n-1)</code>开始时，当前有序区和无序区分别为<code>R[1..i-1]</code>和<code>R(i..n）</code>。该趟排序从当前无序区中-选出关键字最小的记录 <code>R[k]</code>，将它与无序区的第1个记录R交换，使<code>R[1..i]</code>和<code>R[i+1..n)</code>分别变为记录个数增加1个的新有序区和记录个数减少1个的新无序区；</li>
 <li><code>n-1</code>趟结束，数组有序化了。</li>
 </ul>
-<h3 id="3、动画演示-1"><a href="#3、动画演示-1" class="headerlink" title="3、动画演示"></a>3、动画演示</h3><p><img src="qSort/2.gif" alt></p>
-<h3 id="4、代码实现-1"><a href="#4、代码实现-1" class="headerlink" title="4、代码实现"></a>4、代码实现</h3><pre class="line-numbers language-c++"><code class="language-c++">void select_sort()
-{
-    for (int i = 0; i < n; i ++ )
-    {
-        int k = i;
-        for (int j = i+1; j < n; j ++ )
-        {
-            if (a[j] < a[k])
-                k = j;
-        }
-        swap(a[i], a[k]);
-    }
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="3、动画演示-1"><a href="#3、动画演示-1" class="headerlink" title="3、动画演示"></a>3、动画演示</h3><p><img src="2.gif" alt></p>
+<h3 id="4、代码实现-1"><a href="#4、代码实现-1" class="headerlink" title="4、代码实现"></a>4、代码实现</h3><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token function">select_sort</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i <span class="token operator">++</span> <span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> k <span class="token operator">=</span> i<span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> j <span class="token operator">++</span> <span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>a<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&lt;</span> a<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">)</span>
+                k <span class="token operator">=</span> j<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">swap</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> a<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="三、插入排序（Insertion-Sort）"><a href="#三、插入排序（Insertion-Sort）" class="headerlink" title="三、插入排序（Insertion Sort）"></a>三、插入排序（Insertion Sort）</h2><h3 id="1、原理-2"><a href="#1、原理-2" class="headerlink" title="1、原理"></a>1、原理</h3><p>  这里主要针对直接插入排序。将元素与已经排序的有序序列比较，找到对应的位置插入。</p>
 <h3 id="2、步骤-2"><a href="#2、步骤-2" class="headerlink" title="2、步骤"></a>2、步骤</h3><ul>
 <li>① 从第一个元素开始，该元素可以认为已经被排序；</li>
@@ -858,22 +858,22 @@
 <li>⑤ 将新元素插入到该位置后；</li>
 <li>⑥ 重复步骤2~5。</li>
 </ul>
-<h3 id="3、动画演示-2"><a href="#3、动画演示-2" class="headerlink" title="3、动画演示"></a>3、动画演示</h3><p><img src="qSort/3.gif" alt></p>
-<h3 id="4、代码实现-2"><a href="#4、代码实现-2" class="headerlink" title="4、代码实现"></a>4、代码实现</h3><pre class="line-numbers language-c++"><code class="language-c++">void insert_sort()
-{
-    for (int i = 1; i < n; i ++ )
-    {
-        int x = a[i];
-        int j = i-1;
+<h3 id="3、动画演示-2"><a href="#3、动画演示-2" class="headerlink" title="3、动画演示"></a>3、动画演示</h3><p><img src="3.gif" alt></p>
+<h3 id="4、代码实现-2"><a href="#4、代码实现-2" class="headerlink" title="4、代码实现"></a>4、代码实现</h3><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token function">insert_sort</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i <span class="token operator">++</span> <span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> x <span class="token operator">=</span> a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> j <span class="token operator">=</span> i<span class="token number">-1</span><span class="token punctuation">;</span>
 
-        while (j >= 0 && x < a[j])
-        {
-            a[j+1] = a[j];
-            j -- ;
-        }
-        a[j+1] = x;
-    }
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>j <span class="token operator">>=</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> x <span class="token operator">&lt;</span> a<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            a<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> a<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            j <span class="token operator">--</span> <span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        a<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> x<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="四、快速排序（Quick-Sort）"><a href="#四、快速排序（Quick-Sort）" class="headerlink" title="四、快速排序（Quick Sort）"></a>四、快速排序（Quick Sort）</h2><h3 id="1、原理-3"><a href="#1、原理-3" class="headerlink" title="1、原理"></a>1、原理</h3><p>​    一般选择将待排序序列分为两个序列，正中间的那个数作为关键字，然后两个指针一个从头到关键字遍历，遇到大于（小于）关键字的元素就停下来，另一个指针从尾到关键字遍历，遇到小于（大于）关键字的元素停下来，交换两个指针的元素完成排序；将序列递归分治按照前面的原理排序，直到序列有序。</p>
 <h3 id="2、步骤-3"><a href="#2、步骤-3" class="headerlink" title="2、步骤"></a>2、步骤</h3><p>快速排序使用分治法来把一个串（list）分为两个子串（sub-lists）。具体算法描述如下：</p>
 <ul>
@@ -882,20 +882,20 @@
 <li>递归求解小于pivot和大于pivot的部分</li>
 </ul>
 <p>基准元素可以选择第一个元素或者最后一个元素即 Lomuto Partition Scheme，但是这样划分成两部分的时候有一部分是空的，这样可能造成死循环；从中间划分可以保证两部分都不为空，即 Hoare Partition Scheme。</p>
-<h3 id="3、动画演示-3"><a href="#3、动画演示-3" class="headerlink" title="3、动画演示"></a>3、动画演示</h3><p><img src="qSort/4.gif" alt></p>
-<h3 id="4、代码实现-3"><a href="#4、代码实现-3" class="headerlink" title="4、代码实现"></a>4、代码实现</h3><pre class="line-numbers language-c++"><code class="language-c++">void quick_sort(int q[], int l, int r)
-{
-    if (l >= r) return;
+<h3 id="3、动画演示-3"><a href="#3、动画演示-3" class="headerlink" title="3、动画演示"></a>3、动画演示</h3><p><img src="4.gif" alt></p>
+<h3 id="4、代码实现-3"><a href="#4、代码实现-3" class="headerlink" title="4、代码实现"></a>4、代码实现</h3><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token function">quick_sort</span><span class="token punctuation">(</span><span class="token keyword">int</span> q<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">int</span> l<span class="token punctuation">,</span> <span class="token keyword">int</span> r<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>l <span class="token operator">>=</span> r<span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
 
-    int i = l - 1, j = r + 1, x = q[l + r >> 1];
-    while (i < j)
-    {
-        do i ++ ; while (q[i] < x);
-        do j -- ; while (q[j] > x);
-        if (i < j) swap(q[i], q[j]);
-    }
-    quick_sort(q, l, j), quick_sort(q, j + 1, r);
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token keyword">int</span> i <span class="token operator">=</span> l <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> j <span class="token operator">=</span> r <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> x <span class="token operator">=</span> q<span class="token punctuation">[</span>l <span class="token operator">+</span> r <span class="token operator">>></span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> j<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">do</span> i <span class="token operator">++</span> <span class="token punctuation">;</span> <span class="token keyword">while</span> <span class="token punctuation">(</span>q<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;</span> x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">do</span> j <span class="token operator">--</span> <span class="token punctuation">;</span> <span class="token keyword">while</span> <span class="token punctuation">(</span>q<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">></span> x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> j<span class="token punctuation">)</span> <span class="token function">swap</span><span class="token punctuation">(</span>q<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> q<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">quick_sort</span><span class="token punctuation">(</span>q<span class="token punctuation">,</span> l<span class="token punctuation">,</span> j<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">quick_sort</span><span class="token punctuation">(</span>q<span class="token punctuation">,</span> j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> r<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>快速排序的边界问题</strong></p>
 <p>快排属于分治算法，最怕的就是 <code>n</code>分成<code>0</code>和<code>n</code>，或 <code>n</code>分成<code>n</code>和<code>0</code>,导致死循环。</p>
 <ol>
@@ -948,21 +948,21 @@
 <li>2.当增量的大小减到1时，就相当于整个序列被分到一组，进行一次直接插入排序，排序完成。</li>
 </ul>
 <p>对于增量的选定无一定论，但最后一个增量必须等于1，也就是说，每趟后一个增量是前一个增量的1/2。</p>
-<h3 id="3、动画演示-4"><a href="#3、动画演示-4" class="headerlink" title="3、动画演示"></a>3、动画演示</h3><p><img src="qSort/5.gif" alt></p>
-<h3 id="4、代码实现-4"><a href="#4、代码实现-4" class="headerlink" title="4、代码实现"></a>4、代码实现</h3><pre class="line-numbers language-c++"><code class="language-c++">void shell_sort()
-{
-    for (int gap = n >> 1; gap; gap >>= 1)
-    {
-        for (int i = gap; i < n; i ++ )
-        {
-            int x = a[i];
-            int j;
-            for (j = i; j >= gap && a[j-gap] > x; j -= gap)
-                a[j] = a[j-gap];
-            a[j] = x;
-        }
-    }
-}
+<h3 id="3、动画演示-4"><a href="#3、动画演示-4" class="headerlink" title="3、动画演示"></a>3、动画演示</h3><p><img src="5.gif" alt></p>
+<h3 id="4、代码实现-4"><a href="#4、代码实现-4" class="headerlink" title="4、代码实现"></a>4、代码实现</h3><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token function">shell_sort</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> gap <span class="token operator">=</span> n <span class="token operator">>></span> <span class="token number">1</span><span class="token punctuation">;</span> gap<span class="token punctuation">;</span> gap <span class="token operator">>>=</span> <span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> gap<span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i <span class="token operator">++</span> <span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">int</span> x <span class="token operator">=</span> a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> j<span class="token punctuation">;</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span>j <span class="token operator">=</span> i<span class="token punctuation">;</span> j <span class="token operator">>=</span> gap <span class="token operator">&amp;&amp;</span> a<span class="token punctuation">[</span>j<span class="token operator">-</span>gap<span class="token punctuation">]</span> <span class="token operator">></span> x<span class="token punctuation">;</span> j <span class="token operator">-</span><span class="token operator">=</span> gap<span class="token punctuation">)</span>
+                a<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> a<span class="token punctuation">[</span>j<span class="token operator">-</span>gap<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            a<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> x<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="六、归并排序（Merge-Sort）"><a href="#六、归并排序（Merge-Sort）" class="headerlink" title="六、归并排序（Merge Sort）"></a>六、归并排序（Merge Sort）</h2><h3 id="1、原理-5"><a href="#1、原理-5" class="headerlink" title="1、原理"></a>1、原理</h3><p>   归并排序是建立在归并操作上的一种有效的排序算法。该算法是采用分治法（Divide and Conquer）的一个非常典型的应用。将已有序的子序列合并，得到完全有序的序列；即先使每个子序列有序，再使子序列段间有序。若将两个有序表合并成一个有序表，称为2-路归并。</p>
 <h3 id="2、步骤-5"><a href="#2、步骤-5" class="headerlink" title="2、步骤"></a>2、步骤</h3><ul>
@@ -970,28 +970,28 @@
 <li>对这两个子序列分别采用归并排序；</li>
 <li>将两个排序好的子序列合并成一个最终的排序序列</li>
 </ul>
-<h3 id="3、动画演示-5"><a href="#3、动画演示-5" class="headerlink" title="3、动画演示"></a>3、动画演示</h3><p><img src="qSort/6.gif" alt></p>
-<h3 id="4、代码实现-5"><a href="#4、代码实现-5" class="headerlink" title="4、代码实现"></a>4、代码实现</h3><pre class="line-numbers language-c++"><code class="language-c++">void merge_sort(int q[], int l, int r)
-{
-    //递归的终止情况
-    if(l >= r) return;
+<h3 id="3、动画演示-5"><a href="#3、动画演示-5" class="headerlink" title="3、动画演示"></a>3、动画演示</h3><p><img src="6.gif" alt></p>
+<h3 id="4、代码实现-5"><a href="#4、代码实现-5" class="headerlink" title="4、代码实现"></a>4、代码实现</h3><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token function">merge_sort</span><span class="token punctuation">(</span><span class="token keyword">int</span> q<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">int</span> l<span class="token punctuation">,</span> <span class="token keyword">int</span> r<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//递归的终止情况</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>l <span class="token operator">>=</span> r<span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
 
-    //第一步：分成子问题
-    int mid = l + r >> 1;
+    <span class="token comment" spellcheck="true">//第一步：分成子问题</span>
+    <span class="token keyword">int</span> mid <span class="token operator">=</span> l <span class="token operator">+</span> r <span class="token operator">>></span> <span class="token number">1</span><span class="token punctuation">;</span>
 
-    //第二步：递归处理子问题
-    merge_sort(q, l, mid ), merge_sort(q, mid + 1, r);
+    <span class="token comment" spellcheck="true">//第二步：递归处理子问题</span>
+    <span class="token function">merge_sort</span><span class="token punctuation">(</span>q<span class="token punctuation">,</span> l<span class="token punctuation">,</span> mid <span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">merge_sort</span><span class="token punctuation">(</span>q<span class="token punctuation">,</span> mid <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> r<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    //第三步：合并子问题
-    int k = 0, i = l, j = mid + 1, tmp[r - l + 1];
-    while(i <= mid && j <= r)
-        if(q[i] <= q[j]) tmp[k++] = q[i++];
-        else tmp[k++] = q[j++];
-    while(i <= mid) tmp[k++] = q[i++];
-    while(j <= r) tmp[k++] = q[j++];
+    <span class="token comment" spellcheck="true">//第三步：合并子问题</span>
+    <span class="token keyword">int</span> k <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> i <span class="token operator">=</span> l<span class="token punctuation">,</span> j <span class="token operator">=</span> mid <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> tmp<span class="token punctuation">[</span>r <span class="token operator">-</span> l <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>i <span class="token operator">&lt;=</span> mid <span class="token operator">&amp;&amp;</span> j <span class="token operator">&lt;=</span> r<span class="token punctuation">)</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>q<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> q<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span> tmp<span class="token punctuation">[</span>k<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> q<span class="token punctuation">[</span>i<span class="token operator">++</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">else</span> tmp<span class="token punctuation">[</span>k<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> q<span class="token punctuation">[</span>j<span class="token operator">++</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>i <span class="token operator">&lt;=</span> mid<span class="token punctuation">)</span> tmp<span class="token punctuation">[</span>k<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> q<span class="token punctuation">[</span>i<span class="token operator">++</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>j <span class="token operator">&lt;=</span> r<span class="token punctuation">)</span> tmp<span class="token punctuation">[</span>k<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> q<span class="token punctuation">[</span>j<span class="token operator">++</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 
-    for(k = 0, i = l; i <= r; k++, i++) q[i] = tmp[k];
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token keyword">for</span><span class="token punctuation">(</span>k <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> i <span class="token operator">=</span> l<span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> r<span class="token punctuation">;</span> k<span class="token operator">++</span><span class="token punctuation">,</span> i<span class="token operator">++</span><span class="token punctuation">)</span> q<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> tmp<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>tmp 保存的是 q[l..mid] , q[mid+1..r] 中从小到大排序的所有数</strong><br>    证明(第一个 <code>while</code> 循环)<br>    循环不变式: <code>tmp[0..k-1]</code> 保存上述俩数组中从小到大排序的最小 <code>k</code> 个数</p>
 <p><strong>1.初始</strong></p>
 <p>​    <code>k = 0, tmp[0..k-1]</code> 为空，显然成立</p>
@@ -1014,67 +1014,67 @@
 <li>对所有的计数累加（从C中的第一个元素开始，每一项和前一项相加）；</li>
 <li>反向填充目标数组：将每个元素i放在新数组的第C(i)项，每放一个元素就将C(i)减去1。</li>
 </ul>
-<h3 id="3、动画演示-6"><a href="#3、动画演示-6" class="headerlink" title="3、动画演示"></a>3、动画演示</h3><p><img src="qSort/7.gif" alt></p>
-<h3 id="4、代码实现-6"><a href="#4、代码实现-6" class="headerlink" title="4、代码实现"></a>4、代码实现</h3><pre class="line-numbers language-c++"><code class="language-c++">void counting_sort()
-{
-    int sorted[N];
-    int maxv = a[0];
-    for (int i = 1; i < n; i ++ )
-        if (maxv < a[i])
-            maxv = a[i];
-    int count[maxv+1];
-    for (int i = 0; i < n; i ++ ) count[a[i]] ++ ;
-    for (int i = 1; i <= maxv; i ++ ) count[i] += count[i-1];
-    for (int i = n-1; i >= 0; i -- )
-    {
-        sorted[count[a[i]]-1] = a[i];
-        count[a[i]] -- ;
-    }
-    for (int i = 0; i < n; i ++ ) a[i] = sorted[i];
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="3、动画演示-6"><a href="#3、动画演示-6" class="headerlink" title="3、动画演示"></a>3、动画演示</h3><p><img src="7.gif" alt></p>
+<h3 id="4、代码实现-6"><a href="#4、代码实现-6" class="headerlink" title="4、代码实现"></a>4、代码实现</h3><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token function">counting_sort</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> sorted<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> maxv <span class="token operator">=</span> a<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i <span class="token operator">++</span> <span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>maxv <span class="token operator">&lt;</span> a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+            maxv <span class="token operator">=</span> a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> count<span class="token punctuation">[</span>maxv<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i <span class="token operator">++</span> <span class="token punctuation">)</span> count<span class="token punctuation">[</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">++</span> <span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> maxv<span class="token punctuation">;</span> i <span class="token operator">++</span> <span class="token punctuation">)</span> count<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span><span class="token operator">=</span> count<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> n<span class="token number">-1</span><span class="token punctuation">;</span> i <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">--</span> <span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        sorted<span class="token punctuation">[</span>count<span class="token punctuation">[</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        count<span class="token punctuation">[</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">--</span> <span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i <span class="token operator">++</span> <span class="token punctuation">)</span> a<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> sorted<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="八、基数排序（Radix-Sort）"><a href="#八、基数排序（Radix-Sort）" class="headerlink" title="八、基数排序（Radix Sort）"></a>八、基数排序（Radix Sort）</h2><h3 id="1、原理-7"><a href="#1、原理-7" class="headerlink" title="1、原理"></a>1、原理</h3><p>基数排序是按照低位先排序，然后收集；再按照高位排序，然后再收集；依次类推，直到最高位。有时候有些属性是有优先级顺序的，先按低优先级排序，再按高优先级排序。最后的次序就是高优先级高的在前，高优先级相同的低优先级高的在前。</p>
 <h3 id="2、步骤-7"><a href="#2、步骤-7" class="headerlink" title="2、步骤"></a>2、步骤</h3><ul>
 <li>取得数组中的最大数，并取得位数；</li>
 <li>arr为原始数组，从最低位开始取每个位组成radix数组；</li>
 <li>对radix进行计数排序（利用计数排序适用于小范围数的特点)。</li>
 </ul>
-<h3 id="3、动画演示-7"><a href="#3、动画演示-7" class="headerlink" title="3、动画演示"></a>3、动画演示</h3><p><img src="qSort/8.gif" alt></p>
-<h3 id="4、代码实现-7"><a href="#4、代码实现-7" class="headerlink" title="4、代码实现"></a>4、代码实现</h3><pre class="line-numbers language-c++"><code class="language-c++">int maxbit()
-{
-    int maxv = a[0];
-    for (int i = 1; i < n; i ++ )
-        if (maxv < a[i])
-            maxv = a[i];
-    int cnt = 1;
-    while (maxv >= 10) maxv /= 10, cnt ++ ;
+<h3 id="3、动画演示-7"><a href="#3、动画演示-7" class="headerlink" title="3、动画演示"></a>3、动画演示</h3><p><img src="8.gif" alt></p>
+<h3 id="4、代码实现-7"><a href="#4、代码实现-7" class="headerlink" title="4、代码实现"></a>4、代码实现</h3><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">int</span> <span class="token function">maxbit</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> maxv <span class="token operator">=</span> a<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i <span class="token operator">++</span> <span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>maxv <span class="token operator">&lt;</span> a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+            maxv <span class="token operator">=</span> a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> cnt <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>maxv <span class="token operator">>=</span> <span class="token number">10</span><span class="token punctuation">)</span> maxv <span class="token operator">/</span><span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">,</span> cnt <span class="token operator">++</span> <span class="token punctuation">;</span>
 
-    return cnt;
-}
-void radixsort()
-{
-    int t = maxbit();
-    int radix = 1;
+    <span class="token keyword">return</span> cnt<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">void</span> <span class="token function">radixsort</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> t <span class="token operator">=</span> <span class="token function">maxbit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> radix <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
 
-    for (int i = 1; i <= t; i ++ )
-    {
-        for (int j = 0; j < 10; j ++ ) count[j] = 0;
-        for (int j = 0; j < n; j ++ )
-        {
-            int k = (a[j] / radix) % 10;
-            count[k] ++ ;
-        }
-        for (int j = 1; j < 10; j ++ ) count[j] += count[j-1];
-        for (int j = n-1; j >= 0; j -- )
-        {
-            int k = (a[j] / radix) % 10;
-            temp[count[k]-1] = a[j];
-            count[k] -- ;
-        }
-        for (int j = 0; j < n; j ++ ) a[j] = temp[j];
-        radix *= 10;
-    }
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> t<span class="token punctuation">;</span> i <span class="token operator">++</span> <span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> j <span class="token operator">++</span> <span class="token punctuation">)</span> count<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> j <span class="token operator">++</span> <span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">int</span> k <span class="token operator">=</span> <span class="token punctuation">(</span>a<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">/</span> radix<span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">10</span><span class="token punctuation">;</span>
+            count<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">++</span> <span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> j <span class="token operator">++</span> <span class="token punctuation">)</span> count<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">+</span><span class="token operator">=</span> count<span class="token punctuation">[</span>j<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> n<span class="token number">-1</span><span class="token punctuation">;</span> j <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">--</span> <span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">int</span> k <span class="token operator">=</span> <span class="token punctuation">(</span>a<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">/</span> radix<span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">10</span><span class="token punctuation">;</span>
+            temp<span class="token punctuation">[</span>count<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> a<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            count<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">--</span> <span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> j <span class="token operator">++</span> <span class="token punctuation">)</span> a<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> temp<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        radix <span class="token operator">*</span><span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-}
+<span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="九、桶排序（Bucket-Sort）"><a href="#九、桶排序（Bucket-Sort）" class="headerlink" title="九、桶排序（Bucket Sort）"></a>九、桶排序（Bucket Sort）</h2><h3 id="1、原理-8"><a href="#1、原理-8" class="headerlink" title="1、原理"></a>1、原理</h3><p> 遍历原始序列确定最大值 <code>maxval</code> 和最小值 <code>minval</code>，并确定桶的个数 <code>n</code>; 然后，将待排序集合中处于同一个值域的元素存入同一个桶中,在桶内使用各种现有的算法进行排序; 最后按照从小到大的顺序依次收集桶中的每一个元素, 即为最终结果。</p>
 <h3 id="2、步骤-8"><a href="#2、步骤-8" class="headerlink" title="2、步骤"></a>2、步骤</h3><ul>
@@ -1084,38 +1084,38 @@ void radixsort()
 <li>4.从不是空的桶里把排好序的数据拼接起来。 </li>
 </ul>
 <p>桶排序是一种用空间换取时间的排序。桶的个数和大小都是我们人为设置的，而每个桶又要避免空桶的情况，所以我们在使用桶排序的时候即需要对待排序数列要求偏均匀，又要要求桶的设计兼顾效率和空间；数要相对均匀分布，桶的个数也要合理设计。在设计桶排序时，需要知道输入数据的上界和下界。</p>
-<h3 id="3、动画演示-8"><a href="#3、动画演示-8" class="headerlink" title="3、动画演示"></a>3、动画演示</h3><p><img src="qSort/9.gif" alt></p>
+<h3 id="3、动画演示-8"><a href="#3、动画演示-8" class="headerlink" title="3、动画演示"></a>3、动画演示</h3><p><img src="9.gif" alt></p>
 <p><font color="red" size="4"><code>（动图来源于@五分钟学算法，侵删）</code></font></p>
-<h3 id="4、代码实现-8"><a href="#4、代码实现-8" class="headerlink" title="4、代码实现"></a>4、代码实现</h3><pre class="line-numbers language-c++"><code class="language-c++">//桶排序 
-void BucketSort(int a[], int n){
-    int minval = a[0], maxval = a[0];
-    for(int i = 0; i < n; i ++){//寻找原序列数组元素的最大值和最小值 
-        minval = min(minval, a[i]);
-        maxval = max(maxval, a[i]);
-    }
+<h3 id="4、代码实现-8"><a href="#4、代码实现-8" class="headerlink" title="4、代码实现"></a>4、代码实现</h3><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">//桶排序 </span>
+<span class="token keyword">void</span> <span class="token function">BucketSort</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">int</span> minval <span class="token operator">=</span> a<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> maxval <span class="token operator">=</span> a<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i <span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment" spellcheck="true">//寻找原序列数组元素的最大值和最小值 </span>
+        minval <span class="token operator">=</span> <span class="token function">min</span><span class="token punctuation">(</span>minval<span class="token punctuation">,</span> a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        maxval <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>maxval<span class="token punctuation">,</span> a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    int bnum = 10;//桶中元素个数 
-    int m = (maxval - minval) / bnum + 1;//桶的个数 
-    vector< vector<int> > bucket(m);
+    <span class="token keyword">int</span> bnum <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//桶中元素个数 </span>
+    <span class="token keyword">int</span> m <span class="token operator">=</span> <span class="token punctuation">(</span>maxval <span class="token operator">-</span> minval<span class="token punctuation">)</span> <span class="token operator">/</span> bnum <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//桶的个数 </span>
+    vector<span class="token operator">&lt;</span> vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token operator">></span> <span class="token function">bucket</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    //收集,将元素入相应的桶中. 减偏移量是为了将元素映射到更小的区间内,省内存 
-    for(int i = 0; i < n; i ++) bucket[(a[i] - minval) / bnum].push_back(a[i]);
+    <span class="token comment" spellcheck="true">//收集,将元素入相应的桶中. 减偏移量是为了将元素映射到更小的区间内,省内存 </span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i <span class="token operator">++</span><span class="token punctuation">)</span> bucket<span class="token punctuation">[</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> minval<span class="token punctuation">)</span> <span class="token operator">/</span> bnum<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    //将桶内元素排序 
-    for(int i = 0; i < m; i ++) sort(bucket.begin(), bucket.end());
+    <span class="token comment" spellcheck="true">//将桶内元素排序 </span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> m<span class="token punctuation">;</span> i <span class="token operator">++</span><span class="token punctuation">)</span> <span class="token function">sort</span><span class="token punctuation">(</span>bucket<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> bucket<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    //收集, 将各个桶中的元素收集到一起 
-    for(int i = 0, k = 0; i < m; i ++){
-        for(int j = 0; j < bucket[i].size(); j ++){
-            data[k ++] = bucket[i][j];
-        }
-    }
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token comment" spellcheck="true">//收集, 将各个桶中的元素收集到一起 </span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> k <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> m<span class="token punctuation">;</span> i <span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> bucket<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> j <span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            data<span class="token punctuation">[</span>k <span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> bucket<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="十、堆排序（Heap-Sort）"><a href="#十、堆排序（Heap-Sort）" class="headerlink" title="十、堆排序（Heap Sort）"></a>十、堆排序（Heap Sort）</h2><h3 id="1、原理-9"><a href="#1、原理-9" class="headerlink" title="1、原理"></a>1、原理</h3><p>先看看堆的特性：</p>
 <blockquote>
 <p>堆是一种特殊的树形数据结构，即完全二叉树。堆分为大根堆和小根堆，大根堆为根节点的值大于两个子节点的值；小根堆为根节点的值小于两个子节点的值，同时根节点的两个子树也分别是一个堆。</p>
 </blockquote>
-<p><img src="qSort/12.png" alt></p>
+<p><img src="12.png" alt></p>
 <p>堆排序是指利用堆这种数据结构所设计的一种排序算法。堆积是一个近似完全二叉树的结构，并同时满足堆积的性质：即子结点的键值或索引总是小于（或者大于）它的父节点。</p>
 <h3 id="2、步骤-9"><a href="#2、步骤-9" class="headerlink" title="2、步骤"></a>2、步骤</h3><ul>
 <li>1.构建堆：将待排序序列构建成一个堆 H[0……n-1]，从最后一个非叶子结点开始，从左至右，从下至上进行调整。根据升序或降序需求选择大顶堆或小顶堆；</li>
@@ -1125,32 +1125,32 @@ void BucketSort(int a[], int n){
 <li>5.重复以上步骤，直到堆变空。</li>
 </ul>
 <h3 id="3、动画演示-9"><a href="#3、动画演示-9" class="headerlink" title="3、动画演示"></a>3、动画演示</h3><p><img src="qSort/10.gif" alt></p>
-<h3 id="4、代码实现-9"><a href="#4、代码实现-9" class="headerlink" title="4、代码实现"></a>4、代码实现</h3><pre class="line-numbers language-c++"><code class="language-c++">void down(int u)
-{
-    int t = u;
-    if (u<<1 <= n && h[u<<1] < h[t]) t = u<<1;
-    if ((u<<1|1) <= n && h[u<<1|1] < h[t]) t = u<<1|1;
-    if (u != t)
-    {
-        swap(h[u], h[t]);
-        down(t);
-    }
-}
+<h3 id="4、代码实现-9"><a href="#4、代码实现-9" class="headerlink" title="4、代码实现"></a>4、代码实现</h3><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token function">down</span><span class="token punctuation">(</span><span class="token keyword">int</span> u<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> t <span class="token operator">=</span> u<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>u<span class="token operator">&lt;&lt;</span><span class="token number">1</span> <span class="token operator">&lt;=</span> n <span class="token operator">&amp;&amp;</span> h<span class="token punctuation">[</span>u<span class="token operator">&lt;&lt;</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">&lt;</span> h<span class="token punctuation">[</span>t<span class="token punctuation">]</span><span class="token punctuation">)</span> t <span class="token operator">=</span> u<span class="token operator">&lt;&lt;</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>u<span class="token operator">&lt;&lt;</span><span class="token number">1</span><span class="token operator">|</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">&lt;=</span> n <span class="token operator">&amp;&amp;</span> h<span class="token punctuation">[</span>u<span class="token operator">&lt;&lt;</span><span class="token number">1</span><span class="token operator">|</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">&lt;</span> h<span class="token punctuation">[</span>t<span class="token punctuation">]</span><span class="token punctuation">)</span> t <span class="token operator">=</span> u<span class="token operator">&lt;&lt;</span><span class="token number">1</span><span class="token operator">|</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>u <span class="token operator">!=</span> t<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">swap</span><span class="token punctuation">(</span>h<span class="token punctuation">[</span>u<span class="token punctuation">]</span><span class="token punctuation">,</span> h<span class="token punctuation">[</span>t<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">down</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-int main()
-{
-    for (int i = 1; i <= n; i ++ ) cin >> h[i];
-    for (int i = n/2; i; i -- ) down(i);
-    while (true)
-    {
-        if (!n) break;
-        cout << h[1] << ' ';
-        h[1] = h[n];
-        n -- ;
-        down(1);
-    }
-    return 0;
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i <span class="token operator">++</span> <span class="token punctuation">)</span> cin <span class="token operator">>></span> h<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> n<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span> i<span class="token punctuation">;</span> i <span class="token operator">--</span> <span class="token punctuation">)</span> <span class="token function">down</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>n<span class="token punctuation">)</span> <span class="token keyword">break</span><span class="token punctuation">;</span>
+        cout <span class="token operator">&lt;&lt;</span> h<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">&lt;&lt;</span> <span class="token string">' '</span><span class="token punctuation">;</span>
+        h<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> h<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        n <span class="token operator">--</span> <span class="token punctuation">;</span>
+        <span class="token function">down</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -1905,7 +1905,7 @@ KMP查找算法：思路：例题：给定一个模式串 SS，以及一个模�
            <!--<a href="/sitemap.xml" target="_blank">站点地图</a>丨-->
            
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">73k
+            <span class="white-color">75.1k
              丨            
             <a href="https://tongji.baidu.com/web/welcome/ico?s=df42dpc7224a5f6a8d435" target="_blank">百度统计</a>丨
            <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278720284'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1278720284%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
@@ -1996,7 +1996,7 @@ KMP查找算法：思路：例题：给定一个模式串 SS，以及一个模�
       <span class="badge-subject">Link</span><span class="badge-value bg-red">996.ICU</span></a>
     </div>
     <div class="github-badge">
-      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">73k</span>
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">75.1k</span>
     </div>
 </footer>
 
