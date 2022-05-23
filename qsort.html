@@ -620,7 +620,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/29.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/25.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -806,14 +806,14 @@
 <li><strong>稳定</strong>：如果a原本在b前面，且a=b，排序之后a仍然在b的前面。</li>
 <li><strong>不稳定</strong>：如果a原本在b的前面，且a=b，排序之后 a 可能会出现在 b 的后面。</li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@2.2/Images/posts/qSort/14.png" alt></p>
+<p><img src="qSort/14.png" alt></p>
 <h2 id="一、冒泡排序（Bubble-Sort）"><a href="#一、冒泡排序（Bubble-Sort）" class="headerlink" title="一、冒泡排序（Bubble Sort）"></a>一、冒泡排序（Bubble Sort）</h2><h3 id="1、原理"><a href="#1、原理" class="headerlink" title="1、原理"></a>1、原理</h3><p>​    基本思想：通过无序区中相邻元素关键字间的比较和位置的交换，使关键字最小的元素像气泡一样浮到最顶部；接着对剩下的元素排序，使得第二小的元素到达顶部，同样的方法直到所有元素排序完成。</p>
 <h3 id="2、步骤"><a href="#2、步骤" class="headerlink" title="2、步骤"></a>2、步骤</h3><ul>
 <li><strong>①</strong> 比较相邻的元素。如果第一个比第二个大，就交换它们两个；</li>
 <li><strong>②</strong> 对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对，这样在最后的元素应该会是最大的数；</li>
 <li><strong>③</strong> 针对所有的元素重复步骤 <strong>①</strong> ~ <strong>②</strong>，除了最后一个元素，直到排序完成。</li>
 </ul>
-<h3 id="3、动画演示"><a href="#3、动画演示" class="headerlink" title="3、动画演示"></a>3、动画演示</h3><p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@2.1/Images/posts/qSort/1.gif" alt></p>
+<h3 id="3、动画演示"><a href="#3、动画演示" class="headerlink" title="3、动画演示"></a>3、动画演示</h3><p><img src="qSort/1.gif" alt></p>
 <h3 id="4、代码实现"><a href="#4、代码实现" class="headerlink" title="4、代码实现"></a>4、代码实现</h3><pre class="line-numbers language-c++"><code class="language-c++">void bubble_sort()
 {
     for (int i = n-1; i >= 1; i -- )
@@ -835,7 +835,7 @@
 <li>第i趟排序<code>(i=1,2,3…n-1)</code>开始时，当前有序区和无序区分别为<code>R[1..i-1]</code>和<code>R(i..n）</code>。该趟排序从当前无序区中-选出关键字最小的记录 <code>R[k]</code>，将它与无序区的第1个记录R交换，使<code>R[1..i]</code>和<code>R[i+1..n)</code>分别变为记录个数增加1个的新有序区和记录个数减少1个的新无序区；</li>
 <li><code>n-1</code>趟结束，数组有序化了。</li>
 </ul>
-<h3 id="3、动画演示-1"><a href="#3、动画演示-1" class="headerlink" title="3、动画演示"></a>3、动画演示</h3><p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@2.1/Images/posts/qSort/2.gif" alt></p>
+<h3 id="3、动画演示-1"><a href="#3、动画演示-1" class="headerlink" title="3、动画演示"></a>3、动画演示</h3><p><img src="qSort/2.gif" alt></p>
 <h3 id="4、代码实现-1"><a href="#4、代码实现-1" class="headerlink" title="4、代码实现"></a>4、代码实现</h3><pre class="line-numbers language-c++"><code class="language-c++">void select_sort()
 {
     for (int i = 0; i < n; i ++ )
@@ -858,7 +858,7 @@
 <li>⑤ 将新元素插入到该位置后；</li>
 <li>⑥ 重复步骤2~5。</li>
 </ul>
-<h3 id="3、动画演示-2"><a href="#3、动画演示-2" class="headerlink" title="3、动画演示"></a>3、动画演示</h3><p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@2.1/Images/posts/qSort/3.gif" alt></p>
+<h3 id="3、动画演示-2"><a href="#3、动画演示-2" class="headerlink" title="3、动画演示"></a>3、动画演示</h3><p><img src="qSort/3.gif" alt></p>
 <h3 id="4、代码实现-2"><a href="#4、代码实现-2" class="headerlink" title="4、代码实现"></a>4、代码实现</h3><pre class="line-numbers language-c++"><code class="language-c++">void insert_sort()
 {
     for (int i = 1; i < n; i ++ )
@@ -882,7 +882,7 @@
 <li>递归求解小于pivot和大于pivot的部分</li>
 </ul>
 <p>基准元素可以选择第一个元素或者最后一个元素即 Lomuto Partition Scheme，但是这样划分成两部分的时候有一部分是空的，这样可能造成死循环；从中间划分可以保证两部分都不为空，即 Hoare Partition Scheme。</p>
-<h3 id="3、动画演示-3"><a href="#3、动画演示-3" class="headerlink" title="3、动画演示"></a>3、动画演示</h3><p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@2.1/Images/posts/qSort/4.gif" alt></p>
+<h3 id="3、动画演示-3"><a href="#3、动画演示-3" class="headerlink" title="3、动画演示"></a>3、动画演示</h3><p><img src="qSort/4.gif" alt></p>
 <h3 id="4、代码实现-3"><a href="#4、代码实现-3" class="headerlink" title="4、代码实现"></a>4、代码实现</h3><pre class="line-numbers language-c++"><code class="language-c++">void quick_sort(int q[], int l, int r)
 {
     if (l >= r) return;
@@ -948,7 +948,7 @@
 <li>2.当增量的大小减到1时，就相当于整个序列被分到一组，进行一次直接插入排序，排序完成。</li>
 </ul>
 <p>对于增量的选定无一定论，但最后一个增量必须等于1，也就是说，每趟后一个增量是前一个增量的1/2。</p>
-<h3 id="3、动画演示-4"><a href="#3、动画演示-4" class="headerlink" title="3、动画演示"></a>3、动画演示</h3><p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@2.1/Images/posts/qSort/5.gif" alt></p>
+<h3 id="3、动画演示-4"><a href="#3、动画演示-4" class="headerlink" title="3、动画演示"></a>3、动画演示</h3><p><img src="qSort/5.gif" alt></p>
 <h3 id="4、代码实现-4"><a href="#4、代码实现-4" class="headerlink" title="4、代码实现"></a>4、代码实现</h3><pre class="line-numbers language-c++"><code class="language-c++">void shell_sort()
 {
     for (int gap = n >> 1; gap; gap >>= 1)
@@ -970,7 +970,7 @@
 <li>对这两个子序列分别采用归并排序；</li>
 <li>将两个排序好的子序列合并成一个最终的排序序列</li>
 </ul>
-<h3 id="3、动画演示-5"><a href="#3、动画演示-5" class="headerlink" title="3、动画演示"></a>3、动画演示</h3><p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@2.1/Images/posts/qSort/6.gif" alt></p>
+<h3 id="3、动画演示-5"><a href="#3、动画演示-5" class="headerlink" title="3、动画演示"></a>3、动画演示</h3><p><img src="qSort/6.gif" alt></p>
 <h3 id="4、代码实现-5"><a href="#4、代码实现-5" class="headerlink" title="4、代码实现"></a>4、代码实现</h3><pre class="line-numbers language-c++"><code class="language-c++">void merge_sort(int q[], int l, int r)
 {
     //递归的终止情况
@@ -1014,7 +1014,7 @@
 <li>对所有的计数累加（从C中的第一个元素开始，每一项和前一项相加）；</li>
 <li>反向填充目标数组：将每个元素i放在新数组的第C(i)项，每放一个元素就将C(i)减去1。</li>
 </ul>
-<h3 id="3、动画演示-6"><a href="#3、动画演示-6" class="headerlink" title="3、动画演示"></a>3、动画演示</h3><p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@2.1/Images/posts/qSort/7.gif" alt></p>
+<h3 id="3、动画演示-6"><a href="#3、动画演示-6" class="headerlink" title="3、动画演示"></a>3、动画演示</h3><p><img src="qSort/7.gif" alt></p>
 <h3 id="4、代码实现-6"><a href="#4、代码实现-6" class="headerlink" title="4、代码实现"></a>4、代码实现</h3><pre class="line-numbers language-c++"><code class="language-c++">void counting_sort()
 {
     int sorted[N];
@@ -1038,7 +1038,7 @@
 <li>arr为原始数组，从最低位开始取每个位组成radix数组；</li>
 <li>对radix进行计数排序（利用计数排序适用于小范围数的特点)。</li>
 </ul>
-<h3 id="3、动画演示-7"><a href="#3、动画演示-7" class="headerlink" title="3、动画演示"></a>3、动画演示</h3><p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@2.1/Images/posts/qSort/8.gif" alt></p>
+<h3 id="3、动画演示-7"><a href="#3、动画演示-7" class="headerlink" title="3、动画演示"></a>3、动画演示</h3><p><img src="qSort/8.gif" alt></p>
 <h3 id="4、代码实现-7"><a href="#4、代码实现-7" class="headerlink" title="4、代码实现"></a>4、代码实现</h3><pre class="line-numbers language-c++"><code class="language-c++">int maxbit()
 {
     int maxv = a[0];
@@ -1084,7 +1084,7 @@ void radixsort()
 <li>4.从不是空的桶里把排好序的数据拼接起来。 </li>
 </ul>
 <p>桶排序是一种用空间换取时间的排序。桶的个数和大小都是我们人为设置的，而每个桶又要避免空桶的情况，所以我们在使用桶排序的时候即需要对待排序数列要求偏均匀，又要要求桶的设计兼顾效率和空间；数要相对均匀分布，桶的个数也要合理设计。在设计桶排序时，需要知道输入数据的上界和下界。</p>
-<h3 id="3、动画演示-8"><a href="#3、动画演示-8" class="headerlink" title="3、动画演示"></a>3、动画演示</h3><p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@2.1/Images/posts/qSort/9.gif" alt></p>
+<h3 id="3、动画演示-8"><a href="#3、动画演示-8" class="headerlink" title="3、动画演示"></a>3、动画演示</h3><p><img src="qSort/9.gif" alt></p>
 <p><font color="red" size="4"><code>（动图来源于@五分钟学算法，侵删）</code></font></p>
 <h3 id="4、代码实现-8"><a href="#4、代码实现-8" class="headerlink" title="4、代码实现"></a>4、代码实现</h3><pre class="line-numbers language-c++"><code class="language-c++">//桶排序 
 void BucketSort(int a[], int n){
@@ -1115,7 +1115,7 @@ void BucketSort(int a[], int n){
 <blockquote>
 <p>堆是一种特殊的树形数据结构，即完全二叉树。堆分为大根堆和小根堆，大根堆为根节点的值大于两个子节点的值；小根堆为根节点的值小于两个子节点的值，同时根节点的两个子树也分别是一个堆。</p>
 </blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@2.1/Images/posts/qSort/12.png" alt></p>
+<p><img src="qSort/12.png" alt></p>
 <p>堆排序是指利用堆这种数据结构所设计的一种排序算法。堆积是一个近似完全二叉树的结构，并同时满足堆积的性质：即子结点的键值或索引总是小于（或者大于）它的父节点。</p>
 <h3 id="2、步骤-9"><a href="#2、步骤-9" class="headerlink" title="2、步骤"></a>2、步骤</h3><ul>
 <li>1.构建堆：将待排序序列构建成一个堆 H[0……n-1]，从最后一个非叶子结点开始，从左至右，从下至上进行调整。根据升序或降序需求选择大顶堆或小顶堆；</li>
@@ -1124,7 +1124,7 @@ void BucketSort(int a[], int n){
 <li>4.此时堆顶元素为第二大元素；</li>
 <li>5.重复以上步骤，直到堆变空。</li>
 </ul>
-<h3 id="3、动画演示-9"><a href="#3、动画演示-9" class="headerlink" title="3、动画演示"></a>3、动画演示</h3><p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@2.1/Images/posts/qSort/10.gif" alt></p>
+<h3 id="3、动画演示-9"><a href="#3、动画演示-9" class="headerlink" title="3、动画演示"></a>3、动画演示</h3><p><img src="qSort/10.gif" alt></p>
 <h3 id="4、代码实现-9"><a href="#4、代码实现-9" class="headerlink" title="4、代码实现"></a>4、代码实现</h3><pre class="line-numbers language-c++"><code class="language-c++">void down(int u)
 {
     int t = u;
@@ -1311,7 +1311,7 @@ int main()
                   property="dct:title" rel="dct:type">
                     《十大经典排序算法(附动画及代码)》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/shi-da-jing-dian-pai-xu-suan-fa-fu-dong-hua-ji-dai-ma.html" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/qsort.html" property="cc:attributionName"
                rel="cc:attributionURL">
                 Tyzhao
             </a> 采用
@@ -1352,7 +1352,7 @@ int main()
         repo: 'MUYIio.github.io',
         owner: 'MUYIio',
         admin: "MUYIio",
-        id: 'shi-da-jing-dian-pai-xu-suan-fa-fu-dong-hua-ji-dai-ma.html',
+        id: 'qsort.html',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1644,7 +1644,7 @@ int main()
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="高级数据结构-AC自动机总结">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="高级数据结构-AC自动机总结">
                         
                         <span class="card-title">高级数据结构-AC自动机总结</span>
                     </div>
@@ -1695,7 +1695,7 @@ KMP查找算法：思路：例题：给定一个模式串 SS，以及一个模�
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="使用Java Arrays类进行排序">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="使用Java Arrays类进行排序">
                         
                         <span class="card-title">使用Java Arrays类进行排序</span>
                     </div>
