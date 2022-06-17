@@ -33,8 +33,8 @@ if (screen.width >= 768) {
 	]).then(() => {
 		initWidget({
 			waifuPath: live2d_path + "waifu-tips.json",
-			//apiPath: "https://www.yshawlon.cn/live2dapi/",
-			cdnPath: "https://www.yshawlon.cn/live2dapi/"
+			apiPath: "https://www.yshawlon.cn/live2dapi/",
+			//cdnPath: "https://www.yshawlon.cn/live2dapi/"
 		});
 	});
 }
