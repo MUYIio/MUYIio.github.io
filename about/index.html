@@ -826,7 +826,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
         },
         xAxis: {
             type: 'category',
-            data: ["2022-01","2022-02","2022-03","2022-04","2022-05","2022-06","2022-07","2022-08","2022-09","2022-10","2022-11","2022-12","2023-01"]
+            data: ["2022-02","2022-03","2022-04","2022-05","2022-06","2022-07","2022-08","2022-09","2022-10","2022-11","2022-12","2023-01","2023-02"]
         },
         yAxis: {
             type: 'value',
@@ -836,7 +836,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 name: '文章篇数',
                 type: 'line',
                 color: ['#6772e5'],
-                data: [0,1,1,0,0,0,0,0,0,0,0,0,0],
+                data: [1,1,0,0,0,0,0,0,0,0,0,0,0],
                 markPoint: {
                     symbolSize: 45,
                     color: ['#fa755a','#3ecf8e','#82d3f4'],
@@ -878,7 +878,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"随笔","value":2},{"name":"C++","value":5},{"name":"C语言","value":1},{"name":"算法","value":5},{"name":"Blog","value":12},{"name":"Linux","value":3},{"name":"服务器","value":2},{"name":"C++","value":1},{"name":"操作系统","value":2},{"name":"汇编","value":3},{"name":"DDOS","value":1},{"name":"图床","value":1},{"name":"Java","value":2},{"name":"双系统","value":1},{"name":"汇编","value":1},{"name":"数据结构","value":1},{"name":"每日一题","value":2}],
+                data: [{"name":"Blog","value":12},{"name":"随笔","value":2},{"name":"C++","value":5},{"name":"C语言","value":1},{"name":"算法","value":5},{"name":"服务器","value":2},{"name":"Linux","value":3},{"name":"双系统","value":1},{"name":"操作系统","value":2},{"name":"C++","value":1},{"name":"汇编","value":3},{"name":"DDOS","value":1},{"name":"图床","value":1},{"name":"Java","value":2},{"name":"汇编","value":1},{"name":"每日一题","value":2},{"name":"数据结构","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -902,7 +902,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
         xAxis: [
             {
                 type: 'category',
-                data: ["Hexo","学习笔记","Github","随笔","CentOS","排序","LeetCode","Lambda","代码整合","Hash"]
+                data: ["Hexo","学习笔记","Github","随笔","CentOS","排序","LeetCode","博客搭建","Lambda","代码整合"]
             }
         ],
         yAxis: [
@@ -1057,6 +1057,24 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
         <div class="tag-chips center-align">
             
             
+            <a href="/tags/Github/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">Github</span>
+            </a>
+            
+            
+            
+            <a href="/tags/Hexo/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">Hexo</span>
+            </a>
+            
+            
+            
+            <a href="/tags/博客搭建/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">博客搭建</span>
+            </a>
+            
+            
+            
             <a href="/tags/随笔/" target="_blank">
                 <span class="chip center-align waves-effect waves-light chip-default">随笔</span>
             </a>
@@ -1087,12 +1105,6 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             
             
             
-            <a href="/tags/Hexo/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">Hexo</span>
-            </a>
-            
-            
-            
             <a href="/tags/GitHub/" target="_blank">
                 <span class="chip center-align waves-effect waves-light chip-default">GitHub</span>
             </a>
@@ -1101,6 +1113,12 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             
             <a href="/tags/博客优化/" target="_blank">
                 <span class="chip center-align waves-effect waves-light chip-default">博客优化</span>
+            </a>
+            
+            
+            
+            <a href="/tags/Code/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">Code</span>
             </a>
             
             
@@ -1117,20 +1135,26 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             
             
             
-            <a href="/tags/Github/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">Github</span>
+            <a href="/tags/SEO/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">SEO</span>
             </a>
             
             
             
-            <a href="/tags/博客搭建/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">博客搭建</span>
+            <a href="/tags/DaoVoice/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">DaoVoice</span>
             </a>
             
             
             
-            <a href="/tags/Code/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">Code</span>
+            <a href="/tags/CentOS-8-1/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">CentOS 8.1</span>
+            </a>
+            
+            
+            
+            <a href="/tags/Vim/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">Vim</span>
             </a>
             
             
@@ -1153,32 +1177,26 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             
             
             
-            <a href="/tags/DaoVoice/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">DaoVoice</span>
+            <a href="/tags/VMware/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">VMware</span>
             </a>
             
             
             
-            <a href="/tags/SEO/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">SEO</span>
+            <a href="/tags/Ubuntu20-04/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">Ubuntu20.04</span>
+            </a>
+            
+            
+            
+            <a href="/tags/Windows/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">Windows</span>
             </a>
             
             
             
             <a href="/tags/排序/" target="_blank">
                 <span class="chip center-align waves-effect waves-light chip-default">排序</span>
-            </a>
-            
-            
-            
-            <a href="/tags/CentOS-8-1/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">CentOS 8.1</span>
-            </a>
-            
-            
-            
-            <a href="/tags/Vim/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">Vim</span>
             </a>
             
             
@@ -1213,14 +1231,8 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             
             
             
-            <a href="/tags/Ubuntu20-04/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">Ubuntu20.04</span>
-            </a>
-            
-            
-            
-            <a href="/tags/Windows/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">Windows</span>
+            <a href="/tags/Https/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">Https</span>
             </a>
             
             
@@ -1237,12 +1249,6 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             
             
             
-            <a href="/tags/Https/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">Https</span>
-            </a>
-            
-            
-            
             <a href="/tags/主元素/" target="_blank">
                 <span class="chip center-align waves-effect waves-light chip-default">主元素</span>
             </a>
@@ -1255,8 +1261,8 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             
             
             
-            <a href="/tags/VMware/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">VMware</span>
+            <a href="/tags/LeetCode/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">LeetCode</span>
             </a>
             
             
@@ -1281,12 +1287,6 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             
             <a href="/tags/AC自动机/" target="_blank">
                 <span class="chip center-align waves-effect waves-light chip-default">AC自动机</span>
-            </a>
-            
-            
-            
-            <a href="/tags/LeetCode/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">LeetCode</span>
             </a>
             
             
