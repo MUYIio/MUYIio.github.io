@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.yshawlon.cn/"/>
-  <updated>2023-04-07T09:33:39.399Z</updated>
+  <updated>2023-04-07T09:41:43.492Z</updated>
   <id>https://www.yshawlon.cn/</id>
   
   <author>
@@ -17,25 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>VUE-若依框架学习笔记</title>
-    <link href="https://www.yshawlon.cn/vue-ruo-yi-kuang-jia-xue-xi-bi-ji.html"/>
-    <id>https://www.yshawlon.cn/vue-ruo-yi-kuang-jia-xue-xi-bi-ji.html</id>
-    <published>2023-04-07T09:33:39.000Z</published>
-    <updated>2023-04-07T09:33:39.399Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>操作系统实现第一篇</title>
     <link href="https://www.yshawlon.cn/cao-zuo-xi-tong-shi-xian-di-yi-pian.html"/>
     <id>https://www.yshawlon.cn/cao-zuo-xi-tong-shi-xian-di-yi-pian.html</id>
     <published>2022-03-20T10:58:07.000Z</published>
-    <updated>2022-03-20T11:03:11.703Z</updated>
+    <updated>2023-04-07T09:41:43.492Z</updated>
     
     <summary type="html">
     
@@ -543,6 +529,32 @@
     
     
       <category term="Hash" scheme="https://www.yshawlon.cn/tags/Hash/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo博客添加在线留言DaoVoice实时联系</title>
+    <link href="https://www.yshawlon.cn/hexo-bo-ke-tian-jia-zai-xian-liu-yan-daovoice-shi-shi-lian-xi.html"/>
+    <id>https://www.yshawlon.cn/hexo-bo-ke-tian-jia-zai-xian-liu-yan-daovoice-shi-shi-lian-xi.html</id>
+    <published>2020-12-16T03:05:03.000Z</published>
+    <updated>2021-02-19T15:37:46.603Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;strong&gt;DaoVoice简介：&lt;/strong&gt;DaoVoice 是一款革命性的应用运营平台，致力于帮助企业实现以用户为中心的「精益运营」体系。融合「在线聊天」、「客服支持」、「用户画像」、「消息推送」、「行为引导」等功能为一体，
+        
+      
+    
+    </summary>
+    
+      <category term="Blog" scheme="https://www.yshawlon.cn/categories/Blog/"/>
+    
+    
+      <category term="DaoVoice" scheme="https://www.yshawlon.cn/tags/DaoVoice/"/>
     
   </entry>
   
