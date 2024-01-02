@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.yshawlon.cn/"/>
-  <updated>2023-04-07T09:41:43.492Z</updated>
+  <updated>2024-01-02T17:18:59.729Z</updated>
   <id>https://www.yshawlon.cn/</id>
   
   <author>
@@ -15,6 +15,371 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux网络设置-CentOS由NAT模式改为桥接模式</title>
+    <link href="https://www.yshawlon.cn/linux-wang-luo-she-zhi-centos-you-nat-mo-shi-gai-wei-qiao-jie-mo-shi.html"/>
+    <id>https://www.yshawlon.cn/linux-wang-luo-she-zhi-centos-you-nat-mo-shi-gai-wei-qiao-jie-mo-shi.html</id>
+    <published>2023-11-02T11:09:28.000Z</published>
+    <updated>2024-01-02T17:18:59.729Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Linux版本：&lt;code&gt;CentOS&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;CentOS发行版本：&lt;code&gt;CentOS 8.1&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;虚拟机：&lt;code&gt;VMware&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;在前面CentOS
+        
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://www.yshawlon.cn/categories/Linux/"/>
+    
+    
+      <category term="CentOS" scheme="https://www.yshawlon.cn/tags/CentOS/"/>
+    
+      <category term="NAT" scheme="https://www.yshawlon.cn/tags/NAT/"/>
+    
+      <category term="Bridged" scheme="https://www.yshawlon.cn/tags/Bridged/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用Java Arrays类进行排序</title>
+    <link href="https://www.yshawlon.cn/shi-yong-java-arrays-lei-jin-xing-pai-xu.html"/>
+    <id>https://www.yshawlon.cn/shi-yong-java-arrays-lei-jin-xing-pai-xu.html</id>
+    <published>2023-10-21T06:02:24.000Z</published>
+    <updated>2024-01-02T17:17:24.435Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;使用Java-Arrays类进行排序&quot;&gt;&lt;a href=&quot;#使用Java-Arrays类进行排序&quot; class=&quot;headerlink&quot; title=&quot;使用Java Arrays类进行排序&quot;&gt;&lt;/a&gt;使用Java
+        
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="https://www.yshawlon.cn/categories/Java/"/>
+    
+    
+      <category term="排序" scheme="https://www.yshawlon.cn/tags/%E6%8E%92%E5%BA%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C++ 中关于Lambda 表达式的总结</title>
+    <link href="https://www.yshawlon.cn/c-zhong-guan-yu-lambda-biao-da-shi-de-zong-jie.html"/>
+    <id>https://www.yshawlon.cn/c-zhong-guan-yu-lambda-biao-da-shi-de-zong-jie.html</id>
+    <published>2023-10-18T08:57:56.000Z</published>
+    <updated>2024-01-02T17:16:43.959Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Lambda表达式是C++ 11新特性之一，总的来说就是一个函数，第一眼看到这个函数也是一脸懵逼，怎么没有见到过这个写法？于是查找了一些资料，按照我的理解记录一下&lt;/p&gt;
+&lt;h2 id=&quot;Lambda基本语法&quot;&gt;&lt;a href=&quot;#Lambda基本语法&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="C++" scheme="https://www.yshawlon.cn/categories/C/"/>
+    
+    
+      <category term="Lambda" scheme="https://www.yshawlon.cn/tags/Lambda/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>暑假LeetCode刷题集合（下）</title>
+    <link href="https://www.yshawlon.cn/shu-jia-leetcode-shua-ti-ji-he-xia.html"/>
+    <id>https://www.yshawlon.cn/shu-jia-leetcode-shua-ti-ji-he-xia.html</id>
+    <published>2023-07-27T08:48:27.000Z</published>
+    <updated>2024-01-02T17:19:55.711Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;【Day31】461-汉明距离&quot;&gt;&lt;a href=&quot;#【Day31】461-汉明距离&quot; class=&quot;headerlink&quot; title=&quot;【Day31】461. 汉明距离&quot;&gt;&lt;/a&gt;【Day31】461. 汉明距离&lt;/h2&gt;&lt;h4
+        
+      
+    
+    </summary>
+    
+      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    
+      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>暑假LeetCode刷题集合（上）</title>
+    <link href="https://www.yshawlon.cn/shu-jia-leetcode-shua-ti-ji-he-shang.html"/>
+    <id>https://www.yshawlon.cn/shu-jia-leetcode-shua-ti-ji-he-shang.html</id>
+    <published>2023-06-27T13:12:16.000Z</published>
+    <updated>2024-01-02T17:19:49.221Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;strong&gt;最近决定巩固一下算法，开始刷leetcode每日一题，具体刷多久还不知道，刚开始是有点吃力，慢慢来。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;【Day01】938-二叉搜索树的范围和&quot;&gt;&lt;a href=&quot;#【Day01】938-二叉搜索树的范围和&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    
+      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>汇编语言学习 DOSBox+MASM 安装及使用教程</title>
+    <link href="https://www.yshawlon.cn/hui-bian-yu-yan-xue-xi-dosbox-masm-an-zhuang-ji-shi-yong-jiao-cheng.html"/>
+    <id>https://www.yshawlon.cn/hui-bian-yu-yan-xue-xi-dosbox-masm-an-zhuang-ji-shi-yong-jiao-cheng.html</id>
+    <published>2023-05-08T06:19:14.000Z</published>
+    <updated>2024-01-02T17:17:15.839Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;学校没有开设《汇编语言》这门课，但我觉得学习汇编挺重要的，对学习计组以及理解计算机原理很有帮助！&lt;/p&gt;
+&lt;h2 id=&quot;1】安装DOSBox和MASM&quot;&gt;&lt;a href=&quot;#1】安装DOSBox和MASM&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="汇编" scheme="https://www.yshawlon.cn/categories/%E6%B1%87%E7%BC%96/"/>
+    
+    
+      <category term="DOSBox" scheme="https://www.yshawlon.cn/tags/DOSBox/"/>
+    
+      <category term="MASM" scheme="https://www.yshawlon.cn/tags/MASM/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Windows+Ubuntu20.04双系统安装教程</title>
+    <link href="https://www.yshawlon.cn/windows-ubuntu20-04-shuang-xi-tong-an-zhuang-jiao-cheng.html"/>
+    <id>https://www.yshawlon.cn/windows-ubuntu20-04-shuang-xi-tong-an-zhuang-jiao-cheng.html</id>
+    <published>2023-05-08T06:07:52.000Z</published>
+    <updated>2024-01-02T17:19:31.704Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;由于需要在Linux下写代码，之前虚拟机安装过centos，但运行速度不理想，使用颇为受限，故安装双系统，这篇教程没有繁琐赘述，重要之处以及我所遇到的一些BUG都会详细说明。&lt;/p&gt;
+&lt;h2 id=&quot;1-为什么选择Ubuntu20-04&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="双系统" scheme="https://www.yshawlon.cn/categories/%E5%8F%8C%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+      <category term="Ubuntu20.04" scheme="https://www.yshawlon.cn/tags/Ubuntu20-04/"/>
+    
+      <category term="Windows" scheme="https://www.yshawlon.cn/tags/Windows/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C++编程题目整合</title>
+    <link href="https://www.yshawlon.cn/c-bian-cheng-ti-mu-zheng-he.html"/>
+    <id>https://www.yshawlon.cn/c-bian-cheng-ti-mu-zheng-he.html</id>
+    <published>2023-04-26T10:51:17.000Z</published>
+    <updated>2024-01-02T17:18:11.973Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;strong&gt;就从第四章类与对象开始吧，前面的章节和c差不多。&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&quot;1-点类定义和使用&quot;&gt;&lt;a href=&quot;#1-点类定义和使用&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="C++" scheme="https://www.yshawlon.cn/categories/C/"/>
+    
+    
+      <category term="学习笔记" scheme="https://www.yshawlon.cn/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo博客部署到腾讯云服务器(使用宝塔面板)</title>
+    <link href="https://www.yshawlon.cn/shi-yong-bao-ta-mian-ban-yi-jian-bu-shu-hexo-bo-ke.html"/>
+    <id>https://www.yshawlon.cn/shi-yong-bao-ta-mian-ban-yi-jian-bu-shu-hexo-bo-ke.html</id>
+    <published>2023-04-10T09:13:54.000Z</published>
+    <updated>2024-01-02T17:17:34.499Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;前两天突然发现网站挂了，因为Coding和GitHub同时故障。于是我的博客也进不去！虽然博客也部署在服务器，但是没有开启HTTPS,也没有部署证书。所以就想用宝塔面板来部署博客。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;使用宝塔面板的好处：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;l
+        
+      
+    
+    </summary>
+    
+      <category term="服务器" scheme="https://www.yshawlon.cn/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    
+      <category term="Hexo" scheme="https://www.yshawlon.cn/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux学习笔记-Vim编辑器</title>
+    <link href="https://www.yshawlon.cn/linux-xue-xi-bi-ji-vim-bian-ji-qi.html"/>
+    <id>https://www.yshawlon.cn/linux-xue-xi-bi-ji-vim-bian-ji-qi.html</id>
+    <published>2023-03-31T10:41:54.000Z</published>
+    <updated>2024-01-02T17:19:09.047Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;我的Linux版本：&lt;code&gt;CentOS&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;发行版本：&lt;code&gt;CentOS
+        
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://www.yshawlon.cn/categories/Linux/"/>
+    
+    
+      <category term="CentOS 8.1" scheme="https://www.yshawlon.cn/tags/CentOS-8-1/"/>
+    
+      <category term="Vim" scheme="https://www.yshawlon.cn/tags/Vim/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo 博客部署到腾讯云服务器</title>
+    <link href="https://www.yshawlon.cn/hexo-bo-ke-bu-shu-dao-teng-xun-yun-fu-wu-qi.html"/>
+    <id>https://www.yshawlon.cn/hexo-bo-ke-bu-shu-dao-teng-xun-yun-fu-wu-qi.html</id>
+    <published>2023-03-28T12:47:51.000Z</published>
+    <updated>2024-01-02T17:18:29.080Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;
+        
+      
+    
+    </summary>
+    
+      <category term="服务器" scheme="https://www.yshawlon.cn/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    
+      <category term="Hexo" scheme="https://www.yshawlon.cn/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>VMware 安装 CentOS 8.1 完整教程 </title>
+    <link href="https://www.yshawlon.cn/vmware-an-zhuang-centos-8-1-wan-zheng-jiao-cheng.html"/>
+    <id>https://www.yshawlon.cn/vmware-an-zhuang-centos-8-1-wan-zheng-jiao-cheng.html</id>
+    <published>2023-03-05T10:29:16.000Z</published>
+    <updated>2024-01-02T17:19:22.533Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;我使用的&lt;font color=&quot;red&quot; size=&quot;3&quot;&gt;VMware&lt;/font&gt;版本：&lt;font color=&quot;red&quot; size=&quot;3&quot;&gt;VMware 15 Pro&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;镜像：&lt;font color=&quot;red&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://www.yshawlon.cn/categories/Linux/"/>
+    
+    
+      <category term="CentOS" scheme="https://www.yshawlon.cn/tags/CentOS/"/>
+    
+      <category term="VMware" scheme="https://www.yshawlon.cn/tags/VMware/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>高级数据结构-AC自动机总结</title>
+    <link href="https://www.yshawlon.cn/gao-ji-shu-ju-jie-gou-ac-zi-dong-ji-zong-jie.html"/>
+    <id>https://www.yshawlon.cn/gao-ji-shu-ju-jie-gou-ac-zi-dong-ji-zong-jie.html</id>
+    <published>2023-02-01T14:23:13.000Z</published>
+    <updated>2024-01-02T17:17:04.852Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;strong&gt;&lt;em&gt;例题来自于&lt;a href=&quot;https://www.acwing.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ACWing&lt;/a&gt;网站&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&quot;一、关于AC自动机&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="数据结构" scheme="https://www.yshawlon.cn/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="AC自动机" scheme="https://www.yshawlon.cn/tags/AC%E8%87%AA%E5%8A%A8%E6%9C%BA/"/>
+    
+  </entry>
   
   <entry>
     <title>操作系统实现第一篇</title>
@@ -39,33 +404,6 @@
     
     
       <category term="学习笔记" scheme="https://www.yshawlon.cn/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>高级数据结构-AC自动机总结</title>
-    <link href="https://www.yshawlon.cn/gao-ji-shu-ju-jie-gou-ac-zi-dong-ji-zong-jie.html"/>
-    <id>https://www.yshawlon.cn/gao-ji-shu-ju-jie-gou-ac-zi-dong-ji-zong-jie.html</id>
-    <published>2022-02-01T14:23:13.000Z</published>
-    <updated>2022-04-01T14:59:48.398Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;strong&gt;&lt;em&gt;例题来自于&lt;a href=&quot;https://www.acwing.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ACWing&lt;/a&gt;网站&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;h1 id=&quot;一、关于AC自动机&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="数据结构" scheme="https://www.yshawlon.cn/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-    
-      <category term="AC自动机" scheme="https://www.yshawlon.cn/tags/AC%E8%87%AA%E5%8A%A8%E6%9C%BA/"/>
     
   </entry>
   
@@ -98,85 +436,6 @@
   </entry>
   
   <entry>
-    <title>使用Java Arrays类进行排序</title>
-    <link href="https://www.yshawlon.cn/shi-yong-java-arrays-lei-jin-xing-pai-xu.html"/>
-    <id>https://www.yshawlon.cn/shi-yong-java-arrays-lei-jin-xing-pai-xu.html</id>
-    <published>2021-10-21T06:02:24.000Z</published>
-    <updated>2021-10-21T06:58:21.958Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;使用Java-Arrays类进行排序&quot;&gt;&lt;a href=&quot;#使用Java-Arrays类进行排序&quot; class=&quot;headerlink&quot; title=&quot;使用Java Arrays类进行排序&quot;&gt;&lt;/a&gt;使用Java
-        
-      
-    
-    </summary>
-    
-      <category term="Java" scheme="https://www.yshawlon.cn/categories/Java/"/>
-    
-    
-      <category term="排序" scheme="https://www.yshawlon.cn/tags/%E6%8E%92%E5%BA%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C++ 中关于Lambda 表达式的总结</title>
-    <link href="https://www.yshawlon.cn/c-zhong-guan-yu-lambda-biao-da-shi-de-zong-jie.html"/>
-    <id>https://www.yshawlon.cn/c-zhong-guan-yu-lambda-biao-da-shi-de-zong-jie.html</id>
-    <published>2021-10-18T08:57:56.000Z</published>
-    <updated>2022-05-23T15:03:31.054Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Lambda表达式是C++ 11新特性之一，总的来说就是一个函数，第一眼看到这个函数也是一脸懵逼，怎么没有见到过这个写法？于是查找了一些资料，按照我的理解记录一下&lt;/p&gt;
-&lt;h2 id=&quot;Lambda基本语法&quot;&gt;&lt;a href=&quot;#Lambda基本语法&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="C++" scheme="https://www.yshawlon.cn/categories/C/"/>
-    
-    
-      <category term="Lambda" scheme="https://www.yshawlon.cn/tags/Lambda/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>暑假LeetCode刷题集合（下）</title>
-    <link href="https://www.yshawlon.cn/shu-jia-leetcode-shua-ti-ji-he-xia.html"/>
-    <id>https://www.yshawlon.cn/shu-jia-leetcode-shua-ti-ji-he-xia.html</id>
-    <published>2021-07-27T08:48:27.000Z</published>
-    <updated>2022-05-23T15:24:45.762Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;【Day31】461-汉明距离&quot;&gt;&lt;a href=&quot;#【Day31】461-汉明距离&quot; class=&quot;headerlink&quot; title=&quot;【Day31】461. 汉明距离&quot;&gt;&lt;/a&gt;【Day31】461. 汉明距离&lt;/h2&gt;&lt;h4
-        
-      
-    
-    </summary>
-    
-      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
-    
-    
-      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
     <title>使用Java开发一个记事本</title>
     <link href="https://www.yshawlon.cn/shi-yong-java-kai-fa-yi-ge-ji-shi-ben.html"/>
     <id>https://www.yshawlon.cn/shi-yong-java-kai-fa-yi-ge-ji-shi-ben.html</id>
@@ -201,33 +460,6 @@
       <category term="Demo" scheme="https://www.yshawlon.cn/tags/Demo/"/>
     
       <category term="Notepad" scheme="https://www.yshawlon.cn/tags/Notepad/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>暑假LeetCode刷题集合（上）</title>
-    <link href="https://www.yshawlon.cn/shu-jia-leetcode-shua-ti-ji-he-shang.html"/>
-    <id>https://www.yshawlon.cn/shu-jia-leetcode-shua-ti-ji-he-shang.html</id>
-    <published>2021-06-27T13:12:16.000Z</published>
-    <updated>2021-10-20T13:18:37.250Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;strong&gt;最近决定巩固一下算法，开始刷leetcode每日一题，具体刷多久还不知道，刚开始是有点吃力，慢慢来。&lt;/strong&gt;&lt;/p&gt;
-&lt;h2 id=&quot;【Day01】938-二叉搜索树的范围和&quot;&gt;&lt;a href=&quot;#【Day01】938-二叉搜索树的范围和&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="每日一题" scheme="https://www.yshawlon.cn/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
-    
-    
-      <category term="LeetCode" scheme="https://www.yshawlon.cn/tags/LeetCode/"/>
     
   </entry>
   
@@ -286,35 +518,6 @@
   </entry>
   
   <entry>
-    <title>汇编语言学习 DOSBox+MASM 安装及使用教程</title>
-    <link href="https://www.yshawlon.cn/hui-bian-yu-yan-xue-xi-dosbox-masm-an-zhuang-ji-shi-yong-jiao-cheng.html"/>
-    <id>https://www.yshawlon.cn/hui-bian-yu-yan-xue-xi-dosbox-masm-an-zhuang-ji-shi-yong-jiao-cheng.html</id>
-    <published>2021-05-08T06:19:14.000Z</published>
-    <updated>2021-12-14T04:46:20.344Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;学校没有开设《汇编语言》这门课，但我觉得学习汇编挺重要的，对学习计组以及理解计算机原理很有帮助！&lt;/p&gt;
-&lt;h2 id=&quot;1】安装DOSBox和MASM&quot;&gt;&lt;a href=&quot;#1】安装DOSBox和MASM&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="汇编" scheme="https://www.yshawlon.cn/categories/%E6%B1%87%E7%BC%96/"/>
-    
-    
-      <category term="DOSBox" scheme="https://www.yshawlon.cn/tags/DOSBox/"/>
-    
-      <category term="MASM" scheme="https://www.yshawlon.cn/tags/MASM/"/>
-    
-  </entry>
-  
-  <entry>
     <title>《汇编语言》王爽著学习笔记记录(前半部分)</title>
     <link href="https://www.yshawlon.cn/hui-bian-yu-yan-wang-shuang-zhu-xue-xi-bi-ji-ji-lu.html"/>
     <id>https://www.yshawlon.cn/hui-bian-yu-yan-wang-shuang-zhu-xue-xi-bi-ji-ji-lu.html</id>
@@ -342,35 +545,6 @@
   </entry>
   
   <entry>
-    <title>Windows+Ubuntu20.04双系统安装教程</title>
-    <link href="https://www.yshawlon.cn/windows-ubuntu20-04-shuang-xi-tong-an-zhuang-jiao-cheng.html"/>
-    <id>https://www.yshawlon.cn/windows-ubuntu20-04-shuang-xi-tong-an-zhuang-jiao-cheng.html</id>
-    <published>2021-05-08T06:07:52.000Z</published>
-    <updated>2021-05-08T06:09:11.064Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;由于需要在Linux下写代码，之前虚拟机安装过centos，但运行速度不理想，使用颇为受限，故安装双系统，这篇教程没有繁琐赘述，重要之处以及我所遇到的一些BUG都会详细说明。&lt;/p&gt;
-&lt;h2 id=&quot;1-为什么选择Ubuntu20-04&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="双系统" scheme="https://www.yshawlon.cn/categories/%E5%8F%8C%E7%B3%BB%E7%BB%9F/"/>
-    
-    
-      <category term="Ubuntu20.04" scheme="https://www.yshawlon.cn/tags/Ubuntu20-04/"/>
-    
-      <category term="Windows" scheme="https://www.yshawlon.cn/tags/Windows/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Hexo网站部署node版本过高配置问题</title>
     <link href="https://www.yshawlon.cn/hexo-wang-zhan-bu-shu-node-ban-ben-guo-gao-pei-zhi-wen-ti.html"/>
     <id>https://www.yshawlon.cn/hexo-wang-zhan-bu-shu-node-ban-ben-guo-gao-pei-zhi-wen-ti.html</id>
@@ -394,167 +568,6 @@
     
     
       <category term="Hexo" scheme="https://www.yshawlon.cn/tags/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>用具体数学解决约瑟夫环问题</title>
-    <link href="https://www.yshawlon.cn/yong-ju-ti-shu-xue-jie-jue-yue-se-fu-huan-wen-ti.html"/>
-    <id>https://www.yshawlon.cn/yong-ju-ti-shu-xue-jie-jue-yue-se-fu-huan-wen-ti.html</id>
-    <published>2021-01-10T05:03:34.000Z</published>
-    <updated>2021-01-13T08:18:22.955Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;问题描述：&quot;&gt;&lt;a href=&quot;#问题描述：&quot; class=&quot;headerlink&quot; title=&quot;问题描述：&quot;&gt;&lt;/a&gt;问题描述：&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;有 n 个人围成一个圈，每 q
-        
-      
-    
-    </summary>
-    
-      <category term="算法" scheme="https://www.yshawlon.cn/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="约瑟夫环" scheme="https://www.yshawlon.cn/tags/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何实现一个公平的洗牌算法</title>
-    <link href="https://www.yshawlon.cn/ru-he-shi-xian-yi-ge-gong-ping-de-xi-pai-suan-fa.html"/>
-    <id>https://www.yshawlon.cn/ru-he-shi-xian-yi-ge-gong-ping-de-xi-pai-suan-fa.html</id>
-    <published>2021-01-10T05:02:38.000Z</published>
-    <updated>2021-02-19T15:33:42.494Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;问题描述：&quot;&gt;&lt;a href=&quot;#问题描述：&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="算法" scheme="https://www.yshawlon.cn/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="洗牌" scheme="https://www.yshawlon.cn/tags/%E6%B4%97%E7%89%8C/"/>
-    
-      <category term="随机" scheme="https://www.yshawlon.cn/tags/%E9%9A%8F%E6%9C%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>寻找多数元素（主元素）问题</title>
-    <link href="https://www.yshawlon.cn/xun-zhao-duo-shu-yuan-su-zhu-yuan-su-wen-ti.html"/>
-    <id>https://www.yshawlon.cn/xun-zhao-duo-shu-yuan-su-zhu-yuan-su-wen-ti.html</id>
-    <published>2021-01-06T16:31:05.000Z</published>
-    <updated>2021-03-25T06:51:37.432Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;问题描述：&quot;&gt;&lt;a href=&quot;#问题描述：&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="算法" scheme="https://www.yshawlon.cn/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="主元素" scheme="https://www.yshawlon.cn/tags/%E4%B8%BB%E5%85%83%E7%B4%A0/"/>
-    
-      <category term="多数元素" scheme="https://www.yshawlon.cn/tags/%E5%A4%9A%E6%95%B0%E5%85%83%E7%B4%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>怎样告别我的2020呢？</title>
-    <link href="https://www.yshawlon.cn/zen-yang-gao-bie-wo-de-2020-ni.html"/>
-    <id>https://www.yshawlon.cn/zen-yang-gao-bie-wo-de-2020-ni.html</id>
-    <published>2020-12-31T15:33:07.000Z</published>
-    <updated>2021-01-16T06:13:41.332Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;赶在2021前写下这篇文章，想要总结一下2020，实在没什么好总结的，就是一团糟。&lt;/p&gt;
-&lt;h2 id=&quot;一】&quot;&gt;&lt;a href=&quot;#一】&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="随笔" scheme="https://www.yshawlon.cn/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-      <category term="随笔" scheme="https://www.yshawlon.cn/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hash算法</title>
-    <link href="https://www.yshawlon.cn/hash-suan-fa.html"/>
-    <id>https://www.yshawlon.cn/hash-suan-fa.html</id>
-    <published>2020-12-29T14:37:41.000Z</published>
-    <updated>2021-01-02T13:40:07.850Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;哈希算法-Hash-Function&quot;&gt;&lt;a href=&quot;#哈希算法-Hash-Function&quot; class=&quot;headerlink&quot; title=&quot;哈希算法(Hash Function)&quot;&gt;&lt;/a&gt;哈希算法(Hash
-        
-      
-    
-    </summary>
-    
-      <category term="算法" scheme="https://www.yshawlon.cn/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="Hash" scheme="https://www.yshawlon.cn/tags/Hash/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo博客添加在线留言DaoVoice实时联系</title>
-    <link href="https://www.yshawlon.cn/hexo-bo-ke-tian-jia-zai-xian-liu-yan-daovoice-shi-shi-lian-xi.html"/>
-    <id>https://www.yshawlon.cn/hexo-bo-ke-tian-jia-zai-xian-liu-yan-daovoice-shi-shi-lian-xi.html</id>
-    <published>2020-12-16T03:05:03.000Z</published>
-    <updated>2021-02-19T15:37:46.603Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;strong&gt;DaoVoice简介：&lt;/strong&gt;DaoVoice 是一款革命性的应用运营平台，致力于帮助企业实现以用户为中心的「精益运营」体系。融合「在线聊天」、「客服支持」、「用户画像」、「消息推送」、「行为引导」等功能为一体，
-        
-      
-    
-    </summary>
-    
-      <category term="Blog" scheme="https://www.yshawlon.cn/categories/Blog/"/>
-    
-    
-      <category term="DaoVoice" scheme="https://www.yshawlon.cn/tags/DaoVoice/"/>
     
   </entry>
   
