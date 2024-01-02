@@ -1,16 +1,101 @@
-<!DOCTYPE html>
-<html lang="zh-cmn-Hans">
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
 <head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Shawlon`s Blog</title>
+    <meta charset="utf-8">
+    <meta name="keywords" content="分类: C++, 被动学习">
+    <meta name="baidu-site-verification" content="fmlEuI34ir">
+    <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
+    <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
+    <meta name="description" content="分类: C++ | Shawlon`s Blog">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>分类: C++ | Shawlon`s Blog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?4d1d73af45a62734730491a6b6c41da4";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+    })();
+   </script>
+
+
+    <script>(function (i, s, o, g, r, a, m) {
+        i['DaoVoiceObject'] = r;
+        i[r] = i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          };
+        i[r].l = 1 * new Date();
+        a = s.createElement(o);
+        m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        a.charset = 'utf-8';
+        m.parentNode.insertBefore(a, m);
+      })(window, document, 'script', ('https:' === document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0fcc9bf7.js", 'daovoice');
+      daovoice('init', {
+        app_id: "0fcc9bf7",
+      });
+      daovoice('update');
+    </script>
   
   
-  
-  <!--link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/9.10.0/styles/github-gist.min.css"-->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/9.10.0/styles/github-gist.min.css">
-  <link rel="stylesheet" href="/css/style.css">
+
+
+    
+        <script>
+            (function(){
+                var bp = document.createElement('script');
+                var curProtocol = window.location.protocol.split(':')[0];
+                if (curProtocol === 'https') {
+                    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+                }
+                else {
+                    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                }
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(bp, s);
+            })();
+        </script>
+    
+
+    <script>
+        (function(){
+        var src = "https://jspassport.ssl.qhimg.com/11.0.1.js?d182b3f28525f2db83acfaaf6e696dba";
+        document.write('<script src="' + src + '" id="sozz"><\/script>');
+        })();
+    </script>
+
+    <meta name="baidu-site-verification" content="code-FwB5xSTmVO">
+
+
+
+
 <style type="text/css" lang="css">
     #loading-container{
         position: fixed;
@@ -285,2439 +370,934 @@
          <div></div>
      </div>
  </div><body>
-<div class="Shell">
-    <aside class='SideBar'>
-    <section class='avatar' style="background-image: url()">
-        <div class='av-pic' style="background-image: url()">
+
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Shawlon`s Blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/contact" class="waves-effect waves-light">
+            
+            <span>留言板</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Shawlon`s Blog</div>
+        <div class="logo-desc">
+            
+            C++ | LeetCode | Algorithm
+            
         </div>
-    </section>
-    <section class='menu'>
-        <div>Shawlon`s Blog</div>
-        
-            <div>Yshawlon</div>
-        
-        <ul>
-          
-            <a href="/" class="Btn">
-              <li>Home</li>
-            </a>  
-          
-            <a href="/archives/" class="Btn">
-              <li>Archive</li>
-            </a>  
-          
-        </ul>
-    </section>
-    <section class="media">
-        
-    </section>
-</aside>
+    </div>
 
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        <li>
+            <a href="/contact" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                留言板
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/muyiio" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/muyiio" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    <div class="bg-cover pd-header about-cover">
     <div class="container">
-        <div data-pager-shell>
-            <ul class="Index">
-  
-    <header class='PageTitle'>
-        <h1>{ C++ }</h1>
-    </header>
-  
-  
-    <li>
-      <article class='ListView'>
-    <header class="title">
-      
-        <h1>
-          <a href="/c-zhong-guan-yu-lambda-biao-da-shi-de-zong-jie.html">C++ 中关于Lambda 表达式的总结</a>
-        </h1>
-      
-      <div class='ListMeta'>
-  <time datetime="2021-10-18T08:57:56.000Z" itemprop="datePublished">
-    2021-10-18
-  </time>
-  
-  | 
-  <ul>
-    
-  <li class="meta-text">
-  { <a href="/tags/Lambda/">Lambda</a> }
-  </li>
+    <div class="row">
+    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
+        <div class="brand">
+            <div class="title center-align">
+                <!-- 
+                    Yshawlon
+                 -->
+                
+                    分类
+                
+            </div>
 
-
-  </ul>
-  
-  
-  / 
-  <ul>
-    
-  <li class="meta-text">
-  { <a href="/categories/C/">C++</a> }
-  </li>
-
-
-  </ul>
-  
+             <div class="description center-align">
+                
+                    <!-- C++ | LeetCode | Algorithm -->
+                    <span id="jinrishici-sentence">正在加载今日诗词...</span>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+// 每天切换 banner 图.  Switch banner image every day.
+$('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
+</script>
+    </div>
 </div>
 
-    </header>
-    <div>
-      
-        <p>Lambda表达式是C++ 11新特性之一，总的来说就是一个函数，第一眼看到这个函数也是一脸懵逼，怎么没有见到过这个写法？于是查找了一些资料，按照我的理解记录一下</p>
-<h2 id="Lambda基本语法"><a href="#Lambda基本语法" class="headerlink" title="Lambda基本语法"></a>Lambda基本语法</h2><p>Lambda标准语法定义：</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token punctuation">[</span>capture<span class="token punctuation">]</span> <span class="token punctuation">(</span>parameters<span class="token punctuation">)</span> <span class="token keyword">mutable</span> <span class="token operator">-</span><span class="token operator">></span>ret<span class="token operator">-</span>type<span class="token punctuation">{</span>body<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><strong>说明：</strong></p>
-<ul>
-<li><p>1.[capture]：捕捉列表。捕捉列表总是出现在Lambda函数的开始处。实际上，[]是Lambda引出符。编译器根据该引出符判断接下来的代码是否是Lambda函数。捕捉列表能够捕捉上下文中的变量以供Lambda函数使用，捕获列表可以是下面的类型：</p>
-<blockquote>
-<ul>
-<li><p>1.[var]表示值传递方式捕捉变量var；</p>
-</li>
-<li><p>2.[=]表示值传递方式捕捉所有父作用域的变量（包括this）；</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">auto</span> f1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">=</span><span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token keyword">return</span> a <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//按值捕获a</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-</li>
-<li><p>3.[&amp;var]表示引用传递捕捉变量var；</p>
-</li>
-<li><p>4.[&amp;]表示引用传递方式捕捉所有父作用域的变量（包括this）；</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">auto</span> f2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">&amp;</span><span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token keyword">return</span> a <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//按引用捕获a</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-</li>
-<li><p>5.[this]表示值传递方式捕捉当前的this指针。</p>
-</li>
-<li><p>6.[ ]表示不捕获任何变量。</p>
-</li>
-</ul>
-<p><strong>捕获列表也可以组合：</strong></p>
-<ul>
-<li>1.[=,&amp;a,&amp;b]表示以引用传递的方式捕捉变量a和b，以值传递方式捕捉其它所有变量;</li>
-<li>2.[&amp;,a,this]表示以值传递的方式捕捉变量a和this，引用传递方式捕捉其它所有变量。</li>
-</ul>
-<p><strong>如果重复是不允许的：</strong></p>
-<ul>
-<li><p>1.[=,x]这里已经以值传递方式捕捉了所有变量，但重复捕捉x;</p>
-</li>
-<li><p>2.[&amp;,&amp;this]&amp;已经相当于以引用传递方式捕捉了所有变量，再捕捉this则会重复。</p>
-</li>
-</ul>
-</blockquote>
-</li>
-<li><p>2.(parameters)：参数列表。与普通函数的参数列表一致。如果不需要参数传递，则可以连同括号“()”一起省略;</p>
-</li>
-<li><p>3.mutable：mutable修饰符。默认情况下，Lambda函数总是一个const函数，mutable可以取消其常量性。在使用该修饰符时，参数列表不可省略（即使参数为空）;</p>
-</li>
-<li><p>4.-&gt;ret-type：返回类型。可以指定，也可以不指定，不指定编译器则会自动推导返回类型，例如：</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token keyword">double</span> x <span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token keyword">int</span> y <span class="token operator">=</span> x <span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>如果函数有多个返回值，编译器不能推导，需要自行添加，例如：</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token keyword">double</span> x <span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span><span class="token keyword">double</span><span class="token punctuation">{</span><span class="token keyword">int</span> y <span class="token operator">=</span> x <span class="token punctuation">;</span><span class="token keyword">return</span> x <span class="token operator">-</span> y<span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-</li>
-<li><p>5.{body}：函数体。内容与普通函数一样，不过除了可以使用参数之外，还可以使用所有捕获的变量。</p>
-</li>
-</ul>
-<h2 id="Lambda函数具体使用"><a href="#Lambda函数具体使用" class="headerlink" title="Lambda函数具体使用"></a>Lambda函数具体使用</h2><p>1.其中上面讲到了<strong>父作用域</strong>，简单来说就是包含Lambda函数的<code>{ }</code>代码段。</p>
-<p><strong>2. 另外，Lambda是匿名函数，但通常会给它取名，例如：</strong></p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">auto</span> f <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token keyword">int</span> x <span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token keyword">return</span> x <span class="token operator">%</span> <span class="token number">3</span> <span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>这样就可以在程序中更方便的调用Lambda函数了：</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">,</span> b <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
-    <span class="token keyword">auto</span> f <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">=</span><span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token keyword">return</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">//[=]按值捕获了a和b</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>         <span class="token comment" spellcheck="true">//值为15</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>3.保持Lambda函数引用的变量的值是最新的：</strong></p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">8</span><span class="token punctuation">;</span>
-    <span class="token keyword">auto</span> f1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">=</span><span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token keyword">return</span> a <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//按值捕获a</span>
-    <span class="token keyword">auto</span> f2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">&amp;</span><span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token keyword">return</span> a <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//按引用捕获a</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token function">f1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token function">f2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    a<span class="token operator">++</span><span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token function">f1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token function">f2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+<main class="content">
 
-程序结果：
-    <span class="token number">8</span>
-    <span class="token number">8</span>
-    <span class="token number">8</span>
-    <span class="token number">9</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>按值捕获可以看作Lambda函数生成了一个const类型的变量，它的值是不会因为外部更新而更新的；同样引用捕获相当于调用a的内存地址，保证实时更新，如果想要Lambda函数在调用时访问的外部变量是最新的，我们就需要使用按引用捕获。</p>
-<p>如果非要做到修改值捕获变量的值，就可以使用mutale关键字；默认情况下，lambda函数是一个const函数，而mutable也可以取消常量性，例如：</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
-    <span class="token keyword">auto</span> f <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">=</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token keyword">mutable</span><span class="token punctuation">{</span><span class="token keyword">return</span> a <span class="token operator">*</span><span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//取消常量性</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+    
 
-程序结果：
-    <span class="token number">100</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p> mutable 修饰的 Lambda 表达式就算没有参数也要写明参数列表，这里的<code>()</code>表示没有省略，只是没有参数而已。</p>
-
-      
+<div id="category-cloud" class="container chip-container">
+    <div class="card">
+        <div class="card-content">
+            <div class="tag-title center-align">
+                <i class="fa fa-bookmark"></i>&nbsp;&nbsp;文章分类
+            </div>
+            <div class="tag-chips">
+                
+                
+                
+                <a href="/categories/随笔/" title="随笔: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F9EBEA;">随笔
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/C/" title="C++: 5">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-active "
+                            style="background-color: #F5EEF8;">C++
+                        <span class="tag-length">5</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/Blog/" title="Blog: 12">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #D5F5E3;">Blog
+                        <span class="tag-length">12</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/C语言/" title="C语言: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #E8F8F5;">C语言
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/算法/" title="算法: 5">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #FEF9E7;">算法
+                        <span class="tag-length">5</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/服务器/" title="服务器: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F8F9F9;">服务器
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/Linux/" title="Linux: 3">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #82E0AA;">Linux
+                        <span class="tag-length">3</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/双系统/" title="双系统: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #D7BDE2;">双系统
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/算法/C/" title="C++: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-active "
+                            style="background-color: #A3E4D7;">C++
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/操作系统/" title="操作系统: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #85C1E9;">操作系统
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/汇编/" title="汇编: 3">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F8C471;">汇编
+                        <span class="tag-length">3</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/DDOS/" title="DDOS: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F9E79F;">DDOS
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/图床/" title="图床: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F5EEF8;">图床
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/Java/" title="Java: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #FFF;">Java
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/操作系统/汇编/" title="汇编: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F8C471;">汇编
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/每日一题/" title="每日一题: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F8F9F9;">每日一题
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/数据结构/" title="数据结构: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F5EEF8;">数据结构
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+            </div>
+        </div>
     </div>
-</article>
-
-    </li>
-  
-    <li>
-      <article class='ListView'>
-    <header class="title">
-      
-        <h1>
-          <a href="/c-xue-xi-bi-ji-zheng-li-di-san-zhang-han-shu.html">C++学习笔记整理-函数</a>
-        </h1>
-      
-      <div class='ListMeta'>
-  <time datetime="2020-05-08T11:54:09.000Z" itemprop="datePublished">
-    2020-05-08
-  </time>
-  
-  | 
-  <ul>
-    
-  <li class="meta-text">
-  { <a href="/tags/学习笔记/">学习笔记</a> }
-  </li>
-
-
-  </ul>
-  
-  
-  / 
-  <ul>
-    
-  <li class="meta-text">
-  { <a href="/categories/C/">C++</a> }
-  </li>
-
-
-  </ul>
-  
 </div>
 
-    </header>
-    <div>
-      
-        <p><strong>前面几章大体上和C差不多，就从函数开始吧。</strong></p>
-<h2 id="第三章-函数"><a href="#第三章-函数" class="headerlink" title="第三章 函数"></a>第三章 函数</h2><h2 id="1-函数的定义与使用"><a href="#1-函数的定义与使用" class="headerlink" title="1 .函数的定义与使用"></a>1 .函数的定义与使用</h2><h3 id="函数定义的语法形式："><a href="#函数定义的语法形式：" class="headerlink" title="函数定义的语法形式："></a>函数定义的语法形式：</h3><pre class="line-numbers language-c++"><code class="language-c++">类型标识符  函数名（形式参数表）
-{  
-   语句序列
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>若无返回值，类型标识符写void </li>
-<li>形式参数表：是被初始化的内部变量，寿命和可见性仅限于函数内部 </li>
-</ul>
-<h3 id="函数的调用"><a href="#函数的调用" class="headerlink" title="函数的调用"></a>函数的调用</h3><p><strong>调用前先声明函数：</strong></p>
-<ul>
-<li>若函数定义在调用点之前，则无需另外声明； </li>
-<li>若函数定义在调用点之后，则需要在调用函数前按如下形式声明函数原型： </li>
-</ul>
-<p>类型标识符 被调用函数名（含类型说明的形参表）;</p>
-<p><strong>调用形式：</strong> </p>
-<p>函数名（实参列表）</p>
-<ul>
-<li>嵌套调用：     在一个函数的函数体中，可以调用另一函数，称为嵌套调用。 </li>
-<li>递归调用：     函数直接或间接调用自身。 </li>
-</ul>
-<pre class="line-numbers language-c++"><code class="language-c++">//1.编写一个求x的n次方的函数
-
-#include <iostream>
-using namespace std;
-
-//计算x的n次方
-double power(double x,int n)
-{
-    double val=1.0;
-    while(n--)
-        val*=x;
-    return val;
-}
-
-int main()
-{
-    cout << "5 to the power 2 is :"<< power(5, 2) << endl;
-    return 0;
-}
-
-
-
-
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-c++"><code class="language-c++">//2.数制转换
-//输入一个8位二进制数，将其转换为十进制数输出。
-//例如：11012=1(23)+1(22)+0(21)+1(20)=1310 
-//所以，如果输入1101，则应输出13
-
-#include <iostream>
-using namespace std;
-
-double power (double x,int n); //计算x的n次方
-
-int main()
-{
-    int  value=0;
-    cout <<"Enter an 8 bit binary number ";
-    for (int i=7;i>=0;i--) 
-    {
-      char ch;
-      cin>>ch;
-      if (ch =='1')
-            value+=static_cast<int>(power(2, i));
-    }
-    cout<<"Decimal value is "<<value<<endl;
-    return 0;
-}
-
-double power(double x,int n)
-{
-    double val=1.0;
-    while(n--) 
-      val*=x;
-    return val;
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-c++"><code class="language-c++">
-/*3.编写程序求π的值
-π=16arctan(1/5)-4arctan(1/239)
-其中arctan用如下形式的级数计算：
-arctanx=x-x^3/3+x^/5-x^7/7+...
-直到级数某项绝对值不大于10-15为止；π和x均为double型。*/
-
-#include <iostream>
-using namespace std;
-
-double arctan(double x)
-{
-    double sqr = x * x;
-    double e = x;
-    double r = 0;
-    int i = 1;
-    while (e / i > 1e-15) {
-        double f = e / i;
-        r = (i % 4 == 1) ? r + f : r - f;
-        e = e * sqr;
-        i += 2;
-    }
-    return r;
-}
-
-int main() 
-{
-    double a = 16.0 * arctan(1 / 5.0); 
-    double b = 4.0 * arctan(1 / 239.0); 
-    /* 注意：因为整数相除结果取整，如果参数写1/5，1/239，结果就都是0 */
-
-    cout << "PI = " << a - b << endl;
-    return 0;
-}
-
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-c++"><code class="language-c++">/*4.寻找并输出11~999之间的数m，它满足m、m2和m3均为回文数。
-回文：各位数字左右对称的整数。
-例如：11满足上述条件 
-112=121，113=1331。
-分析：
-10取余的方法，从最低位开始，依次取出该数的各位数字。按反序重新构成新的数，比较与原数是否相等，若相等，则原数为回文。*/
-
-#include <iostream>
-using namespace std;
-//判断n是否为回文数
-bool symm(unsigned n)
-{
-  unsigned i = n;
-    unsigned m = 0;
-    while (i > 0) {
-      m = m*10+i%10;
-      i/=10;
-  }
-  return m==n;
-}
-
-int main()
-{
-    for(unsigned m = 11; m < 1000; m++)
-      if (symm(m) && symm(m * m) &&
-          symm(m * m * m)) {
-        cout << "m = " << m;
-        cout << "  m * m = " << m * m;
-        cout << "  m * m * m = "
-             << m * m * m << endl;
-      }
-    return 0;
-}
-
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>/<em>5.计算如下公式，并输出结果：</em><br>$$<br>k =  \begin{cases}     \sqrt{sin^2r+sin^2s} &amp; \text{}\  当r^2\leqslant s^2\     \frac{1}{2}sin(rs) &amp; \text{}\ 当r^2&gt; s^2&amp;  \end{cases}<br>$$<br>其中r、s的值由键盘输入</p>
-<p>sin x的近似值按如下公式计算，计算精度为10-10：</p>
-<p>$$ sinx=\frac{x}{1!}+\frac{x^3}{3!}+\frac{x^5}{5!}+\frac{x^7}{7!}+…=\displaystyle \sum_{n=1}^∞(-1)^{n-1}\frac{x^{2n-1}}{(2n-1)!} $$</p>
-<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
-#include <cmath>  /*对C++标准库中数学函数的说明*/
-using namespace std;
-
-const double TINY_VALUE = 1e-10;
-
-double tsin(double x) 
-{
-    double g = 0;
-    double t = x;
-    int n = 1;
-    do {
-        g += t;
-        n++;
-        t = -t * x * x / (2 * n - 1) / (2 * n - 2);
-    } while (fabs(t) >= TINY_VALUE); 
-    return g;
-} 
-
-int main() 
-{
-    double k, r, s;
-    cout << "r = ";
-    cin >> r;
-    cout << "s = ";
-    cin >> s;
-    if (r * r <= s * s)
-      k=sqrt(tsin(r)*tsin(r)+tsin(s)*tsin(s));
-    else
-      k = tsin(r * s) / 2;
-    cout << k << endl;
-    return 0;
-}
-
-
-
-//运行结果：
-r=5
-s=8
-1.37781
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-c++"><code class="language-c++">/*6.投骰子的随机游戏
-
-每个骰子有六面，点数分别为1、2、3、4、5、6。游戏者在程序开始时输入一个无符号整数，作为产生随机数的种子。
-每轮投两次骰子，第一轮如果和数为7或11则为胜，游戏结束；和数为2、3或12则为负，游戏结束；和数为其它值则将此值作为自己的点数，继续第二轮、第三轮...直到某轮的和数等于点数则取胜，若在此前出现和数为7则为负。
-由rolldice函数负责模拟投骰子、计算和数并输出和数。
-
-rand
-函数原型：int rand(void);
-所需头文件：<cstdlib>
-功能和返回值：求出并返回一个伪随机数
-
-srand
-函数原型：void srand(unsigned int seed);
-参数：seed产生随机数的种子。
-所需头文件：<cstdlib>
-功能：为使rand()产生一序列伪随机整数而设置起始点。使用1作为seed参数，可以重新初化rand()。*/
-
-#include <iostream>
-#include <cstdlib>
-using namespace std;
-
-//投骰子、计算和数、输出和数
-int rollDice() {
-    int die1 = 1 + rand() % 6;
-    int die2 = 1 + rand() % 6;
-    int sum = die1 + die2;
-    cout << "player rolled " << die1 << " + " << die2 << " = " << sum << endl;
-    return sum;
-}
-
-enum GameStatus { WIN, LOSE, PLAYING };
-
-int main() {
-    int sum, myPoint;
-    GameStatus status;
-
-    unsigned seed; 
-    cout<<"Please enter an unsigned integer: ";
-    cin >> seed;//输入随机数种子
-    srand(seed);//将种子传递给rand()
-
-    sum = rollDice(); //第一轮投骰子、计算和数
-
-switch (sum) {
-    case 7:   //如果和数为7或11则为胜,状态为WIN
-    case 11:
-      status = WIN;
-      break;
-    case 2:   //和数为2、3或12则为负,状态为LOSE
-    case 3: 
-    case 12:
-      status = LOSE;
-      break;
-    default: /*其它情况,游戏尚无结果,状态为
-            PLAYING,记下点数,为下一轮做准备 */
-      status = PLAYING;
-      myPoint = sum;
-      cout << "point is " << myPoint << endl;
-      break;
-    }
-
-while (status == PLAYING) { //只要状态仍为PLAYING,就继续进 行下一轮
-      sum = rollDice();
-      if (sum == myPoint)    //某轮的和数等于点数则取胜
-        status = WIN;
-      else if (sum == 7)    //出现和数为7则为负
-        status = LOSE;
-    }
-
-    //当状态不为PLAYING时上面的循环结束,以下程序段输出游戏结果
-    if (status == WIN)
-      cout << "player wins" << endl;
-    else
-      cout << "player loses" << endl;
-
-    return 0;
-}
-//运行结果：
-Please enter an unsigned integer:23
-player rolled 6 + 3 = 9
-point is 9
-player rolled 5 + 4 = 9
-player wins<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>嵌套调用</strong></p>
-<pre class="line-numbers language-c++"><code class="language-c++">//1.输入两个整数，求平方和
-
-#include <iostream>
-using namespace std;
-
-int fun2(int m) 
-{
-    return m * m;
-}
-
-int fun1(int x,int y) 
-{
-    return fun2(x) + fun2(y);
-}
-
-int main() 
-{
-    int a, b;
-    cout<<"Please enter two integers (a and b): ";
-    cin >> a >> b;
-    cout << "The sum of square of a and  b: " << fun1(a, b) << endl;
-    return 0;
-}
-
-
-//运行结果：
-Please enter two integers(a and b): 3 4
-The sum of square of a and b: 25<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>递归调用</strong></p>
-<p>//1.求n!<br>$$<br>n!=  \begin{cases}     1 &amp; \text{}\ (n=0)  \     n(n-1)! &amp; \text{}\ (n&gt; 0)  \ \end{cases}<br>$$</p>
-<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
-using namespace std;
-
-unsigned fac(int n)
-{
-    unsigned f;
-    if (n == 0)
-      f = 1;
-  else
-      f = fac(n - 1) * n;
-  return f;
-}
-
-int main() 
-{
-    unsigned n;
-    cout << "Enter a positive integer:";
-    cin >> n;
-    unsigned y = fac(n);
-    cout << n << "! = " << y << endl;
-    return 0;
-}
-
-//运行结果：
-Enter a positive integer:8
-8! = 40320
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-c++"><code class="language-c++">/*2.用递归法计算从n个人中选择k个人组成一个委员会的不同组合数。
-
-分析：
-   由n个人里选k个人的组合数 = 由n-1个人里选k个人的组合数+由n-1个人里选k-1个人的组合数
-当n = k或k = 0时，组合数为1*/
-
-#include <iostream>
-using namespace std;
-
-int comm(int n, int k) {
-    if (k > n)
-      return 0;
-    else if (n == k || k == 0)
-      return 1;
-    else
-      return comm(n - 1, k) + comm(n - 1, k - 1);
-}
-
-int main() {
-    int n, k;
-    cout << "Please enter two integers n and k: ";
-    cin >> n >> k;
-    cout << "C(n, k) = " << comm(n, k) << endl;
-    return 0;
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>3.汉诺塔问题</strong></p>
-<p>有三根针A、B、C。A针上有N个盘子，大的在下，小的在上，要求把这N个盘子从A针移到C针，在移动过程中可以借助B针，每次只允许移动一个盘，且在移动过程中在三根针上都保持大盘在下，小盘在上。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.5/Images/posts/C%E7%AC%94%E8%AE%B0/%E5%9B%BE%E7%89%871.png" alt="img"></p>
-<p>分析：</p>
-<ul>
-<li><strong>将n 个盘子从A针移到C针可以分解为下面三个步骤：</strong></li>
-<li>①将A 上n-1个盘子移到 B针上（借助C针）;</li>
-<li>②把A针上剩下的一个盘子移到C针上;</li>
-<li>③将n-1个盘子从B针移到C针上（借助A针）; </li>
-<li><strong>事实上，上面三个步骤包含两种操作：</strong> </li>
-<li>①将多个盘子从一个针移到另一个针上，这是一个递归的过程。 hanoi函数实现。</li>
-<li>②将1个盘子从一个针上移到另一针上。 用move函数实现</li>
-</ul>
-<pre class="line-numbers language-c++"><code class="language-c++">//3.汉诺塔问题
-
-#include <iostream>
-using namespace std;
-
-//把src针的最上面一个盘子移动到dest针上
-void move(char src, char dest) { 
-    cout << src << " --> " << dest << endl;
-}
-
-//把n个盘子从src针移动到dest针，以medium针作为中介
-void hanoi(int n, char src, char medium, char dest) {
-    if (n == 1)
-      move(src, dest);
-    else {
-      hanoi(n - 1, src, dest, medium);
-      move(src, dest);
-      hanoi(n - 1, medium, src, dest);
-    }
-}
-
-int main() {
-    int m;
-    cout << "Enter the number of diskes: ";
-    cin >> m;
-    cout << "the steps to moving " << m << " diskes:" << endl;
-    hanoi(m,'A','B','C');
-    return 0;
-}
-
-//运行结果：
-Enter the number of diskes:3
-the steps to moving 3 diskes:
-A --> C
-A --> B
-C --> B
-A --> C
-B --> A
-B --> C
-A --> C<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="函数的参数传递"><a href="#函数的参数传递" class="headerlink" title="函数的参数传递"></a>函数的参数传递</h3><ul>
-<li>在函数被调用时才分配形参的存储单元。 </li>
-<li>实参可以是常量、变量或表达式。 </li>
-<li>实参类型必须与形参相符。 </li>
-<li>值传递是传递参数值，即单向传递。 </li>
-<li>引用传递可以实现双向传递 </li>
-<li>常引用作参数可以保障实参数据的安全 </li>
-</ul>
-<p><strong>引用传递</strong></p>
-<p>引用(&amp;)是标识符的别名,例如:</p>
-<pre class="line-numbers language-c++"><code class="language-c++">int i,j;
-int &ri=i;//建立一个int型的引用ri,并将其初始化为变量i的一个别名
-j=10;
-ri=j;//相当于 i = j;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>声明一个引用时，必须同时对它进行初始化，使它指向一个已存在的对象。 一旦一个引用被初始化后，就不能改为指向其它对象。 引用可以作为形参:</p>
-<pre class="line-numbers language-c++"><code class="language-c++">void swap(int &a, int &b) {...}
-//1.输入两个整数交换后输出
-
-#include<iostream>
-using namespace std;
-void swap(int& a, int& b) {
-    int t = a;
-    a = b;
-    b = t;
-}
-int main() {
-    int x = 5, y = 10;
-    cout << "x = " << x << "  y = " << y << endl;
-    swap(x, y);
-    cout << "x = " << x << "  y = " << y << endl;
-    return 0;
-}
-
-//运行结果:
-x = 5   y = 10
-x = 10  y = 5
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-c++"><code class="language-c++">//2.值传递与引用传递的比较
-
-#include <iostream>
-#include <iomanip>
-using namespace std;
-void fiddle(int in1, int &in2) 
-{
-    in1 = in1 + 100;
-    in2 = in2 + 100;
-    cout<<"The values are ";
-    cout << setw(5) << in1;
-    cout << setw(5) << in2 << endl;
-}
-
-int main() { 
-  int v1=7,v2=12;
-  cout << "The values are ";
-  cout << setw(5) << v1;
-  cout << setw(5) << v2 << endl;
-  fiddle(v1, v2);
-  cout << "The values are ";
-  cout << setw(5) << v1;
-  cout << setw(5) << v2 << endl;
-  return 0;
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="2-内联函数"><a href="#2-内联函数" class="headerlink" title="2.内联函数"></a>2.内联函数</h2><ul>
-<li>声明时使用关键字 inline。 </li>
-<li>编译时在调用处用函数体进行替换,节省了参数传递、控制转移等开销。 </li>
-<li>内联函数体内不能有循环语句和switch语句。 </li>
-<li>内联函数的声明必须出现在内联函数第一次被调用之前。 </li>
-<li>对内联函数不能进行异常接口声明。 </li>
-</ul>
-<pre class="line-numbers language-c++"><code class="language-c++">//example:
-
-#include <iostream>
-using namespace std;
-
-const double PI = 3.14159265358979;
-inline double calArea(double radius) {
-    return PI * radius * radius;
-}
-
-int main() {
-    double r = 3.0;
-    double area = calArea(r);
-    cout << area << endl;
-    return 0;
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="3-带默认参数值的函数"><a href="#3-带默认参数值的函数" class="headerlink" title="3.带默认参数值的函数"></a>3.带默认参数值的函数</h2><p>函数在声明时可以预先给出默认的形参值，调用时如给出实参，则采用实参值，否则采用预先给出的默认参数值。</p>
-<p>例如：</p>
-<pre class="line-numbers language-c++"><code class="language-c++">int add(int x = 5,int y = 6) {
-    return x + y;
-}
-int main() {
-    add(10,20);//10+20
-    add(10);  //10+6
-    add();  //5+6
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>默认参数值的说明次序</strong></p>
-<p>有默认参数的形参必须在形参列表的最后，也就是说默认参数值的右面不能有无默认值的参数。因为调用时实参与形参的结合是从左向右的顺序。</p>
-<p>例：</p>
-<pre class="line-numbers language-c++"><code class="language-c++">int add(int x, int y = 5, int z = 6);//正确
-int add(int x = 1, int y = 5, int z);//错误
-int add(int x = 1, int y, int z = 6);//错误<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p><strong>默认参数值与函数的调用位置</strong></p>
-<p>如果一个函数有原型声明，且原型声明在定义之前，则默认参数值必须在函数原型声明中给出；而如果只有函数的定义，或函数定义在前，则默认参数值需在函数定义中给出。 例：</p>
-<pre><code>int add(int x = 5,int y = 6);        int add(int x = 5,int y = 6) {
-//原型声明在前                         //只有定义，没有原型声明
-int main() {                         return  x + y;
-  add();                             }
-}                                    int main() {
-int add(int x,int y) {               add();
-//此处不能再指定默认值                   }
-  return x + y;
-}
-</code></pre><h2 id="4-函数重载"><a href="#4-函数重载" class="headerlink" title="4.函数重载"></a>4.函数重载</h2><p>C++允许功能相近的函数在相同的作用域内以相同函数名声明，从而形成重载。方便使用，便于记忆。</p>
-<p>例：</p>
-<pre class="line-numbers language-c++"><code class="language-c++">//形参类型不同
-int add(int x, int y);
-float add(float x, float y);
-
-//形参个数不同
-int add(int x, int y);
-int add(int x, int y, int z);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-c++"><code class="language-c++">/*1.计算长方体的体积
-
-子函数getVolume是计算体积的函数，有三个形参：length（长）、width（宽）、height（高），其中width和height带有默认值。
-主函数中以不同形式调用getVolume函数，分析程序的运行结果。*/
-
-#include <iostream>
-#include <iomanip>
-using namespace std;
-
-int getVolume(int length, int width = 2, int height = 3);
-
-int main() {
-    const int X = 10, Y = 12, Z = 15;
-    cout << "Some box data is " ;
-    cout << getVolume(X, Y, Z) << endl;
-    cout << "Some box data is " ;
-    cout << getVolume(X, Y) << endl;
-    cout << "Some box data is " ;
-    cout << getVolume(X) << endl;
-    return 0;
-}
-
-int getVolume(int length, int width/* = 2 */, int height/* = 3 */) {
-    cout << setw(5) << length << setw(5) << width << setw(5) << height << '\t';
-    return length * width * height;
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>注意事项</strong></p>
-<ul>
-<li>重载函数的形参必须不同:个数不同或类型不同。 </li>
-<li>编译程序将根据实参和形参的类型及个数的最佳匹配来选择调用哪一个函数。 </li>
-</ul>
-<pre class="line-numbers language-c++"><code class="language-c++">int add(int x,int y);                     int add(int x,int y);
-int add(int a,int b);                     void add(int x,int y);
-//编译器不以形参名来区分                        //编译器不以返回值来区分<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>不要将不同功能的函数声明为重载函数，以免出现调用结果的误解、混淆。这样不好：</li>
-</ul>
-<pre class="line-numbers language-c++"><code class="language-c++">int add(int x, int y)               float add(float x,float y)
-{  return x + y;  }                 {  return x - y;  }
-//编写两个名为sumOfSquare的重载函数，分别求两整数的平方和及两实数的平方和。
-
-
-
-#include <iostream>
-using namespace std;
-
-int sumOfSquare(int a, int b) {
-    return a * a + b * b;
-}
-double sumOfSquare(double a, double b) {
-    return a * a + b * b;
-}
-int main() {
-    int m, n;
-    cout << "Enter two integer: ";
-    cin >> m >> n;
-    cout << "Their sum of square: " << sumOfSquare(m, n) << endl;
-
-    double x, y;
-    cout << "Enter two real number: ";
-    cin >> x >> y;
-    cout << "Their sum of square: " << sumOfSquare(x, y) << endl;
-
-    return 0;
-}
-
-
-//运行结果：
-Enter two integer: 3 5
-Their sum of square: 34
-Enter two real number: 2.3 5.8
-Their sum of square: 38.93<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="5-使用C-系统函数"><a href="#5-使用C-系统函数" class="headerlink" title="5.使用C++系统函数"></a>5.使用C++系统函数</h2><p>C++的系统库中提供了几百个函数可供程序员使用。 例如：求平方根函数（sprt）、求绝对值函数（abs）等。</p>
-<p>使用系统函数时要包含相应的头文件。 例如：cmath 或 math.h</p>
-<pre class="line-numbers language-c++"><code class="language-c++">/*1.从键盘输入一个角度值，求出该角度的正弦值、余弦值和正切值。
-
-分析：
-系统函数中提供了求正弦值、余弦值和正切值的函数：sin()、cos()、tan()，函数的说明在头文件cmath中。*/
-
-
-#include <iostream>
-#include <cmath>
-using namespace std;
-
-const double PI = 3.14159265358979;
-
-int main() {
-    double angle;
-    cout << "Please enter an angle: ";
-    cin >> angle;   //输入角度值
-
-    double radian = angle * PI / 180;   //转化为弧度值
-    cout << "sin(" << angle << ") = " << sin(radian) <<endl;
-    cout << "cos(" << angle << ") = " << cos(radian) <<endl;
-    cout << "tan(" << angle << ") = " << tan(radian) <<endl;
-    return 0;
-}
-
-//运行结果：
-30
-sin(30)=0.5
-cos(30)=0.866025
-tan(30)=0.57735<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-      
-    </div>
-</article>
-
-    </li>
-  
-    <li>
-      <article class='ListView'>
-    <header class="title">
-      
-        <h1>
-          <a href="/c-xue-xi-bi-ji-zheng-li-di-si-zhang-lei-yu-dui-xiang.html">C++学习笔记整理-类与对象</a>
-        </h1>
-      
-      <div class='ListMeta'>
-  <time datetime="2020-04-26T10:53:44.000Z" itemprop="datePublished">
-    2020-04-26
-  </time>
-  
-  | 
-  <ul>
     
-  <li class="meta-text">
-  { <a href="/tags/学习笔记/">学习笔记</a> }
-  </li>
+
+    <article id="articles" class="container articles">
+        <div class="row tags-posts">
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/c-zhong-guan-yu-lambda-biao-da-shi-de-zong-jie.html">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/40.jpg" class="responsive-img" alt="C++ 中关于Lambda 表达式的总结">
+                            
+                            <span class="card-title">C++ 中关于Lambda 表达式的总结</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                Lambda表达式是C++ 11新特性之一，总的来说就是一个函数。
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-10-18
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/C/" class="post-category" target="_blank">
+                                    C++
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Lambda/" target="_blank">
+                            <span class="chip bg-color">Lambda</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/c-xue-xi-bi-ji-zheng-li-di-san-zhang-han-shu.html">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="C++学习笔记整理-函数">
+                            
+                            <span class="card-title">C++学习笔记整理-函数</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                前面两章和C差不多，就从第三章《函数》开始吧，错误之处欢迎指正。
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-08
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/C/" class="post-category" target="_blank">
+                                    C++
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/学习笔记/" target="_blank">
+                            <span class="chip bg-color">学习笔记</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/c-xue-xi-bi-ji-zheng-li-di-si-zhang-lei-yu-dui-xiang.html">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/44.jpg" class="responsive-img" alt="C++学习笔记整理-类与对象">
+                            
+                            <span class="card-title">C++学习笔记整理-类与对象</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                抽象是对具体对象（问题）进行概括，抽出这一类对象的公共性质并加以描述的过程.
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-26
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/C/" class="post-category" target="_blank">
+                                    C++
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/学习笔记/" target="_blank">
+                            <span class="chip bg-color">学习笔记</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/c-bian-cheng-ti-mu-zheng-he.html">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/31.jpg" class="responsive-img" alt="C++编程题目整合">
+                            
+                            <span class="card-title">C++编程题目整合</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                就从第四章类与对象开始吧，前面的章节和c差不多在另一篇文章。
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-26
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/C/" class="post-category" target="_blank">
+                                    C++
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/学习笔记/" target="_blank">
+                            <span class="chip bg-color">学习笔记</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/c-xue-xi-bi-ji-zheng-li-di-wu-zhang-shu-ju-de-gong-xiang-yu-bao-hu.html">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/40.jpg" class="responsive-img" alt="C++学习笔记整理-数据的共享与保护">
+                            
+                            <span class="card-title">C++学习笔记整理-数据的共享与保护</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                第五章数据的共享与保护,作用域是一个标识符在程序正文中有效的区域。
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-23
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/C/" class="post-category" target="_blank">
+                                    C++
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/学习笔记/" target="_blank">
+                            <span class="chip bg-color">学习笔记</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </article>
+</main>
 
 
-  </ul>
-  
-  
-  / 
-  <ul>
-    
-  <li class="meta-text">
-  { <a href="/categories/C/">C++</a> }
-  </li>
+    <footer class="page-footer bg-color">
+    <div class="container row center-align">
+       <div class="Copy-right">
+            &copy; 2022 Yshawlon. All Rights Reserved.
+
+           <img src="/medias/avatars/icp.png" style="width:18px;height:18px;margin-bottom:-2px" alt="ICP">
+           <a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank">渝ICP备2020014220号-1</a>丨
+           <img src="/medias/avatars/moeicp.png" style="width:18px;height:18px;margin-bottom:-3px" alt="MOE ICP">
+           <a href="https://icp.gov.moe/?keyword=20225132" target="_blank">萌ICP备20225132号</a>丨            
+           <!--<a href="/sitemap.xml" target="_blank">站点地图</a>丨-->
+           
+            &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+            <span class="white-color">81.7k
+             丨            
+            <a href="https://tongji.baidu.com/web/welcome/ico?s=df42dpc7224a5f6a8d435" target="_blank">百度统计</a>丨
+           <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278720284'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1278720284%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+
+            <span id="sitetime"></span>
+
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv" style='display:none'>
+                <i class="fa fa-users"></i>
+                本站总访问量 <span id="busuanzi_value_site_pv" class="red-color"></span>
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv" style='display:none'>
+               人次,&nbsp;<i class="fa fa-user"></i>访客数 <span id="busuanzi_value_site_uv" class="blue-color"></span> 人.
+            </span>
+            
+            
+        </div>        
+        <div class="social-link social-statis">
+    <a href="https://github.com/MUYIio" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
 
 
-  </ul>
-  
+
+    <a href="https://www.csdn.net/weixin_45682081?type=blog" class="tooltipped" target="_blank" data-tooltip="访问我的CSDN主页" data-position="top" data-delay="50">
+        <i class="fa fa-inverse">CSDN</i>
+    </a>
+
+
+
+    <a href="https://www.zhihu.com/people/muyiio" class="tooltipped" target="_blank" data-tooltip="访问我的知乎" data-position="top" data-delay="50">
+        <i class="fa fa-inverse">知</i>
+    </a>
+
+
+
+    <a href="https://user.qzone.qq.com/1571504536" class="tooltipped" target="_blank" data-tooltip="访问我的QQ空间" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="mailto:1571504536@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
 </div>
 
-    </header>
-    <div>
-      
-        <h1 id="第四章-类和对象"><a href="#第四章-类和对象" class="headerlink" title="第四章 类和对象"></a>第四章 类和对象</h1><h2 id="1-面向对象程序设计的基本特点"><a href="#1-面向对象程序设计的基本特点" class="headerlink" title="1.面向对象程序设计的基本特点"></a>1.面向对象程序设计的基本特点</h2><h3 id="①抽象"><a href="#①抽象" class="headerlink" title="①抽象"></a>①抽象</h3><p><strong>抽象是对具体对象（问题）进行概括，抽出这一类对象的公共性质并加以描述的过程。</strong></p>
-<ul>
-<li><p>先注意问题的本质及描述，其次是实现过程或细节。</p>
-</li>
-<li><p>数据抽象：描述某类对象的属性或状态（对象相互区别的物理量）。</p>
-</li>
-<li><p>代码抽象：描述某类对象的共有的行为特征或具有的功能。</p>
-</li>
-<li><p>抽象的实现：通过类的声明。</p>
-</li>
-</ul>
-<pre class="line-numbers language-c++"><code class="language-c++">//数据抽象：
-int hour,int minute,int second
-//代码抽象：
-setTime(),showTime()
 
-class  Clock {
-  public: 
-   void setTime(int newH, int newM, int newS);   void showTime();
-  private: 
-   int hour, minute, second;
-};
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="②封装"><a href="#②封装" class="headerlink" title="②封装"></a>②封装</h3><p><strong>将抽象出的数据成员、代码成员相结合，将它们视为一个整体。</strong></p>
-<ul>
-<li><p>目的是增强安全性和简化编程，使用者不必了解具体的实现细节，而只需要通过外部接口，以特定的访问权限，来使用类的成员。</p>
-</li>
-<li><p>实现封装：类声明中的{}</p>
-</li>
-</ul>
-<pre class="line-numbers language-c++"><code class="language-c++">//实例：
-
-class  Clock {
-  public://公有的访问权限
-      void setTime(int newH, int newM, int newS);//外部接口
-      void showTime();//外部接口
-  private: //私有的访问权限
-      int hour, minute, second;
-};//边界
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="③继承"><a href="#③继承" class="headerlink" title="③继承"></a>③继承</h3><p><strong>是C++中支持层次分类的一种机制，允许程序员在保持原有类特性的基础上，进行更具体的说明。</strong></p>
-<ul>
-<li>实现：声明派生类</li>
-</ul>
-<h3 id="④多态"><a href="#④多态" class="headerlink" title="④多态"></a>④多态</h3><p><strong>多态：同一名称，不同的功能实现方式。</strong></p>
-<ul>
-<li><p>目的：达到行为标识统一，减少程序中标识符的个数。</p>
-</li>
-<li><p>实现：重载函数和虚函数</p>
-</li>
-</ul>
-<hr>
-<h2 id="2-类和对象"><a href="#2-类和对象" class="headerlink" title="2.类和对象"></a>2.类和对象</h2><h3 id="①类和对象"><a href="#①类和对象" class="headerlink" title="①类和对象"></a>①类和对象</h3><p><strong>类是具有相同属性和行为的一组对象的集合，它为属于该类的全部对象提供了统一的抽象描述，其内部包括属性和行为两个主要部分。</strong></p>
-<ul>
-<li><p>利用类可以实现数据的封装、隐藏、继承与派生。</p>
-</li>
-<li><p>利用类易于编写大型复杂程序，其模块化程度比C中采用函数更高。</p>
-</li>
-<li><p>定义一个新的class也就定义了一个新的类型</p>
-</li>
-</ul>
-<h3 id="②类的定义"><a href="#②类的定义" class="headerlink" title="②类的定义"></a>②类的定义</h3><p>类是一种用户自定义类型，声明形式：</p>
-<pre class="line-numbers language-c++"><code class="language-c++">class 类名称
-{
-   public:
-             公有成员（外部接口）
-   private:
-             私有成员
-   protected:
-             保护型成员
-};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li><p><strong>在关键字public后面声明，它们是类与外部的接口，任何外部函数都可以访问公有类型数据和函数。</strong></p>
-</li>
-<li><p><strong>在关键字private后面声明，只允许本类中的函数访问，而类外部的任何函数都不能访问。</strong><br><strong>如果紧跟在类名称的后面声明私有成员，则关键字private可以省略。</strong></p>
-</li>
-<li><p><strong>protected保护型成员与private类似，其差别表现在继承与派生时对派生类的影响不同</strong></p>
-</li>
-</ul>
-<hr>
-<h3 id="③对象"><a href="#③对象" class="headerlink" title="③对象"></a>③对象</h3><p><strong>类的对象是该类的某一特定实体，即类类型的变量。</strong><br>声明形式：</p>
-<pre class="line-numbers language-c++c"><code class="language-c++c">类名  对象名；
-例：Clock  myClock;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<ul>
-<li><p>类中成员互访：直接使用成员名</p>
-</li>
-<li><p>类外访问：使用“对象名.成员名”方式访问 public 属性的成员</p>
-</li>
-</ul>
-<h3 id="④类的成员函数"><a href="#④类的成员函数" class="headerlink" title="④类的成员函数"></a>④类的成员函数</h3><ul>
-<li><p>在类中说明原型，可以在类外给出函数体实现，并在函数名前使用类名加以限定。也可以直接在类中给出函数体，形成内联成员函数。</p>
-</li>
-<li><p>允许声明重载函数和带默认形参值的函数</p>
-</li>
-</ul>
-<h3 id="⑤内联成员函数"><a href="#⑤内联成员函数" class="headerlink" title="⑤内联成员函数"></a>⑤内联成员函数</h3><ul>
-<li><p><strong>为了提高运行时的效率，对于较简单的函数可以声明为内联形式。</strong></p>
-</li>
-<li><p>内联函数体中不要有复杂结构（如循环语句和switch语句）。</p>
-</li>
-</ul>
-<p>  在类中声明内联成员函数的方式：</p>
-<ul>
-<li>将函数体放在类的声明中。</li>
-<li>使用inline关键字。</li>
-</ul>
-<pre class="line-numbers language-c++"><code class="language-c++">//example.1类的实现
-#include<iostream>
-using namespace std;
-class Clock{
-public:        
-    void setTime(int newH = 0, int newM = 0, int newS = 0);
-    void showTime();
-private:    
-    int hour, minute, second;
-};
-int main()
-{
-    Clock myClock;
-    myClock.setTime(8, 30, 30);
-    myClock.showTime();
-    return 0;
-}
-
-void Clock::setTime(int newH, int newM,int newS)
-{
-   hour=newH;
-   minute=newM;
-   second=newS;
-}
-void Clock::showTime() 
-{
-   cout << hour << ":" << minute << ":" << second;
-}
-
-
-//运行结果：
-8:30:30
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-c++"><code class="language-c++">//Point类的完整程序
-
-class Point {   //Point 类的定义
-public:
-    Point(int xx=0, int yy=0) { x = xx; y = yy; }    //构造函数，内联
-    Point(const Point& p); //复制构造函数
-    void setX(int xx) {x=xx;}
-    void setY(int yy) {y=yy;}
-    int getX() const { return x; } //常函数（第5章）
-    int getY() const { return y; } //常函数（第5章）
-private:
-    int x, y; //私有数据
-};
-//成员函数的实现
-Point::Point (const Point& p) {
-  x = p.x;
-  y = p.y;
-  cout << "Calling the copy constructor " << endl;
-}
-
-//形参为Point类对象的函数
-void fun1(Point p) {
-    cout << p.getX() << endl;
-}
-//返回值为Point类对象的函数
-Point fun2() {
-    Point a(1, 2);
-    return a;
-}
-
-//主程序
-int main() {
-    Point a(4, 5);    //第一个对象A
-    Point b = a;    //情况一，用A初始化B。第一次调用复制构造函数
-    cout << b.getX() << endl;
-    fun1(b);    //情况二，对象B作为fun1的实参。第二次调用复制构造函数
-    b = fun2();    //情况三，函数的返回值是类对象，函数返回时调用复制构造函数
-    cout << b.getX() << endl;
-    return 0;
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="3-构造函数和析构函数"><a href="#3-构造函数和析构函数" class="headerlink" title="3.构造函数和析构函数"></a>3.构造函数和析构函数</h2><h3 id="①构造函数"><a href="#①构造函数" class="headerlink" title="①构造函数"></a>①构造函数</h3><ul>
-<li><p>类中的特殊函数</p>
-</li>
-<li><p>用于描述初始化算法</p>
-</li>
-<li><p>构造函数的作用是在对象被创建时使用特定的值构造对象，将对象初始化为一个特定的初始状态。</p>
-</li>
-<li><p>在对象创建时被自动调用</p>
-</li>
-<li><p>如果程序中未声明，则系统自动产生出一个默认的构造函数，其参数列表为空</p>
-</li>
-<li><p>构造函数可以是内联函数、重载函数、带默认参数值的函数</p>
-</li>
-</ul>
-<pre class="line-numbers language-c++"><code class="language-c++">//构造函数举例
-class Clock {
-public:
-    Clock(int newH,int newM,int newS);//构造函数
-    void setTime(int newH, int newM, int newS);
-    void showTime();
-private:
-    int hour, minute, second;
-};
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-c++"><code class="language-c++">//构造函数的实现：
-Clock::Clock(int newH, int newM, int newS): hour(newH), minute(newM), second(newS) {
-    }
-建立对象时构造函数的作用：
-int main() {
-  Clock c(0,0,0); //此处将自动调用构造函数
-  c.showTime();
-    return 0;
-}
-
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="②复制构造函数"><a href="#②复制构造函数" class="headerlink" title="②复制构造函数"></a>②复制构造函数</h3><p><strong>复制构造函数是一种特殊的构造函数，其形参为本类的对象引用。作用是用一个已存在的对象去初始化同类型的新对象。</strong></p>
-<pre class="line-numbers language-c++"><code class="language-c++">class 类名 {
-public :
-    类名（形参）；//构造函数
-    类名（const  类名 &对象名）；//复制构造函数
-           ...
-}；
-类名::类（ const  类名 &对象名）//复制构造函数的实现
-{    函数体    }
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>复制构造函数被调用的三种情况</strong></p>
-<ul>
-<li><p>定义一个对象时，以本类另一个对象作为初始值，发生复制构造；</p>
-</li>
-<li><p>如果函数的形参是类的对象，调用函数时，将使用实参对象初始化形参对象，发生复制构造；</p>
-</li>
-<li><p>如果函数的返回值是类的对象，函数执行完成返回主调函数时，将使用return语句中的对象初始化一个临时无名对象，传递给主调函数，此时发生复制构造。</p>
-</li>
-</ul>
-<p><strong>有时不应该进行复制和赋值</strong></p>
-<ul>
-<li>例如，房屋中介系统有一个类描述待售房屋</li>
-</ul>
-<pre class="line-numbers language-c++"><code class="language-c++">class HomeForSale{…}
-//通常没有完全一样的房屋，因此不应有复制构造<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-c++"><code class="language-c++">//解决方法一：将不应该有的默认函数定义为私有
-
-class HomeForSale{
-public:
-    …
-private:
-    …
-    HomeForSale(const HomeForSale&);
-    HomeForSale& operator=(const HomeForSale&)
-
-//解决方法二：定义一个Uncopyable类作为基类
-
-class Uncopyable{
-protected:
-    Uncopyable(){}
-    ~ Uncopyable(){}
-private:
-     Uncopyable(const Uncopyable&);
-     Uncopyable operator=(const Uncopyable&);
-};
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="③默认构造函数"><a href="#③默认构造函数" class="headerlink" title="③默认构造函数"></a>③默认构造函数</h3><p><strong>调用时可以不需要参数的构造函数都是默认构造函数。</strong></p>
-<ul>
-<li><p>当不定义构造函数时，编译器自动产生默认构造函数</p>
-</li>
-<li><p>在类中可以自定义无参数的构造函数，也是默认构造函数</p>
-</li>
-<li><p>全部参数都有默认形参值的构造函数也是默认构造函数</p>
-</li>
-</ul>
-<p><strong>下面两个都是默认构造函数，如果在类中同时出现，将产生编译错误：</strong></p>
-<pre class="line-numbers language-c++"><code class="language-c++">Clock();
-Clock(int newH=0,int newM=0,int newS=0);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-c++"><code class="language-c++">//example.1
-class Clock {
-public:
-    Clock(int newH,int newM,int newS);//构造函数
-    Clock();//默认构造函数
-    void setTime(int newH, int newM, int newS);
-    void showTime();
-private:
-    int hour, minute, second;
-};
-//构造函数的实现：
-Clock::Clock(int newH, int newM, int newS): hour(newH), minute(newM), second(newS) { }
-//默认构造函数的实现：
-Clock::Clock(): hour(0), minute(0), second(0) { }
-
-//建立对象时构造函数的作用：
-int main() {
-  Clock c(8,10,0); //调用有参构造函数
-  Clock c2();//调用无参构造函数
-  c.showTime();
-  c2.showTime();
-    return 0;
-}
-
-void Clock::setTime(int newH, int newM,int newS)
-{
-   hour = newH;
-   minute = newM;
-   second = newS;
-}
-void Clock::showTime() 
-{
-   cout << hour << ":" << minute << ":" << second;
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>有时不应该有默认的构造函数</strong></p>
-<ul>
-<li><p>有些类，不应该有默认初始化。<br>例如，没有姓名的学生对象是没有意义的<br>解决：<br>至少定义一个有参数的构造函数<br>不定义默认构造函数</p>
-</li>
-<li><p>需要深层复制时，默认的复制构造会引起错误。<br>解决：<br>自定义实现深层复制的复制构造函数</p>
-</li>
-</ul>
-<h3 id="④隐含的复制构造函数"><a href="#④隐含的复制构造函数" class="headerlink" title="④隐含的复制构造函数"></a>④隐含的复制构造函数</h3><p>如果程序员没有为类声明拷贝初始化构造函数，则编译器自己生成一个隐含的复制构造函数。</p>
-<p>这个构造函数执行的功能是：用作为初始值的对象的每个数据成员的值，初始化将要建立的对象的对应数据成员。</p>
-<h3 id="⑤函数参数尽量传递常引用而不是值"><a href="#⑤函数参数尽量传递常引用而不是值" class="headerlink" title="⑤函数参数尽量传递常引用而不是值"></a>⑤函数参数尽量传递常引用而不是值</h3><ul>
-<li>传递对象值会引起复制构造和析构，增加时间空间开销。</li>
-<li>传常引用可避免这一问题。以引用做参数时，尽量使用常引用。</li>
-</ul>
-<pre class="line-numbers language-c++"><code class="language-c++">//例如：
-void fun1(const Point &p) {
-    cout << p.getX() << endl;
-   p.setX(1); //语法错误：p是常引用而setX不是常函数
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>基本类型、STL的迭代器和函数对象传值较好。</p>
-<h3 id="⑥返回值优化"><a href="#⑥返回值优化" class="headerlink" title="⑥返回值优化"></a>⑥返回值优化</h3><ul>
-<li><p>当函数返回一个对象时，会构造临时对象用以返回，这会增加开销。</p>
-</li>
-<li><p>用返回引用或者指针替代不是好办法。返回指向局部对象的指针或者引用，会引发错误。返回指向动态内存的指针或引用容易忘记动态空间释放，引起内存泄露。</p>
-</li>
-<li><p>解决显式构造临时对象返回。此举表面上还是构造了一个临时对象，但是编译器通常都会进行优化，使之不产生临时对象。</p>
-</li>
-</ul>
-<pre class="line-numbers language-c++"><code class="language-c++">//例如：
-Point fun2() {
-    return Point(1, 2);
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="⑦析构函数"><a href="#⑦析构函数" class="headerlink" title="⑦析构函数"></a>⑦析构函数</h3><ul>
-<li><p>完成对象被删除前的一些清理工作。</p>
-</li>
-<li><p>在对象的生存期结束的时刻系统自动调用它，然后再释放此对象所属的空间。</p>
-</li>
-<li><p>如果程序中未声明析构函数，编译器将自动产生一个隐含的析构函数。</p>
-</li>
-</ul>
-<pre class="line-numbers language-c++"><code class="language-c++">//构造函数和析构函数举例
-
-#include <iostream>
-using namespace std;
-class Point {     
-public:
-  Point(int xx,int yy);
-  ~Point();
-  //...其他函数原型
-private:
-  int x, y;
-};
-
-Point::Point(int xx,int yy) {
-  x = xx;
-  y = yy;
-}
-Point::~Point() {
-}
-//...其他函数的实现略<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<hr>
-<h2 id="3-类的组合"><a href="#3-类的组合" class="headerlink" title="3.类的组合"></a>3.类的组合</h2><h3 id="①组合"><a href="#①组合" class="headerlink" title="①组合"></a>①组合</h3><ul>
-<li><p>类中的成员数据是另一个类的对象。</p>
-</li>
-<li><p>可以在已有抽象的基础上实现更复杂的抽象。</p>
-</li>
-</ul>
-<p><strong>类组合的构造函数设计</strong></p>
-<ul>
-<li>原则：不仅要负责对本类中的基本类型成员数据赋初值，也要对对象成员初始化。</li>
-</ul>
-<pre class="line-numbers language-c++"><code class="language-c++">//声明形式：
-类名::类名(对象成员所需的形参，本类成员形参)
-       :对象1(参数)，对象2(参数)，......
-{  
-//函数体其他语句
-}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>构造组合类对象时的初始化次序</strong></p>
-<ul>
-<li><p>首先对构造函数初始化列表中列出的成员（包括基本类型成员和对象成员）进行初始化，初始化次序是成员在类体中定义的次序。</p>
-</li>
-<li><p>成员对象构造函数调用顺序：按对象成员的声明顺序，先声明者先构造。</p>
-</li>
-<li><p>初始化列表中未出现的成员对象，调用用默认构造函数（即无形参的）初始化</p>
-</li>
-<li><p>处理完初始化列表之后，再执行构造函数的函数体</p>
-</li>
-</ul>
-<pre class="line-numbers language-c++"><code class="language-c++">//类的组合，线段（Line）类
-
-
-#include <iostream>
-#include <cmath>
-using namespace std;
-class Point {    //Point类定义
-public:
-    Point(int xx = 0, int yy = 0) {
-        x = xx;
-        y = yy;
-    }
-    Point(Point &p);
-    int getX() { return x; }
-    int getY() { return y; }
-private:
-    int x, y;
-};
-Point::Point(Point &p) {    //复制构造函数的实现
-    x = p.x;
-    y = p.y;
-    cout << "Calling the copy constructor of Point" << endl;
-}
-
-public:    //外部接口
-    Line(Point xp1, Point xp2);
-    Line(Line &l);
-    double getLen() { return len; }
-private:    //私有数据成员
-    Point p1, p2;    //Point类的对象p1,p2
-    double len;
-};
-//组合类的构造函数
-Line::Line(Point xp1, Point xp2) : p1(xp1), p2(xp2) {
-    cout << "Calling constructor of Line" << endl;
-    double x = static_cast<double>(p1.getX() - p2.getX());
-    double y = static_cast<double>(p1.getY() - p2.getY());
-    len = sqrt(x * x + y * y);
-}
-Line::Line (Line &l): p1(l.p1), p2(l.p2) {//组合类的复制构造函数
-    cout << "Calling the copy constructor of Line" << endl;
-    len = l.len;
-}
-
-//主函数
-int main() {
-    Point myp1(1, 1), myp2(4, 5);    //建立Point类的对象
-    Line line(myp1, myp2);    //建立Line类的对象
-    Line line2(line);    //利用复制构造函数建立一个新对象
-    cout << "The length of the line is: ";
-    cout << line.getLen() << endl;
-    cout << "The length of the line2 is: ";
-    cout << line2.getLen() << endl;
-    return 0;
-}
-
-
-//运行结果如下：
-Calling the copy constructor of Point
-Calling the copy constructor of Point
-Calling the copy constructor of Point
-Calling the copy constructor of Point
-Calling constructor of Line
-Calling the copy constructor of Point
-Calling the copy constructor of Point
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>前向引用声明</strong></p>
-<ul>
-<li><p>类应该先声明，后使用</p>
-</li>
-<li><p>如果需要在某个类的声明之前，引用该类，则应进行前向引用声明。</p>
-</li>
-<li><p>前向引用声明只为程序引入一个标识符，但具体声明在其他地方。</p>
-</li>
-</ul>
-<pre class="line-numbers language-c++"><code class="language-c++">//example
-
-class B;  //前向引用声明
-class A {
-public:
-  void f(B b);
-};
-class B {
-public:
-  void g(A a);
-};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>前向引用声明注意事项</strong></p>
-<p>使用前向引用声明虽然可以解决一些问题，但它并不是万能的。需要注意的是，尽管使用了前向引用声明，但是在提供一个完整的类声明之前，不能声明该类的对象，也不能在内联成员函数中使用该类的对象</p>
-<pre class="line-numbers language-c++"><code class="language-c++">class Fred; //前向引用声明
-class Barney {
-   Fred x; //错误：类Fred的声明尚不完善
-};
-class Fred {
-   Barney y;
-};
-
-//更正
-class Fred;    //前向引用声明
-class Barney {
-public:
-  ……
-  void method() {
-    x.yabbaDabbaDo();    //错误：Fred类的对象在定义之前被使用
-  }
- private:
-  Fred &x;//正确，经过前向引用声明，可以声明Fred类的对象引用
-};
-
-class Fred {
-public:
-  void yabbaDabbaDo();
-private:
-  Barney &y;
-}; 
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>前向引用声明注意事项</strong></p>
-<ul>
-<li>应该记住：当使用前向引用声明时，只能使用被声明的符号，而不能涉及类的任何细节。</li>
-</ul>
-<hr>
-<h2 id="4-UML图形标识"><a href="#4-UML图形标识" class="headerlink" title="4.UML图形标识"></a>4.UML图形标识</h2><h3 id="①UML简介"><a href="#①UML简介" class="headerlink" title="①UML简介"></a>①UML简介</h3><p><strong>UML（Unified Modeling Language）语言是一种可视化的的面向对象建模语言。</strong></p>
-<p><strong>UML有三个基本的部分</strong></p>
-<ul>
-<li><p>事物（Things）UML中重要的组成部分，在模型中属于最静态的部分，代表概念上的或物理上的元素</p>
-</li>
-<li><p>关系（Relationships）关系把事物紧密联系在一起</p>
-</li>
-<li><p>图（Diagrams）图是很多有相互相关的事物的组</p>
-</li>
-</ul>
-<h3 id="②UML类图"><a href="#②UML类图" class="headerlink" title="②UML类图"></a>②UML类图</h3><p><strong>举例：Clock类的完整表示:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Clock</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>- hour:  int</td>
-</tr>
-<tr>
-<td>- minute:  int</td>
-</tr>
-<tr>
-<td>- second:  int</td>
-</tr>
-<tr>
-<td>+ showTime(): void</td>
-</tr>
-<tr>
-<td>+ setTime(newH:int=0,newM:int=0,newS:int=0)</td>
-</tr>
-</tbody></table>
-<p><strong>Clock类的简洁表示</strong></p>
-<table>
-<thead>
-<tr>
-<th>Clock</th>
-</tr>
-</thead>
-<tbody><tr>
-<td></td>
-</tr>
-</tbody></table>
-<h3 id="③对象图"><a href="#③对象图" class="headerlink" title="③对象图"></a>③对象图</h3><table>
-<thead>
-<tr>
-<th align="center">myClock:Clock</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">- hour: int</td>
-</tr>
-<tr>
-<td align="center">- minute: int</td>
-</tr>
-<tr>
-<td align="center">- second: int</td>
-</tr>
-</tbody></table>
-<h3 id="④几种关系的图形标识"><a href="#④几种关系的图形标识" class="headerlink" title="④几种关系的图形标识"></a>④几种关系的图形标识</h3><p><strong>依赖关系</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.5/Images/posts/C%E7%AC%94%E8%AE%B0/%E5%9B%BE%E7%89%875.png" alt></p>
-<p>图中的“类A”是源，“类B”是目标，表示“类A”使用了“类B”，或称“类A”依赖“类B”</p>
-<p><strong>作用关系—关联</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.5/Images/posts/C%E7%AC%94%E8%AE%B0/%E5%9B%BE%E7%89%874.png" alt></p>
-<p>图中的“重数A”决定了类B的每个对象与类A的多少个对象发生作用，同样“重数B”决定了类A的每个对象与类B的多少个对象发生作用。</p>
-<p><strong>包含关系—聚集和组合</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.5/Images/posts/C%E7%AC%94%E8%AE%B0/%E5%9B%BE%E7%89%876.png" alt></p>
-<p>聚集表示类之间的关系是整体与部分的关系，“包含”、“组成”、“分为……部分”等都是聚集关系。共享聚集：部分可以参加多个整体；组成聚集：整体拥有各个部分，整体与部分共存，如果整体不存在了，那么部分也就不存在了。</p>
-<p><strong><em>采用UML方法来描述例4-4中Line类和Point类的关系</em></strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.5/Images/posts/C%E7%AC%94%E8%AE%B0/%E5%9B%BE%E7%89%878.png" alt></p>
-<p><strong>继承关系—泛化</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.5/Images/posts/C%E7%AC%94%E8%AE%B0/%E5%9B%BE%E7%89%877.png" alt></p>
-<p><strong><em>带有注释的Line类和Point类关系的描述</em></strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.5/Images/posts/C%E7%AC%94%E8%AE%B0/%E5%9B%BE%E7%89%873.png" alt></p>
-<p><strong>注释</strong></p>
-<p>在UML图形上，注释表示为带有褶角的矩形，然后用虚线连接到UML的其他元素上，它是一种用于在图中附加文字注释的机制。</p>
-<h2 id="5-结构体和联合体"><a href="#5-结构体和联合体" class="headerlink" title="5.结构体和联合体"></a>5.结构体和联合体</h2><h3 id="①结构体"><a href="#①结构体" class="headerlink" title="①结构体"></a>①结构体</h3><p><strong>结构体是一种特殊形态的类</strong></p>
-<ul>
-<li><p>与类的唯一区别：类的缺省访问权限是private，结构体的缺省访问权限是public</p>
-</li>
-<li><p>结构体存在的主要原因：与C语言保持兼容</p>
-</li>
-</ul>
-<p><strong>什么时候用结构体而不用类</strong></p>
-<ul>
-<li><p>定义主要用来保存数据、而没有什么操作的类型</p>
-</li>
-<li><p>人们习惯将结构体的数据成员设为公有，因此这时用结构体更方便</p>
-</li>
-</ul>
-<p><strong>结构体的定义和初始化</strong></p>
-<pre class="line-numbers language-c++"><code class="language-c++">//结构体定义
-struct 结构体名称 {
-     公有成员
-protected:
-    保护型成员
-private:
-     私有成员
-};
-
-
-//一些结构体变量的初始化可以用以下形式
-类型名 变量名 = { 成员数据1初值, 成员数据2初值, …… };
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-c++"><code class="language-c++">//1.用结构体表示学生的基本信息
-
-#include <iostream>
-#include <iomanip>
-#include <string>
-using namespace std;
-
-struct Student {    //学生信息结构体
-    int num;        //学号
-    string name;    //姓名，字符串对象，将在第6章详细介绍
-    char sex;        //性别
-    int age;        //年龄
-};
-
-int main() {
-    Student stu = { 97001, "Lin Lin", 'F', 19 };
-    cout << "Num:  " << stu.num << endl;
-    cout << "Name: " << stu.name << endl;
-    cout << "Sex:  " << stu.sex << endl;
-    cout << "Age:  " << stu.age << endl;
-    return 0;
-}
-
-//运行结果：
-Num:  97001
-Name: Lin Lin
-Sex:  F
-Age:  19
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="②联合体"><a href="#②联合体" class="headerlink" title="②联合体"></a>②联合体</h3><pre class="line-numbers language-c++"><code class="language-c++">//声明形式
-union 联合体名称 {
-    公有成员
-protected:
-    保护型成员
-private:
-    私有成员
-};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>特点：</strong></p>
-<ul>
-<li><p>成员共用相同的内存单元</p>
-</li>
-<li><p>任何两个成员不会同时有效</p>
-</li>
-</ul>
-<p><strong>联合体的内存分配</strong></p>
-<pre class="line-numbers language-c++"><code class="language-c++">union Mark {    //表示成绩的联合体
-    char grade;    //等级制的成绩
-    bool pass;    //只记是否通过课程的成绩
-    int percent;    //百分制的成绩
-};
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.5/Images/posts/C%E7%AC%94%E8%AE%B0/%E5%9B%BE%E7%89%872.png" alt></p>
-<p><strong>无名联合</strong></p>
-<p>无名联合没有标记名，只是声明一个成员项的集合，这些成员项具有相同的内存地址，可以由成员项的名字直接访问。</p>
-<pre class="line-numbers language-c++"><code class="language-c++">例：
-union {
-  int i;
-  float f;
-}
-//在程序中可以这样使用：
-i = 10;
-f = 2.2;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-c++"><code class="language-c++">//example.使用联合体保存成绩信息，并且输出。
-
-#include <string>
-#include <iostream>
-using namespace std;
-class ExamInfo {
-private:
-    string name;    //课程名称
-    enum { GRADE, PASS, PERCENTAGE } mode;//采用何种计分方式
-    union {
-        char grade;    //等级制的成绩
-        bool pass;    //只记是否通过课程的成绩
-        int percent;    //百分制的成绩
-    };
-
-public:
-    //三种构造函数，分别用等级、是否通过和百分初始化
-    ExamInfo(string name, char grade)
-        : name(name), mode(GRADE), grade(grade) { }
-    ExamInfo(string name, bool pass)
-        : name(name), mode(PASS), pass(pass) { }
-    ExamInfo(string name, int percent)
-        : name(name), mode(PERCENTAGE), percent(percent) { }
-    void show();
-}
-
-void ExamInfo::show() {
-    cout << name << ": ";
-    switch (mode) {
-      case GRADE: cout << grade;  break;
-      case PASS: cout << (pass ? "PASS" : "FAIL"); break;
-      case PERCENTAGE: cout << percent; break;
-    }
-    cout << endl;
-}
-
-int main() {
-    ExamInfo course1("English", 'B');
-    ExamInfo course2("Calculus", true);
-    ExamInfo course3("C++ Programming", 85);
-    course1.show();
-    course2.show();
-    course3.show();
-    return 0;
-}
-
-//运行结果：
-English: B
-Calculus: PASS
-C++ Programming: 85<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<hr>
-
-      
     </div>
-</article>
-
-    </li>
-  
-    <li>
-      <article class='ListView'>
-    <header class="title">
-      
-        <h1>
-          <a href="/c-bian-cheng-ti-mu-zheng-he.html">C++编程题目整合</a>
-        </h1>
-      
-      <div class='ListMeta'>
-  <time datetime="2020-04-26T10:51:17.000Z" itemprop="datePublished">
-    2020-04-26
-  </time>
-  
-  | 
-  <ul>
-    
-  <li class="meta-text">
-  { <a href="/tags/学习笔记/">学习笔记</a> }
-  </li>
-
-
-  </ul>
-  
-  
-  / 
-  <ul>
-    
-  <li class="meta-text">
-  { <a href="/categories/C/">C++</a> }
-  </li>
-
-
-  </ul>
-  
-</div>
-
-    </header>
-    <div>
-      
-        <p><strong>就从第四章类与对象开始吧，前面的章节和c差不多。</strong></p>
-<h3 id="1-点类定义和使用"><a href="#1-点类定义和使用" class="headerlink" title="1.点类定义和使用"></a>1.点类定义和使用</h3><p><strong>【问题描述】</strong></p>
-<p>定义一个点类，该类包含整形坐标x,y以及用于设置坐标值的函数，名为setxy（）参数自行确定，以及用于显示坐标的函数displayxy()参数自行设置。合理编写主函数，能够实现（3，4）以及（5，6）固定两个点对象的参数设置，以及信息输出</p>
-<p><strong>【输入形式】</strong></p>
-<p>无数据输入，请一定使用类的定义以及对象的创建的相关知识</p>
-<p><strong>【输出形式】</strong></p>
-<p>输出两个固定点的相关信息</p>
-<p><strong>【样例输入】</strong></p>
-<p><strong>【样例输出】</strong></p>
-<p>The first point is:(3,4)</p>
-<p>The second point is:(5,6)</p>
-<pre class="line-numbers language-c++"><code class="language-c++">#include<iostream>
-using namespace std;
-class Point {
-    public:
-              Point(int a,int b) 
-              {     x=a;
-                  y=b;
-            } 
-          void setxy(int a,int b)
-          {
-                x=a;
-                y=b;
-          }
-                  void display()
-         {
-             cout<<"The first point is"<<":"<<"("<<x<<","<<y<<")"<<endl;
-             //cout<<"The second point is"<<":"<<"("<<5<<","<<6<<")"<<endl;
-         }
-    private: 
-        int x,y;
-};
-int main()
-{
-    //int a,b,c,d;
-    Point s1(3,4);
-    Point s2(5,6);
-    //s.setxy(3,4);
-    //s.display();
-    //s.setxy(5,6);
-    s1.display();
-    s2.display();
-    return 0;
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<hr>
-<h3 id="2-三角形类"><a href="#2-三角形类" class="headerlink" title="2.三角形类"></a>2.三角形类</h3><p><strong>【问题描述】</strong></p>
-<p>定义一个描述三角形的类Tri，其具体要求为：  </p>
-<p>（1）私有数据成员为三角形的三边 </p>
-<p> （2）公有成员函数      构造函数：用以初始化指定的三角形对象；求三角形的边长的成员函数；求三角形面积的成员函数；输出三角形各种参数的成员函数即用以输出三角形对象的边长、周长和面积。</p>
-<p><strong>【输入形式】</strong></p>
-<p>输入三角形的三边长 【输出形式】若构成三角形，输出三角形的边长、周长及面积，否则输出“不构成三角形!” </p>
-<p><strong>【样例输入1】</strong></p>
-<p>  3 4 5 </p>
-<p><strong>【样例输出1】</strong>    </p>
-<p>三角形的边长:3 4 5  三角形的周长:12  三角形的面积:6</p>
-<p><strong>【样例输入1】</strong> </p>
-<p> 1 2 3 </p>
-<p><strong>【样例输出1】</strong>   </p>
-<p> 不构成三角形!</p>
-<pre class="line-numbers language-c++"><code class="language-c++">#include<iostream>
-#include<math.h>
-using namespace std; 
-
-class Tri
-{
-        double a,b,c;  //定义三角形的三边
-    public:
-        Tri(double x, double y, double z) //构造函数，初始化三边
-        {        a=x; b=y;c=z;        }
-
-        double Peri()  //返回三角形的周长
-        {        return (a+b+c);        }
-
-        double Area()  //返回三角形的面积
-        {    double s=Peri()/2;
-            double area=sqrt(s*(s-a)*(s-b)*(s-c));
-            return area;
-        }
-
-        void Show() //输出三角形的参数
-        {    cout<<"三角形的边长:"<<a<<' '<<b<<' '<<c<<endl;
-            cout<<"三角形的周长:"<<Peri()<<endl;
-            cout<<"三角形的面积:"<<Area()<<endl<<endl;
-        }
-
-};//三角形类的定义结束，定义了三角形的各种属性和可实施的操作
-
-int main()
-{    double x,y,z;
-    cin>>x>>y>>z;
-    Tri tri(x,y,z);
-
-    if(x+y>z&&y+z>x&&x+z>y)
-        tri.Show();  //输出这两个三角形的参数
-    else
-        cout<<"不构成三角形!"<<endl;
-
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<hr>
-<h3 id="3-设计一个Time类"><a href="#3-设计一个Time类" class="headerlink" title="3.设计一个Time类"></a>3.设计一个Time类</h3><p><strong>【问题描述】</strong></p>
-<p>定义了一个以hours, minutes和seconds作为数据成员的Time类。设计了成员函数将两个Time对象相加（即时间相加），并进行相应的检查，查看增加的分钟数及秒数是否大于59。如果秒数大于59，则分钟数向前递增1。类似地，如果分钟数大于59，则小时数向前增1。</p>
-<p><strong>【输入形式】</strong></p>
-<p>输入两个由时、分、秒构成的时间。 </p>
-<p><strong>【输出形式】</strong></p>
-<p>输出输入的两个时间相加后的时间</p>
-<p> <strong>【样例输入】</strong></p>
-<p>  2 34 45  1 47 56</p>
-<p><strong>【样例输出】</strong></p>
-<p>  the result is:4:22:41</p>
-<p><strong>【样例输入】</strong></p>
-<p>​    2 67 100  1 56 200</p>
-<p><strong>【样例输出】</strong></p>
-<p>  the result is:5:8:0</p>
-<pre class="line-numbers language-c++"><code class="language-c++">#include<iostream>
-using namespace std; 
-
-class Time
-{
-    private:
-          int hours, minutes, seconds;
-    public:
-        void get_time()
-        {
-            cin>>hours>>minutes>>seconds;
-        }
-
-        void display_time()
-        {
-            cout<<hours<<':'<<minutes<<':'<<seconds<<endl;
-        }
-
-        void add_time(Time & t1, Time & t2)
-        {    int tmp; 
-            hours=t1.hours+t2.hours;
-            minutes=t1.minutes+t2.minutes;
-            seconds=t1.seconds+t2.seconds;
-            if(seconds>=60)
-            {  tmp=seconds/60;
-               seconds-=tmp*60;
-               minutes=minutes+tmp;
-            }
-            if(minutes>=60)
-            {  tmp=minutes/60;
-               minutes-=tmp*60;
-               hours=hours+tmp;
-            }
-        }
-};
-
-int main()
-{
-       Time one, two, three;
-       //cout<<"Enter the first time(hours minutes seconds):";
-       one.get_time();
-       //cout<<"Enter the second time(hours minutes seconds):";
-       two.get_time();
-       three.add_time(one,two);
-       cout<<"the result is:";
-       three.display_time();
-}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<hr>
-<h3 id="4-datatype-数据类型-类"><a href="#4-datatype-数据类型-类" class="headerlink" title="4.datatype(数据类型)类"></a>4.datatype(数据类型)类</h3><p><strong>【问题描述】</strong></p>
-<p>声明一个datatype(数据类型)类，该类能够根据用户的输入，确定输入的数据类型，能处理包含字符型、整形、浮点型3种类型的数据，并给出合理的输出。提示：需要进行构造函数的重载</p>
-<p><strong>【输入形式】</strong></p>
-<p>给用户选择，当输入1时，选择输入整型；输入2时，输入字符型；选择3时，输入浮点型。不考虑其他错误情况</p>
-<p><strong>【输出形式】</strong></p>
-<p>输入该数据以及该数据的类型</p>
-<p><strong>【样例输入1】</strong></p>
-<p>2c</p>
-<p><strong>【样例输出1】</strong></p>
-<p>character:c</p>
-<p><strong>【样例输入2】</strong></p>
-<p>112</p>
-<p><strong>【样例输出2】</strong></p>
-<p>int:12</p>
-<p><strong>【样例输入3】</strong></p>
-<p>31.44F</p>
-<p><strong>【样例输出3】</strong></p>
-<p>float:1.44</p>
-<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
-using namespace std;
-
-class DataType{
-    enum
-    {
-        character,
-        integer,
-        floating_point
-    } vartype;
-    union 
-    {
-        char c;
-        int i;
-        float f;
-    };
-    public:
-        DataType(char ch) 
-        {
-            vartype = character;
-            c = ch;
-        }
-
-        DataType(int ii) 
-        {
-            vartype = integer;
-            i = ii;
-        }
-
-        DataType(float ff) 
-        {
-            vartype = floating_point;
-            f = ff;
-        }
-        void print();
-};
-
-void DataType::print() 
-{
-    switch (vartype) 
-    {
-        case character:
-            cout << "字符型: " << c << endl;
-            break;
-        case integer:
-            cout << "整型: " << i << endl;
-            break;
-        case floating_point:
-            cout << "浮点型: " << f << endl;
-            break;
-    }
-}
-
-int main() 
-{    DataType a('c'), b(12), c(1.44F);
-    a.print();
-    b.print();
-    c.print();
-    return 0;
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<hr>
-<h3 id="5-复数类Complex"><a href="#5-复数类Complex" class="headerlink" title="5.复数类Complex"></a>5.复数类Complex</h3><p><strong>【问题描述】</strong></p>
-<p>定义一个复数类，使得下面的代码能够工作：    </p>
-<p>Complex c1(3,5);   </p>
-<p> Complex c2=4.5;   </p>
-<p> c1.add(c2);    </p>
-<p> c1.show(); </p>
-<p><strong>【输入形式】</strong></p>
-<p>无 </p>
-<p><strong>【输出形式】</strong> </p>
-<p>c1=3 + 5i </p>
-<p>c2=4.5 + 0i  </p>
-<p>c1+c2=7.5 + 5i</p>
-<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
-using namespace std;
-
-class Complex {
-    public:
-        Complex(double r, double i) :real(r), image(i) { }
-        Complex(double r) :real(r), image(0) {}
-        void show();
-        void add(Complex c2);
-
-    private:
-        double real;
-        double image;
-};
-void Complex::add(Complex c2) {
-    real += c2.real;
-    image += c2.image;
-}
-
-void Complex::show() {
-    cout << real << "+";
-    cout << image << "i";
-    cout << endl;
-}
-
-int main() {
-    Complex c1(3, 5);
-    Complex c2=4.5;
-    cout<<"c1=";
-    c1.show();
-    cout<<"c2=";
-    c2.show();
-    c1.add(c2);
-    cout<<"c1+c2=";
-    c1.show();
-    return 0;
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<hr>
-<h3 id="6-计算由圆和正方形构成的阴影部分的面积"><a href="#6-计算由圆和正方形构成的阴影部分的面积" class="headerlink" title="6.计算由圆和正方形构成的阴影部分的面积"></a>6.计算由圆和正方形构成的阴影部分的面积</h3><p><strong>【问题描述】</strong></p>
-<p>定义一个圆形类，属性有半径和相应的成员函数。然后定义一个正方形类，属性有边长和相应的成员函数。再编写一个如下图所示的组合类，由一个正方型和一个圆形组成，要求该组合类能求出阴影部分面积和周长。</p>
-<p><img src="http://jsjjs.ctbu.edu.cn/userfiles/image/2020/1586088754215004939.png" alt="image.png"></p>
-<p><strong>【输入形式】</strong></p>
-<p>无 </p>
-<p><strong>【输出形式】</strong> </p>
-<p> 自定义图形的面积49.2656  自定义图形的周长29.1328  自定义图形的面积109.098  自定义图形的周长45.6992</p>
-<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
-using namespace std; 
-
-const double  PI=3.1416;
-/**********Program**********/
-class Box  //正方形类 
-{
-    private:
-        int A;
-    public:
-        Box( ){ }  //默认构造函数 
-        Box(int x){    A=x;}  //构造函数 
-        void set(double a){ A=a;}  //设置边长 
-        double S(){    return A*A;    }  //求面积 
-        double BL(){    return 4*A;    }  //求周长 
-};
-
-class circle  //圆类 
-{
-    private:
-        int B;
-    public:
-          circle( ){ }; //默认构造函数 
-        circle(int x){B=x;} //构造函数
-        void set(double b){ B=b;} //设置半径
-        double CL(){    return 2*PI*B;    } //求周长 
-        double S(){ return PI*B*B;}   //求面积
-};
-
-class NewStyle  //组合类 
-{
-    private:
-        circle A;
-        Box B;
-    public:
-        NewStyle( ) {} //默认构造函数
-        NewStyle(circle x,Box y):A(x),B(y){}  //构造函数
-        void set(circle x,Box y){ A=x;B=y;}  //设置组合图形 
-        double S(){    return A.S()-B.S();}     //求面积
-        double L(){    return A.CL()+B.BL();};  //求周长
-} ; 
-/**********  End  **********/
-
-int main()
-{
-    circle A(4);  //圆的半径为4
-    Box B(1);   //正方形的边长为1
-    NewStyle C(A,B);  
-    cout<<"自定义图形的面积"<<C.S()<<endl; 
-    cout<<"自定义图形的周长"<<C.L()<<endl; 
-    A.set(6);   //圆的半径变为6
-    B.set(2);   //正方形的边长变为2
-    C.set(A,B);
-    cout<<"自定义图形的面积"<<C.S()<<endl; 
-    cout<<"自定义图形的周长"<<C.L()<<endl; 
-    return 0;
-}  
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<hr>
-<h3 id="7-CPU类"><a href="#7-CPU类" class="headerlink" title="7.CPU类"></a>7.CPU类</h3><p><strong>【问题描述】</strong></p>
-<p>声明一个CPU类。包含等级(rank)、频率(frequency)、电压(voltage)等属性，有两个公有成员函数run、stop，分别提示“CPU开始运行!”和“CPU停止运行!”。其中，rank为枚举类型CPU_Rank，声明为enum CPU_Rank{ P1=1, P2, P3, P4, P5, P6, P7 }; frequency为单位是MHz的整型数，voltage为浮点型的电压值。用2个CPU对象进行测试观察构造函数和析构函数的调用顺序。</p>
-<p><strong>【输入形式】</strong></p>
-<p>输入CPU的等级，1表示P1，3代表P3</p>
-<p><strong>【输出形式】</strong></p>
-<p>CPU对象的相关信息：构造函数、析构函数的调用情况，CPU对象的运行状况及CPU的等级</p>
-<p><strong>【样例输入1】</strong></p>
-<p>  2 5 </p>
-<p><strong>【样例输出1】</strong> </p>
-<p> 构造了一个CPU! </p>
-<p> 构造了一个CPU! </p>
-<p> CPU开始运行! </p>
-<p> 等级为:2  </p>
-<p>CPU停止运行!</p>
-<p>  CPU开始运行!  </p>
-<p>等级为:5  </p>
-<p>CPU停止运行!</p>
-<p> 析构了一个CPU!  </p>
-<p>析构了一个CPU!</p>
-<p><strong>【样例输入2】</strong> </p>
-<p> 1 7 </p>
-<p><strong>【样例输出2】</strong> </p>
-<p> 构造了一个CPU!  </p>
-<p>构造了一个CPU!  </p>
-<p>CPU开始运行!  </p>
-<p>等级为:1 </p>
-<p> CPU停止运行!  </p>
-<p>CPU开始运行!  </p>
-<p>等级为:7  </p>
-<p>CPU停止运行!  </p>
-<p>析构了一个CPU!  </p>
-<p>析构了一个CPU! </p>
-<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
-using namespace std;
-
-enum CPU_Rank {P1=1,P2,P3,P4,P5,P6,P7};
-class CPU
-{
-    private:
-        CPU_Rank rank;
-        int frequency;
-        float voltage;
-    public:
-        CPU (CPU_Rank r, int f, float v)
-        {
-            rank = r;
-            frequency = f;
-            voltage = v;
-            cout << "构造了一个CPU!" << endl;
-        }
-
-        ~CPU () { cout << "析构了一个CPU!" << endl; }
-
-        CPU_Rank GetRank() const { return rank; }
-        int GetFrequency() const { return frequency; }
-        float GetVoltage() const { return voltage; }
-
-        void SetRank(CPU_Rank r) { rank = r; }
-        void SetFrequency(int f) { frequency = f; }
-        void SetVoltage(float v) { voltage = v; }
-
-        void Run() {cout << "CPU开始运行!" << "\n等级为:"<<rank<<endl; }
-        void Stop() {cout << "CPU停止运行!" << endl; }
-};
-
-int main()
-{
-    int r1,r2;
-    cin>>r1>>r2;
-    CPU a((CPU_Rank)r1,300,2.8);
-    CPU b((CPU_Rank)r2,800,8.8);
-    a.Run();
-    a.Stop();
-    b.Run();
-    b.Stop();
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>持续更新中</p>
-
-      
+    <div class="container row center-align">
+    <div class="github-badge">
+      <a style="color: #fff" rel="license" href="https://hexo.io/" target="_blank" title="由 Hexo 强力驱动">
+      <span class="badge-subject">Powered</span><span class="badge-value bg-blue">Hexo</span></a>
     </div>
-</article>
-
-    </li>
-  
-    <li>
-      <article class='ListView'>
-    <header class="title">
-      
-        <h1>
-          <a href="/c-xue-xi-bi-ji-zheng-li-di-wu-zhang-shu-ju-de-gong-xiang-yu-bao-hu.html">C++学习笔记整理-数据的共享与保护</a>
-        </h1>
-      
-      <div class='ListMeta'>
-  <time datetime="2020-04-23T04:59:54.000Z" itemprop="datePublished">
-    2020-04-23
-  </time>
-  
-  | 
-  <ul>
-    
-  <li class="meta-text">
-  { <a href="/tags/学习笔记/">学习笔记</a> }
-  </li>
-
-
-  </ul>
-  
-  
-  / 
-  <ul>
-    
-  <li class="meta-text">
-  { <a href="/categories/C/">C++</a> }
-  </li>
-
-
-  </ul>
-  
-</div>
-
-    </header>
-    <div>
-      
-        <hr>
-<h1 id="第五章数据的共享与保护"><a href="#第五章数据的共享与保护" class="headerlink" title="第五章数据的共享与保护"></a>第五章数据的共享与保护</h1><h2 id="1-标识符的作用域与可见性"><a href="#1-标识符的作用域与可见性" class="headerlink" title="1.标识符的作用域与可见性"></a>1.标识符的作用域与可见性</h2><h3 id="①作用域"><a href="#①作用域" class="headerlink" title="①作用域"></a>①作用域</h3><p><strong>作用域是一个标识符在程序正文中有效的区域。</strong></p>
-<ul>
-<li><p>函数原型作用域</p>
-</li>
-<li><p>局部作用域(块作用域)</p>
-</li>
-<li><p>类作用域</p>
-</li>
-<li><p>文件作用域</p>
-</li>
-<li><p>命名空间作用域</p>
-</li>
-</ul>
-<p><strong>函数原形的作用域</strong></p>
-<p>函数原型中的参数，其作用域始于”(“，结束于”)”。</p>
-<pre class="line-numbers language-c++"><code class="language-c++">//例如，设有下列原型声明：
-double area(double radius);
-//radius 的作用域仅在于此area，不能用于程序正文其他地方，因而可有可无。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p><strong>局部作用域</strong></p>
-<p>函数的形参，在块中声明的标识符，其作用域自声明处起，限于块中，例如：</p>
-<pre class="line-numbers language-c++"><code class="language-c++">void fun(int a) {
-   int b = a;
-   cin >> b;
-   if (b > 0) {
-     int c;
-
-     ......
-   }
-}
-
-//a的作用域是整个fun函数，b作用域在fun函数内，而c作用域在if语句内<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>类作用域</strong></p>
-<ul>
-<li><p>类的成员具有类作用域，其范围包括类体和非内联成员函数的函数体。</p>
-</li>
-<li><p>如果在类作用域以外访问类的成员，要通过类名（访问静态成员），或者该类的对象名、对象引用、对象指针（访问非静态成员）。</p>
-</li>
-</ul>
-<p><strong>文件作用域</strong></p>
-<p>不在前述各个作用域中出现的声明，就具有文件作用域，这样声明的标识符其作用域开始于声明点，结束于文件尾。</p>
-<pre class="line-numbers language-c++"><code class="language-c++">//example.1
-#include <iostream>
-using namespace std;
-
-int i;                //全局变量，文件作用域
-int main() { 
-     i = 5;            //为全局变量i赋值
-     {                //子块1
-         int i;        //局部变量，局部作用域
-         i = 7;
-         cout << "i = " << i << endl;//输出7
-      }
-      cout << “i = ” << i << endl;//输出5
-      return 0;
-}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="②可见性"><a href="#②可见性" class="headerlink" title="②可见性"></a>②可见性</h3><ul>
-<li><p>可见性是从对标识符的引用的角度来谈的概念</p>
-</li>
-<li><p>可见性表示从内层作用域向外层作用域“看”时能看见什么。</p>
-</li>
-<li><p>如果标识在某处可见，则就可以在该处引用此标识符。</p>
-</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.5/Images/posts/C%E7%AC%94%E8%AE%B0/%E5%9B%BE%E7%89%879.png" alt></p>
-<ul>
-<li>标识符应声明在先，引用在后。</li>
-<li>如果某个标识符在外层中声明，且在内层中没有同一标识符的声明，则该标识符在内层可见。</li>
-<li>对于两个嵌套的作用域，如果在内层作用域内声明了与外层作用域中同名的标识符，则外层作用域的标识符在内层不可见。</li>
-</ul>
-<p><strong>同一作用域中的同名标识符</strong></p>
-<ul>
-<li><p>在同一作用域内的对象名、函数名、枚举常量名会隐藏同名的类名或枚举类型名。</p>
-</li>
-<li><p>重载的函数可以有相同的函数名。</p>
-</li>
-</ul>
-<hr>
-<h2 id="2-对象的生存期"><a href="#2-对象的生存期" class="headerlink" title="2.对象的生存期"></a>2.对象的生存期</h2><p><strong>对象从产生到结束的这段时间就是它的生存期。在对象生存期内，对象将保持它的值，直到被更新为止。</strong></p>
-<p><strong>①静态生存期</strong></p>
-<ul>
-<li><p>这种生存期与程序的运行期相同。</p>
-</li>
-<li><p>在文件作用域中声明的对象具有这种生存期。</p>
-</li>
-<li><p>在函数内部声明静态生存期对象，要冠以关键字static 。</p>
-</li>
-</ul>
-<p><strong>②动态生存期</strong></p>
-<ul>
-<li><p>块作用域中声明的，没有用static修饰的对象是动态生存期的对象（习惯称局部生存期对象）。</p>
-</li>
-<li><p>开始于程序执行到声明点时，结束于命名该标识符的作用域结束处。</p>
-</li>
-</ul>
-<pre class="line-numbers language-c++"><code class="language-c++">//1.变量的生存期与可见性
-
-
-#include<iostream>
-using namespace std;
-int i = 1; // i 为全局变量，具有静态生存期。
-void other() {
-  static int a = 2;
-  static int b;
-   // a,b为静态局部变量，具有全局寿命，局部可见。
-   //只第一次进入函数时被初始化。
-  int c = 10; // C为局部变量，具有动态生存期，
-            //每次进入函数时都初始化。
-  a += 2; i += 32; c += 5;
-  cout<<"---OTHER---\n";
-  cout<<" i: "<<i<<" a: "<<a<<" b: "<<b<<" c: "<<c<<endl;
-  b = a;
-}
-
-int main() {
-  static int a;//静态局部变量，有全局寿命，局部可见。
-  int b = -10; // b, c为局部变量，具有动态生存期。
-  int c = 0;
-    cout << "---MAIN---\n";
-  cout<<" i: "<<i<<" a: "<<a<<" b: "<<b<<" c: "<<c<<endl;
-  c += 8; other();
-  cout<<"---MAIN---\n";
-  cout<<" i: "<<i<<" a: "<<a<<" b: "<<b<<" c: "<<c<<endl;
-  i += 10; other();  
-    return 0;
-}
-
-//运行结果：
----MAIN---
- i: 1 a: 0 b: -10 c: 0
----OTHER---
- i: 33 a: 4 b: 0 c: 15
----MAIN---
- i: 33 a: 0 b: -10 c: 8
----OTHER---
- i: 75 a: 6 b: 4 c: 15<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="3-类的静态成员"><a href="#3-类的静态成员" class="headerlink" title="3.类的静态成员"></a>3.类的静态成员</h2><p><strong>静态数据成员</strong></p>
-<ul>
-<li><p>用关键字static声明</p>
-</li>
-<li><p>为该类的所有对象共享，静态数据成员具有静态生存期。</p>
-</li>
-<li><p>必须在类外定义和初始化，用(::)来指明所属的类。</p>
-</li>
-</ul>
-<p><strong>具有静态数据成员的Point类</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.5/Images/posts/C%E7%AC%94%E8%AE%B0/%E5%9B%BE%E7%89%8710.png" alt></p>
-<pre class="line-numbers language-c++"><code class="language-c++">//1.具有静态数据成员的Point类
-
-#include <iostream>
-using namespace std;
-
-class Point {    //Point类定义
-public:    //外部接口
-    Point(int x = 0, int y = 0) : x(x), y(y) { //构造函数
-        //在构造函数中对count累加，所有对象共同维护同一个count
-        count++;
-    }
-    Point(Point &p) {    //复制构造函数
-        x = p.x;
-        y = p.y;
-        count++;
-    }
-    ~Point() {  count--; }
-    int getX() { return x; }
-    int getY() { return y; }
-
- void showCount() {        //输出静态数据成员
-        cout << "  Object count = " << count << endl;
-    }
-private:    //私有数据成员
-    int x, y;
-    static int count;    //静态数据成员声明，用于记录点的个数
-};
-int Point::count = 0;//静态数据成员定义和初始化，使用类名限定
-int main() {    //主函数
-    Point a(4, 5);    //定义对象a，其构造函数回使count增1
-    cout << "Point A: " << a.getX() << ", " << a.getY();
-    a.showCount();    //输出对象个数
-
-    Point b(a);    //定义对象b，其构造函数回使count增1
-    cout << "Point B: " << b.getX() << ", " << b.getY();
-    b.showCount();    //输出对象个数
-    return 0;
-}
-
-
-
-//运行结果：
- Point A: 4, 5  Object count=1
- Point B: 4, 5  Object count=2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>静态函数成员</strong></p>
-<ul>
-<li>类外代码可以使用类名和作用域操作符来调用静态成员函数。</li>
-<li>静态成员函数只能引用属于该类的静态数据成员或静态成员函数。</li>
-</ul>
-<p><strong>具有静态数据、函数成员的 Point类</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MUYIio/CDN@1.5/Images/posts/C%E7%AC%94%E8%AE%B0/%E5%9B%BE%E7%89%8711.png" alt></p>
-<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
-using namespace std;
-
-class Point {    //Point类定义
-public:    //外部接口
-    Point(int x = 0, int y = 0) : x(x), y(y) { //构造函数
-        //在构造函数中对count累加，所有对象共同维护同一个count
-        count++;
-    }    
-    Point(Point &p) {    //复制构造函数
-        x = p.x;
-        y = p.y;
-        count++;
-    }
-    ~Point() {  count--; }
-    int getX() { return x; }
-    int getY() { return y; }
-
-    static void showCount() {        //静态函数成员
-        cout << "  Object count = " << count << endl;
-    }
-
-private:    //私有数据成员
-    int x, y;
-    static int count;    //静态数据成员声明，用于记录点的个数
-};
-
-int Point::count = 0;//静态数据成员定义和初始化，使用类名限定
-
-int main() {    //主函数
-    Point a(4, 5);    //定义对象a，其构造函数回使count增1
-    cout << "Point A: " << a.getX() << ", " << a.getY();
-    Point::showCount();    //输出对象个数
-
-    Point b(a);    //定义对象b，其构造函数回使count增1
-    cout << "Point B: " << b.getX() << ", " << b.getY();
-    Point::showCount();    //输出对象个数
-
-    return 0;
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<hr>
-<h2 id="4-类的友元"><a href="#4-类的友元" class="headerlink" title="4.类的友元"></a>4.类的友元</h2><p>友元是C++提供的一种破坏数据封装和数据隐藏的机制。</p>
-<p>通过将一个模块声明为另一个模块的友元，一个模块能够引用到另一个模块中本是被隐藏的信息。</p>
-<p>可以使用友元函数和友元类。</p>
-<p>为了确保数据的完整性，及数据封装与隐藏的原则，建议尽量不使用或少使用友元。</p>
-
-      
+    <div class="github-badge">
+      <a style="color: #fff" rel="license" href="https://github.com/" target="_blank" title="静态网页托管于 GitHub Pages 和 Coding Pages">
+      <span class="badge-subject">Hosted</span><span class="badge-value bg-brightgreen">GitHub & Coding</span></a>
     </div>
-</article>
-
-    </li>
-  
-</ul>
-
-
-            <footer>
-    <div>© 2024 - Tyzhao </div>
-    <div>
-        <span>
-            Powered by <a href="https://hexo.io">Hexo</a>
-        </span>
-        ,
-        <span>
-            Theme - <a href="https://github.com/nameoverflow/hexo-theme-icalm">Icalm</a>
-        </span>
+    <div class="github-badge">
+      <a style="color: #fff" rel="license" href="https://www.cloud.tencent.com/" target="_blank" title="腾讯云提供域名相关服务">
+      <span class="badge-subject">DNS</span><span class="badge-value bg-blueviolet">Tencent cloud</span></a>
+    </div>
+    <div class="github-badge">
+      <a style="color: #fff" rel="license" href="https://www.jsdelivr.com/" target="_blank" title="jsDelivr 提供 CDN 加速服务">
+      <span class="badge-subject">CDN</span><span class="badge-value bg-orange">jsDelivr</span></a>
+    </div>
+    <div class="github-badge">
+        <a style="color: #fff" rel="license" href="https://github.com/blinkfox/hexo-theme-matery/" target="_blank" title="站点使用 Matery 主题">
+      <span class="badge-subject">Theme</span><span class="badge-value bg-blue">Matery</span></a>
+    </div>
+    <div class="github-badge">
+      <a style="color: #fff" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="本站点采用知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议进行许可">
+      <span class="badge-subject"><i class="fa fa-copyright"></i></span><span class="badge-value bg-lightgrey">BY-NC-SA 4.0</span></a>
+    </div>
+    <div class="github-badge">
+      <a style="color: #fff" rel="license" href="https://996.icu/" target="_blank" title="支持 996.ICU">
+      <span class="badge-subject">Link</span><span class="badge-value bg-red">996.ICU</span></a>
+    </div>
+    <div class="github-badge">
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">81.7k</span>
     </div>
 </footer>
 
+<div class="progress-bar"></div>
+
+<!-- 不蒜子计数初始值纠正 -->
+<script>
+    $(document).ready(function () {
+
+        var int = setInterval(fixCount, 50);
+        var pvcountOffset = 80000;
+        var uvcountOffset = 20000;
+
+        function fixCount() {
+            if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
+                $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset);
+                clearInterval(int);
+            }
+            if ($("#busuanzi_container_site_pv").css("display") != "none") {
+                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据 
+                clearInterval(int);
+            }
+        }
+    });
+</script>
+
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2020, 01, 01, 00, 00, 00); //北京时间2018-2-13 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = " | 本站已运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+    }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
         </div>
+        <div id="searchResult"></div>
     </div>
 </div>
-<script src="/js/pager/dist/singlepager.js"></script>
-<script>
-var sp = new Pager('data-pager-shell')
 
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
 </script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <script type="text/javascript"> var OriginTitile = document.title, st; document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title = "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) })
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', '');
+</script>
+
+
+
+    <!--鼠标点击特效-->
+    
+
+
+    <!--不蒜子计数-->
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+
+    <!-- 雪花特效 -->
+    
+    
+    <!--动态线条背景-->
+    <script type="text/javascript"
+    color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"> </script>
+
+    <!--鼠标跟随樱花特效 -->
+    
+        <script type="text/javascript" src="/js/fairyDustCursor.js"></script>
+    
+
+
+    <!--单击显示文字-->
+    
+
+    <!--鼠标点击粒子特效-->
+    
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+    <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+    <script type="text/javascript" src="/js/fireworks.js"></script>
+    
+
+    <script async src =“ https://www.jsdelivr.com/terms/acceptable-use-policy-jsdelivr-net”></script>
+
+
+
+    <!-- 自定义看板娘 -->
+    <!--这个是看板娘必须jquery，假如你的网站已经有引用就不需要重复引用了-->
+    <script src="/live2d-widget/autoload.js"></script>
+
+
 </body>
 </html>
