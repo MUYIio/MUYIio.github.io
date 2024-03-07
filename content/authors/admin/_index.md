@@ -1,9 +1,9 @@
 ---
 # Display name
-title: 吳健雄
+title: 11111
 
 # Name pronunciation (optional)
-name_pronunciation: Chien Shiung Wu
+name_pronunciation: 1111
 
 # Full name (for SEO)
 first_name: Shiung Wu
@@ -17,7 +17,7 @@ status:
 superuser: true
 
 # Role/position/tagline
-role: Professor of Artificial Intelligence
+role: 11111
 
 # Organizations/Affiliations to show in About widget
 organizations:
