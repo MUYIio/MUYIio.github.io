@@ -1,13 +1,13 @@
 ---
 # Display name
-title: 11111
+title: 赵晓龙
 
 # Name pronunciation (optional)
-name_pronunciation: 1111
+name_pronunciation: Shio Zoe
 
 # Full name (for SEO)
-first_name: Shiung Wu
-last_name: Chien
+first_name: 
+last_name: 
 
 # Status emoji
 status:
@@ -17,7 +17,7 @@ status:
 superuser: true
 
 # Role/position/tagline
-role: 11111
+role: 
 
 # Organizations/Affiliations to show in About widget
 organizations:
